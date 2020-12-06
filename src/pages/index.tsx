@@ -1,8 +1,7 @@
 import React from "react"
 import Layout from "containers/layout"
 import SpecItem from "components/spec-item"
-import { HomeHeaderStyled } from "components/utils"
-import { mocks } from "../utils/mocks"
+import { HomeHeaderStyled, mocks } from "components/utils"
 import { SiFacebook, SiTwitter, SiInstagram, SiLinkedin, SiGithub, SiUplabs } from "react-icons/si"
 
 const Home = () => {
@@ -18,7 +17,7 @@ const Home = () => {
         <div className="py-16 mt-8">
           <div>
             <div className="flex items-center">
-              <div className="">
+              <div>
                 <img className="object-cover" style={{height: 200, borderRadius: "2.5rem"}} src="https://res.cloudinary.com/muhrusdi/image/upload/v1607237923/muhrusdi.png" alt=""/>
               </div>
               <div className="pl-10">

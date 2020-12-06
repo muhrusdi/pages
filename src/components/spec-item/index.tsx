@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { PropsType } from "./props-type"
 
-const SpecItem: React.FC<PropsType> = ({data: {title}}) => {
+const SpecItem: React.FC<PropsType> = ({data: {title, description}}) => {
   const [toggle, setToggle] = useState(false);
   const specs = {
     "General Information": {
@@ -160,10 +160,8 @@ const SpecItem: React.FC<PropsType> = ({data: {title}}) => {
                   initial="collapsed"
                   animate="open"
                   exit="collapsed"
-                  className="pt-10 pb-16 text-lg leading-loose relative">
-                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore, consectetur.</p>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facere nobis quia corrupti deleniti perspiciatis aliquid repellendus saepe, in optio repellat, nisi animi fugit reiciendis voluptatibus mollitia distinctio itaque officiis.</p>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facere nobis quia corrupti deleniti perspiciatis aliquid repellendus saepe, in optio repellat, nisi animi fugit reiciendis voluptatibus mollitia distinctio itaque officiis.</p>
+                  className="pt-10 pb-16 text-xl text-gray-300 leading-loose relative">
+                  {description}
                 </motion.div>
               </motion.div>
             )
