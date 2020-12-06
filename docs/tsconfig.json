@@ -1,0 +1,41 @@
+{
+  "include": [
+    "./src/**/*.ts",
+    "./src/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    // "allowJs": true,
+    // "checkJs": true,
+    "jsx": "react",
+    "strict": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "moduleResolution": "node",
+    "noEmit": true,
+    "skipLibCheck": true,
+    "baseUrl": "./src",
+    "paths": {
+      "components/*": ["components/*"],
+      "components/utils": ["components/utils"],
+      "containers/*": ["containers/*"],
+      "templates/*": ["templates/*"],
+      "layout": ["containers/layout"],
+      "images/*": ["images/*"],
+      "types/*": ["types/*"],
+      "hooks/*": ["hooks/*"],
+      "contexts/*": ["contexts/*"],
+      "styles/*": ["styles/*"],
+    }
+  }
+}
