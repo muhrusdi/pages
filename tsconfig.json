@@ -27,6 +27,7 @@
     "baseUrl": "./src",
     "paths": {
       "components/*": ["components/*"],
+      "components/utils": ["components/utils"],
       "containers/*": ["containers/*"],
       "templates/*": ["templates/*"],
       "layout": ["containers/layout"],
