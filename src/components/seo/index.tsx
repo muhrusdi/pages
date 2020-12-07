@@ -118,6 +118,7 @@ const SEO: React.FC<SeoType> = ({ description, lang, title, image, author, date,
       ]}
     >
       <title>{metaTitle}</title>
+      <script data-ad-client="ca-pub-6628628466268276" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
       {isArticle && <script type="application/ld+json">{JSON.stringify(schemaOrg)}</script>}
     </Helmet>
   )
