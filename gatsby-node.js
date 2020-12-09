@@ -1,5 +1,6 @@
   
 const path = require('path')
+const fs = require("fs")
 
 const aliases = {
   containers: path.resolve(__dirname, "src/containers"),
@@ -22,3 +23,7 @@ exports.onCreateWebpackConfig = ({
      },
    });
  }
+
+exports.onPostBuild = () => {
+  fs.renameSync(path.join(__dirname, 'public'), path.join(__dirname, 'docs'));
+}
