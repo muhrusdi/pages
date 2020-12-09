@@ -27,7 +27,7 @@ const Home = () => {
                   <a href="https://www.facebook.com/mhmrofficial/" rel="noreferrer" target="_blank" className="block px-4 mb-8 sm:mb-0">
                     <SiFacebook size={25} color="#fff"/>
                   </a>
-                  <a href="https://twitter.com/muhrusdiid" rel="noreferrer" target="_blank" className="block px-4 mb-8 sm:mb-0">
+                  <a href="https://twitter.com/mhmrus" rel="noreferrer" target="_blank" className="block px-4 mb-8 sm:mb-0">
                     <SiTwitter size={25} color="#fff"/>
                   </a>
                   <a href="https://www.instagram.com/mhmrofficial/" rel="noreferrer" target="_blank" className="block px-4 mb-8 sm:mb-0">
