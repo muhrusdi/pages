@@ -122,14 +122,14 @@ const SpecItem: React.FC<PropsType> = ({data: {title, description}}) => {
 
   return (
     <div className="flex relative py-12 border-gray-600">
-      <div className="pr-8">
+      <div className="pr-8 hidden sm:block">
         <div>
           {specs[title].icon}
         </div>
       </div>
       <div>
         <div className="select-none">
-          <h3 className="text-5xl font-black py-11">{title}</h3>
+          <h3 className="text-4xl sm:text-5xl font-black py-11">{title}</h3>
         </div>
         <motion.button
           animate={toggle ? "open" : "closed"}

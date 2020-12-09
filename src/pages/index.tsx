@@ -16,30 +16,30 @@ const Home = () => {
         </HomeHeaderStyled>
         <div className="py-16 mt-8">
           <div>
-            <div className="flex items-center">
+            <div className="block sm:flex items-center">
               <div>
                 <img className="object-cover" style={{height: 200, borderRadius: "2.5rem"}} src="https://res.cloudinary.com/muhrusdi/image/upload/v1607237923/muhrusdi.png" alt=""/>
               </div>
-              <div className="pl-10">
-                <h2 className="text-5xl font-black">Muhammad Rusdi</h2>
-                <p className="text-3xl mt-4 text-gray-400">Front End Engineer</p>
-                <div className="flex mt-10 -mx-4">
-                  <a href="#" className="block px-4">
+              <div className="sm:pl-10 mt-14 sm:mt-0">
+                <h2 className="text-4xl sm:text-5xl font-black leading-tight">Muhammad Rusdi</h2>
+                <p className="text-2xl smtext-3xl mt-4 text-gray-400">Front End Engineer</p>
+                <div className="flex mt-10 -mx-4 flex-wrap">
+                  <a href="#" className="block px-4 mb-8 sm:mb-0">
                     <SiFacebook size={25} color="#fff"/>
                   </a>
-                  <a href="#" className="block px-4">
+                  <a href="#" className="block px-4 mb-8 sm:mb-0">
                     <SiTwitter size={25} color="#fff"/>
                   </a>
-                  <a href="#" className="block px-4">
+                  <a href="#" className="block px-4 mb-8 sm:mb-0">
                     <SiInstagram size={25} color="#fff"/>
                   </a>
-                  <a href="#" className="block px-4">
+                  <a href="#" className="block px-4 mb-8 sm:mb-0">
                     <SiLinkedin size={25} color="#fff"/>
                   </a>
-                  <a href="#" className="block px-4">
+                  <a href="#" className="block px-4 mb-8 sm:mb-0">
                     <SiGithub size={25} color="#fff"/>
                   </a>
-                  <a href="#" className="block px-4">
+                  <a href="#" className="block px-4 mb-8 sm:mb-0">
                     <SiUplabs size={25} color="#fff"/>
                   </a>
                 </div>
