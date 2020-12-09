@@ -25,5 +25,10 @@ exports.onCreateWebpackConfig = ({
  }
 
 exports.onPostBuild = () => {
-  fs.renameSync(path.join(__dirname, 'public'), path.join(__dirname, 'docs'));
+  const publicDir = path.join(__dirname, 'public');
+  const docsDir = path.join(__dirname, 'docs');
+  if (fs.existsSync) {
+    fs.rmdirSync(docsDir, {recursive: true})
+  }
+  fs.renameSync(publicDir, docsDir);
 }
