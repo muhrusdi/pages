@@ -24,22 +24,22 @@ const Home = () => {
                 <h2 className="text-4xl sm:text-5xl font-black leading-tight">Muhammad Rusdi</h2>
                 <p className="text-2xl smtext-3xl mt-4 text-gray-400">Front End Engineer</p>
                 <div className="flex mt-10 -mx-4 flex-wrap">
-                  <a href="#" className="block px-4 mb-8 sm:mb-0">
+                  <a href="https://www.facebook.com/mhmrofficial/" rel="noreferrer" target="_blank" className="block px-4 mb-8 sm:mb-0">
                     <SiFacebook size={25} color="#fff"/>
                   </a>
-                  <a href="#" className="block px-4 mb-8 sm:mb-0">
+                  <a href="https://twitter.com/muhrusdiid" rel="noreferrer" target="_blank" className="block px-4 mb-8 sm:mb-0">
                     <SiTwitter size={25} color="#fff"/>
                   </a>
-                  <a href="#" className="block px-4 mb-8 sm:mb-0">
+                  <a href="https://www.instagram.com/mhmrofficial/" rel="noreferrer" target="_blank" className="block px-4 mb-8 sm:mb-0">
                     <SiInstagram size={25} color="#fff"/>
                   </a>
-                  <a href="#" className="block px-4 mb-8 sm:mb-0">
+                  <a href="https://www.linkedin.com/in/muhrusdi/" rel="noreferrer" target="_blank" className="block px-4 mb-8 sm:mb-0">
                     <SiLinkedin size={25} color="#fff"/>
                   </a>
-                  <a href="#" className="block px-4 mb-8 sm:mb-0">
+                  <a href="https://github.com/muhrusdi" rel="noreferrer" target="_blank" className="block px-4 mb-8 sm:mb-0">
                     <SiGithub size={25} color="#fff"/>
                   </a>
-                  <a href="#" className="block px-4 mb-8 sm:mb-0">
+                  <a href="https://www.uplabs.com/muhrusdi" rel="noreferrer" target="_blank" className="block px-4 mb-8 sm:mb-0">
                     <SiUplabs size={25} color="#fff"/>
                   </a>
                 </div>
