@@ -14,7 +14,7 @@ export const HomeHeaderStyled = styled.div`
 
 export const mocks = [
   {
-    title: "General Information",
+    title: "Profile",
     description: (
       <div>
         <p>My name is Muhammad Rusdi, you can call me Rusdi. I'm Front End Engineer with 3+ years experiences in web development using modern stack, i'm enthutiastic about design and new technology</p>
