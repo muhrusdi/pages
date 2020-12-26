@@ -259,6 +259,9 @@ export const mocks = [
             <span className="block py-2 px-4 bg-gray-900 rounded-md mr-4">JAMStack</span>
           </li>
           <li className="mt-4">
+            <span className="block py-2 px-4 bg-gray-900 rounded-md mr-4">Tailwindcss</span>
+          </li>
+          <li className="mt-4">
             <span className="block py-2 px-4 bg-gray-900 rounded-md mr-4">Netlify</span>
           </li>
           <li className="mt-4">
