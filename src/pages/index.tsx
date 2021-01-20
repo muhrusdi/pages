@@ -11,9 +11,13 @@ const Home = () => {
     <Layout>
       <div>
         <HomeHeaderStyled>
-          <div className="text-center">
-            <img style={{height: 140}} src="https://res.cloudinary.com/muhrusdi/image/upload/v1607237336/mhmmr-logo-white.png" alt=""/>
-            <h2 className="mt-11">MHMMR</h2>
+          <div className="text-center flex flex-col">
+            <div>
+              <img style={{height: 200}} src="https://res.cloudinary.com/muhrusdi/image/upload/v1611123004/mhmmr-black-transparent.png" alt=""/>
+            </div>
+            <div>
+              <h2 className="mt-1" style={{textIndent: 22}}>MHMMR</h2>
+            </div>
           </div>
         </HomeHeaderStyled>
         <div className="py-16 mt-8">
