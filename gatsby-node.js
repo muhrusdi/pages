@@ -1,6 +1,6 @@
   
 const path = require('path')
-const fs = require("fs")
+const fs = require("fs-extra")
 
 const aliases = {
   containers: path.resolve(__dirname, "src/containers"),
@@ -27,8 +27,8 @@ exports.onCreateWebpackConfig = ({
 exports.onPostBuild = () => {
   const publicDir = path.join(__dirname, 'public');
   const docsDir = path.join(__dirname, 'docs');
-  if (fs.existsSync) {
-    fs.rmdirSync(docsDir, {recursive: true})
-  }
-  fs.renameSync(publicDir, docsDir);
+  // if (fs.existsSync) {
+  //   fs.rmdirSync(docsDir, {recursive: true})
+  // }
+  fs.copySync(publicDir, docsDir, { overwrite: true });
 }
