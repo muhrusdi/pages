@@ -3,6 +3,7 @@ import Layout from "containers/layout"
 import SpecItem from "components/spec-item"
 import { HomeHeaderStyled, mocks } from "components/utils"
 import { SiFacebook, SiTwitter, SiInstagram, SiLinkedin, SiGithub, SiUplabs } from "react-icons/si"
+import { StaticImage } from "gatsby-plugin-image"
 import { BsArrowDown } from "react-icons/bs"
 import cv from "../utils/cv-muhrusdi.pdf"
 
@@ -13,7 +14,7 @@ const Home = () => {
         <HomeHeaderStyled>
           <div className="text-center flex flex-col">
             <div>
-              <img style={{height: 200}} src="https://res.cloudinary.com/muhrusdi/image/upload/v1611123004/mhmmr-black-transparent.png" alt=""/>
+              <StaticImage height={200} alt="mhmmr" src="https://res.cloudinary.com/muhrusdi/image/upload/v1611123004/mhmmr-black-transparent.png"/>
             </div>
             <div>
               <h2 className="mt-1" style={{textIndent: 22}}>MHMMR</h2>
@@ -24,7 +25,7 @@ const Home = () => {
           <div>
             <div className="block sm:flex items-center">
               <div>
-                <img className="object-cover" style={{height: 200, borderRadius: "2.5rem"}} src="https://res.cloudinary.com/muhrusdi/image/upload/v1616335341/thumb-612467.png" alt=""/>
+                <StaticImage className="object-cover" height={200} style={{borderRadius: "2.5rem"}} src="https://res.cloudinary.com/muhrusdi/image/upload/v1616335341/thumb-612467.png" alt="muhrusdi"/>
               </div>
               <div className="sm:pl-10 mt-14 sm:mt-0">
                 <h2 className="text-4xl sm:text-5xl font-black leading-tight">Muhammad Rusdi</h2>
