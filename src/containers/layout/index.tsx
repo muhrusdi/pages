@@ -10,7 +10,7 @@ const Layout: React.FC<LayoutType> = ({children}) => {
       <div className="container max-w-screen-lg">
         {children}
         <div className="text-center py-16">
-          <span>© {date.getFullYear()} Made with <span className="text-red-500">♥</span> - mhmmr</span>
+          <span>© {date.getFullYear()} Made with <span className="text-red-500">♥</span> - Muhammad Rusdi</span>
         </div>
       </div>
     </>
