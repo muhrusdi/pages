@@ -24,7 +24,7 @@ const Home = () => {
           <div>
             <div className="block sm:flex items-center">
               <div>
-                <img className="object-cover" style={{height: 200, borderRadius: "2.5rem"}} src="https://res.cloudinary.com/muhrusdi/image/upload/v1610255559/thumb-612467.png" alt=""/>
+                <img className="object-cover" style={{height: 200, borderRadius: "2.5rem"}} src="https://res.cloudinary.com/muhrusdi/image/upload/v1616335341/thumb-612467.png" alt=""/>
               </div>
               <div className="sm:pl-10 mt-14 sm:mt-0">
                 <h2 className="text-4xl sm:text-5xl font-black leading-tight">Muhammad Rusdi</h2>
