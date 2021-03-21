@@ -1,3 +1,1 @@
-import NotFound from "templates/404"
-
-export default NotFound
+export { default } from "templates/404"

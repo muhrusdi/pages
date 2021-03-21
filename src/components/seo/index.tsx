@@ -38,26 +38,26 @@ const SEO: React.FC<SeoType> = ({ description, lang, title, image, author, date,
   const metaUrl = slug ? `${site.siteMetadata.siteUrl}${pathname}` : site.siteMetadata.siteUrl
 
   const schemaOrg = {
-    '@context': 'http://schema.org',
-    '@type': 'Article',
+    "@context": "http://schema.org",
+    "@type": "Article",
     author: {
-      '@type': 'Person',
+      "@type": "Person",
       name: metaAuthor,
     },
     copyrightHolder: {
-      '@type': 'Person',
+      "@type": "Person",
       name: metaAuthor,
     },
-    copyrightYear: '2019',
+    copyrightYear: "2019",
     creator: {
-      '@type': 'Person',
+      "@type": "Person",
       name: metaAuthor,
     },
     publisher: {
-      '@type': 'Organization',
+      "@type": "Organization",
       name: metaAuthor,
       logo: {
-        '@type': 'ImageObject',
+        "@type": "ImageObject",
         url: metaImage,
       },
     },
@@ -67,7 +67,7 @@ const SEO: React.FC<SeoType> = ({ description, lang, title, image, author, date,
     url: metaUrl,
     name: metaTitle,
     image: {
-      '@type': 'ImageObject',
+      "@type": "ImageObject",
       url: metaImage,
     },
     mainEntityOfPage: metaUrl,
@@ -80,39 +80,39 @@ const SEO: React.FC<SeoType> = ({ description, lang, title, image, author, date,
       }}
       meta={[
         {
-          name: `description`,
+          name: "description",
           content: metaDescription,
         },
         {
-          property: `og:title`,
+          property: "og:title",
           content: metaTitle,
         },
         {
-          property: `og:description`,
+          property: "og:description",
           content: metaDescription,
         },
         {
-          property: `og:type`,
-          content: `website`,
+          property: "og:type",
+          content: "website",
         },
         {
-          name: `twitter:card`,
-          content: `summary_large_image`,
+          name: "twitter:card",
+          content: "summary_large_image",
         },
         {
-          name: `twitter:creator`,
-          content: site.siteMetadata?.author || ``,
+          name: "twitter:creator",
+          content: site.siteMetadata?.author || "",
         },
         {
-          name: `twitter:title`,
+          name: "twitter:title",
           content: metaTitle,
         },
         {
-          name: `twitter:image`,
+          name: "twitter:image",
           content: metaImage,
         },
         {
-          name: `twitter:description`,
+          name: "twitter:description",
           content: metaDescription,
         },
       ]}
@@ -125,8 +125,8 @@ const SEO: React.FC<SeoType> = ({ description, lang, title, image, author, date,
 }
 
 SEO.defaultProps = {
-  lang: `id`,
-  description: ``,
+  lang: "id",
+  description: "",
   type: "website"
 }
 

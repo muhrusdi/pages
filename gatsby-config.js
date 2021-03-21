@@ -10,20 +10,27 @@ module.exports = {
     siteUrl: "https://github.com/mhmmr",
     image: "https://res.cloudinary.com/muhrusdi/image/upload/v1604903512/template-awwwara.jpg"
   },
+  flags: {
+    PRESERVE_WEBPACK_CACHE: false,
+    FAST_DEV: true,
+    FAST_REFRESH: true,
+    DEV_SSR: false,
+  },
   plugins: [
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-styled-components`,
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-styled-components",
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: `images`,
+        name: "images",
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: "gatsby-plugin-manifest",
       options: {
         name: `gatsby-starter-default`,
         short_name: `starter`,
@@ -33,6 +40,15 @@ module.exports = {
         display: `minimal-ui`,
         icon: `src/images/mhmmr-white-transparent.png`, // This path is relative to the root of the site.
       },
+    },
+    {
+      resolve: "gatsby-plugin-eslint",
+      options: {
+        stages: ["develop"],
+        extensions: ["js", "jsx"],
+        exclude: ["node_modules", ".cache", "public"],
+        // Any eslint-webpack-plugin options below
+      }
     },
     "gatsby-plugin-postcss",
     // this (optional) plugin enables Progressive Web App + Offline functionality
