@@ -1,5 +1,18 @@
 import React from "react"
 import styled from "styled-components"
+import {
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
+  SiTypescript,
+  SiReact,
+  SiGraphql,
+  SiTailwindcss,
+  SiFigma,
+  SiSketch,
+  SiAdobexd
+} from "react-icons/si"
+import { DiPhotoshop } from "react-icons/di"
 
 export const HomeHeaderStyled = styled.div`
   height: 100vh;
@@ -17,7 +30,7 @@ export const mocks = [
     title: "Profile",
     description: (
       <div>
-        <p>My name is Muhammad Rusdi, you can call me Rusdi. I'm Front End Engineer with 3+ years experiences in web development using modern stack, i'm enthutiastic about design and new technology</p>
+        <p>I like to code things from scratch, and enjoy bringing ideas to life in the browser.</p>
         <ul className="mt-8">
           <li>
             <div className="sm:flex bg-gray-900 rounded-md py-2 px-4 mt-4">
@@ -60,8 +73,8 @@ export const mocks = [
         <ul>
           <li>
             <div className="flex">
-              <div className="pr-4 flex-none py-4 hidden sm:block" style={{width: 150}}>
-                <span>2012-2016</span>
+              <div className="pr-4 flex-none py-4 text-right hidden sm:block" style={{width: 150}}>
+                <span>2012 - 2016</span>
               </div>
               <div className="border-yellow-500 border-l-4 pl-4 py-4">
                 <div>
@@ -74,8 +87,8 @@ export const mocks = [
           </li>
           <li>
             <div className="flex">
-              <div className="pr-4 flex-none py-4 hidden sm:block" style={{width: 150}}>
-                <span>2009-2012</span>
+              <div className="pr-4 flex-none py-4 text-right hidden sm:block" style={{width: 150}}>
+                <span>2009 - 2012</span>
               </div>
               <div className="border-green-500 border-l-4 pl-4 py-4">
                 <div>
@@ -88,8 +101,8 @@ export const mocks = [
           </li>
           <li>
             <div className="flex">
-              <div className="pr-4 flex-none py-4 hidden sm:block" style={{width: 150}}>
-                <span>2006-2009</span>
+              <div className="pr-4 flex-none py-4 text-right hidden sm:block" style={{width: 150}}>
+                <span>2006 - 2009</span>
               </div>
               <div className="border-blue-500 border-l-4 pl-4 py-4">
                 <div>
@@ -101,8 +114,8 @@ export const mocks = [
           </li>
           <li>
             <div className="flex">
-              <div className="pr-4 flex-none py-4 hidden sm:block" style={{width: 150}}>
-                <span>2001-2006</span>
+              <div className="pr-4 flex-none py-4 text-right hidden sm:block" style={{width: 150}}>
+                <span>2001 - 2006</span>
               </div>
               <div className="border-pink-500 border-l-4 pl-4 py-4">
                 <div>
@@ -123,7 +136,7 @@ export const mocks = [
         <ul>
           <li>
             <div className="flex">
-              <div className="pr-4 flex-none py-4 hidden sm:block" style={{width: 150}}>
+              <div className="pr-4 flex-none py-4 text-right hidden sm:block" style={{width: 150}}>
                 <span>Oct 2019 - Current</span>
               </div>
               <div className="border-yellow-500 border-l-4 pl-4 py-4">
@@ -138,7 +151,7 @@ export const mocks = [
           </li>
           <li>
             <div className="flex">
-              <div className="pr-4 flex-none py-4 hidden sm:block" style={{width: 150}}>
+              <div className="pr-4 flex-none py-4 text-right hidden sm:block" style={{width: 150}}>
                 <span>May 2019 - Oct 2019</span>
               </div>
               <div className="border-green-500 border-l-4 pl-4 py-4">
@@ -152,7 +165,7 @@ export const mocks = [
           </li>
           <li>
             <div className="flex">
-              <div className="pr-4 flex-none py-4 hidden sm:block" style={{width: 150}}>
+              <div className="pr-4 flex-none py-4 text-right hidden sm:block" style={{width: 150}}>
                 <span>March 2017 - May 2019</span>
               </div>
               <div className="border-green-500 border-l-4 pl-4 py-4">
@@ -174,28 +187,49 @@ export const mocks = [
         <ul>
           <li>
             <div>
-              <h3 className="font-bold text-2xl">Web Development</h3>
-              <ul className="flex mt-2 flex-wrap">
-                <li className="mt-4">
-                  <span className="block py-2 px-4 bg-gray-900 rounded-md mr-4">HTML</span>
+              <h3 className="font-bold text-2xl">Development</h3>
+              <ul className="flex mt-2 flex-wrap -mx-3">
+                <li className="mt-4 px-3">
+                  <div className="flex flex-col items-center">
+                    <SiHtml5 size={60} color="#ff3f3f"/>
+                    <span className="text-sm uppercase mt-4">HTML</span>
+                  </div>
                 </li>
-                <li className="mt-4">
-                  <span className="block py-2 px-4 bg-gray-900 rounded-md mr-4">CSS</span>
+                <li className="mt-4 px-3">
+                  <div className="flex flex-col items-center">
+                    <SiCss3 size={60} color="#1f99f7"/>
+                    <span className="text-sm uppercase mt-4">CSS</span>
+                  </div>
                 </li>
-                <li className="mt-4">
-                  <span className="block py-2 px-4 bg-gray-900 rounded-md mr-4">JavaScript</span>
+                <li className="mt-4 px-3">
+                  <div className="flex flex-col items-center">
+                    <SiJavascript size={60} color="#f7cc1f"/>
+                    <span className="text-sm uppercase mt-4">Javascript</span>
+                  </div>
                 </li>
-                <li className="mt-4">
-                  <span className="block py-2 px-4 bg-gray-900 rounded-md mr-4">TypeScirpt</span>
+                <li className="mt-4 px-3">
+                  <div className="flex flex-col items-center">
+                    <SiTypescript size={60} color="#4674e4"/>
+                    <span className="text-sm uppercase mt-4">Typescript</span>
+                  </div>
                 </li>
-                <li className="mt-4">
-                  <span className="block py-2 px-4 bg-gray-900 rounded-md mr-4">React</span>
+                <li className="mt-4 px-3">
+                  <div className="flex flex-col items-center">
+                    <SiReact size={60} color="#2dfff9"/>
+                    <span className="text-sm uppercase mt-4">React</span>
+                  </div>
                 </li>
-                <li className="mt-4">
-                  <span className="block py-2 px-4 bg-gray-900 rounded-md mr-4">Vue.js</span>
+                <li className="mt-4 px-3">
+                  <div className="flex flex-col items-center">
+                    <SiGraphql size={60} color="#ff2dd8"/>
+                    <span className="text-sm uppercase mt-4">GraphQL</span>
+                  </div>
                 </li>
-                <li className="mt-4">
-                  <span className="block py-2 px-4 bg-gray-900 rounded-md mr-4">GraphQL</span>
+                <li className="mt-4 px-3">
+                  <div className="flex flex-col items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 106 128" height="60"><path fill="#d1d5db" fill-rule="evenodd" d="M105.306 97.519L61.284 4.037v-.002A7.062 7.062 0 0055.265.013c-2.679-.156-5.079 1.136-6.433 3.335L1.088 80.678a7.233 7.233 0 00.084 7.763l23.338 36.152c1.391 2.158 3.801 3.407 6.306 3.407.71 0 1.424-.1 2.126-.308l67.744-20.036a7.424 7.424 0 004.66-4.028 7.264 7.264 0 00-.04-6.11zm-9.857 4.01l-57.479 17c-1.756.52-3.439-.999-3.07-2.77l20.534-98.34c.384-1.838 2.926-2.13 3.728-.427l38.02 80.736c.717 1.523-.1 3.319-1.733 3.801z" clip-rule="evenodd"></path></svg>
+                    <span className="text-sm uppercase mt-4">Prisma</span>
+                  </div>
                 </li>
               </ul>
             </div>
@@ -203,18 +237,30 @@ export const mocks = [
           <li className="mt-10">
             <div>
               <h3 className="font-bold text-2xl">Design</h3>
-              <ul className="flex mt-2 flex-wrap">
-                <li className="mt-4">
-                  <span className="block py-2 px-4 bg-gray-900 rounded-md mr-4">Figma</span>
+              <ul className="flex mt-2 flex-wrap -mx-3">
+                <li className="mt-4 px-3">
+                  <div className="flex flex-col items-center">
+                    <SiFigma size={60} color="#4ba053"/>
+                    <span className="text-sm uppercase mt-4">Figma</span>
+                  </div>
                 </li>
-                <li className="mt-4">
-                  <span className="block py-2 px-4 bg-gray-900 rounded-md mr-4">Sketch</span>
+                <li className="mt-4 px-3">
+                  <div className="flex flex-col items-center">
+                    <SiSketch size={60} color="#ef9746"/>
+                    <span className="text-sm uppercase mt-4">Sketch</span>
+                  </div>
                 </li>
-                <li className="mt-4">
-                  <span className="block py-2 px-4 bg-gray-900 rounded-md mr-4">Adobe XD</span>
+                <li className="mt-4 px-3">
+                  <div className="flex flex-col items-center">
+                    <SiAdobexd size={60} color="#ff5ce8"/>
+                    <span className="text-sm uppercase mt-4">Adobe XD</span>
+                  </div>
                 </li>
-                <li className="mt-4">
-                  <span className="block py-2 px-4 bg-gray-900 rounded-md mr-4">Adobe Photoshop</span>
+                <li className="mt-4 px-3">
+                  <div className="flex flex-col items-center">
+                    <DiPhotoshop size={60} color="#5c84ff"/>
+                    <span className="text-sm uppercase mt-4">Adobe Photoshop</span>
+                  </div>
                 </li>
               </ul>
             </div>
@@ -227,51 +273,144 @@ export const mocks = [
     title: "Stack",
     description: (
       <div>
-        <ul className="flex mt-2 flex-wrap">
-          <li className="mt-4">
-            <span className="block py-2 px-4 bg-gray-900 rounded-md mr-4">JavaScript</span>
+        <ul className="-my-6">
+          <li className="py-6">
+            <div className="p-4 border-indigo-500 border-2 rounded-xl">
+              <div className="text-center text-sm text-indigo-400 uppercase font-bold">
+                <span>Back End / CMS</span>
+              </div>
+              <ul className="flex mt-2 justify-center flex-wrap -mx-3">
+                <li className="mt-4 px-3">
+                  <div className="flex flex-col items-center">
+                    <SiJavascript size={60} color="#f7cc1f"/>
+                    <span className="text-sm uppercase mt-4">Javascript</span>
+                  </div>
+                </li>
+                <li className="mt-4 px-3">
+                  <div className="flex flex-col items-center">
+                    <SiTypescript size={60} color="#4674e4"/>
+                    <span className="text-sm uppercase mt-4">Typescript</span>
+                  </div>
+                </li>
+                <li className="mt-4 px-3">
+                  <div className="flex flex-col items-center">
+                    <SiGraphql size={60} color="#ff2dd8"/>
+                    <span className="text-sm uppercase mt-4">GraphQL</span>
+                  </div>
+                </li>
+                <li className="mt-4 px-3">
+                  <div className="flex flex-col items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 106 128" height="60"><path fill="#d1d5db" fill-rule="evenodd" d="M105.306 97.519L61.284 4.037v-.002A7.062 7.062 0 0055.265.013c-2.679-.156-5.079 1.136-6.433 3.335L1.088 80.678a7.233 7.233 0 00.084 7.763l23.338 36.152c1.391 2.158 3.801 3.407 6.306 3.407.71 0 1.424-.1 2.126-.308l67.744-20.036a7.424 7.424 0 004.66-4.028 7.264 7.264 0 00-.04-6.11zm-9.857 4.01l-57.479 17c-1.756.52-3.439-.999-3.07-2.77l20.534-98.34c.384-1.838 2.926-2.13 3.728-.427l38.02 80.736c.717 1.523-.1 3.319-1.733 3.801z" clip-rule="evenodd"></path></svg>
+                    <span className="text-sm uppercase mt-4">Prisma</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </li>
-          <li className="mt-4">
-            <span className="block py-2 px-4 bg-gray-900 rounded-md mr-4">TypeScirpt</span>
+          <li className="py-6">
+            <div className="p-4 border-yellow-500 border-2 rounded-xl">
+              <div className="text-center text-sm text-yellow-400 uppercase font-bold">
+                <span>Front End</span>
+              </div>
+              <ul className="flex mt-2 justify-center flex-wrap -mx-3">
+                <li className="mt-4 px-3">
+                  <div className="flex flex-col items-center">
+                    <SiHtml5 size={60} color="#ff3f3f"/>
+                    <span className="text-sm uppercase mt-4">HTML</span>
+                  </div>
+                </li>
+                <li className="mt-4 px-3">
+                  <div className="flex flex-col items-center">
+                    <SiCss3 size={60} color="#1f99f7"/>
+                    <span className="text-sm uppercase mt-4">CSS</span>
+                  </div>
+                </li>
+                <li className="mt-4 px-3">
+                  <div className="flex flex-col items-center">
+                    <SiJavascript size={60} color="#f7cc1f"/>
+                    <span className="text-sm uppercase mt-4">Javascript</span>
+                  </div>
+                </li>
+                <li className="mt-4 px-3">
+                  <div className="flex flex-col items-center">
+                    <SiTypescript size={60} color="#4674e4"/>
+                    <span className="text-sm uppercase mt-4">Typescript</span>
+                  </div>
+                </li>
+                <li className="mt-4 px-3">
+                  <div className="flex flex-col items-center">
+                    <SiReact size={60} color="#2dfff9"/>
+                    <span className="text-sm uppercase mt-4">React</span>
+                  </div>
+                </li>
+                <li className="mt-4 px-3">
+                  <div className="flex flex-col items-center">
+                    <SiGraphql size={60} color="#ff2dd8"/>
+                    <span className="text-sm uppercase mt-4">GraphQL</span>
+                  </div>
+                </li>
+                <li className="mt-4 px-3">
+                  <div className="flex flex-col items-center">
+                    <SiTailwindcss size={60} color="#ff2dd8"/>
+                    <span className="text-sm uppercase mt-4">Tailwindcss</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </li>
-          <li className="mt-4">
-            <span className="block py-2 px-4 bg-gray-900 rounded-md mr-4">React</span>
-          </li>
-          <li className="mt-4">
-            <span className="block py-2 px-4 bg-gray-900 rounded-md mr-4">CSS in JS</span>
-          </li>
-          <li className="mt-4">
-            <span className="block py-2 px-4 bg-gray-900 rounded-md mr-4">GraphQL</span>
-          </li>
-          <li className="mt-4">
-            <span className="block py-2 px-4 bg-gray-900 rounded-md mr-4">Redux</span>
-          </li>
-          <li className="mt-4">
-            <span className="block py-2 px-4 bg-gray-900 rounded-md mr-4">Gatsby.js</span>
-          </li>
-          <li className="mt-4">
-            <span className="block py-2 px-4 bg-gray-900 rounded-md mr-4">Next.js</span>
-          </li>
-          <li className="mt-4">
-            <span className="block py-2 px-4 bg-gray-900 rounded-md mr-4">WPGraphQL</span>
-          </li>
-          <li className="mt-4">
-            <span className="block py-2 px-4 bg-gray-900 rounded-md mr-4">JAMStack</span>
-          </li>
-          <li className="mt-4">
-            <span className="block py-2 px-4 bg-gray-900 rounded-md mr-4">Tailwindcss</span>
-          </li>
-          <li className="mt-4">
-            <span className="block py-2 px-4 bg-gray-900 rounded-md mr-4">Netlify</span>
-          </li>
-          <li className="mt-4">
-            <span className="block py-2 px-4 bg-gray-900 rounded-md mr-4">Vercel</span>
-          </li>
-          <li className="mt-4">
-            <span className="block py-2 px-4 bg-gray-900 rounded-md mr-4">Directus</span>
-          </li>
-          <li className="mt-4">
-            <span className="block py-2 px-4 bg-gray-900 rounded-md mr-4">Wordpress</span>
+          <li className="py-6">
+            <div className="p-4 border-green-400 border-2 rounded-xl">
+              <div className="text-center text-sm text-green-400 uppercase font-bold">
+                <span>Deployment</span>
+              </div>
+              <ul className="flex mt-1 flex-wrap">
+                <li className="mt-4">
+                  <span className="block py-2 px-4 bg-gray-900 rounded-md mr-4">JavaScript</span>
+                </li>
+                <li className="mt-4">
+                  <span className="block py-2 px-4 bg-gray-900 rounded-md mr-4">TypeScirpt</span>
+                </li>
+                <li className="mt-4">
+                  <span className="block py-2 px-4 bg-gray-900 rounded-md mr-4">React</span>
+                </li>
+                <li className="mt-4">
+                  <span className="block py-2 px-4 bg-gray-900 rounded-md mr-4">CSS in JS</span>
+                </li>
+                <li className="mt-4">
+                  <span className="block py-2 px-4 bg-gray-900 rounded-md mr-4">GraphQL</span>
+                </li>
+                <li className="mt-4">
+                  <span className="block py-2 px-4 bg-gray-900 rounded-md mr-4">Redux</span>
+                </li>
+                <li className="mt-4">
+                  <span className="block py-2 px-4 bg-gray-900 rounded-md mr-4">Gatsby.js</span>
+                </li>
+                <li className="mt-4">
+                  <span className="block py-2 px-4 bg-gray-900 rounded-md mr-4">Next.js</span>
+                </li>
+                <li className="mt-4">
+                  <span className="block py-2 px-4 bg-gray-900 rounded-md mr-4">WPGraphQL</span>
+                </li>
+                <li className="mt-4">
+                  <span className="block py-2 px-4 bg-gray-900 rounded-md mr-4">JAMStack</span>
+                </li>
+                <li className="mt-4">
+                  <span className="block py-2 px-4 bg-gray-900 rounded-md mr-4">Tailwindcss</span>
+                </li>
+                <li className="mt-4">
+                  <span className="block py-2 px-4 bg-gray-900 rounded-md mr-4">Netlify</span>
+                </li>
+                <li className="mt-4">
+                  <span className="block py-2 px-4 bg-gray-900 rounded-md mr-4">Vercel</span>
+                </li>
+                <li className="mt-4">
+                  <span className="block py-2 px-4 bg-gray-900 rounded-md mr-4">Directus</span>
+                </li>
+                <li className="mt-4">
+                  <span className="block py-2 px-4 bg-gray-900 rounded-md mr-4">Wordpress</span>
+                </li>
+              </ul>
+            </div>
           </li>
         </ul>
       </div>

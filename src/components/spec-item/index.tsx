@@ -4,7 +4,7 @@ import { PropsType } from "./props-type"
 
 const SpecItem: React.FC<PropsType> = ({data: {title, description}}) => {
   const [toggle, setToggle] = useState(false);
-  const specs = {
+  const specs: any = {
     "Profile": {
       icon: (
         <svg width="135" height="135" viewBox="0 0 135 135" fill="none" xmlns="http://www.w3.org/2000/svg">
