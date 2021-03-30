@@ -1,5 +1,6 @@
 import React from "react"
 import Layout from "containers/layout"
+import { Link } from "gatsby"
 import SpecItem from "components/spec-item"
 import { HomeHeaderStyled, mocks } from "components/utils"
 import { SiFacebook, SiTwitter, SiInstagram, SiLinkedin, SiGithub, SiUplabs } from "react-icons/si"
@@ -18,6 +19,17 @@ const Home = () => {
             </div>
             <div>
               <h2 className="mt-1" style={{textIndent: 22}}>MHMMR</h2>
+              <ul className="flex justify-center uppercase font-light mt-8 text-sm">
+                <li className="px-2">
+                  <Link to="/blogs" className="text-gray-400 hover:text-white transition-all">Blogs</Link>
+                </li>
+                <li className="px-2">
+                  <span className="text-gray-400">/</span>
+                </li>
+                <li className="px-2">
+                  <a href="#" className="text-gray-400 hover:text-white transition-all">Works</a>
+                </li>
+              </ul>
             </div>
           </div>
         </HomeHeaderStyled>
