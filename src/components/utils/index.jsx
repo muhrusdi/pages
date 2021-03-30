@@ -15,13 +15,34 @@ import {
 import { DiPhotoshop } from "react-icons/di"
 
 export const HomeHeaderStyled = styled.div`
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
   h2 {
-    letter-spacing: 1.2rem;
+    font-size: 5em;
+  }
+  p {
+    font-size: 2em;
+  }
+  .arrow {
+    svg {
+      position: absolute;
+      top: 37px;
+      left: 0;
+    }
+  }
+  @media (min-width: 640px) {
+    h2 {
+      font-size: 8em;
+    }
+    p {
+      font-size: 3em;
+    }
+  }
+  @media (min-width: 768px) {
+    h2 {
+      font-size: 15em;
+    }
+    p {
+      font-size: 4em;
+    }
   }
 `;
 
