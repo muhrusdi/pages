@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 const Nav = () => {
   return (
-    <nav>
+    <nav className="top-0 left-0 right-0 absolute z-50">
       <div className="container max-w-screen-lg">
         <div className="flex py-6 justify-between items-center">
           <div>
@@ -12,15 +12,15 @@ const Nav = () => {
             </Link>
           </div>
           <div>
-            <ul className="flex justify-center uppercase font-light text-sm">
+            <ul className="flex justify-center -mx-2 uppercase text-sm">
               <li className="px-2">
-                <Link to="/blogs" className="text-gray-400 hover:text-white transition-all">Blogs</Link>
+                <Link to="/blogs" className="text-gray-200 hover:text-white transition-all">Blogs</Link>
               </li>
               <li className="px-2">
                 <span className="text-gray-400">/</span>
               </li>
               <li className="px-2">
-                <a href="#" className="text-gray-400 hover:text-white transition-all">Works</a>
+                <a href="#" className="text-gray-200 hover:text-white transition-all">Works</a>
               </li>
             </ul>
           </div>
