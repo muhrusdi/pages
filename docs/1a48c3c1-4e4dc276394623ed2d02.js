@@ -1,0 +1,2 @@
+(self.webpackChunkgatsby_boilerplate=self.webpackChunkgatsby_boilerplate||[]).push([[874],{7244:function(t,a,e){"use strict";e.d(a,{lU2:function(){return r}});var n=e(1046);function r(t){return(0,n.w_)({tag:"svg",attr:{viewBox:"0 0 24 24"},child:[{tag:"path",attr:{d:"M10.707 17.707L16.414 12 10.707 6.293 9.293 7.707 13.586 12 9.293 16.293z"}}]})(t)}}}]);
+//# sourceMappingURL=1a48c3c1-4e4dc276394623ed2d02.js.map

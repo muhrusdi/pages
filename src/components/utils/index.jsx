@@ -1,5 +1,5 @@
 import React from "react"
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
 import {
   SiHtml5,
   SiCss3,
@@ -14,10 +14,25 @@ import {
 } from "react-icons/si"
 import { DiPhotoshop } from "react-icons/di"
 
-export const HomeHeaderStyled = styled.div`
-  h2 {
-    font-size: 5em;
+const key = keyframes`
+  from {
+      transform: translate3d(0,0,0);
   }
+
+  to {
+      transform: translate3d(-50%,0,0);
+  }
+`
+
+export const HomeHeaderStyled = styled.div`
+  & > div {
+    display: inline-block;
+    white-space: nowrap;
+    animation: ${key} 80s linear infinite;
+  }
+  h2 {
+      font-size: 15em;
+    }
   p {
     font-size: 2em;
   }
@@ -45,6 +60,17 @@ export const HomeHeaderStyled = styled.div`
     }
   }
 `;
+
+export const BlogItemFooter = styled.div`
+  a {
+    &:hover {
+      color: rgba(156, 163, 175, var(--tw-text-opacity));
+      & + span {
+        color: white;
+      }
+    }
+  }
+`
 
 export const mocks = [
   {

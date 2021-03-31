@@ -4,26 +4,25 @@ import { useStaticQuery, graphql } from "gatsby"
 import Nav from "components/navigation"
 import { StaticImage } from "gatsby-plugin-image"
 import { BiChevronRight } from "react-icons/bi"
-import { BlogItemFooter } from "./styled"
+import { BlogItemFooter } from "components/utils"
 import LatestBlog from "components/blog/lastest"
 
 const Blogs = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      allMdx {
-        edges {
-          node {
-            frontmatter {
-              title
-              date
-            }
-          }
-        }
-      }
-    }
-  `)
+  // const data = useStaticQuery(graphql`
+  //   query {
+  //     allMdx {
+  //       edges {
+  //         node {
+  //           frontmatter {
+  //             title
+  //             date
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // `)
 
-  console.log(data)
   return (
     <>
       <Nav/>
