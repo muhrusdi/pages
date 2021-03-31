@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
   
 const path = require('path')
-// const fs = require("fs-extra")
+const fs = require("fs-extra")
 
 const aliases = {
   containers: path.resolve(__dirname, "src/containers"),
