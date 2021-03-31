@@ -25,11 +25,11 @@ exports.onCreateWebpackConfig = ({
    });
  }
 
-// exports.onPostBuild = () => {
-//   const publicDir = path.join(__dirname, 'public');
-//   const docsDir = path.join(__dirname, 'docs');
-//   // if (fs.existsSync) {
-//   //   fs.rmdirSync(docsDir, {recursive: true})
-//   // }
-//   fs.copySync(publicDir, docsDir, { overwrite: true });
-// }
+exports.onPostBuild = () => {
+  const publicDir = path.join(__dirname, 'public');
+  const docsDir = path.join(__dirname, 'docs');
+  // if (fs.existsSync) {
+  //   fs.rmdirSync(docsDir, {recursive: true})
+  // }
+  fs.copySync(publicDir, docsDir, { overwrite: true });
+}
