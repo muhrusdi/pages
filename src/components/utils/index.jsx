@@ -320,7 +320,7 @@ export const mocks = [
     )
   },
   {
-    title: "Stack",
+    title: "Stacks",
     description: (
       <div>
         <ul className="-my-6">
