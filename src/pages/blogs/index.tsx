@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "containers/layout"
-import { useStaticQuery, graphql } from "gatsby"
+// import { useStaticQuery, graphql } from "gatsby"
 import Nav from "components/navigation"
 import { StaticImage } from "gatsby-plugin-image"
 import { BiChevronRight } from "react-icons/bi"

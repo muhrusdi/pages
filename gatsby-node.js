@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
   
-const path = require('path')
+const path = require("path")
 const fs = require("fs-extra")
 
 const aliases = {
@@ -26,8 +26,8 @@ exports.onCreateWebpackConfig = ({
  }
 
 exports.onPostBuild = () => {
-  const publicDir = path.join(__dirname, 'public');
-  const docsDir = path.join(__dirname, 'docs');
+  const publicDir = path.join(__dirname, "public");
+  const docsDir = path.join(__dirname, "docs");
   // if (fs.existsSync) {
   //   fs.rmdirSync(docsDir, {recursive: true})
   // }

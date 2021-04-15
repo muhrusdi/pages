@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-boilerplate",
+  "name": "mhmmr.github.io",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "JAMStack Enthusiast",
   "version": "0.1.0",
   "author": "mhmmr",
   "dependencies": {
@@ -13,7 +13,7 @@
     "autoprefixer": "^10.2.4",
     "babel-plugin-styled-components": "^1.12.0",
     "framer-motion": "^3.9.1",
-    "gatsby": "^3.0.0",
+    "gatsby": "^3.3.0",
     "gatsby-image": "^3.0.0",
     "gatsby-plugin-image": "^1.0.0",
     "gatsby-plugin-manifest": "^3.0.0",
@@ -59,6 +59,7 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "lint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx . --fix",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "repository": {

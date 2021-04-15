@@ -4,9 +4,9 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Muhammad Rusdi`,
-    description: `Front End Engineer, JAMStack Enthusiast`,
-    author: `@mhmmr`,
+    title: "Muhammad Rusdi",
+    description: "Front End Engineer, JAMStack Enthusiast",
+    author: "@mhmmr",
     siteUrl: "https://github.com/mhmmr",
     image: "https://res.cloudinary.com/muhrusdi/image/upload/v1604903512/template-awwwara.jpg"
   },
@@ -32,13 +32,13 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/mhmmr-white-transparent.png`, // This path is relative to the root of the site.
+        name: "gatsby-starter-default",
+        short_name: "starter",
+        start_url: "/",
+        background_color: "#663399",
+        theme_color: "#663399",
+        display: "minimal-ui",
+        icon: "src/images/mhmmr-white-transparent.png", // This path is relative to the root of the site.
       },
     },
     {
@@ -51,16 +51,16 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: `blogs`,
+        name: "blogs",
         path: `${__dirname}/src/data/blogs`,
       },
     },
     {
-      resolve: `gatsby-plugin-mdx`,
+      resolve: "gatsby-plugin-mdx",
       options: {
-        extensions: [`.mdx`, `.md`],
+        extensions: [".mdx", ".md"],
       },
     },
     "gatsby-plugin-postcss",

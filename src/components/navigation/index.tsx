@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import { SiGithub } from "react-icons/si"
 
 const Nav = () => {
   return (
@@ -12,7 +13,7 @@ const Nav = () => {
             </Link>
           </div>
           <div>
-            <ul className="flex justify-center -mx-2 uppercase text-sm">
+            <ul className="sm:flex justify-center -mx-2 uppercase text-sm items-center">
               <li className="px-2">
                 <Link to="/blogs" className="text-gray-200 hover:text-white transition-all">Blogs</Link>
               </li>
@@ -21,6 +22,23 @@ const Nav = () => {
               </li>
               <li className="px-2">
                 <a href="#" className="text-gray-200 hover:text-white transition-all">Works</a>
+              </li>
+              <li className="px-2">
+                <span className="text-gray-400">/</span>
+              </li>
+              <li className="px-2">
+                <a href="#" className="text-gray-200 hover:text-white transition-all">Stories</a>
+              </li>
+              <li className="px-2">
+                <span className="text-gray-400">/</span>
+              </li>
+              <li className="px-2">
+                <Link to="/profile" className="text-gray-200 hover:text-white transition-all">Profile</Link>
+              </li>
+              <li className="px-2 ml-2">
+                <a href="https://github.com/muhrusdi" target="_blank" rel="noreferrer" className="block">
+                  <SiGithub size={22}/>
+                </a>
               </li>
             </ul>
           </div>
