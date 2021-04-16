@@ -1,6 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
 import { SiGithub } from "react-icons/si"
+import { BsList } from "react-icons/bs"
+import {CenterMenus } from "./styled"
 
 const Nav = () => {
   return (
@@ -12,19 +14,13 @@ const Nav = () => {
               <img style={{height: 40}} alt="mhmmr" src="https://res.cloudinary.com/muhrusdi/image/upload/v1611123004/mhmmr-black-transparent.png"/>
             </Link>
           </div>
-          <div>
+          <CenterMenus>
             <ul className="sm:flex justify-center -mx-2 uppercase text-sm items-center">
               <li className="px-2">
                 <Link to="/blogs" className="text-gray-200 hover:text-white transition-all">Blogs</Link>
               </li>
               <li className="px-2">
-                <span className="text-gray-400">/</span>
-              </li>
-              <li className="px-2">
                 <a href="#" className="text-gray-200 hover:text-white transition-all">Works</a>
-              </li>
-              <li className="px-2">
-                <span className="text-gray-400">/</span>
               </li>
               <li className="px-2">
                 <a href="#" className="text-gray-200 hover:text-white transition-all">Stories</a>
@@ -41,6 +37,9 @@ const Nav = () => {
                 </a>
               </li>
             </ul>
+          </CenterMenus>
+          <div>
+            <BsList/>
           </div>
         </div>
       </div>
