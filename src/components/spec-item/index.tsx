@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { PropsType } from "./props-type"
+import { SpecsGroup } from "./styled"
 
 const SpecItem: React.FC<PropsType> = ({data: {title, description}}) => {
   const [toggle, setToggle] = useState(false);
@@ -121,25 +122,29 @@ const SpecItem: React.FC<PropsType> = ({data: {title, description}}) => {
   }
 
   return (
-    <div className="flex relative py-12 border-gray-600">
-      <div className="pr-8 hidden sm:block">
-        <div>
-          {specs[title].icon}
-        </div>
-      </div>
-      <div>
-        <div className="select-none">
-          <h3 className="text-4xl sm:text-5xl font-black py-11">{title}</h3>
+    <SpecsGroup className="relative border-gray-600">
+      <div className="flex py-6 sm:py-12 justify-between items-center">
+        <div className="flex items-center">
+          <div className="icon-wrapper">
+            <div>
+              {specs[title].icon}
+            </div>
+          </div>
+          <div className="select-none">
+            <h3 className="text-2xl sm:text-5xl font-black">{title}</h3>
+          </div>
         </div>
         <motion.button
           animate={toggle ? "open" : "closed"}
           variants={buttonVariants}
-          className="absolute focus:outline-none" style={{right: 0, top: 95}} onClick={handleClick} >
-          <svg width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+          className="close focus:outline-none" onClick={handleClick} >
+          <svg viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M27 0.5V53.5" stroke="white"/>
           <path d="M0.25 27L53.25 27" stroke="white"/>
           </svg>
         </motion.button>
+      </div>
+      <div className="content">
         <AnimatePresence initial={false}>
           {
             toggle && (
@@ -168,7 +173,7 @@ const SpecItem: React.FC<PropsType> = ({data: {title, description}}) => {
           }
         </AnimatePresence>
       </div>
-    </div>
+    </SpecsGroup>
   )
 }
 

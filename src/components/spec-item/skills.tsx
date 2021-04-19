@@ -6,8 +6,6 @@ import {
   SiTypescript,
   SiReact,
   SiGraphql,
-  SiFigma,
-  SiSketch,
   SiAdobexd
 } from "react-icons/si"
 import { DiPhotoshop } from "react-icons/di"
@@ -45,6 +43,12 @@ const SkillsItem: React.FC = () => (
             </li>
             <li className="mt-4 px-3">
               <div className="flex flex-col items-center">
+                <img style={{height: 60}} src="https://cdn.pixabay.com/photo/2015/04/23/17/41/node-js-736399_960_720.png" alt=""/>
+                <span className="text-sm uppercase mt-4">Node.js</span>
+              </div>
+            </li>
+            <li className="mt-4 px-3">
+              <div className="flex flex-col items-center">
                 <SiReact size={60} color="#2dfff9"/>
                 <span className="text-sm uppercase mt-4">React</span>
               </div>
@@ -76,13 +80,13 @@ const SkillsItem: React.FC = () => (
           <ul className="flex mt-2 flex-wrap -mx-3">
             <li className="mt-4 px-3">
               <div className="flex flex-col items-center">
-                <SiFigma size={60} color="#4ba053"/>
+                <img style={{height: 60}} src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" alt=""/>
                 <span className="text-sm uppercase mt-4">Figma</span>
               </div>
             </li>
             <li className="mt-4 px-3">
               <div className="flex flex-col items-center">
-                <SiSketch size={60} color="#ef9746"/>
+                <img style={{height: 60}} src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Sketch_Logo.svg/1200px-Sketch_Logo.svg.png" alt=""/>
                 <span className="text-sm uppercase mt-4">Sketch</span>
               </div>
             </li>
