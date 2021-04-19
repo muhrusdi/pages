@@ -16,6 +16,7 @@ import {
 } from "react-icons/si"
 import { DiPhotoshop } from "react-icons/di"
 import { BiServer } from "react-icons/bi"
+import ExperiencesItem from "../spec-item/experiences"
 
 const key = keyframes`
   from {
@@ -181,54 +182,7 @@ export const mocks = [
   },
   {
     title: "Experiences",
-    description: (
-      <div>
-        <ul>
-          <li>
-            <div className="flex">
-              <div className="pr-4 flex-none py-4 text-right hidden sm:block" style={{width: 150}}>
-                <span>Oct 2019 - Current</span>
-              </div>
-              <div className="border-yellow-500 border-l-4 pl-4 py-4">
-                <div>
-                  <span className="text-sm text-blue-600 pb-6 block sm:hidden">Oct 2019 - Current</span>
-                  <span className="block uppercase font-bold text-gray-400 text-base">Freelancer</span>
-                  <h3 className="text-2xl font-bold mt-2">Front End Engineer</h3>
-                  <p className="text-gray-500">Makassar, Sulawesi Selatan, Indonesia</p>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div className="flex">
-              <div className="pr-4 flex-none py-4 text-right hidden sm:block" style={{width: 150}}>
-                <span>May 2019 - Oct 2019</span>
-              </div>
-              <div className="border-green-500 border-l-4 pl-4 py-4">
-                <div>
-                  <span className="text-sm text-blue-600 pb-6 block sm:hidden">May 2019 - Oct 2019</span>
-                  <span className="block uppercase font-bold text-gray-400 text-base">PT. Docotel Teknologi Celebes</span>
-                  <h3 className="text-2xl font-bold mt-2">Lead Front End Engineer</h3>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div className="flex">
-              <div className="pr-4 flex-none py-4 text-right hidden sm:block" style={{width: 150}}>
-                <span>March 2017 - May 2019</span>
-              </div>
-              <div className="border-green-500 border-l-4 pl-4 py-4">
-                <div>
-                  <h3 className="text-2xl font-bold mt-2">Front End Engineer</h3>
-                  <p className="text-gray-500">Makassar, Sulawesi Selatan, Indonesia</p>
-                </div>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-    )
+    description: <ExperiencesItem/>
   },
   {
     title: "Skills",

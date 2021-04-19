@@ -12,7 +12,7 @@ module.exports = {
   },
   flags: {
     PRESERVE_WEBPACK_CACHE: false,
-    FAST_DEV: true,
+    FAST_DEV: false,
     FAST_REFRESH: true,
     DEV_SSR: false,
   },
