@@ -7,7 +7,7 @@ import { BiChevronRight } from "react-icons/bi"
 import { BlogItemFooter } from "components/utils"
 import LatestBlog from "components/blog/lastest"
 
-const Blogs = () => {
+const Blogs: React.FC = () => {
   // const data = useStaticQuery(graphql`
   //   query {
   //     allMdx {
