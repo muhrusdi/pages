@@ -19,7 +19,10 @@
     "react/prop-types": 0,
     "quotes": [
       "error",
-      "double"
+      "double",
+      {
+        "allowTemplateLiterals": true
+      }
     ],
     "@typescript-eslint/explicit-function-return-type": 0,
     "@typescript-eslint/explicit-member-accessibility": 0,
@@ -34,14 +37,6 @@
         "argsIgnorePattern": "^_"
       }
     ],
-    "no-console": [
-      2,
-      {
-        "allow": [
-          "warn",
-          "error"
-        ]
-      }
-    ]
+    "no-console": "off"
   }
 }
