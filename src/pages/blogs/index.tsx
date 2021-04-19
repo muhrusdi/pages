@@ -31,7 +31,7 @@ const Blogs = () => {
           <div className="py-14 mt-20">
             <LatestBlog/>
           </div>
-          <div className="mt-14 py-20">
+          <div className="py-20">
             <ul className="grid grid-cols-3 gap-8">
               <li>
                 <div>
