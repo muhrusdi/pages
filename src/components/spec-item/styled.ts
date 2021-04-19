@@ -1,5 +1,13 @@
 import styled from "styled-components"
 
+export const EntityCompanyGroup = styled.ul`
+  & > li {
+    &:not(:first-of-type) {
+      margin-top: 40px;
+    }
+  }
+`
+
 export const EntityPositionGroup = styled.ul`
   margin-top: 14px;
   padding-left: 20px;

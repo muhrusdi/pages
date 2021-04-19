@@ -1,9 +1,81 @@
 import React from "react"
-import { EntityPositionGroup, CompanyLogo } from "./styled"
+import { EntityPositionGroup, CompanyLogo, EntityCompanyGroup } from "./styled"
 
 const ExperiencesItem: React.FC = () => (
   <div>
-    <ul>
+    <EntityCompanyGroup>
+    <li>
+        <div>
+          <div className="flex items-center">
+            <CompanyLogo className="mr-6">
+              <svg xmlns="http://www.w3.org/2000/svg" width="49" height="49" fill="currentColor" className="bi bi-person-bounding-box" viewBox="0 0 16 16">
+                <path fill="rgba(99, 102, 241, var(--tw-bg-opacity))" d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1h-3zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5zM.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5zm15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5z"/>
+                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+              </svg>
+            </CompanyLogo>
+            <div>
+              <h4 className="leading-tight font-bold text-xl">Remote Worker</h4>
+              <span className="text-blueGray-500">Current</span>
+            </div>
+          </div>
+          <EntityPositionGroup>
+            <li>
+              <div className="leading-relaxed">
+                  <h5 className="leading-loose">Front End Engineer <span className="text-blueGray-500">Freelancer</span></h5>
+                  <p className="text-blueGray-500">Aprl 2021 - Current <span className="text-indigo-500">1 mos</span></p>
+                  <p className="text-blueGray-500">Makassar Area, South Sulawesi, Indonesia</p>
+              </div>
+            </li>
+          </EntityPositionGroup>
+        </div>
+      </li>
+      <li>
+        <div>
+          <div className="flex items-center">
+            <CompanyLogo className="mr-6">
+              <img src="https://res.cloudinary.com/muhrusdi/image/upload/v1618838821/template.png" alt=""/>
+            </CompanyLogo>
+            <div>
+              <h4 className="leading-tight font-bold text-xl">PT. Kirim Email Indonesia</h4>
+              <span className="text-blueGray-500">4 mos</span>
+            </div>
+          </div>
+          <EntityPositionGroup>
+            <li>
+              <div className="leading-relaxed">
+                  <h5 className="leading-loose">Front End Engineer <span className="text-blueGray-500">Remote</span></h5>
+                  <p className="text-blueGray-500">Dec 2020 - Aprl 2021 <span className="text-indigo-500">4 mos</span></p>
+                  <p className="text-blueGray-500">Makassar Area, South Sulawesi, Indonesia</p>
+              </div>
+            </li>
+          </EntityPositionGroup>
+        </div>
+      </li>
+      <li>
+        <div>
+          <div className="flex items-center">
+            <CompanyLogo className="mr-6">
+              <svg xmlns="http://www.w3.org/2000/svg" width="49" height="49" fill="currentColor" className="bi bi-person-bounding-box" viewBox="0 0 16 16">
+                <path fill="rgba(99, 102, 241, var(--tw-bg-opacity))" d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1h-3zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5zM.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5zm15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5z"/>
+                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+              </svg>
+            </CompanyLogo>
+            <div>
+              <h4 className="leading-tight font-bold text-xl">Remote Worker</h4>
+              <span className="text-blueGray-500">1 yrs 4 mos</span>
+            </div>
+          </div>
+          <EntityPositionGroup>
+            <li>
+              <div className="leading-relaxed">
+                  <h5 className="leading-loose">Front End Engineer <span className="text-blueGray-500">Freelancer</span></h5>
+                  <p className="text-blueGray-500">Oct 2019 - Dec 2020 <span className="text-indigo-500">7 mos</span></p>
+                  <p className="text-blueGray-500">Makassar Area, South Sulawesi, Indonesia</p>
+              </div>
+            </li>
+          </EntityPositionGroup>
+        </div>
+      </li>
       <li>
         <div>
           <div className="flex items-center">
@@ -19,7 +91,7 @@ const ExperiencesItem: React.FC = () => (
             <li>
               <div className="leading-relaxed">
                   <h5 className="leading-loose">Lead Front End Engineer</h5>
-                  <p className="text-blueGray-500">May 2019 - Oct 2019 <span className="text-indigo-500">4 mos</span></p>
+                  <p className="text-blueGray-500">May 2019 - Oct 2019 <span className="text-indigo-500">6 mos</span></p>
                   <p className="text-blueGray-500">Makassar Area, South Sulawesi, Indonesia</p>
               </div>
             </li>
@@ -33,7 +105,7 @@ const ExperiencesItem: React.FC = () => (
           </EntityPositionGroup>
         </div>
       </li>
-    </ul>
+    </EntityCompanyGroup>
   </div>
 )
 
