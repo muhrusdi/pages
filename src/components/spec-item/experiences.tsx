@@ -21,9 +21,9 @@ const ExperiencesItem: React.FC = () => (
           <EntityPositionGroup>
             <li>
               <div className="leading-relaxed">
-                  <h5 className="leading-loose">Front End Engineer <span className="text-blueGray-500">Freelancer</span></h5>
-                  <p className="text-blueGray-500">Aprl 2021 - Current <span className="text-indigo-500">1 mos</span></p>
-                  <p className="text-blueGray-500">Makassar Area, South Sulawesi, Indonesia</p>
+                  <h5 className="leading-normal sm:leading-loose">Front End Engineer <span className="text-blueGray-500">Freelancer</span></h5>
+                  <p className="text-blueGray-500 mt-3 sm:mt-0">Aprl 2021 - Current <span className="text-indigo-500">1 mos</span></p>
+                  <p className="text-blueGray-500 mt-3 sm:mt-0">Makassar Area, South Sulawesi, Indonesia</p>
               </div>
             </li>
           </EntityPositionGroup>
@@ -43,9 +43,9 @@ const ExperiencesItem: React.FC = () => (
           <EntityPositionGroup>
             <li>
               <div className="leading-relaxed">
-                  <h5 className="leading-loose">Front End Engineer <span className="text-blueGray-500">Remote</span></h5>
-                  <p className="text-blueGray-500">Dec 2020 - Aprl 2021 <span className="text-indigo-500">4 mos</span></p>
-                  <p className="text-blueGray-500">Makassar Area, South Sulawesi, Indonesia</p>
+                  <h5 className="leading-normal sm:leading-loose">Front End Engineer <span className="text-blueGray-500">Remote</span></h5>
+                  <p className="text-blueGray-500 mt-3 sm:mt-0">Dec 2020 - Aprl 2021 <span className="text-indigo-500">4 mos</span></p>
+                  <p className="text-blueGray-500 mt-3 sm:mt-0">Makassar Area, South Sulawesi, Indonesia</p>
               </div>
             </li>
           </EntityPositionGroup>
@@ -62,15 +62,15 @@ const ExperiencesItem: React.FC = () => (
             </CompanyLogo>
             <div>
               <h4 className="leading-tight font-bold text-xl">Remote Worker</h4>
-              <span className="text-blueGray-500">1 yrs 4 mos</span>
+              <span className="text-blueGray-500 mt-3 sm:mt-0">1 yrs 4 mos</span>
             </div>
           </div>
           <EntityPositionGroup>
             <li>
               <div className="leading-relaxed">
-                  <h5 className="leading-loose">Front End Engineer <span className="text-blueGray-500">Freelancer</span></h5>
-                  <p className="text-blueGray-500">Oct 2019 - Dec 2020 <span className="text-indigo-500">7 mos</span></p>
-                  <p className="text-blueGray-500">Makassar Area, South Sulawesi, Indonesia</p>
+                  <h5 className="leading-normal sm:leading-loose">Front End Engineer <span className="text-blueGray-500">Freelancer</span></h5>
+                  <p className="text-blueGray-500 mt-3 sm:mt-0">Oct 2019 - Dec 2020 <span className="text-indigo-500">7 mos</span></p>
+                  <p className="text-blueGray-500 mt-3 sm:mt-0">Makassar Area, South Sulawesi, Indonesia</p>
               </div>
             </li>
           </EntityPositionGroup>
@@ -90,16 +90,16 @@ const ExperiencesItem: React.FC = () => (
           <EntityPositionGroup>
             <li>
               <div className="leading-relaxed">
-                  <h5 className="leading-loose">Lead Front End Engineer</h5>
-                  <p className="text-blueGray-500">May 2019 - Oct 2019 <span className="text-indigo-500">6 mos</span></p>
-                  <p className="text-blueGray-500">Makassar Area, South Sulawesi, Indonesia</p>
+                  <h5 className="leading-normal sm:leading-loose">Lead Front End Engineer</h5>
+                  <p className="text-blueGray-500 mt-3 sm:mt-0">May 2019 - Oct 2019 <span className="text-indigo-500">6 mos</span></p>
+                  <p className="text-blueGray-500 mt-3 sm:mt-0">Makassar Area, South Sulawesi, Indonesia</p>
               </div>
             </li>
             <li>
               <div className="leading-relaxed">
-                  <h5 className="leading-loose">Front End Engineer</h5>
-                  <p>March 2017 - May 2019 <span className="text-indigo-500">2 yrs 8 mos</span></p>
-                  <p>Makassar Area, South Sulawesi, Indonesia</p>
+                  <h5 className="leading-normal sm:leading-loose">Front End Engineer</h5>
+                  <p className="text-blueGray-500 mt-3 sm:mt-0">March 2017 - May 2019 <span className="text-indigo-500">2 yrs 8 mos</span></p>
+                  <p className="text-blueGray-500 mt-3 sm:mt-0">Makassar Area, South Sulawesi, Indonesia</p>
               </div>
             </li>
           </EntityPositionGroup>

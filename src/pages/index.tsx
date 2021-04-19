@@ -50,7 +50,7 @@ const Blogs: React.FC = () => {
               </li>
             </ul>
           </div>
-          <div className="py-0 sm:py-20">
+          <div className="py-20">
             <div className="uppercase flex justify-between items-center mb-4">
               <div>
               </div>

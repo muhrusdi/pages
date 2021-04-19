@@ -8,6 +8,43 @@ export const EntityCompanyGroup = styled.ul`
   }
 `
 
+export const SpecsGroup = styled.div`
+  .icon-wrapper {
+    padding-right: 1rem;
+    svg {
+      width: 60px;
+      height: 60px;
+    }
+    @media (min-width: 640px) {
+      padding-right: 2rem;
+      svg {
+        width: 135px;
+        height: 135px;
+      }
+    }
+  }
+  .content {
+    @media (min-width: 640px) {
+      padding-left: 165px;
+    }
+  }
+  .close {
+    right: 0;
+    top: 50px;
+    svg {
+      width: 34px;
+      height: 34px;
+    }
+    @media (min-width: 640px) {
+      top: 95px;
+      svg {
+        width: 54px;
+        height: 54px;
+      }
+    }
+  }
+`
+
 export const EntityPositionGroup = styled.ul`
   margin-top: 14px;
   padding-left: 20px;

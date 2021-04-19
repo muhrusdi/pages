@@ -34,8 +34,8 @@ const Home = () => {
                   <img className="object-cover" style={{height: 200, borderRadius: "2.5rem"}} src="https://res.cloudinary.com/muhrusdi/image/upload/v1616335341/thumb-612467.png" alt="muhrusdi"/>
                 </div>
                 <div className="sm:pl-10 mt-14 sm:mt-0">
-                  <h2 className="text-4xl sm:text-5xl font-black leading-tight">Muhammad Rusdi</h2>
-                  <p className="text-2xl smtext-3xl mt-4 text-gray-400">Front End Engineer</p>
+                  <h2 className="text-3xl sm:text-5xl font-black leading-tight">Muhammad Rusdi</h2>
+                  <p className="text-xl sm:text-3xl mt-4 text-gray-400">Front End Engineer</p>
                   <div className="flex mt-10 -mx-4 flex-wrap items-center">
                     <a href="https://www.facebook.com/mhmrofficial/" rel="noreferrer" target="_blank" className="block px-4 mb-8 sm:mb-0">
                       <SiFacebook size={25} color="#fff"/>
