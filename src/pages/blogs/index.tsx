@@ -1,11 +1,10 @@
 import React from "react"
 import Layout from "containers/layout"
-// import { useStaticQuery, graphql } from "gatsby"
-import Nav from "components/navigation"
 import { StaticImage } from "gatsby-plugin-image"
 import { BiChevronRight } from "react-icons/bi"
 import { BlogItemFooter } from "components/utils"
 import LatestBlog from "components/blog/lastest"
+import Newsletter from "components/newsletter"
 
 const Blogs: React.FC = () => {
   // const data = useStaticQuery(graphql`
@@ -25,10 +24,9 @@ const Blogs: React.FC = () => {
 
   return (
     <>
-      <Nav/>
       <Layout>
         <div>
-          <div className="py-14 mt-20">
+          <div className="py-8">
             <LatestBlog/>
           </div>
           <div className="py-20">
@@ -104,6 +102,7 @@ const Blogs: React.FC = () => {
               </li>
             </ul>
           </div>
+          <Newsletter/>
         </div>
       </Layout>
     </>

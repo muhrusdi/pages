@@ -1,9 +1,24 @@
 import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
+import { Root, Trigger } from "@radix-ui/react-tooltip"
 import { BiChevronRight } from "react-icons/bi"
 import { BlogItemFooter } from "components/utils"
+import { SiGatsby, SiNextDotJs, SiReact, SiStyledComponents, SiTailwindcss, SiTypescript } from "react-icons/si"
+import { TechIcon, TooltipContentStyled, TooltipArrowStyled } from "./styled"
 
-const WorkItem = () => {
+const TooltipIcon = ({icon, text}) => (
+  <Root>
+    <Trigger>
+      {icon}
+    </Trigger>
+    <TooltipContentStyled className="bg-gray-900 text-xs py-1 px-2 rounded-md">
+      {text}
+      <TooltipArrowStyled/>
+    </TooltipContentStyled>
+  </Root>
+)
+
+const WorkItem: React.FC = () => {
   return (
     <div>
       <div>
@@ -20,7 +35,44 @@ const WorkItem = () => {
                 <span>Show</span> <BiChevronRight size={24}/>
               </div>
             </a>
-            <span className="text-gray-400 transition-all">12 Sept 2021</span>
+            <TechIcon className="flex transition-all items-center">
+              <div>
+                <TooltipIcon
+                  icon={<SiTypescript/>}
+                  text="Typescript"
+                />
+              </div>
+              <div>
+                <TooltipIcon
+                  icon={<SiReact/>}
+                  text="React"
+                />
+              </div>
+              <div>
+                <TooltipIcon
+                  icon={<SiNextDotJs/>}
+                  text="Nextjs"
+                />
+              </div>
+              <div>
+                <TooltipIcon
+                  icon={<SiGatsby/>}
+                  text="Gatsbyjs"
+                />
+              </div>
+              <div>
+                <TooltipIcon
+                  icon={<SiTailwindcss/>}
+                  text="Tailwindcss"
+                />
+              </div>
+              <div>
+                <TooltipIcon
+                  icon={<SiStyledComponents/>}
+                  text="Styled Components"
+                />
+              </div>
+            </TechIcon>
           </BlogItemFooter>
         </div>
       </div>
