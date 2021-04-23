@@ -2,7 +2,7 @@ import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 import { BiChevronRight } from "react-icons/bi"
 
-const Latest = () => {
+const Latest: React.FC = () => {
   return (
     <div className="md:flex -mx-4 items-center">
       <div className="w-full md:w-1/2 px-4">

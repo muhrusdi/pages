@@ -21,8 +21,17 @@ module.exports = {
           light: "#56CCF2",
         },
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            color: "#acb5c3",
+          },
+        },
+      }
     }
   },
   variants: {},
-  plugins: [],
+  plugins: [
+    require("@tailwindcss/typography")
+  ],
 }
