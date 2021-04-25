@@ -118,7 +118,7 @@ const SEO: React.FC<SeoType> = ({ description, lang, title, image, author, date,
       ]}
     >
       <title>{metaTitle}</title>
-      <script data-ad-client="ca-pub-6628628466268276" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      {/* <script data-ad-client="ca-pub-6628628466268276" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> */}
       {isArticle && <script type="application/ld+json">{JSON.stringify(schemaOrg)}</script>}\
       <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "2bd8976300b840faae07e9a2aa6f3f40"}'></script>
     </Helmet>
