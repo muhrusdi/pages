@@ -15,15 +15,17 @@ const aliases = {
 }
 
 
-exports.onCreateWebpackConfig = ({
-  stage, getConfig, rules, loaders, actions
- }) => {
-   actions.setWebpackConfig({
-     resolve: {
-       alias: aliases
-     },
-   });
- }
+exports.onCreateWebpackConfig = ({actions}) => { //stage, getConfig, rules, loaders, actions
+  actions.setWebpackConfig({
+    resolve: {
+      alias: aliases
+    },
+  });
+}
+
+// exports.createPages = async ({actions}) => {
+
+// }
 
 exports.onPostBuild = () => {
   const publicDir = path.join(__dirname, "public");
