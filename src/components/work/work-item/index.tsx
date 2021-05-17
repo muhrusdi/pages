@@ -11,7 +11,7 @@ const TooltipIcon = ({icon, text}) => (
     <Trigger>
       {icon}
     </Trigger>
-    <TooltipContentStyled className="bg-gray-900 text-xs py-1 px-2 rounded-md">
+    <TooltipContentStyled side="top" className="bg-gray-900 text-xs py-1 px-2 rounded-md">
       {text}
       <TooltipArrowStyled/>
     </TooltipContentStyled>

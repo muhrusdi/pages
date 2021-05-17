@@ -1,12 +1,13 @@
 import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 import Layout from "containers/layout"
+import Playground from "components/playground"
 
 const DetailBlog: React.FC = () => {
   return (
     <Layout>
       <div>
-        <header className="text-center">
+        <header className="text-center mt-12">
           <div className="container max-w-3xl">
             <h1 className="text-5xl font-black leading-tight">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, quaerat?</h1>
           </div>
@@ -15,6 +16,7 @@ const DetailBlog: React.FC = () => {
         <div className="container max-w-2xl mt-14">
           <article className="prose prose-xl">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius ipsum perspiciatis dicta, obcaecati, suscipit voluptatum voluptates sed ipsa saepe fugit quas beatae temporibus, atque voluptas pariatur dolore facere odit eos.</p>
+            <Playground/>
           </article>
         </div>
       </div>
