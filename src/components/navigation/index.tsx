@@ -39,10 +39,10 @@ const Nav: React.FC = () => {
             <CenterMenus ref={menusRef}>
               <ul className={`sm:flex justify-center -mx-2 uppercase text-sm border border-gray-700 sm:border-none rounded-lg bg-black items-center ${toggle ? "" : "hidden"}`}>
                 <li className="px-2">
-                  <Link to="/blogs" className="text-gray-200 hover:text-white transition-all">Blogs</Link>
+                  <Link to="/blog" className="text-gray-200 hover:text-white transition-all">Blogs</Link>
                 </li>
                 <li className="px-2">
-                  <Link to="/works" className="text-gray-200 hover:text-white transition-all">Works</Link>
+                  <Link to="/work" className="text-gray-200 hover:text-white transition-all">Works</Link>
                 </li>
                 <li className="px-2">
                   <a href="#" className="text-gray-200 hover:text-white transition-all">Stories</a>

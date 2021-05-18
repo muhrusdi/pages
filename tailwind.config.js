@@ -24,7 +24,31 @@ module.exports = {
       typography: {
         DEFAULT: {
           css: {
-            color: "#acb5c3",
+            color: "white",
+            pre: {
+              margin: "0px -32px"
+            },
+            p: {
+              color: "#acb5c3"
+            },
+            h1: {
+              color: "white"
+            },
+            h2: {
+              color: "white"
+            },
+            h3: {
+              color: "white"
+            },
+            h4: {
+              color: "white"
+            },
+            h5: {
+              color: "white"
+            },
+            h6: {
+              color: "white"
+            },
           },
         },
       }

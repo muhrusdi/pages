@@ -60,6 +60,9 @@ module.exports = {
     {
       resolve: "gatsby-plugin-mdx",
       options: {
+        gatsbyRemarkPlugins: [
+          `gatsby-remark-images`
+        ],
         extensions: [".mdx", ".md"],
       },
     },

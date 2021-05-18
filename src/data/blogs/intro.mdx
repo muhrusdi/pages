@@ -1,12 +1,44 @@
 ---
-title: First Post
-date: 10 Desc 2021
-description: Description
-author: Muhammad Rusdi
+title: How I Built My Blog 1
+seoTitle: How I Built my Blog using MDX, Next.js, and React
+abstract: An in-depth look at the technical structure for my blog.
+isPublished: true
+featured: true
+publishedOn: Tue May 18 2021 11:26:16 GMT+0800 (Singapore Standard Time)
+featuredImage: https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2089&q=80
+layout: Article
 ---
 
-# First Post
+import Playground from "components/playground"
+
+
+### Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius ipsum perspiciatis dicta
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius ipsum perspiciatis dicta, obcaecati, suscipit voluptatum voluptates sed ipsa saepe fugit quas beatae temporibus, atque voluptas pariatur dolore facere odit eos.
 
 ![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
 
-## Second Title
+### Second Title
+
+- lorem
+- test
+
+<button>TEST</button>
+
+<Playground/>
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius ipsum perspiciatis dicta, obcaecati, suscipit voluptatum voluptates sed ipsa saepe fugit quas beatae temporibus, atque voluptas pariatur dolore facere odit eos.
+
+
+```javascript
+import PieChart from '../components/PieChart';
+This paragraph introduces a **data visualization**:
+<PieChart
+  title="Favourite foods"
+  data={[
+    { label: 'Pizza', value: '30%' },
+    { label: 'Broccoli', value: '5%' },
+    { label: 'Haagen-Dasz', value: '65%' },
+  ]}
+/>
+```

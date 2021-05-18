@@ -36,6 +36,7 @@
       "hooks/*": ["hooks/*"],
       "contexts/*": ["contexts/*"],
       "styles/*": ["styles/*"],
+      "utils/*": ["utils/*"],
     }
   }
 }

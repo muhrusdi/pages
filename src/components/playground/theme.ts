@@ -1,16 +1,21 @@
 import merge from "lodash/merge"
 import styled from "styled-components"
 
-const bg = "#111827"
+const bg = "rgb(1, 22, 39)"
 
 export const PlyStyled = styled.div`
   margin: 0px -32px;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
   .playground {
     border-radius: 8px;
     overflow: hidden;
     border: 1px solid #111827;
-    .go1671171827 {
+    .go1107490688 {
       background: white;
+    }
+    .go1048851327 {
+      font-size: 16px;
     }
   }
   [role=tablist] {
@@ -20,6 +25,7 @@ export const PlyStyled = styled.div`
     color: #6B7280;
     font-size: 14px;
     text-transform: uppercase;
+    outline: none;
   }
   [data-reach-tab][data-selected] {
     color: white;
