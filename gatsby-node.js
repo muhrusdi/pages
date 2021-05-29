@@ -1,9 +1,10 @@
+/* eslint-disable no-undef */
 /* eslint-disable @typescript-eslint/no-unused-vars */
   
 const path = require("path")
 const slugify = require("slugify")
 const fs = require("fs-extra")
-// const { createFilePath } = require(`gatsby-source-filesystem`)
+const { createRemoteFileNode } = require(`gatsby-source-filesystem`)
 
 const aliases = {
   containers: path.resolve(__dirname, "src/containers"),
@@ -38,7 +39,11 @@ exports.createPages = async ({graphql, actions}) => {
               publishedOn
               seoTitle
               abstract
-              featuredImage
+              featuredImage {
+                childImageSharp {
+                  gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
+                }
+              }
             }
             fields {
               slug
@@ -65,8 +70,30 @@ exports.createPages = async ({graphql, actions}) => {
   })
 }
 
-exports.onCreateNode = ({ node, actions }) => {
-  const { createNodeField } = actions
+exports.createSchemaCustomization = ({ actions, schema }) => {
+  const { createTypes, printTypeDefinitions } = actions;
+
+  createTypes(`
+    type Mdx implements Node {
+      frontmatter: Frontmatter
+    }
+    type Frontmatter @dontInfer {
+      title: String!
+      publishedOn: String!
+      isPublished: Boolean!
+      featured: Boolean!
+      seoTitle: String!
+      abstract: String!
+      featuredImage: File @link(by: "url")
+      embeddedImagesLocal: [File] @fileByRelativePath
+    }
+    `);
+
+  // printTypeDefinitions({ path: "./typeDefs.txt" });
+}
+
+exports.onCreateNode = ({ node, actions, createNodeId, cache, store }) => {
+  const { createNodeField, createNode  } = actions
   if (node.internal.type === `Mdx`) {
     const slug = slugify(node.frontmatter.title, {lower: true})
     createNodeField({
@@ -74,6 +101,25 @@ exports.onCreateNode = ({ node, actions }) => {
       name: `slug`,
       value: slug,
     })
+  }
+
+  if (
+    node.internal.type === "Mdx" &&
+    node.frontmatter &&
+    node.frontmatter.featuredImage
+  ) {
+    try {
+      return createRemoteFileNode({
+        url: node.frontmatter.featuredImage,
+        parentNodeId: node.id,
+        createNode,
+        createNodeId,
+        cache,
+        store
+      });
+    } catch (error) {
+      console.error(error);
+    }
   }
 }
 

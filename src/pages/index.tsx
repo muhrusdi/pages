@@ -21,7 +21,11 @@ const Home: React.FC = () => {
               publishedOn
               seoTitle
               abstract
-              featuredImage
+              featuredImage {
+                childImageSharp {
+                  gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
+                }
+              }
             }
             fields {
               slug

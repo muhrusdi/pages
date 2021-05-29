@@ -1,5 +1,5 @@
 import React from "react"
-// import { StaticImage } from "gatsby-plugin-image"
+import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import Layout from "containers/layout"
 import Playground from "components/playground"
 import { formatDate } from "utils"
@@ -13,7 +13,7 @@ export const Header: React.FC = ({title, featuredImage, date}) => (
           <span className="text-blueGray-400">{formatDate(date, "EEEE, dd MMM yyyy")}</span>
         </li>
       </ul>
-      <img className="object-cover rounded-lg mt-14 w-full" style={{height: 500}} src={featuredImage} alt=""/>
+      <GatsbyImage className="object-cover rounded-lg mt-14 w-full" style={{height: 500}} image={getImage(featuredImage)} alt=""/>
     </div>
   </header>
 )
