@@ -33,7 +33,11 @@ const Nav: React.FC = () => {
           <div className="flex py-7 sm:py-6 justify-between items-center">
             <div className="relative z-50">
               <Link to="/">
-                <img className="transition-all" style={{height: toggle ? 20 : 40}} alt="mhmmr" src="https://res.cloudinary.com/muhrusdi/image/upload/v1611123004/mhmmr-black-transparent.png"/>
+                <svg style={{height: toggle ? 24 : 44}} className="transition-all" viewBox="0 0 745 745" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M103 103L255.036 255.036L273.364 273.364L372.5 372.5L471.636 273.364V283.777V471.636L489.964 489.964L642 642V103L489.964 255.036L471.636 273.364L372.5 372.5L430.5 430.5L273.364 300.022V471.636L255.036 489.964L103 642V103Z" fill="white"/>
+                </svg>
+
+                {/* <img className="transition-all" style={{height: toggle ? 20 : 40}} alt="mhmmr" src="https://res.cloudinary.com/muhrusdi/image/upload/v1611123004/mhmmr-black-transparent.png"/> */}
               </Link>
             </div>
             <CenterMenus ref={menusRef}>

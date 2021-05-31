@@ -6,7 +6,7 @@ import { FiChevronRight } from "react-icons/fi"
 const FeaturedWork: React.FC = () => {
   return (
     <div>
-      <div className="flex">
+      <div className="flex items-center">
         <div className="w-1/2">
           <div>
             <div className="bg-blueGray-700 rounded-full inline-flex items-center text-xs uppercase pr-4">
@@ -42,7 +42,9 @@ const FeaturedWork: React.FC = () => {
           </div>
         </div>
         <div className="w-1/2">
-          <div></div>
+          <div>
+            <img style={{height: 260}} className="w-full object-contain" src="https://res.cloudinary.com/muhrusdi/image/upload/v1622428743/linearmr.png" alt="" />
+          </div>
         </div>
       </div>
     </div>
