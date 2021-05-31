@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import styled, { keyframes } from "styled-components"
 import ExperiencesItem from "../spec-item/experiences"
 import StacksItem from "../spec-item/stacks"
@@ -204,3 +205,9 @@ technology company</p>
     )
   },
 ]
+
+export const ViewAll = ({link}) => (
+  <div className="flex justify-center mt-10 uppercase text-sm">
+    <Link to={link} className="text-blueGray-400 hover:text-blueGray-300 font-medium transition-all">View All</Link>
+  </div>
+)

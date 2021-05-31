@@ -1,5 +1,6 @@
 import React from "react"
-import { StaticImage } from "gatsby-plugin-image"
+import { Link } from "@reach/router"
+// import { StaticImage } from "gatsby-plugin-image"
 import { Root, Trigger } from "@radix-ui/react-tooltip"
 import { BiChevronRight } from "react-icons/bi"
 import { BlogItemFooter } from "components/utils"
@@ -18,23 +19,23 @@ const TooltipIcon = ({icon, text}) => (
   </Root>
 )
 
-const WorkItem: React.FC = () => {
+const WorkItem: React.FC = ({data}) => {
   return (
     <div>
       <div>
         <div>
-          <StaticImage width={100} style={{height: 200}} layout="fullWidth" className="rounded-lg" src="https://images.unsplash.com/photo-1612831660296-0cd5841b89fb?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80" alt=""/>
+          <img style={{height: 200}} className="rounded-lg w-full" src={data.featuredImage.url} alt=""/>
         </div>
       </div>
       <div>
         <div>
-          <h2 className="text-xl mt-6 font-bold">Lorem ipsum dolor, sit amet consectetur</h2>
+          <h2 className="text-xl mt-6 font-bold">{data.title}</h2>
           <BlogItemFooter className="flex flex-row-reverse justify-between mt-6">
-            <a href="#" className="inline-block transition-all">
+            <Link to={`/work/${data.sys.id}`} className="inline-block transition-all">
               <div className="flex items-center">
                 <span>Show</span> <BiChevronRight size={24}/>
               </div>
-            </a>
+            </Link>
             <TechIcon className="flex transition-all items-center">
               <div>
                 <TooltipIcon
@@ -81,3 +82,7 @@ const WorkItem: React.FC = () => {
 }
 
 export default WorkItem
+
+export const WorkItemLoading: React.FC = () => (
+  <div className="bg-blueGray-900 rounded-lg" style={{height: 200}}></div>
+)
