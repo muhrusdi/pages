@@ -83,7 +83,7 @@ const Home: React.FC = () => {
         <div className="py-14 sm:py-20">
           <div className="text-center mb-4 max-w-2xl container">
             <span className="uppercase font-bold text-indigo-500">Blogs</span>
-            <h4 className="font-black mt-2 text-3xl">Our Articles</h4>
+            <h4 className="font-black mt-2 text-3xl">Helpful Resources</h4>
           </div>
           <ul className="grid grid-cols-1 mt-8 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {

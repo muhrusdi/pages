@@ -78,7 +78,7 @@ const Detail: React.FC = (props) => {
               </IconList>
           </div>
           <div className="py-3 px-4 mt-6 text-center block uppercase text-sm rounded-lg text-blueGray-400 font-medium bg-blueGray-900">
-            <span>{data?.work.category.title}</span>
+            <span>{data?.work.category.title || "Loading"}</span>
           </div>
           <div className="mt-4">
             <a href={data?.work.link} target="_blank" rel="noreferrer" className="bg-indigo-600 text-white text-center block py-3 uppercase font-semibold text-sm rounded-lg hover:bg-indigo-700 transition-all px-4">Visit</a>

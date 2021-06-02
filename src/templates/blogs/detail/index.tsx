@@ -26,7 +26,7 @@ export const ArticleStyled = styled.article`
 export const Header: React.FC = ({title, featuredImage, date}) => (
   <header className="text-center mt-12">
     <div>
-      <h1 className="text-4xl sm:text-5xl font-black leading-tight">{title}</h1>
+      <h1 className="text-4xl sm:text-5xl font-black leading-tight sm:leading-12">{title}</h1>
       <ul className="mt-10">
         <li>
           <span className="text-blueGray-400">{formatDate(date, "EEEE, dd MMM yyyy")}</span>

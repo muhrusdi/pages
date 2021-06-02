@@ -14,7 +14,7 @@ const FeaturedWork: React.FC = () => {
               Senja
             </div>
             <div>
-              <h2 className="text-5xl font-black mt-6">The modern Next.js and GraphQL boilerplate</h2>
+              <h2 className="text-5xl leading-12 font-black mt-6">The modern Next.js and GraphQL boilerplate</h2>
             </div>
             <ul className="mt-12 flex -mx-2 items-center">
               <li className="px-2">
