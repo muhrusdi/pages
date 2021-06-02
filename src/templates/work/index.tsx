@@ -33,6 +33,18 @@ const Works: React.FC = () => {
           featuredImage {
             url
           }
+          techsCollection {
+            items {
+              ... on TechIcon {
+                name
+              }
+            }
+          }
+          category {
+            ... on WorkCategory {
+              title
+            }
+          }
         }
       }
     }

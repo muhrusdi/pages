@@ -1,19 +1,27 @@
 import React from "react"
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
+import styled from "styled-components"
 import Layout from "containers/layout"
 import Playground from "components/playground"
 import { formatDate } from "utils"
 
+const ImageStyled = styled(GatsbyImage)`
+  height: 200px;
+  @media (min-width: 640px) {
+    height: 500px;
+  }
+`
+
 export const Header: React.FC = ({title, featuredImage, date}) => (
   <header className="text-center mt-12">
-    <div className="container">
-      <h1 className="text-5xl font-black leading-tight">{title}</h1>
+    <div>
+      <h1 className="text-4xl sm:text-5xl font-black leading-tight">{title}</h1>
       <ul className="mt-10">
         <li>
           <span className="text-blueGray-400">{formatDate(date, "EEEE, dd MMM yyyy")}</span>
         </li>
       </ul>
-      <GatsbyImage className="object-cover rounded-lg mt-14 w-full" style={{height: 500}} image={getImage(featuredImage)} alt=""/>
+      <ImageStyled className="object-cover rounded-lg mt-14 w-full" image={getImage(featuredImage)} alt=""/>
     </div>
   </header>
 )

@@ -1,25 +1,13 @@
 import React from "react"
 import { Link } from "@reach/router"
 // import { StaticImage } from "gatsby-plugin-image"
-import { Root, Trigger } from "@radix-ui/react-tooltip"
-import { BiChevronRight } from "react-icons/bi"
-import { BlogItemFooter } from "components/utils"
-import { SiGatsby, SiNextDotJs, SiReact, SiStyledComponents, SiTailwindcss, SiTypescript } from "react-icons/si"
-import { TechIcon, TooltipContentStyled, TooltipArrowStyled } from "./styled"
-
-const TooltipIcon = ({icon, text}) => (
-  <Root>
-    <Trigger>
-      {icon}
-    </Trigger>
-    <TooltipContentStyled side="top" className="bg-gray-900 text-xs py-1 px-2 rounded-md">
-      {text}
-      <TooltipArrowStyled/>
-    </TooltipContentStyled>
-  </Root>
-)
+import { BlogItemFooter, TooltipIcon } from "components/utils"
+// import { SiGatsby, SiNextDotJs, SiReact, SiStyledComponents, SiTailwindcss, SiTypescript } from "react-icons/si"
+import { TechIcon } from "./styled"
+import techIcons from "components/utils/tech-icons"
 
 const WorkItem: React.FC = ({data}) => {
+  // const icons = ["Typescript", "React", "Tailwindcss"]
   return (
     <div>
       <div>
@@ -29,51 +17,25 @@ const WorkItem: React.FC = ({data}) => {
       </div>
       <div>
         <div>
-          <h2 className="text-xl mt-6 font-bold">{data.title}</h2>
-          <BlogItemFooter className="flex flex-row-reverse justify-between mt-6">
-            <Link to={`/work/${data.sys.id}`} className="inline-block transition-all">
-              <div className="flex items-center">
-                <span>Show</span> <BiChevronRight size={24}/>
-              </div>
-            </Link>
-            <TechIcon className="flex transition-all items-center">
-              <div>
-                <TooltipIcon
-                  icon={<SiTypescript/>}
-                  text="Typescript"
-                />
-              </div>
-              <div>
-                <TooltipIcon
-                  icon={<SiReact/>}
-                  text="React"
-                />
-              </div>
-              <div>
-                <TooltipIcon
-                  icon={<SiNextDotJs/>}
-                  text="Nextjs"
-                />
-              </div>
-              <div>
-                <TooltipIcon
-                  icon={<SiGatsby/>}
-                  text="Gatsbyjs"
-                />
-              </div>
-              <div>
-                <TooltipIcon
-                  icon={<SiTailwindcss/>}
-                  text="Tailwindcss"
-                />
-              </div>
-              <div>
-                <TooltipIcon
-                  icon={<SiStyledComponents/>}
-                  text="Styled Components"
-                />
-              </div>
+          <Link to={`/work/${data.sys.id}`} className="block transition-all">
+            <h2 className="text-xl mt-6 font-bold">{data.title}</h2>
+          </Link>
+          <BlogItemFooter className="flex mt-4">
+            <TechIcon className="flex transition-all items-center pr-4">
+              {
+                data.techsCollection.items.map((item, i) => (
+                  <div key={i}>
+                    <TooltipIcon
+                      icon={techIcons[item.name].icon}
+                      text={techIcons[item.name].name}
+                    />
+                  </div>
+                ))
+              }
             </TechIcon>
+            <div className="py-1 px-2 border rounded-md text-xs uppercase text-blueGray-400 font-medium border-blueGray-500">
+              <span>{data.category.title}</span>
+            </div>
           </BlogItemFooter>
         </div>
       </div>

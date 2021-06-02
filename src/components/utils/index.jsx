@@ -1,11 +1,25 @@
 import React from "react"
 import { Link } from "gatsby"
 import styled, { keyframes } from "styled-components"
+import { Content, Arrow, Trigger, Root } from "@radix-ui/react-tooltip"
 import ExperiencesItem from "../spec-item/experiences"
 import StacksItem from "../spec-item/stacks"
 import ProfileItem from "../spec-item/profile"
 import SkillsItem from "../spec-item/skills"
 import EducationsItem from "../spec-item/educations"
+
+
+export const TechIcon = styled.div`
+  margin: 0 -4px;
+  & > div {
+    padding: 0 4px;
+  }
+`
+
+export const TooltipContentStyled = styled(Content)``
+export const TooltipArrowStyled = styled(Arrow)`
+  fill: rgba(17, 24, 39, var(--tw-bg-opacity));
+`
 
 const key = keyframes`
   from {
@@ -119,7 +133,7 @@ technology company</p>
               <p className="mt-4 text-gray-400">Awwwara is a news media</p>
             </div>
           </li>
-          <li className="border-gray-600">
+          {/* <li className="border-gray-600">
             <div className="my-10">
               <h3 className="text-3xl font-bold mt-2">Web Profile DTC Academy</h3>
               <a href="https://dtc-academy.netlify.app" target="_blank" rel="noreferrer">
@@ -199,8 +213,11 @@ technology company</p>
               </a>
               <p className="mt-4 text-gray-400">Markir adalah sistem manajemen tempat parkir yang mengutamakan transparansi, optimalisasi dan efisiensi. Markir berdiri di antara parkir off-street dan on-street, harapannya Markir dapat mengsinergikan keduanya untuk memberikan kenyamanan bagi semua.</p>
             </div>
-          </li>
+          </li> */}
         </ul>
+        <div>
+          <Link to="/work" className="inline-block py-1 px-4 text-sm uppercase font-medium bg-indigo-600 rounded-full">Show All</Link>
+        </div>
       </div>
     )
   },
@@ -210,4 +227,16 @@ export const ViewAll = ({link}) => (
   <div className="flex justify-center mt-10 uppercase text-sm">
     <Link to={link} className="text-blueGray-400 hover:text-blueGray-300 font-medium transition-all">View All</Link>
   </div>
+)
+
+export const TooltipIcon = ({icon, text}) => (
+  <Root>
+    <Trigger>
+      {icon}
+    </Trigger>
+    <TooltipContentStyled side="top" className="bg-gray-900 text-xs py-1 px-2 rounded-md">
+      {text}
+      <TooltipArrowStyled/>
+    </TooltipContentStyled>
+  </Root>
 )

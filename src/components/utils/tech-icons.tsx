@@ -4,23 +4,23 @@ import { SiGatsby, SiNextDotJs, SiReact, SiStyledComponents, SiTailwindcss, SiTy
 const icons = {
   "Javascript": {
     name: "Javascript",
-    icon: <SiTypescript/>
+    icon: <SiTypescript color="#f7cc1f"/>
   },
   "Typescript": {
     name: "Tavascript",
-    icon: <SiTypescript/>
+    icon: <SiTypescript color="#4674e4"/>
   },
   "React": {
     name: "React",
-    icon: <SiReact/>
+    icon: <SiReact color="#2dfff9"/>
   },
   "Nextjs": {
     name: "Nextjs",
-    icon: <SiNextDotJs/>
+    icon: <SiNextDotJs color="#d1d5db"/>
   },
   "Gatsbyjs": {
     name: "Gatsbyjs",
-    icon: <SiGatsby/>
+    icon: <SiGatsby color="#660bb3"/>
   },
   "Styled Components": {
     name: "Styled Components",
@@ -28,7 +28,7 @@ const icons = {
   },
   "Tailwindcss": {
     name: "Tailwindcss",
-    icon: <SiTailwindcss/>
+    icon: <SiTailwindcss color="#2dffe2"/>
   },
 }
 
