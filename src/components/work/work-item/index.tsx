@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "@reach/router"
+import { Link } from "gatsby"
 // import { StaticImage } from "gatsby-plugin-image"
 import { BlogItemFooter, TooltipIcon } from "components/utils"
 // import { SiGatsby, SiNextDotJs, SiReact, SiStyledComponents, SiTailwindcss, SiTypescript } from "react-icons/si"

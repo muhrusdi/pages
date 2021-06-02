@@ -4,9 +4,11 @@ import styled from "styled-components"
 const bg = "rgb(1, 22, 39)"
 
 export const PlyStyled = styled.div`
-  margin: 0px -32px;
   padding-top: 1rem;
   padding-bottom: 2rem;
+  @media (min-width: 640px) {
+    margin: 0px -32px;
+  }
   .playground {
     border-radius: 8px;
     overflow: hidden;

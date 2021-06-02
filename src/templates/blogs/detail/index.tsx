@@ -12,6 +12,17 @@ const ImageStyled = styled(GatsbyImage)`
   }
 `
 
+export const ArticleStyled = styled.article`
+  pre {
+    margin-left: 0;
+    margin-right: 0;
+    @media (min-width: 640px) {
+      margin-left: -32px;
+      margin-right: -32px;
+    }
+  }
+`
+
 export const Header: React.FC = ({title, featuredImage, date}) => (
   <header className="text-center mt-12">
     <div>
@@ -31,11 +42,11 @@ const DetailBlog: React.FC = () => {
     <Layout>
       <div>
         <Header/>
-        <div className="container max-w-2xl mt-14">
-          <article className="prose prose-xl">
+        <div className="sm:pr-6 sm:pl-6 mx-auto max-w-2xl mt-14">
+          <ArticleStyled className="prose prose-xl">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius ipsum perspiciatis dicta, obcaecati, suscipit voluptatum voluptates sed ipsa saepe fugit quas beatae temporibus, atque voluptas pariatur dolore facere odit eos.</p>
             <Playground/>
-          </article>
+          </ArticleStyled>
         </div>
       </div>
     </Layout>

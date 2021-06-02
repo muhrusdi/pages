@@ -65,7 +65,7 @@ const Blogs: React.FC = () => {
             <LatestBlog badge="Featured" data={featured.node}/>
           </div>
           <div className="py-20">
-            <ul className="grid grid-cols-3 gap-8">
+            <ul className="grid grid-cols-1 sm:grid-cols-3 gap-8">
               {
                 data.allMdx.edges.map(({node}, key) => (
                   <li key={key}>
