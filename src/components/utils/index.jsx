@@ -89,19 +89,19 @@ export const mocks = [
     description: <EducationsItem/>
   },
   {
-    title: "Experiences",
+    title: "Career",
     description: <ExperiencesItem/>
   },
   {
-    title: "Skills",
+    title: "Skill",
     description: <SkillsItem/>
   },
   {
-    title: "Stacks",
+    title: "Stack",
     description: <StacksItem/>
   },
   {
-    title: "Works",
+    title: "Work",
     description: (
       <div>
         <ul className="divide-y border-gray-600">

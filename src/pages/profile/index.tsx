@@ -5,7 +5,7 @@ import styled from "styled-components"
 import SpecItem from "components/spec-item"
 import { mocks } from "components/utils"
 // import LatestBlog from "components/blog/lastest"
-import { SiFacebook, SiTwitter, SiInstagram, SiLinkedin, SiGithub, SiUplabs } from "react-icons/si"
+import { SiTwitter, SiInstagram, SiLinkedin, SiGithub, SiUplabs } from "react-icons/si"
 import { StaticImage } from "gatsby-plugin-image"
 import { BsArrowDown } from "react-icons/bs"
 import cv from "../../utils/cv-muhrusdi-2022.pdf"
@@ -41,9 +41,6 @@ const Home: React.FC = () => {
                 <h2 className="text-3xl sm:text-5xl font-black leading-tight">Muhammad Rusdi</h2>
                 <p className="text-xl sm:text-3xl mt-2 sm:mt-4 text-gray-400">Front End Engineer</p>
                 <Networks className="flex mt-10 -mx-4 flex-wrap items-center justify-center sm:justify-start">
-                  <a href="https://www.facebook.com/mhmrofficial/" rel="noreferrer" target="_blank" className="block px-4 mb-8 sm:mb-0">
-                    <SiFacebook color="#fff"/>
-                  </a>
                   <a href="https://twitter.com/mhmrus" rel="noreferrer" target="_blank" className="block px-4 mb-8 sm:mb-0">
                     <SiTwitter color="#fff"/>
                   </a>

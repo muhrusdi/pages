@@ -22,7 +22,7 @@ const SpecItem: React.FC<PropsType> = ({data: {title, description}}) => {
         </svg>
       )
     },
-    "Experiences": {
+    "Career": {
       icon: (
         <svg width="135" height="135" viewBox="0 0 135 135" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="135" height="135" rx="29" fill="url(#paint0_linear-309534)"/>
@@ -56,7 +56,7 @@ const SpecItem: React.FC<PropsType> = ({data: {title, description}}) => {
         </svg>
       )
     },
-    "Stacks": {
+    "Stack": {
       icon: (
         <svg width="135" height="135" viewBox="0 0 135 135" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="135" height="135" rx="29" fill="url(#paint0_linear-057369)"/>
@@ -76,7 +76,7 @@ const SpecItem: React.FC<PropsType> = ({data: {title, description}}) => {
         </svg>
       )
     },
-    "Skills": {
+    "Skill": {
       icon: (
         <svg width="135" height="135" viewBox="0 0 135 135" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="135" height="135" rx="29" fill="url(#paint0_linear-285097)"/>
@@ -96,7 +96,7 @@ const SpecItem: React.FC<PropsType> = ({data: {title, description}}) => {
         </svg>
       )
     },
-    "Works": {
+    "Work": {
       icon: (
         <svg width="135" height="135" viewBox="0 0 135 135" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="135" height="135" rx="29" fill="url(#paint0_linear-852392)"/>
