@@ -60,7 +60,7 @@ const Home: React.FC = () => {
                     <SiUplabs color="#fff"/>
                   </a>
                   <a href={cv} rel="noreferrer" target="_blank" className="block px-4 mb-8 sm:mb-0">
-                    <div className=" cv flex border-2 border-blue-500 rounded-full py-1 px-4 text-sm items-center">
+                    <div className=" cv flex ring-4 ring-indigo-500 hover:bg-indigo-500 transition-all rounded-full py-1 px-4 text-sm items-center">
                       <span>CV</span>
                       <BsArrowDown color="#fff" style={{marginLeft: 8}}/>
                     </div>
