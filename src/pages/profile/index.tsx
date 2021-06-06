@@ -1,13 +1,31 @@
 import React from "react"
 import Layout from "containers/layout"
 // import { Link } from "gatsby"
+import styled from "styled-components"
 import SpecItem from "components/spec-item"
 import { mocks } from "components/utils"
 // import LatestBlog from "components/blog/lastest"
 import { SiFacebook, SiTwitter, SiInstagram, SiLinkedin, SiGithub, SiUplabs } from "react-icons/si"
 import { StaticImage } from "gatsby-plugin-image"
 import { BsArrowDown } from "react-icons/bs"
-import cv from "../../utils/cv-muhrusdi.pdf"
+import cv from "../../utils/cv-muhrusdi-2022.pdf"
+
+const Networks = styled.div`
+  svg {
+    height: 20px;
+    width: 20px;
+    @media (min-width: 640px) {
+      height: 25px;
+      width: 25px;
+    }
+  }
+  .cv {
+    svg {
+      height: 18px;
+      width: 18px;
+    }
+  }
+`
 
 const Home: React.FC = () => {
   return (
@@ -15,39 +33,39 @@ const Home: React.FC = () => {
       <div>
         <div className="py-8">
           <div>
-            <div className="block sm:flex items-center">
+            <div className="flex flex-col sm:flex-row items-center">
               <div>
-                <StaticImage className="object-cover" style={{height: 200, width: 200, borderRadius: "2.5rem"}} src="https://res.cloudinary.com/muhrusdi/image/upload/v1616335341/thumb-612467.png" alt="muhrusdi"/>
+                <StaticImage className="object-cover rounded-full sm:rounded-5xl" style={{height: 200, width: 200}} src="https://res.cloudinary.com/muhrusdi/image/upload/v1616335341/thumb-612467.png" alt="muhrusdi"/>
               </div>
-              <div className="sm:pl-10 mt-14 sm:mt-0">
+              <div className="sm:pl-10 mt-14 sm:mt-0 text-center sm:text-left">
                 <h2 className="text-3xl sm:text-5xl font-black leading-tight">Muhammad Rusdi</h2>
-                <p className="text-xl sm:text-3xl mt-4 text-gray-400">Front End Engineer</p>
-                <div className="flex mt-10 -mx-4 flex-wrap items-center">
+                <p className="text-xl sm:text-3xl mt-2 sm:mt-4 text-gray-400">Front End Engineer</p>
+                <Networks className="flex mt-10 -mx-4 flex-wrap items-center justify-center sm:justify-start">
                   <a href="https://www.facebook.com/mhmrofficial/" rel="noreferrer" target="_blank" className="block px-4 mb-8 sm:mb-0">
-                    <SiFacebook size={25} color="#fff"/>
+                    <SiFacebook color="#fff"/>
                   </a>
                   <a href="https://twitter.com/mhmrus" rel="noreferrer" target="_blank" className="block px-4 mb-8 sm:mb-0">
-                    <SiTwitter size={25} color="#fff"/>
+                    <SiTwitter color="#fff"/>
                   </a>
                   <a href="https://www.instagram.com/mhmrofficial/" rel="noreferrer" target="_blank" className="block px-4 mb-8 sm:mb-0">
-                    <SiInstagram size={25} color="#fff"/>
+                    <SiInstagram color="#fff"/>
                   </a>
                   <a href="https://www.linkedin.com/in/muhrusdi/" rel="noreferrer" target="_blank" className="block px-4 mb-8 sm:mb-0">
-                    <SiLinkedin size={25} color="#fff"/>
+                    <SiLinkedin color="#fff"/>
                   </a>
                   <a href="https://github.com/muhrusdi" rel="noreferrer" target="_blank" className="block px-4 mb-8 sm:mb-0">
-                    <SiGithub size={25} color="#fff"/>
+                    <SiGithub color="#fff"/>
                   </a>
                   <a href="https://www.uplabs.com/muhrusdi" rel="noreferrer" target="_blank" className="block px-4 mb-8 sm:mb-0">
-                    <SiUplabs size={25} color="#fff"/>
+                    <SiUplabs color="#fff"/>
                   </a>
                   <a href={cv} rel="noreferrer" target="_blank" className="block px-4 mb-8 sm:mb-0">
-                    <div className="flex border-2 border-blue-500 rounded-full py-1 px-4 text-sm items-center">
+                    <div className=" cv flex border-2 border-blue-500 rounded-full py-1 px-4 text-sm items-center">
                       <span>CV</span>
-                      <BsArrowDown size={18} color="#fff" style={{marginLeft: 8}}/>
+                      <BsArrowDown color="#fff" style={{marginLeft: 8}}/>
                     </div>
                   </a>
-                </div>
+                </Networks>
               </div>
             </div>
           </div>

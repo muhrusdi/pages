@@ -12,6 +12,9 @@ module.exports = {
       padding: "1.5rem"
     },
     extend: {
+      borderRadius: {
+        "5xl": "2.5rem"
+      },
       lineHeight: {
         "11": "3rem",
         "12": "3.5rem",
