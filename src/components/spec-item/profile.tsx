@@ -2,7 +2,7 @@ import React from "react"
 
 const ProfileItem: React.FC = () => (
   <div>
-    <p>I like to code things from scratch, and enjoy bringing ideas to life in the browser.</p>
+    <p>I’m Front End Engineer with 5+ years of experience in web development. I like to code things from scratch and enjoy bringing ideas to life in the browser.</p>
     <ul className="mt-8 whitespace-nowrap">
       <li>
         <div className="sm:flex bg-gray-900 rounded-md py-2 px-4 mt-4">
