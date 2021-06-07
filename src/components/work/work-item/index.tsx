@@ -17,7 +17,7 @@ const WorkItem: React.FC = ({data}) => {
       </div>
       <div>
         <div>
-          <Link to={`/work/${data.sys.id}`} className="block transition-all">
+          <Link to={`/work/${data.sys.id}`} className="transition-all inline-block hover:text-indigo-500">
             <h2 className="text-xl mt-6 font-bold">{data.title}</h2>
           </Link>
           <BlogItemFooter className="flex mt-4">

@@ -1,23 +1,9 @@
 import React from "react"
 import { useQuery, gql } from "@apollo/client"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
-import styled from "styled-components"
 import { TooltipIcon } from "components/utils/"
 import techIcons from "components/utils/tech-icons"
-
-const IconList = styled.ul({
-  svg: {
-    height: 20,
-    width: 20
-  }
-})
-
-const ImageStyled = styled.img`
-  height: 200px;
-  @media (min-width: 640px) {
-    height: 400px;
-  }
-`
+import { Grid, IconList, ImageStyled } from "./styled"
 
 const Detail: React.FC = (props) => {
   const WORK_COLLECTION = gql`
@@ -47,11 +33,18 @@ const Detail: React.FC = (props) => {
             title
           }
         }
+        screenshotCollection {
+          items {
+            url
+            title
+            description
+          }
+        }
       }
     }
   `
 
-  const { data } = useQuery(WORK_COLLECTION, {
+  const { data, loading } = useQuery(WORK_COLLECTION, {
     variables: { id: props.slug}
   })
 
@@ -59,7 +52,11 @@ const Detail: React.FC = (props) => {
     <div>
       <div className="grid gap-8 sm:grid-cols-3">
         <div className="col-span-3">
-          <ImageStyled className="object-cover w-full rounded-lg" src={data?.work.featuredImage.url} alt={data?.work.title} />
+          {
+            loading ? (
+              <ImageStyled as="div" className="bg-blueGray-900 w-full rounded-lg"/>
+            ) : <ImageStyled className="object-cover object-top w-full rounded-lg" src={data?.work.featuredImage.url} alt={data?.work.title} />
+          }
         </div>
         <div className="col-span-3 sm:col-span-1">
           <div>
@@ -92,6 +89,22 @@ const Detail: React.FC = (props) => {
           <div className="mt-10 prose-lg">
             {documentToReactComponents(data?.work.content.json)}
           </div>
+          {
+            data?.work.screenshotCollection.items.length ? (
+              <div className="mt-14">
+                <h4 className="text-xl font-bold">Screenshot</h4>
+                <Grid className="grid grid-cols-2 sm:grid-cols-3 mt-6 gap-6">
+                  {
+                    data?.work.screenshotCollection.items.map((item, i) => (
+                      <a href={item.url} rel="noreferrer" target="_blank" key={i} className="block bg-blueGray-900">
+                        <img className="w-full object-cover h-full" src={item.url} alt={item.title}/>
+                      </a>
+                    ))
+                  }
+                </Grid>
+              </div>
+            ) : null
+          }
         </div>
       </div>
     </div>
