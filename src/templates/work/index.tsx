@@ -4,6 +4,7 @@ import { useQuery, gql } from "@apollo/client"
 // import { useStaticQuery, graphql } from "gatsby"
 import WorkItem, { WorkItemLoading } from "components/work/work-item"
 import FeaturedWork from "components/work/featured"
+import Newsletter from "components/newsletter"
 
 const Works: React.FC = () => {
   // const data = useStaticQuery(graphql`
@@ -47,6 +48,14 @@ const Works: React.FC = () => {
           }
         }
       }
+      openSourceCollection {
+        items {
+          name
+          description
+          github
+          preview
+        }
+      }
     }
   `
 
@@ -86,6 +95,21 @@ const Works: React.FC = () => {
               }
             </ul>
           </div>
+          <div className="mt-8">
+            <div className="text-center">
+              <h2 className="text-2xl font-bold">Open Source Contribute</h2>
+            </div>
+            <ul className="grid grid-cols-1 mt-8 sm:grid-cols-3 md:grid-cols-4 gap-8">
+              {
+                dataWorks?.openSourceCollection.items.map((item, i) => (
+                  <li key={i}>
+                    <WorkItem.Mini data={item}/>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+          <Newsletter/>
         </div>
     </>
   )
