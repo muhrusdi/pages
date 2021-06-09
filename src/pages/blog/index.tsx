@@ -3,7 +3,6 @@ import Layout from "containers/layout"
 import { useStaticQuery, graphql } from "gatsby"
 import BlogItem from "components/blog/blog-item"
 import LatestBlog from "components/blog/lastest"
-import Newsletter from "components/newsletter"
 
 const Blogs: React.FC = () => {
   const data = useStaticQuery(graphql`
@@ -64,7 +63,7 @@ const Blogs: React.FC = () => {
           <div className="py-8">
             <LatestBlog badge="Featured" data={featured.node}/>
           </div>
-          <div className="py-20">
+          <div className="mt-20">
             <ul className="grid grid-cols-1 sm:grid-cols-3 gap-8">
               {
                 data.allMdx.edges.map(({node}, key) => (
@@ -75,7 +74,6 @@ const Blogs: React.FC = () => {
               }
             </ul>
           </div>
-          <Newsletter/>
         </div>
       </Layout>
     </>

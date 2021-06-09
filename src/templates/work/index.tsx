@@ -4,24 +4,8 @@ import { useQuery, gql } from "@apollo/client"
 // import { useStaticQuery, graphql } from "gatsby"
 import WorkItem, { WorkItemLoading } from "components/work/work-item"
 import FeaturedWork from "components/work/featured"
-import Newsletter from "components/newsletter"
 
 const Works: React.FC = () => {
-  // const data = useStaticQuery(graphql`
-  //   query {
-  //     allMdx {
-  //       edges {
-  //         node {
-  //           frontmatter {
-  //             title
-  //             date
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // `)
-
   const WORK_COLLECTION = gql`
     query GetWorkCollection {
       workCollection {
@@ -64,10 +48,10 @@ const Works: React.FC = () => {
   return (
     <>
         <div>
-          <div className="py-8">
+          <div className="mt-8">
             <FeaturedWork/>
           </div>
-          <div className="py-20">
+          <div className="mt-32">
             <ul className="grid grid-cols-1 mt-8 sm:grid-cols-2 md:grid-cols-3 gap-8">
               {
                 loading ? (
@@ -95,7 +79,7 @@ const Works: React.FC = () => {
               }
             </ul>
           </div>
-          <div className="mt-8">
+          <div className="mt-32">
             <div className="text-center">
               <h2 className="text-2xl font-bold">Open Source Contribute</h2>
             </div>
@@ -109,7 +93,6 @@ const Works: React.FC = () => {
               }
             </ul>
           </div>
-          <Newsletter/>
         </div>
     </>
   )

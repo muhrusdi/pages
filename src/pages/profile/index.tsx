@@ -31,7 +31,7 @@ const Home: React.FC = () => {
   return (
     <Layout>
       <div>
-        <div className="py-8">
+        <div className="mt-8">
           <div>
             <div className="flex flex-col sm:flex-row items-center">
               <div>

@@ -5,7 +5,6 @@ import { useStaticQuery, graphql } from "gatsby"
 import LatestBlog from "components/blog/lastest"
 import BlogItem from "components/blog/blog-item"
 import WorkItem, { WorkItemLoading } from "components/work/work-item"
-import Newsletter from "components/newsletter"
 import { ViewAll } from "components/utils"
 
 const Home: React.FC = () => {
@@ -80,7 +79,7 @@ const Home: React.FC = () => {
         <div className="py-8">
           <LatestBlog data={firstBlog.node}/>
         </div>
-        <div className="py-14 sm:py-20">
+        <div className="mt-14 sm:mt-20">
           <div className="text-center mb-4 max-w-2xl container">
             <span className="uppercase font-bold text-indigo-500">Blogs</span>
             <h4 className="font-black mt-2 text-3xl">Helpful Resources</h4>
@@ -100,7 +99,7 @@ const Home: React.FC = () => {
             ) : null
           }
         </div>
-        <div className="py-20">
+        <div className="mt-28">
           <div className="text-center mb-4">
             <span className="uppercase font-bold text-indigo-500">Works</span>
             <h4 className="font-black mt-2 text-3xl">Our Projects</h4>
@@ -137,7 +136,6 @@ const Home: React.FC = () => {
             ) : null
           }
         </div>
-        <Newsletter/>
       </div>
     </Layout>
   )
