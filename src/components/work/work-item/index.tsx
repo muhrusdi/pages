@@ -12,7 +12,7 @@ const WorkItem: React.FC = ({data}) => {
     <div>
       <div>
         <div>
-          <img style={{height: 200}} className="rounded-lg w-full" src={data.featuredImage.url} alt=""/>
+          <img style={{height: 200}} className="rounded-lg w-full object-cover" src={data.featuredImage.url} alt=""/>
         </div>
       </div>
       <div>
@@ -33,9 +33,13 @@ const WorkItem: React.FC = ({data}) => {
                 ))
               }
             </TechIcon>
-            <div className="py-1 px-2 border rounded-md text-xs uppercase text-blueGray-400 font-medium border-blueGray-500">
-              <span>{data.category.title}</span>
-            </div>
+            {
+              data.category?.title ? (
+                <div className="py-1 px-2 border rounded-md text-xs uppercase text-blueGray-400 font-medium border-blueGray-500">
+                  <span>{data.category?.title}</span>
+                </div>
+              ) : null
+            }
           </BlogItemFooter>
         </div>
       </div>

@@ -3,7 +3,7 @@ import { useQuery, gql } from "@apollo/client"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { TooltipIcon } from "components/utils/"
 import techIcons from "components/utils/tech-icons"
-import { Grid, IconList, ImageStyled } from "./styled"
+import { Grid, IconList, ImageStyled, Articles } from "./styled"
 
 const Detail: React.FC = (props) => {
   const WORK_COLLECTION = gql`
@@ -77,18 +77,26 @@ const Detail: React.FC = (props) => {
           <div className="py-3 px-4 mt-6 text-center block uppercase text-sm rounded-lg text-blueGray-400 font-medium bg-blueGray-900">
             <span>{data?.work.category.title || "Loading"}</span>
           </div>
-          <div className="mt-4">
-            <a href={data?.work.link} target="_blank" rel="noreferrer" className="bg-indigo-600 text-white text-center block py-3 uppercase font-semibold text-sm rounded-lg hover:bg-indigo-700 transition-all px-4">Visit</a>
-          </div>
+          {
+            data?.work.link ? (
+              <div className="mt-4">
+                <a href={data?.work.link} target="_blank" rel="noreferrer" className="bg-indigo-600 text-white text-center block py-3 uppercase font-semibold text-sm rounded-lg hover:bg-indigo-700 transition-all px-4">Visit</a>
+              </div>
+            ) : (
+              <div className="mt-4">
+                <button disabled className="bg-gray-300 disabled cursor-default text-gray-500 text-center w-full py-3 uppercase font-semibold text-sm rounded-lg px-4">Visit</button>
+              </div>
+            )
+          }
         </div>
         <div className="col-span-3 sm:col-span-2">
           <div>
             <h1 className="font-bold text-3xl">{data?.work.title}</h1>
             <p className="text-blueGray-400 text-xl mt-4 leading-relaxed">{data?.work.description}</p>
           </div>
-          <div className="mt-10 prose-lg">
+          <Articles className="mt-10 prose-lg">
             {documentToReactComponents(data?.work.content.json)}
-          </div>
+          </Articles>
           {
             data?.work.screenshotCollection.items.length ? (
               <div className="mt-14">

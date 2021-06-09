@@ -43,7 +43,7 @@ const Home: React.FC = () => {
 
   const WORK_COLLECTION = gql`
     query GetWorkCollection {
-      workCollection {
+      workCollection(limit: 6) {
         items {
           title
           sys {
@@ -94,7 +94,11 @@ const Home: React.FC = () => {
               ))
             }
           </ul>
-          <ViewAll link="blog"/>
+          {
+            blogRest.length > 5 ? (
+              <ViewAll link="blog"/>
+            ) : null
+          }
         </div>
         <div className="py-20">
           <div className="text-center mb-4">
@@ -127,7 +131,11 @@ const Home: React.FC = () => {
               ) : null
             }
           </ul>
-          <ViewAll link="work"/>
+          {
+            dataWorks?.workCollection.items.length > 5 ? (
+              <ViewAll link="work"/>
+            ) : null
+          }
         </div>
         <Newsletter/>
       </div>

@@ -1,5 +1,11 @@
 import styled from "styled-components"
 
+export const Articles = styled.article`
+  a {
+    color: #6f66ff;
+  }
+`
+
 export const Grid = styled.div`
   a {
     grid-template-columns: repeat(2, minmax(0, 1fr));

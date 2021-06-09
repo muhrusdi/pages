@@ -11,7 +11,11 @@ const BlogItem: React.FC = ({data}) => {
       <div>
         <div>
           <GatsbyImage width={100} style={{height: 200}} className="rounded-lg w-full" image={getImage(data.frontmatter.featuredImage)} alt=""/>
-          {/* <StaticImage width={100} style={{height: 200}} layout="fullWidth" className="rounded-lg" src={data.frontmatter.featuredImage} alt=""/> */}
+          {
+            !data.frontmatter.featuredImage ? (
+              <img style={{height: 200}} className="rounded-lg object-cover w-full" src="https://res.cloudinary.com/muhrusdi/image/upload/v1623214698/placeholder.jpg" alt=""/>
+            ) : null
+          }
         </div>
       </div>
       <div>
