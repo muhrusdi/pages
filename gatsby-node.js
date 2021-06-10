@@ -71,17 +71,9 @@ exports.createPages = async ({graphql, actions}) => {
   }
 
 
-  if (process.env.NODE_ENV !== "production") {
-    mdxResults.data.allMdx.edges.forEach(({ node }) => {
-      createMdxPage(node)
-    })
-  } else {
-    mdxResults.data.allMdx.edges.forEach(({ node }) => {
-      if (node.frontmatter.isPublished) {
-        createMdxPage(node)
-      }
-    })
-  }
+  mdxResults.data.allMdx.edges.forEach(({ node }) => {
+    createMdxPage(node)
+  })
 }
 
 exports.createSchemaCustomization = ({ actions, schema }) => {
