@@ -39,7 +39,7 @@ module.exports = {
             color: "white",
             pre: {
               margin: "0px -32px",
-              padding: "1.1em 0",
+              padding: "32px 0",
             },
             p: {
               color: "#acb5c3"
@@ -67,7 +67,7 @@ module.exports = {
         "xl": {
           css: {
             pre: {
-              padding: "1.1em 0",
+              padding: "32px 0",
             },
           }
         }

@@ -2,7 +2,7 @@
 title: Membuat Personal Blog menggunakan Gatsby.js
 seoTitle: Cara cepat membuat blog menggunakan Gatsby.js
 abstract: Selamat datang di Gatsby (atau Gatsby.js), yaitu framework untuk membuat website static atau yang dikenal dengan Static Site Generation (SSG) yang berbasis React dan GraphQL, Gatsby semakin populer seiring berjalannya waktu dan semakin banyak orang menggunakannya. Salah satu alasannya adalah kemampuan membangun web statis sederhana dengan cepat.
-isPublished: false
+isPublished: true
 featured: false
 publishedOn: Tue May 18 2021 13:41:17 GMT+0800 (Singapore Standard Time)
 featuredImage: https://res.cloudinary.com/muhrusdi/image/upload/v1623214698/placeholder.jpg
@@ -80,8 +80,64 @@ import Seo from "../components/seo"
 const IndexPage = () => (
   <Layout>
     <Seo title="Home" />
+    <h1>Hi people</h1>
+    <p>Welcome to your new Gatsby site.</p>
+    <p>Now go build something great.</p>
+    <StaticImage
+      src="../images/gatsby-astronaut.png"
+      width={300}
+      quality={95}
+      formats={["AUTO", "WEBP", "AVIF"]}
+      alt="A Gatsby astronaut"
+      style={{ marginBottom: `1.45rem` }}
+    />
+    <p>
+      <Link to="/page-2/">Go to page 2</Link> <br />
+      <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
+    </p>
+  </Layout>
+)
+
+export default IndexPage
+```
+
+Terlihat komponen React sederhana yang hanya menampikan beberapa paragraf dan satu gambar. Ketika kita menjalankan `yarn start`, 
+gatsby akan mengenali sendiri semua file yang berada didalam
+direktori `src/pages` yang akan dibuat menjadi sebuah halaman. Jadi untuk file `pages/index.js` ditujukan untuk halaman root 
+atau yang biasa kita sebut halaman home, contoh urlnya adalah `(example.com)`. Demikian juga ketika terdapat file lain seperti `pages/blog.js` 
+maka akan diarahkan ke halaman blog `(example.com/blog)`.
+
+Mari kita membuat perubahan pada file `src/pages/index.js` dengan menambahkan beberapa komponent list dari blog kita.
+
+```jsx
+import * as React from "react"
+import { Link } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
+
+import Layout from "../components/layout"
+import Seo from "../components/seo"
+
+const IndexPage = () => (
+  <Layout>
+    <Seo title="Home" />
     // highlight-add-start
-    <h1>Selamat Data di Blog Saya</h1>
+    <h1>Selamat Datang di Blog Saya</h1>
+    <ul>
+      <li>
+        <div>
+          <h3>Blog 1</h3>
+          <p>Membuat blog pertama saya</p>
+          <a href="/blog/pertama">Baca selengkapnya</a>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>Blog 2</h3>
+          <p>Membuat blog kedua saya</p>
+          <a href="/blog/kedua">Baca selengkapnya</a>
+        </div>
+      </li>
+    </ul>
     // highlight-add-end
     // highlight-remove-start
     <h1>Hi people</h1>
@@ -104,10 +160,283 @@ const IndexPage = () => (
 )
 
 export default IndexPage
+```
+
+Setelah kita menambah beberapa komponen dan menghapus yang tidak diperlukan, maka tampilan yang dapat kita lihat di browser seperti berikut:
+
+![Ubah halaman index](https://lh3.google.com/u/4/d/1s0IA3IvO9b5qOqeJZspmyb_5iR-F5Et_=w1920-h890-iv1)
+
+Kemudian untuk mengubah tulisan Gatsby Default Starter di header dapat diubah di file `[root-project]/gatsby-config.js`:
+
+```js
+module.exports = {
+  siteMetadata: {
+    // highlight-add-start
+    title: `My Blog`,
+    // highlight-add-end
+    // highlight-remove-start
+    title: `Gatsby Default Starter`,
+    // highlight-remove-end
+    ...
+  }
+  ...
+}
 
 ```
 
-Terlihat komponen React sederhana yang hanya menampikan beberapa paragraf dan satu gambar. Ketika kita menjalankan `yarn start`, 
-gatsby akan mengenali sendiri semua file yang berada didalam
-direktori `src/pages` yang akan dibuat menjadi sebuah halaman. Jadi untuk file `pages/index.js` ditujukan untuk halaman root 
-atau yang biasa kita sebut halaman home, contoh urlnya adalah `(example.com)`. Demikian juga ketika terdapat file lain seperti `pages/blog.js` maka akan diarahkan ke halaman blog `(example.com/blog)`.
+### Content dari Markdown
+
+Gatsby.js disebut juga sebagai static site generator yaitu salah satu framework yang digunakan untuk menghasilkan website 
+statik dari *source* seperti file [Markdown](https://www.markdownguide.org/) dan juga dari [Headless CMS](https://jamstack.org/headless-cms/).
+
+Sekarang, untuk membuat blog kita lebih dinamis dalam penambahan konten baru, maka kita akan membuat gatsby.js menampilkan blog kita dari file markdown.
+
+Disini anda harus menambahkan sebuah plugin `gatsby-source-filesystem` dan `gatsby-transformer-remark` di file `gatsby-config.js`:
+
+```js
+module.exports = {
+  ...
+  plugins: [
+    ...
+    // highlight-add-start
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "blogs",
+        path: `${__dirname}/src/content`,
+      },
+    },
+    "gatsby-transformer-remark",
+    // highlight-add-end
+    ...
+  ],
+}
+
+```
+
+Sekarang kita asumsikan semua file markdown berada dalam direktori `/src/content`. 
+Oleh karena itu, anda harus membuat folder `content` didalam `src` dan buat file baru dengan nama `postingan-pertama.md`
+
+Berikut adalah contoh isi dari blog pertama kita:
+
+```md
+---
+title: Postingan Pertama Saya
+description: Ini adalah contoh konten pada postingan pertama
+publishedOn: Tue May 18 2021 13:41:17 GMT+0800 (Singapore Standard Time)
+featuredImage: https://res.cloudinary.com/muhrusdi/image/upload/v1623214698/placeholder.jpg
+---
+
+## Postingan Pertama Saya
+
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+
+```
+
+Apa yang anda lihat dibagian atas file markdown adalah kumpulan metadata yang disebut dengan `frontmatter` yang nantinya informasi ini kita akan ambil dan menggunakannya di dalam React.
+
+### Request data dari GraphQL
+
+Gatsby.js akan membuat data tersedia saat prose build (ketika menjalankan perintah `yarn start` atau `gatsby develop`) dalam bentuk GraphQL. 
+Anda dapat melihatnya menggunakan GraphQL Playground di `http://localhost:8000/___graphql`.
+
+![GraphQL Playground](https://lh3.google.com/u/4/d/1qD2e2-f8l_EUUAtOLIWyyAJBiC9-3x79=w1920-h890-iv1)
+
+Dapat anda lihat bahwa query diatas mengembalikan semua data markdown dalam versi yang telah teformat, kemudian yang akan kita lakukan adalah melewatkan data ini kedalam komponen dan membuat halaman berdasarkan slug.
+
+
+Pertama kita perlu mengubah format penulisan komponen kita pada file `pages/index.js` seperti pada baris kode berikut:
+
+```jsx
+import * as React from "react"
+...
+// highlight-add-start
+const IndexPage = () => {
+  return (
+    <Layout>
+      ...
+    </Layout>
+  )
+}
+// highlight-add-end
+// highlight-remove-start
+const IndexPage = () => (
+  <Layout>
+    ...
+  </Layout>
+)
+// highlight-remove-end
+
+export default IndexPage
+```
+
+Untuk query GraphQL di komponen React, kita memerlukan beberapa module dari `gatsby` seperti `useStaticQuery` dan `graphql`.
+
+```jsx
+import * as React from "react"
+ // highlight-add-start
+import { Link, useStaticQuery, graphql } from "gatsby"
+// highlight-add-end
+import { StaticImage } from "gatsby-plugin-image"
+import Layout from "../components/layout"
+import Seo from "../components/seo"
+
+const IndexPage = () => {
+  // highlight-add-start
+  const data = useStaticQuery(graphql`
+    query MyQuery {
+      allMarkdownRemark {
+        edges {
+          node {
+            frontmatter {
+              title
+              description
+            }
+          }
+        }
+      }
+    }
+  `)
+  // highlight-add-end
+
+  return (
+    <Layout>
+      <Seo title="Home" />
+      <h1>Selamat Datang di Blog Saya</h1>
+      <ul>
+      // highlight-add-start
+        {
+          data && data.allMarkdownRemark.edges.map(({node}, i) => (
+            <li>
+              <div>
+                <h3>{node.frontmatter.title}</h3>
+                <p>{node.frontmatter.description}</p>
+                <Link to="/blog/pertama">Baca selengkapnya</Link>
+              </div>
+            </li>
+          ))
+        }
+      // highlight-add-end
+      // highlight-remove-start
+        <li>
+          <div>
+            <h3>Blog 2</h3>
+            <p>Membuat blog kedua saya</p>
+            <a href="/blog/kedua">Baca selengkapnya</a>
+          </div>
+        </li>
+      // highlight-remove-end
+      </ul>
+    </Layout>
+  )
+}
+
+export default IndexPage
+```
+
+Sampai disini kita sudah menapilkan list blog dari file markdown yang ada di direktori `src/content`:
+
+![List Blog](https://lh3.google.com/u/4/d/1QxOrJXCjgv2jkCGCw8WTzcWjILr357JQ=w1920-h890-iv1)
+
+Sekarang kita akan mencoba membuat postingan kedua, dengan cara buat file markdown kedua dengan nama `postingan-kedua.md` di 
+dalam folder `src/content`, setelah itu jalankan kembali perintah `yarn start`, dan lihat dikembali di browser anda apakah list blog kita sudah bertambah.
+
+### Membuat halaman detail blog secara dinamis
+
+Pertama, kita perlu membuat template detail halamannya terlebih dahulu dengan membuat file di dalam direktori `src/templates`. Oleh karena itu, kita sediakan direktori `src/templates` kemudian buat file dengan nama `detail-blog.js` 
+di dalam direktori tersebut.
+
+```js
+import React from "react"
+import Layout from "../components/layout"
+
+const DetailBlog = ({pageContext}) => {
+  const { data } = pageContext
+  return (
+    <Layout>
+      <h1>{data.frontmatter.title}</h1>
+      <img src={data.frontmatter.featuredImage} style={{height: 200}}/>
+      <p>{data.frontmatter.description}</p>
+      <div dangerouslySetInnerHTML={{__html: data.html}}/>
+    </Layout>
+  )
+}
+
+export default DetailBlog
+```
+
+Untuk menbuat halaman secara dinamis, kita akan menggunakan salah satu API yang ada di gatsby yaitu `createPages`. Buka file `gatsby-node.js` dan gunakanlah API `createPages` dengan mengekspornya seperti pada blok kode berikut:
+
+```js
+const slugify = require("slugify")
+
+exports.createPages = async ({actions, graphql}) => {
+  const { createPage } = actions
+  const result = await graphql(`
+    query {
+      allMarkdownRemark {
+        edges {
+          node {
+            frontmatter {
+              title
+              description
+              publishedOn
+              featuredImage
+            }
+            html
+          }
+        }
+      }
+    }
+  `)
+
+  result.data.allMarkdownRemark.edges.forEach(({node}) => {
+    const slug = slugify(node.frontmatter.title, {lower: true}) // highlight-line
+    createPage({
+      path: `/blog/${slug}`,
+      component: require.resolve(`./src/templates/detail-blog.js`),
+      context: {
+        slug,
+        data: node
+      }
+    })
+  })
+}
+```
+
+Untuk bagian baris `const slug = slugify(node.frontmatter.title, {lower: true})`, disini kita menggunakan library [slugify](https://github.com/simov/slugify) untuk mengkonversi 
+title menjadi sebuah `pathname` yang digunakan sebagai slug.
+
+Sampai disini, kita telah melewatkan data graphql ke halaman detail blog.
+
+![DevsTool](https://lh3.google.com/u/4/d/1WWJffHm2Om858SgLF_xEq8WtAoneN1FJ=w1920-h890-iv1)
+
+Kembali ke halaman home yang berada di file `src/pages/index.js`, agar supaya list blog dapat diarahkan ke halaman detail dengan mudah, maka kita perlu 
+menyesuaikan link yang ada dilist blog dengan slug halaman.
+
+```js
+import { Link } from "gatsby"
+import slugify from "slugify"
+...
+<div>
+  <h3>{node.frontmatter.title}</h3>
+  <p>{node.frontmatter.description}</p>
+  // highlight-add-start
+  <Link to={`blog/${slugify(node.frontmatter.title, {lower: true})}`}>Baca selengkapnya</Link>
+  // highlight-add-end
+  // highlight-remove-start
+  <a href="/blog/pertama">Baca selengkapnya</a>
+  // highlight-remove-end
+</div>
+...
+```
+
+Anda seharusnya sudah dapat melihat positngan anda di halamana browser anda. Berikut adalah tampilan list blog dan detail blog:
+
+![Result](https://lh3.google.com/u/4/d/134aPgCJDMi6NjiP9hEqmMS9uAiqGKMbK=w1920-h890-iv1)
+![Result](https://lh3.google.com/u/4/d/1OJJNF9J70q1Nnoa29AZzTq_jKTJrw8vV=w1920-h890-iv1)
+
+### Ringkasan
+
+Secara keseluruhan, Gatsby merupakan tool yang luar biasa untuk membuat website statik dengan cepat. Ada banyak tool lain dan mungkin cara lain dalam mengembangkan web, tetapi memahami apa yang 
+terjadi dibalik layar merupakan hal yang penting untuk mengetahui bagaimana hal tersebut bisa bekerja. Saya berharap ini dapat membantu anda mengembangkan web yang lebih hebat lagi.

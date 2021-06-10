@@ -1,14 +1,14 @@
 import React from "react"
 import Highlight, {defaultProps} from "prism-react-renderer"
 import theme from "prism-react-renderer/themes/nightOwl"
-import { Line, Add, Remove } from "./styled"
+import { Line, Add, Remove, Lang, Pre } from "./styled"
 
 let highlightAddStart = false;
 let highlightRemoveStart = false;
 // const highlightClassName = "gatsby-highlight-code-line";
 const highlightAddClassName = "bg-highlight-add";
 const highlightRemoveClassName = "bg-highlight-remove";
-const highlightLineClassName = "bg-highlight-remove";
+const highlightLineClassName = "bg-highlight-line";
 
 const highlightLine = (lineArray, lineProps) => {
   let shouldExclude = false;
@@ -75,9 +75,12 @@ const CodeBlock: React.FC = ({children}) => {
         }
       >
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
-          <pre className={className} style={style}>
+          <Pre className={`${className} relative`} style={style}>
+            <Lang className="absolute top-0 right-2 uppercase p-2 font-semibold">
+              <span>{matches.groups.lang}</span>
+            </Lang>
             {tokens.map((line, i) => {
-              if (!line[0].empty) {
+              // if (!line[0].empty) {
                 const lineProps = getLineProps({ line, key: i });
                 const {shouldExclude, highlightAddStart, highlightRemoveStart} = highlightLine(line, lineProps);
                 return !shouldExclude ? (
@@ -89,9 +92,9 @@ const CodeBlock: React.FC = ({children}) => {
                     ))}
                   </Line>
                 ) : null
-              }
+              // }
             })}
-          </pre>
+          </Pre>
         )}
       </Highlight>
   )
