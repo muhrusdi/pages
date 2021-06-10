@@ -39,6 +39,7 @@ exports.createPages = async ({graphql, actions}) => {
               publishedOn
               seoTitle
               abstract
+              isPublished
               featuredImage {
                 childImageSharp {
                   gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
