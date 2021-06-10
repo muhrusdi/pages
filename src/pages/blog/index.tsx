@@ -43,7 +43,6 @@ const Blogs: React.FC = () => {
       }
       allMdx(
         sort: {fields: frontmatter___publishedOn, order: DESC}
-        filter: {frontmatter: {isPublished: {eq: true}}}
       ) {
         edges {
           node {
@@ -55,7 +54,7 @@ const Blogs: React.FC = () => {
   `)
 
   const [featured] = data.featured.edges
-
+  console.log(process.env.NODE_ENV)
   return (
     <>
       <Layout>
@@ -66,11 +65,21 @@ const Blogs: React.FC = () => {
           <div className="mt-20">
             <ul className="grid grid-cols-1 sm:grid-cols-3 gap-8">
               {
-                data.allMdx.edges.map(({node}, key) => (
-                  <li key={key}>
-                    <BlogItem data={node}/>
-                  </li>
-                ))
+                data.allMdx.edges.map(({node}, key) => {
+                  return process.env.NODE_ENV !== "production" ? (
+                    (
+                      <li key={key}>
+                        <BlogItem data={node}/>
+                      </li>
+                    )
+                  ) : (
+                    node.frontmatter.isPublished ? (
+                      <li key={key}>
+                        <BlogItem data={node}/>
+                      </li>
+                    ) : null
+                  )
+                })
               }
             </ul>
           </div>

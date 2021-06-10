@@ -24,6 +24,11 @@ module.exports = {
       },
       colors: {
         blueGray: colors.blueGray,
+        highlight: {
+          remove: "#1b0204",
+          add: "#132d03",
+          line: "#0d2f4a",
+        },
         blue: {
           light: "#56CCF2",
         },
@@ -33,7 +38,8 @@ module.exports = {
           css: {
             color: "white",
             pre: {
-              margin: "0px -32px"
+              margin: "0px -32px",
+              padding: "1.1em 0",
             },
             p: {
               color: "#acb5c3"
@@ -58,6 +64,13 @@ module.exports = {
             },
           },
         },
+        "xl": {
+          css: {
+            pre: {
+              padding: "1.1em 0",
+            },
+          }
+        }
       }
     }
   },

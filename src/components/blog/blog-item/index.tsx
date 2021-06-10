@@ -21,8 +21,8 @@ const BlogItem: React.FC = ({data}) => {
       <div>
         <div>
           <h2 className="text-xl mt-6 font-bold line-clamp-2">{data.frontmatter.title}</h2>
-          <p className="mt-6 text-gray-400 line-clamp-2">{data.frontmatter.abstract}</p>
-          <BlogItemFooter className="flex flex-row-reverse justify-between mt-6">
+          <p className="mt-4 text-gray-400 line-clamp-2">{data.frontmatter.abstract}</p>
+          <BlogItemFooter className="flex flex-row-reverse justify-between mt-4">
             <Link to={`/blog/${data.fields.slug}`} className="inline-block transition-all">
               <div className="flex items-center">
                 <span>Read more</span> <BiChevronRight size={24}/>

@@ -13,6 +13,14 @@ const ImageStyled = styled(GatsbyImage)`
 `
 
 export const ArticleStyled = styled.article`
+  a {
+    color: #6f66ff;
+  }
+  p {
+    code {
+      color: #6f66ff;
+    }
+  }
   pre {
     margin-left: 0;
     margin-right: 0;

@@ -57,7 +57,7 @@ exports.createPages = async ({graphql, actions}) => {
     }
   `)
 
-  mdxResults.data.allMdx.edges.forEach(({ node }) => {
+  const createMdxPage = (node) => {
     const { slug } = node.fields
     createPage({
       path: `/blog/${slug}`,
@@ -67,7 +67,20 @@ exports.createPages = async ({graphql, actions}) => {
         data: node
       },
     })
-  })
+  }
+
+
+  if (process.env.NODE_ENV !== "production") {
+    mdxResults.data.allMdx.edges.forEach(({ node }) => {
+      createMdxPage(node)
+    })
+  } else {
+    mdxResults.data.allMdx.edges.forEach(({ node }) => {
+      if (node.frontmatter.isPublished) {
+        createMdxPage(node)
+      }
+    })
+  }
 }
 
 exports.createSchemaCustomization = ({ actions, schema }) => {

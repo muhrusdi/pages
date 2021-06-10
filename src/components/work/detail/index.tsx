@@ -3,7 +3,8 @@ import { useQuery, gql } from "@apollo/client"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { TooltipIcon } from "components/utils/"
 import techIcons from "components/utils/tech-icons"
-import { Grid, IconList, ImageStyled, Articles } from "./styled"
+import { Grid, IconList, ImageStyled } from "./styled"
+import { ArticleStyled } from "templates/blogs/detail"
 
 const Detail: React.FC = (props) => {
   const WORK_COLLECTION = gql`
@@ -94,9 +95,9 @@ const Detail: React.FC = (props) => {
             <h1 className="font-bold text-3xl">{data?.work.title}</h1>
             <p className="text-blueGray-400 text-xl mt-4 leading-relaxed">{data?.work.description}</p>
           </div>
-          <Articles className="mt-10 prose-lg">
+          <ArticleStyled className="mt-10 prose-lg">
             {documentToReactComponents(data?.work.content.json)}
-          </Articles>
+          </ArticleStyled>
           {
             data?.work.screenshotCollection.items.length ? (
               <div className="mt-14">

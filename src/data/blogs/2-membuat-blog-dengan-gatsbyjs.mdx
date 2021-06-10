@@ -1,0 +1,113 @@
+---
+title: Membuat Personal Blog menggunakan Gatsby.js
+seoTitle: Cara cepat membuat blog menggunakan Gatsby.js
+abstract: Selamat datang di Gatsby (atau Gatsby.js), yaitu framework untuk membuat website static atau yang dikenal dengan Static Site Generation (SSG) yang berbasis React dan GraphQL, Gatsby semakin populer seiring berjalannya waktu dan semakin banyak orang menggunakannya. Salah satu alasannya adalah kemampuan membangun web statis sederhana dengan cepat.
+isPublished: false
+featured: false
+publishedOn: Tue May 18 2021 13:41:17 GMT+0800 (Singapore Standard Time)
+featuredImage: https://res.cloudinary.com/muhrusdi/image/upload/v1623214698/placeholder.jpg
+layout: Article
+---
+
+### Apa yang diperlukan untuk memulainya?. Yah, kita umumnya menggunakan [Starter Kit](https://www.gatsbyjs.com/starters) untuk memulai, setup akun di platform CDN seperti Vercel/Netlify dan boom!!!, kita sudah memiliki website sendiri.
+
+Dengan Gatsby.js memungkinkan kita mengembangkan website secara instan dengan memanfaatkan starter kit yang disediakan oleh Gatsby.js
+
+>Gatsby provides development teams an open source frontend framework for creating dynamic, optimized websites and a cloud platform for delivering them on a blazing fast edge network.
+
+
+
+### Tool yang dibutuhkan
+
+Sebelum memulai, anda perlu memasang beberapa tool di local anda.
+
+Pastikan bahwa di local anda telah terpasang `Node.js` dengan mengecek menggunakan perintah `node --version` di 
+terminal komputer anda. Biasanya `npm` sudah sepaket dengan `Node.js` yang juga dapat dicek dengan perintah `npm --version`.
+Ketika kedua perintah tersebut mengeluarkan versi, hal itu berarti tool tersebut telah terpasang. Jika `Node.js` belum terpasang di
+ local anda, anda dapat mengunduhnya di website resmi [Node.js](https://nodejs.org/en/).
+
+Setelah keperluan dasar selesai, maka kita dapat memasang Gatsby CLI secara lokal. Denga Gatsby CLI akan memudahkan kita membuat repo, memulai pengemabangan sampai dengan prose build ke production. Untuk memasang, anda dapat mengetikkan perintah berikut
+
+```shell
+npm install -g gatsby-cli
+```
+
+Ketiak proses pemasangan selesai, silakan cek dengan perintah `gatsby --version`.
+
+### Memulai Direktori
+
+Kita akan menggunakan Starter kit sederhana dari gatsby.js, kit ini salah satu kit yang minimalis yang tidak memberikan banyak kode diawal.
+
+Mari kita membuat direktorinya:
+
+```shell
+gatsby new my-blog
+```
+
+Perintah diatas secara default akan mengunduh starter kit yang disediakan langsung dari Gatsby.js, jika anda ingin 
+menggunakan starter kit yang disediakan oleh [komunitas lain](https://www.gatsbyjs.com/starters/), 
+anda dapat menjalankan perintah berikut:
+
+```shell
+gatsby new {nama-projek} {link-starter-kit}
+// contoh
+gatsby new my-blog https://github.com/LekoArts/gatsby-starter-portfolio-cara
+```
+
+Setelah Gatsby CLI menginstall semua yang kita perlukan, kemudian kita masuk kedalam directori dan mulai menjalankan tahap pengembangan.
+
+```shell
+cd my-blog
+yarn start
+```
+
+Perintah ini akan membuat banyak hal dan juga membuat website kita tersedia di `http://localhost:8000/`, dan untuk graphql playground tersedia di `http://localhost:8000/___graphql`.
+
+![Tampilan default Gatsby Starter Kit](https://lh3.google.com/u/4/d/1UXr0s4auy1wJmmJY2mjUxhtFLDjBhDTT=w1920-h890-iv1)
+
+Jika anda membuka di browser, anda akan melihat tampilan default dari starter kit dari Gatsby.js yang terlihat sederhana seprti gambar diatas.
+
+Ayo kita lihat file dari halaman home yang terdapat didalam direktori pages `src/pages/index.js`.
+
+```jsx
+import * as React from "react"
+import { Link } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
+
+import Layout from "../components/layout"
+import Seo from "../components/seo"
+
+const IndexPage = () => (
+  <Layout>
+    <Seo title="Home" />
+    // highlight-add-start
+    <h1>Selamat Data di Blog Saya</h1>
+    // highlight-add-end
+    // highlight-remove-start
+    <h1>Hi people</h1>
+    <p>Welcome to your new Gatsby site.</p>
+    <p>Now go build something great.</p>
+    <StaticImage
+      src="../images/gatsby-astronaut.png"
+      width={300}
+      quality={95}
+      formats={["AUTO", "WEBP", "AVIF"]}
+      alt="A Gatsby astronaut"
+      style={{ marginBottom: `1.45rem` }}
+    />
+    <p>
+      <Link to="/page-2/">Go to page 2</Link> <br />
+      <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
+    </p>
+    // highlight-remove-end
+  </Layout>
+)
+
+export default IndexPage
+
+```
+
+Terlihat komponen React sederhana yang hanya menampikan beberapa paragraf dan satu gambar. Ketika kita menjalankan `yarn start`, 
+gatsby akan mengenali sendiri semua file yang berada didalam
+direktori `src/pages` yang akan dibuat menjadi sebuah halaman. Jadi untuk file `pages/index.js` ditujukan untuk halaman root 
+atau yang biasa kita sebut halaman home, contoh urlnya adalah `(example.com)`. Demikian juga ketika terdapat file lain seperti `pages/blog.js` maka akan diarahkan ke halaman blog `(example.com/blog)`.
