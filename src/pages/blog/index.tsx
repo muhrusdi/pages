@@ -12,6 +12,7 @@ const Blogs: React.FC = () => {
         publishedOn
         seoTitle
         abstract
+        isPublished
         featuredImage {
           childImageSharp {
             gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
@@ -67,11 +68,9 @@ const Blogs: React.FC = () => {
               {
                 data.allMdx.edges.map(({node}, key) => {
                   return process.env.NODE_ENV !== "production" ? (
-                    (
-                      <li key={key}>
-                        <BlogItem data={node}/>
-                      </li>
-                    )
+                    <li key={key}>
+                      <BlogItem data={node}/>
+                    </li>
                   ) : (
                     node.frontmatter.isPublished ? (
                       <li key={key}>
