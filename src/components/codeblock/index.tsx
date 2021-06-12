@@ -76,7 +76,7 @@ const CodeBlock: React.FC = ({children}) => {
       >
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
           <Pre className={`${className} relative`} style={style}>
-            <Lang className="absolute top-0 right-2 uppercase p-2 font-semibold">
+            <Lang className="absolute top-0 right-2 text-sm sm:text-base uppercase p-2 font-semibold">
               <span>{matches.groups.lang}</span>
             </Lang>
             {tokens.map((line, i) => {
