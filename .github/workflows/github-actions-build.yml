@@ -21,7 +21,6 @@ jobs:
         with:
           node-version: '12.x'
       - name: Install dependencies
-      - run: yarn
+        run: yarn
       - name: Build
-      - uses: actions/checkout@v2
-      - run: yarn build
+        run: yarn build
