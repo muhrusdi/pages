@@ -23,4 +23,5 @@ jobs:
       - name: Install dependencies
       - run: yarn
       - name: Build
+      - uses: actions/checkout@v2
       - run: yarn build
