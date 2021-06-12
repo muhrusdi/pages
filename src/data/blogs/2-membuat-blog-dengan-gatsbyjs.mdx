@@ -63,7 +63,7 @@ yarn start
 
 Perintah ini akan membuat banyak hal dan juga membuat website kita tersedia di `http://localhost:8000/`, dan untuk graphql playground tersedia di `http://localhost:8000/___graphql`.
 
-![Tampilan default Gatsby Starter Kit](https://lh3.google.com/u/4/d/1UXr0s4auy1wJmmJY2mjUxhtFLDjBhDTT=w1920-h890-iv1)
+![Tampilan default Gatsby Starter Kit](https://res.cloudinary.com/muhrusdi/image/upload/v1623473804/assets/localhost_8002_.png)
 
 Jika anda membuka di browser, anda akan melihat tampilan default dari starter kit dari Gatsby.js yang terlihat sederhana seprti gambar diatas.
 
@@ -164,7 +164,7 @@ export default IndexPage
 
 Setelah kita menambah beberapa komponen dan menghapus yang tidak diperlukan, maka tampilan yang dapat kita lihat di browser seperti berikut:
 
-![Ubah halaman index](https://lh3.google.com/u/4/d/1s0IA3IvO9b5qOqeJZspmyb_5iR-F5Et_=w1920-h890-iv1)
+![Ubah halaman index](https://res.cloudinary.com/muhrusdi/image/upload/v1623473877/assets/localhost_8002__1.png)
 
 Kemudian untuk mengubah tulisan Gatsby Default Starter di header dapat diubah di file `[root-project]/gatsby-config.js`:
 
@@ -240,7 +240,7 @@ Apa yang anda lihat dibagian atas file markdown adalah kumpulan metadata yang di
 Gatsby.js akan membuat data tersedia saat prose build (ketika menjalankan perintah `yarn start` atau `gatsby develop`) dalam bentuk GraphQL. 
 Anda dapat melihatnya menggunakan GraphQL Playground di `http://localhost:8000/___graphql`.
 
-![GraphQL Playground](https://lh3.google.com/u/4/d/1qD2e2-f8l_EUUAtOLIWyyAJBiC9-3x79=w1920-h890-iv1)
+![GraphQL Playground](https://res.cloudinary.com/muhrusdi/image/upload/v1623473910/assets/localhost_8002____graphql_query_query_20MyQuery_20_7B_0A_20_20allMarkdownRemark_20_7B_0A_09_09edges_20_7B_0A_09_09_09node_20_7B_0A_09_09_09_09frontmatter_20_7B_0A_09_09_09_09_09title_0A_20_20_20_20_20_20_20_20_1.png)
 
 Dapat anda lihat bahwa query diatas mengembalikan semua data markdown dalam versi yang telah teformat, kemudian yang akan kita lakukan adalah melewatkan data ini kedalam komponen dan membuat halaman berdasarkan slug.
 
@@ -336,7 +336,7 @@ export default IndexPage
 
 Sampai disini kita sudah menapilkan list blog dari file markdown yang ada di direktori `src/content`:
 
-![List Blog](https://lh3.google.com/u/4/d/1QxOrJXCjgv2jkCGCw8WTzcWjILr357JQ=w1920-h890-iv1)
+![List Blog](https://res.cloudinary.com/muhrusdi/image/upload/v1623473948/assets/localhost_8002__3.png)
 
 Sekarang kita akan mencoba membuat postingan kedua, dengan cara buat file markdown kedua dengan nama `postingan-kedua.md` di 
 dalam folder `src/content`, setelah itu jalankan kembali perintah `yarn start`, dan lihat dikembali di browser anda apakah list blog kita sudah bertambah.
@@ -409,7 +409,7 @@ title menjadi sebuah `pathname` yang digunakan sebagai slug.
 
 Sampai disini, kita telah melewatkan data graphql ke halaman detail blog.
 
-![DevsTool](https://lh3.google.com/u/4/d/1WWJffHm2Om858SgLF_xEq8WtAoneN1FJ=w1920-h890-iv1)
+![DevsTool](https://res.cloudinary.com/muhrusdi/image/upload/v1623473982/assets/Capture.png)
 
 Kembali ke halaman home yang berada di file `src/pages/index.js`, agar supaya list blog dapat diarahkan ke halaman detail dengan mudah, maka kita perlu 
 menyesuaikan link yang ada dilist blog dengan slug halaman.
@@ -433,7 +433,7 @@ import slugify from "slugify"
 
 Anda seharusnya sudah dapat melihat positngan anda di halamana browser anda. Berikut adalah tampilan list blog dan detail blog:
 
-![Result](https://lh3.google.com/u/4/d/134aPgCJDMi6NjiP9hEqmMS9uAiqGKMbK=w1920-h890-iv1)
+![Result](https://res.cloudinary.com/muhrusdi/image/upload/v1623474015/assets/localhost_8002__5.png)
 ![Result](https://res.cloudinary.com/muhrusdi/image/upload/v1623466391/assets/localhost_8002__7.png)
 
 Demo: [https://silly-pike-43422e.netlify.app/](https://silly-pike-43422e.netlify.app/)
