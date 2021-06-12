@@ -16,6 +16,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+          token: ${{ secrets.TOKEN }}
       - name: Use Node.js
         uses: actions/setup-node@v1
         with:
@@ -27,3 +30,6 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Automated Change
+          commit_user_name: Muhammad Rusdi
+          commit_user_email: mhmrofficial@gmail.com
+          commit_author: muhrusdi
