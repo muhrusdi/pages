@@ -33,7 +33,7 @@ const Blogs: React.FC = () => {
     query {
       featured: allMdx(
         limit: 1
-        sort: {fields: frontmatter___publishedOn, order: DESC}
+        sort: {fields: frontmatter___publishedOn, order: ASC}
         filter: {frontmatter: {isPublished: {eq: true}, featured: {eq: true}}}
       ) {
         edges {
@@ -43,7 +43,7 @@ const Blogs: React.FC = () => {
         }
       }
       allMdx(
-        sort: {fields: frontmatter___publishedOn, order: DESC}
+        sort: {fields: frontmatter___publishedOn, order: ASC}
       ) {
         edges {
           node {
@@ -55,18 +55,17 @@ const Blogs: React.FC = () => {
   `)
 
   const [featured] = data.featured.edges
-  console.log(process.env.NODE_ENV)
   return (
     <>
       <Layout>
         <div>
           <div className="py-8">
-            <LatestBlog badge="Featured" data={featured.node}/>
+            <LatestBlog badge="Featured" data={featured?.node}/>
           </div>
           <div className="mt-20">
             <ul className="grid grid-cols-1 sm:grid-cols-3 gap-8">
               {
-                data.allMdx.edges.map(({node}, key) => {
+                data?.allMdx.edges.map(({node}, key) => {
                   return process.env.NODE_ENV !== "production" ? (
                     <li key={key}>
                       <BlogItem data={node}/>

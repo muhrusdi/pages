@@ -20,7 +20,7 @@ const Newsletter: React.FC = () => {
             </div>
             <div className="mt-6 flex items-center -mx-4">
               <div className="px-4">
-                <button onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className="py-2 rounded-md px-4 hover:bg-indigo-700 transition-all bg-indigo-600">
+                <button onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className="py-2 font-semibold rounded-md px-4 hover:bg-indigo-700 transition-all bg-indigo-600">
                   <a href="mailto:mhmrofficial@gmail.com">Contact me</a>
                 </button>  
               </div>

@@ -11,8 +11,8 @@ const Home: React.FC = () => {
   const data = useStaticQuery(graphql`
     query {
       allMdx(
-        limit: 3
-        sort: {fields: frontmatter___publishedOn, order: DESC}
+        limit: 6
+        sort: {fields: frontmatter___publishedOn, order: ASC}
         filter: {frontmatter: {isPublished: {eq: true}}}
       ) {
         edges {
