@@ -1,0 +1,141 @@
+---
+title: Cara Deploy Aplikasi React ke Netlify
+seoTitle: Cara Deploy Aplikasi React ke Netlify
+abstract: Artikel ini akan memaparkan dua cara yang berbeda bagaimana mendeploy aplikasi React ke Netlify
+isPublished: true
+featured: false
+publishedOn: Sun Jun 13 2021 16:12:28 GMT+0800 (Singapore Standard Time)
+featuredImage: https://res.cloudinary.com/muhrusdi/image/upload/v1623577286/deploy-react-netlify.jpg
+layout: Article
+---
+
+Dalam artikel ini, anda akan diperlihatkan dua cara bagaimana mendeploy aplikasi react ke netlify.
+
+Mungkin cara pertama ini akan terlihat cukup manual, kemudian cara yang kedua termasuk *best practice* karena sudah termasuk *continous deployments* dan update yang otomatis lewat 
+github. Ini akan jadi luar biasa.
+
+### Membuat repo React
+
+Untuk membuat project baru, kita akan menggunakan [starter kit](https://create-react-app.dev/) resmi dari React.
+
+```shell
+npx create-react-app my-react-app
+cd my-react-app
+npm start
+```
+
+> Sebelumnya kalian harus memasang terlebih dahulu `create-react-app` cli lewat perintah `npm install -g create-react-app`
+
+Muncul tampilan berikut di terminal menandakan kalian sudah berhasil membuat project baru menggunakan `create-react-app`:
+
+```shell
+Success! Created my-react-app at D:\Software Dev\my-react-app
+Inside that directory, you can run several commands:
+
+yarn start
+...
+```
+
+Kemudian coba jalankan perintah berikut untuk memulai proses development:
+
+```shell
+cd my-react-app
+yarn start
+```
+
+Kemudian kalian ketikkan url berikut `http://localhost:3000` di browser anda. Harusnya kalian sudah melihat tampilan berikut:
+
+![Result](https://res.cloudinary.com/muhrusdi/image/upload/v1623573070/Capture.png)
+
+Sekarang silakan masuk di file `src/App.js` sebelum kita deploy untuk mengubah beberap kode, seperti pada gambar blok kode berikut:
+
+```jsx
+import logo from './logo.svg';
+import './App.css';
+
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        // highlight-add-start
+        <p>
+          Belajar deploy aplikasi react ke netlify
+        </p>
+        // highlight-add-end
+        // highlight-remove-start
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        // highlight-remove-end
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+  );
+}
+
+export default App;
+
+```
+
+Silakan save dan lihat hasilnya di browser.
+
+![Edit version](https://res.cloudinary.com/muhrusdi/image/upload/v1623573496/Capture2_2.png)
+
+Luar biasa!, sekarang kita fokus tujuan utama artikel kita yaitu saat deploy ke netlify.
+
+### Deploy manual
+
+Kita mulai dari cara yang paling mudah yaitu hanya drag and drop. Namun sebelum itu kalian haru punya [akun netlify](https://app.netlify.com/signup) terlebih dahulu.
+
+Setelah login, buka menu sites `https://app.netlify.com/teams/{your_account}/sites` kemudian silakan scroll kebagian paling bawa 
+dan anda akan melihat bagian kosong yang mana kita dapat drag kebagian tersebut:
+
+![Box](https://res.cloudinary.com/muhrusdi/image/upload/v1623574222/Capture3.png)
+
+Sebelum itu, kalian perlu melakukan build dengan menjalankan perintah berikut:
+
+```shell
+yarn build
+```
+
+Perintah ini akan membuat direktori `build`, seprti yang terlihat di gambar berikut:
+
+![Folder](https://res.cloudinary.com/muhrusdi/image/upload/v1623574449/Capture4.png)
+
+Kemudian drag and drop direktori `build` kedalam kota kosong dihalaman netlify. Tunggu beberapa detik, setelah itu harusnya aplikasi react anda telah terdepoloy 🎉.
+
+### Deploy otomatis
+
+Dengan menggunakan cara ini, maka setiap perubahan terhadap kode kita yang ada di github akan membuat website kita terdeploy secara otomatis ke netlify.
+
+Untuk melakukan ini, kita perlu menyimpan projek kita ke repositoi github. Kunjungi [github](https://github.com) dan buat repositori baru. Kalian dapat mengikuti 
+panduannya [disini](https://docs.github.com/en/github/importing-your-projects-to-github/importing-source-code-to-github/adding-an-existing-project-to-github-using-the-command-line)
+
+Jalankan perintah berikut untuk push kode kalian ke github:
+
+```shell
+git push -u origin main
+```
+
+Kita bisa kembali ke halaman netlify. Kalian bisa menekan tombol `New site from Git`:
+
+![new site](https://res.cloudinary.com/muhrusdi/image/upload/v1623637700/Capture5.png)
+
+Kemudian kita akan dihadapkan sebuah pilihan, repositori kalian berada dimana. Dalam kasus ini kita pilih github, 
+karena dilangka sebelumnya projek kita di push ke github:
+
+![repo](https://res.cloudinary.com/muhrusdi/image/upload/v1623637700/Capture6.png)
+
+Kemudian kalian bisa mencari nama projek yang ingin kalian deploy:
+
+![deploy](https://res.cloudinary.com/muhrusdi/image/upload/v1623637700/Capture7.png)
+
+Pilih repositori yang ingin di deploy, setelah itu tekan tombol deploy dan tunggu beberapa detik, setelah itu kalian dapat melihat website kalian sekarang sudah live.

@@ -20,6 +20,10 @@ export const ArticleStyled = styled.article`
     code {
       color: #6f66ff;
     }
+    img {
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
   pre {
     margin-left: 0;
