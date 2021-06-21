@@ -1,9 +1,9 @@
 {
-  "name": "mhmmr.github.io",
+  "name": "muhrusdi.github.io",
   "private": true,
   "description": "JAMStack Enthusiast",
   "version": "0.1.0",
-  "author": "mhmmr",
+  "author": "muhrusdi",
   "dependencies": {
     "@agney/playground": "^0.6.1",
     "@apollo/client": "^3.3.20",

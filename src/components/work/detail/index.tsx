@@ -5,6 +5,7 @@ import { TooltipIcon } from "components/utils/"
 import techIcons from "components/utils/tech-icons"
 import { Grid, IconList, ImageStyled } from "./styled"
 import { ArticleStyled } from "templates/blogs/detail"
+import SEO from "components/seo"
 
 const Detail: React.FC = (props) => {
   const WORK_COLLECTION = gql`
@@ -51,6 +52,7 @@ const Detail: React.FC = (props) => {
 
   return (
     <div>
+      <SEO title={data?.work.title} description={data?.work.description} image={data?.work.featuredImage.url}/>
       <div className="grid gap-8 sm:grid-cols-3">
         <div className="col-span-3">
           {
