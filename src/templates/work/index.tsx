@@ -81,7 +81,7 @@ const Works: React.FC = () => {
           </div>
           <div className="mt-32">
             <div className="text-center">
-              <h2 className="text-2xl font-bold">Open Source Contribute</h2>
+              <h2 className="text-2xl font-bold">Open Source Contribution</h2>
             </div>
             <ul className="grid grid-cols-1 mt-8 sm:grid-cols-3 md:grid-cols-4 gap-8">
               {
