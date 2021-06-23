@@ -12,7 +12,7 @@ const Home: React.FC = () => {
     query {
       allMdx(
         limit: 6
-        sort: {fields: frontmatter___publishedOn, order: ASC}
+        sort: {fields: frontmatter___publishedOn, order: DESC}
         filter: {frontmatter: {isPublished: {eq: true}}}
       ) {
         edges {

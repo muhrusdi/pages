@@ -8,6 +8,40 @@ import ProfileItem from "../spec-item/profile"
 import SkillsItem from "../spec-item/skills"
 import EducationsItem from "../spec-item/educations"
 
+export const ArticleStyled = styled.article`
+  color: #acb5c3;
+  a {
+    color: #6f66ff;
+  }
+  ul {
+    li {
+      strong {
+        color: white;
+      }
+    }
+  }
+  p {
+    strong {
+      color: inherit;
+    }
+    code {
+      color: #6f66ff;
+    }
+    img {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  pre {
+    margin-left: 0;
+    margin-right: 0;
+    @media (min-width: 640px) {
+      margin-left: -32px;
+      margin-right: -32px;
+    }
+  }
+`
+
 
 export const TechIcon = styled.div`
   margin: 0 -4px;

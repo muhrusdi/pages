@@ -1,10 +1,9 @@
 import React from "react"
 import { useQuery, gql } from "@apollo/client"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
-import { TooltipIcon } from "components/utils/"
+import { TooltipIcon, ArticleStyled } from "components/utils/"
 import techIcons from "components/utils/tech-icons"
 import { Grid, IconList, ImageStyled } from "./styled"
-import { ArticleStyled } from "templates/blogs/detail"
 import SEO from "components/seo"
 
 const Detail: React.FC = (props) => {

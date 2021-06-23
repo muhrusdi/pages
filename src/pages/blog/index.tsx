@@ -33,7 +33,7 @@ const Blogs: React.FC = () => {
     query {
       featured: allMdx(
         limit: 1
-        sort: {fields: frontmatter___publishedOn, order: ASC}
+        sort: {fields: frontmatter___publishedOn, order: DESC}
         filter: {frontmatter: {isPublished: {eq: true}, featured: {eq: true}}}
       ) {
         edges {
@@ -43,7 +43,7 @@ const Blogs: React.FC = () => {
         }
       }
       allMdx(
-        sort: {fields: frontmatter___publishedOn, order: ASC}
+        sort: {fields: frontmatter___publishedOn, order: DESC}
       ) {
         edges {
           node {
