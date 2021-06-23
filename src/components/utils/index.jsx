@@ -167,87 +167,6 @@ technology company</p>
               <p className="mt-4 text-gray-400">Awwwara is a news media</p>
             </div>
           </li>
-          {/* <li className="border-gray-600">
-            <div className="my-10">
-              <h3 className="text-3xl font-bold mt-2">Web Profile DTC Academy</h3>
-              <a href="https://dtc-academy.netlify.app" target="_blank" rel="noreferrer">
-                <span className="block mt-2 font-semibold text-gray-400 text-2xl text-blue-500">dtcacademy.co.id</span>
-              </a>
-              <p className="mt-4 text-gray-400">DTC Academy is a Technology and Design Academy.</p>
-            </div>
-          </li>
-          <li className="border-gray-600">
-            <div className="my-10">
-              <h3 className="text-3xl font-bold mt-2">Eproc Indonesia</h3>
-              <a href="https://eproc.id" target="_blank" rel="noreferrer">
-                <span className="block mt-2 font-semibold text-gray-400 text-2xl text-blue-500">eproc.id</span>
-              </a>
-              <p className="mt-4 text-gray-400">Eproc Indonesia is an application for find all tender in Indonesia. I worked on the frontend.</p>
-            </div>
-          </li>
-          <li className="border-gray-600">
-            <div className="my-10">
-              <h3 className="text-3xl font-bold mt-2">Real Travel Finance</h3>
-              <a href="https://realtravelfinance.com" target="_blank" rel="noreferrer">
-                <span className="block mt-2 font-semibold text-gray-400 text-2xl text-blue-500">realtravelfinance.com</span>
-              </a>
-              <p className="mt-4 text-gray-400">Real Travel Finance is a finance app for tours & travel company</p>
-            </div>
-          </li>
-          <li className="border-gray-600">
-            <div className="my-10">
-              <h3 className="text-3xl font-bold mt-2">E-Survey</h3>
-              <a href="https://assipauang.opmksr.com" target="_blank" rel="noreferrer">
-                <span className="block mt-2 font-semibold text-gray-400 text-2xl text-blue-500">assipauang.opmksr.com</span>
-              </a>
-              <p className="mt-4 text-gray-400">E-Survey is a society satisfaction survey application.</p>
-            </div>
-          </li>
-          <li className="border-gray-600">
-            <div className="my-10">
-              <h3 className="text-3xl font-bold mt-2">Modana</h3>
-              <a href="https://modana.netlify.app/" target="_blank" rel="noreferrer">
-                <span className="block mt-2 font-semibold text-gray-400 text-2xl text-blue-500">modana.id</span>
-              </a>
-              <p className="mt-4 text-gray-400">Human Resource Management Systems, Payroll, Virtual Accounts, Loans. I worked on the dashboard frontend and landing page.</p>
-            </div>
-          </li>
-          <li className="border-gray-600">
-            <div className="my-10">
-              <h3 className="text-3xl font-bold mt-2">Web Profile DM-PTSP Kota Makassar</h3>
-              <a href="https://dpmptsp.makassar.go.id" target="_blank" rel="noreferrer">
-                <span className="block mt-2 font-semibold text-gray-400 text-2xl text-blue-500">dpmptsp.makassar.go.id</span>
-              </a>
-              <p className="mt-4 text-gray-400">Web profile for Online Licensing Application</p>
-            </div>
-          </li>
-          <li className="border-gray-600">
-            <div className="my-10">
-              <h3 className="text-3xl font-bold mt-2">Reus Design</h3>
-              <a href="https://reus-design.netlify.app" target="_blank" rel="noreferrer">
-                <span className="block mt-2 font-semibold text-gray-400 text-2xl text-blue-500">reus.design</span>
-              </a>
-              <p className="mt-4 text-gray-400">Design System for my projects</p>
-            </div>
-          </li>
-          <li className="border-gray-600">
-            <div className="my-10">
-              <h3 className="text-3xl font-bold mt-2">Web Profile Masar</h3>
-              <a href="https://masar.netlify.app/" target="_blank" rel="noreferrer">
-                <span className="block mt-2 font-semibold text-gray-400 text-2xl text-blue-500">masar.co.id</span>
-              </a>
-              <p className="mt-4 text-gray-400">Solusi manajemen pasar tradisional yang dikemas dalam konsep ERP (Enterprise Resource Planning), sehingga integrasi bisnis proses dilingkungan pasar tradisional lebih mudah dilakukan serta integritas data lebih terjamin.</p>
-            </div>
-          </li>
-          <li className="border-gray-600">
-            <div className="my-10">
-              <h3 className="text-3xl font-bold mt-2">Web Profile Markir</h3>
-              <a href="https://markir.netlify.app/" target="_blank" rel="noreferrer">
-                <span className="block mt-2 font-semibold text-gray-400 text-2xl text-blue-500">markir.co.id</span>
-              </a>
-              <p className="mt-4 text-gray-400">Markir adalah sistem manajemen tempat parkir yang mengutamakan transparansi, optimalisasi dan efisiensi. Markir berdiri di antara parkir off-street dan on-street, harapannya Markir dapat mengsinergikan keduanya untuk memberikan kenyamanan bagi semua.</p>
-            </div>
-          </li> */}
         </ul>
         <div>
           <Link to="/work" className="inline-block py-1 px-4 text-sm uppercase font-medium bg-indigo-600 rounded-full">Show All</Link>
@@ -265,7 +184,7 @@ export const ViewAll = ({link}) => (
 
 export const TooltipIcon = ({icon, text}) => (
   <Root>
-    <Trigger>
+    <Trigger aria-label={text}>
       {icon}
     </Trigger>
     <TooltipContentStyled side="top" className="bg-gray-900 text-xs py-1 px-2 rounded-md">

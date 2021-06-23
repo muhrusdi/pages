@@ -81,8 +81,8 @@ const Home: React.FC = () => {
         </div>
         <div className="mt-14 sm:mt-20">
           <div className="text-center mb-4 max-w-2xl container">
-            <span className="uppercase font-bold text-indigo-500">Blogs</span>
-            <h4 className="font-black mt-2 text-3xl">Helpful Resources</h4>
+            <h2 className="uppercase font-bold text-indigo-500">Blogs</h2>
+            <h3 className="font-black mt-2 text-3xl">Helpful Resources</h3>
           </div>
           <ul className="grid grid-cols-1 mt-8 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {
@@ -101,8 +101,8 @@ const Home: React.FC = () => {
         </div>
         <div className="mt-28">
           <div className="text-center mb-4">
-            <span className="uppercase font-bold text-indigo-500">Works</span>
-            <h4 className="font-black mt-2 text-3xl">Our Projects</h4>
+            <h2 className="uppercase font-bold text-indigo-500">Works</h2>
+            <h3 className="font-black mt-2 text-3xl">Our Projects</h3>
           </div>
           <ul className="grid grid-cols-1 mt-8 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {

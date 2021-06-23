@@ -16,7 +16,7 @@ const Newsletter: React.FC = () => {
         <div className="absolute flex justify-center z-50 items-center top-0 bottom-0 left-0 right-0">
           <div>
             <div>
-              <h4 className="font-black text-4xl text-center">Get in Touch</h4>
+              <h2 className="font-black text-4xl text-center">Get in Touch</h2>
             </div>
             <div className="mt-6 flex items-center -mx-4">
               <div className="px-4">
