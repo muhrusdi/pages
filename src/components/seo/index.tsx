@@ -28,8 +28,8 @@ const SEO: React.FC<SeoType> = ({ description, lang, title, image, author, date,
     `
   )
 
-  const { pathname } = useLocation();
-  const isArticle = type === "article";
+  const { pathname } = useLocation()
+  const isArticle = type === "article"
 
   const metaDescription = description || site.siteMetadata.description
   const metaTitle = title || site.siteMetadata.title

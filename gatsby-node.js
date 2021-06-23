@@ -48,11 +48,9 @@ exports.createPages = async ({graphql, actions}) => {
               abstract
               isPublished
               featuredImage {
+                url
                 childImageSharp {
                   gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
-                  original {
-                    src
-                  }
                 }
               }
             }
