@@ -6,9 +6,9 @@ module.exports = {
   siteMetadata: {
     title: "Muhammad Rusdi",
     description: "Front End Engineer, JAMStack Enthusiast",
-    author: "@mhmmr",
-    siteUrl: "https://github.com/mhmmr",
-    image: "https://res.cloudinary.com/muhrusdi/image/upload/v1604903512/template-awwwara.jpg"
+    author: "@muhrusdi",
+    siteUrl: "https://github.com/muhrusdi/muhrusdi.github.io",
+    image: "https://res.cloudinary.com/muhrusdi/image/upload/v1624511269/muhrusdi-cover.jpg"
   },
   flags: {
     PRESERVE_WEBPACK_CACHE: false,
@@ -32,12 +32,13 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        name: "gatsby-starter-default",
-        short_name: "starter",
+        name: "Muhammad Rusdi",
+        short_name: "muhrusdi",
+        description: "Front End Engineer, JAMStack Enthusiast",
         start_url: "/",
-        background_color: "#663399",
+        background_color: "#000",
         theme_color: "#663399",
-        display: "minimal-ui",
+        display: "standalone",
         icon: "src/images/mhmmr-white-transparent.png", // This path is relative to the root of the site.
       },
     },

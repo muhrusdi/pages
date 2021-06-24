@@ -1,6 +1,6 @@
 ---
 title: Membuat Personal Blog menggunakan Gatsby.js
-seoTitle: Cara cepat membuat blog menggunakan Gatsby.js
+seoTitle: Cara membuat blog menggunakan Gatsby.js
 abstract: Selamat datang di Gatsby (atau Gatsby.js), yaitu framework untuk membuat website static atau yang dikenal dengan Static Site Generation (SSG) yang berbasis React dan GraphQL, Gatsby semakin populer seiring berjalannya waktu dan semakin banyak orang menggunakannya. Salah satu alasannya adalah kemampuan membangun web statis sederhana dengan cepat.
 isPublished: true
 featured: false
@@ -26,17 +26,18 @@ terminal komputer anda. Biasanya `npm` sudah sepaket dengan `Node.js` yang juga 
 Ketika kedua perintah tersebut mengeluarkan versi, hal itu berarti tool tersebut telah terpasang. Jika `Node.js` belum terpasang di
  local anda, anda dapat mengunduhnya di website resmi [Node.js](https://nodejs.org/en/).
 
-Setelah keperluan dasar selesai, maka kita dapat memasang Gatsby CLI secara lokal. Denga Gatsby CLI akan memudahkan kita membuat repo, memulai pengemabangan sampai dengan prose build ke production. Untuk memasang, anda dapat mengetikkan perintah berikut
+Setelah keperluan dasar selesai, maka kita dapat memasang Gatsby CLI secara lokal. Denga Gatsby CLI akan memudahkan kita membuat repositori, 
+memulai pengemabangan sampai dengan prose build ke production. Untuk memasangnya, anda dapat mengetikkan perintah berikut
 
 ```shell
 npm install -g gatsby-cli
 ```
 
-Ketiak proses pemasangan selesai, silakan cek dengan perintah `gatsby --version`.
+Ketika proses pemasangan selesai, silakan cek dengan perintah `gatsby --version`.
 
 ### Memulai Direktori
 
-Kita akan menggunakan Starter kit sederhana dari gatsby.js, kit ini salah satu kit yang minimalis yang tidak memberikan banyak kode diawal.
+Kita akan menggunakan Starter kit sederhana dari gatsby.js. Kit ini salah satu kit yang minimalis yang tidak memberikan banyak kode diawal.
 
 Mari kita membuat direktorinya:
 
@@ -242,7 +243,8 @@ Anda dapat melihatnya menggunakan GraphQL Playground di `http://localhost:8000/_
 
 ![GraphQL Playground](https://res.cloudinary.com/muhrusdi/image/upload/v1623473910/assets/localhost_8002____graphql_query_query_20MyQuery_20_7B_0A_20_20allMarkdownRemark_20_7B_0A_09_09edges_20_7B_0A_09_09_09node_20_7B_0A_09_09_09_09frontmatter_20_7B_0A_09_09_09_09_09title_0A_20_20_20_20_20_20_20_20_1.png)
 
-Dapat anda lihat bahwa query diatas mengembalikan semua data markdown dalam versi yang telah teformat, kemudian yang akan kita lakukan adalah melewatkan data ini kedalam komponen dan membuat halaman berdasarkan slug.
+Dapat anda lihat bahwa query diatas mengembalikan semua data markdown dalam versi yang telah terformat, 
+kemudian yang akan kita lakukan adalah melewatkan data ini kedalam komponen dan membuat halaman berdasarkan slug.
 
 
 Pertama kita perlu mengubah format penulisan komponen kita pada file `pages/index.js` seperti pada baris kode berikut:

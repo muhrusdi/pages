@@ -14,7 +14,7 @@ const WorkItem: React.FC = ({data}) => {
     <div>
       <div>
         <div>
-          <img style={{height: 200}} className="rounded-lg w-full object-cover" src={data.featuredImage.url} alt=""/>
+          <img style={{height: 200}} className="rounded-lg w-full object-cover bg-blueGray-900" src={data.featuredImage.url} alt=""/>
         </div>
       </div>
       <div>
