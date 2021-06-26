@@ -1,2 +1,0 @@
-(self.webpackChunkmhmmr_github_io=self.webpackChunkmhmmr_github_io||[]).push([[152],{3750:function(t,n,r){"use strict";r.d(n,{Tfp:function(){return e}});var o=r(1046);function e(t){return(0,o.w_)({tag:"svg",attr:{viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round"},child:[{tag:"polyline",attr:{points:"9 18 15 12 9 6"}}]})(t)}}}]);
-//# sourceMappingURL=5e2a4920-b07cc26a2d11f9dd36d6.js.map
