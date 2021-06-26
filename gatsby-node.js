@@ -109,7 +109,7 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
 exports.onCreateNode = ({ node, actions, createNodeId, cache, store }) => {
   const { createNodeField, createNode  } = actions
   if (node.internal.type === `Mdx`) {
-    const slug = slugify(node.frontmatter.title, {lower: true})
+    const slug = slugify(node.frontmatter.title, {lower: true, remove: /[*+~.()'"!:@]/g})
     createNodeField({
       node,
       name: `slug`,
