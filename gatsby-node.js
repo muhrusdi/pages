@@ -143,5 +143,6 @@ exports.onPostBuild = () => {
   // if (fs.existsSync) {
   //   fs.rmdirSync(docsDir, {recursive: true})
   // }
+  fs.removeSync(docsDir)
   fs.copySync(publicDir, docsDir, { overwrite: true });
 }

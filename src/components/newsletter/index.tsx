@@ -30,7 +30,7 @@ const Newsletter: React.FC = () => {
             </div>
           </div>
         </div>
-        <img className={`object-cover w-full transform ${isHover ? "translate-x-6" : "translate-x-0"} transition-all duration-1000`} style={{height: 200}} src="https://tailwindui.com/img/beams-bottom.jpg" alt=""/>
+        <img className={`object-cover w-full transform ${isHover ? "translate-x-6" : "translate-x-0"} transition-all duration-1000`} style={{height: 200}} src="https://res.cloudinary.com/muhrusdi/image/upload/v1624698813/beams-bottom.jpg" alt=""/>
       </div>
     </div>
   )
