@@ -1,7 +1,7 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
-  <a href="https://mhmmr.github.io">
-    <img alt="Gatsby" src="https://res.cloudinary.com/muhrusdi/image/upload/v1608884163/new-logo-mhmr.png" width="120" />
+  <a href="https://muhrusdi.github.io">
+    <img alt="Muhammad Rusdi" src="./src/images/profile-cover.png" width="100%" />
   </a>
 </p>
 

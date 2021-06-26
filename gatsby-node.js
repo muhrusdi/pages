@@ -5,7 +5,7 @@ const path = require("path")
 const slugify = require("slugify")
 const fs = require("fs-extra")
 const { createRemoteFileNode } = require(`gatsby-source-filesystem`)
-const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin')
+// const MonacoWebpackPlugin = require("monaco-editor-webpack-plugin")
 
 const aliases = {
   containers: path.resolve(__dirname, "src/containers"),
@@ -25,12 +25,12 @@ exports.onCreateWebpackConfig = ({actions, plugins}) => { //stage, getConfig, ru
     resolve: {
       alias: aliases
     },
-    plugins: [
-      new MonacoWebpackPlugin({
-        languages: ['css', 'typescript', 'javascript', 'html'],
-        filename: 'static/chunks/[name].worker.js',
-      })
-    ]
+    // plugins: [
+    //   new MonacoWebpackPlugin({
+    //     languages: ["css", "typescript", "javascript", "html"],
+    //     filename: "static/chunks/[name].worker.js",
+    //   })
+    // ]
   });
 }
 
