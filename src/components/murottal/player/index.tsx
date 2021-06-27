@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react"
+import React, { useEffect, useState, useRef, useContext } from "react"
 import { 
   BsFillSkipStartFill, 
   BsFillSkipEndFill, 
@@ -10,24 +10,19 @@ import {
   BsFillPlayFill } from "react-icons/bs"
 // import Amplitude from "amplitudejs"
 import { PlayerStyled, TimeContainer, LeftControl, RightControl, StyledContent } from "./styled"
+import { Context } from "contexts"
 
-const MurottalPlayer: React.FC = () => {
+const MurottalPlayer: React.FC = ({data}) => {
   const [volumeToggle, setVolumeToggle] = useState(false)
   const volumeContentRef = useRef(null)
   const amplitudeRef = useRef(null)
+  const { handleSetMurottal } = useContext(Context)
 
   useEffect(() => {
     import("amplitudejs").then(amplitude => {
-      amplitudeRef.current = amplitude.init({
-        "songs": [
-          {
-            "name": "سورة غافر بمسجد الراشد 1425 هـ",
-            "artist": "مشاري راشد العفاسي",
-            "album": "1425 ه",
-            "url": "https://archive.org/download/ghafer-1425/ghafer-1425.mp3",
-            "cover_art_url": "https://2.bp.blogspot.com/-qSLgfecTQ3c/XESBVkoA4aI/AAAAAAAANNM/GKWwhBOTgU4BWarXyxhX2vUmd5N018g0ACLcBGAs/w320-h180/%25D8%25BA%25D8%25A7%25D9%2581%25D8%25B1.jpg"
-          },
-        ],
+      amplitudeRef.current = amplitude
+      amplitudeRef.current.init({
+        "songs": data || [],
         // "callbacks": {
         //       "play": function(){
         //           document.getElementById("album-art").style.visibility = "hidden";
@@ -43,8 +38,10 @@ const MurottalPlayer: React.FC = () => {
           sample_rate: 50
         }
       });
+    }).then(() => {
+      amplitudeRef.current.play()
     })
-  }, [])
+  }, [data])
 
   const handleClickOutside = (e) => {
     if (volumeContentRef.current && !volumeContentRef.current.contains(e.target)) {
@@ -61,6 +58,11 @@ const MurottalPlayer: React.FC = () => {
 
   const handleClickVolume = () => {
     setVolumeToggle(!volumeToggle)
+  }
+
+  const handleClose = () => {
+    amplitudeRef.current.stop()
+    handleSetMurottal([])
   }
 
   return (
@@ -144,7 +146,7 @@ const MurottalPlayer: React.FC = () => {
             </RightControl>
           </div>
         </div>
-        <button className="absolute right-2 z-50 top-1/2 transform -translate-y-1/2 text-blueGray-500">
+        <button onClick={handleClose} className="absolute right-2 z-50 top-1/2 transform -translate-y-1/2 text-blueGray-500">
           <BsX size={24}/>
         </button>
       </div>
