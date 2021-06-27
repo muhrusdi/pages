@@ -7,7 +7,11 @@ const MurottalPage: React.FC = () => {
   return (
     <div>
       <div>
-        <div className="grid grid-cols-4 gap-8">
+        <div>
+          <h1 className="font-black text-5xl">Murottal</h1>
+          <p className="text-gray-400 text-2xl mt-4">Lantunan indah Al Qur&apos;an</p>
+        </div>
+        <div className="grid grid-cols-4 gap-8 mt-12">
           <GridItem>
             <div className="image relative h-44 rounded-md flex justify-center items-center">
               <div className="relative z-10 play transition-all">

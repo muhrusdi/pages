@@ -8,39 +8,42 @@ import {
   BsFillVolumeUpFill,
   BsX,
   BsFillPlayFill } from "react-icons/bs"
-import Amplitude from "amplitudejs"
+// import Amplitude from "amplitudejs"
 import { PlayerStyled, TimeContainer, LeftControl, RightControl, StyledContent } from "./styled"
 
 const MurottalPlayer: React.FC = () => {
   const [volumeToggle, setVolumeToggle] = useState(false)
   const volumeContentRef = useRef(null)
+  const amplitudeRef = useRef(null)
 
   useEffect(() => {
-    Amplitude.init({
-      "songs": [
-        {
-          "name": "سورة غافر بمسجد الراشد 1425 هـ",
-          "artist": "مشاري راشد العفاسي",
-          "album": "1425 ه",
-          "url": "https://archive.org/download/ghafer-1425/ghafer-1425.mp3",
-          "cover_art_url": "https://2.bp.blogspot.com/-qSLgfecTQ3c/XESBVkoA4aI/AAAAAAAANNM/GKWwhBOTgU4BWarXyxhX2vUmd5N018g0ACLcBGAs/w320-h180/%25D8%25BA%25D8%25A7%25D9%2581%25D8%25B1.jpg"
-        },
-      ],
-      // "callbacks": {
-      //       "play": function(){
-      //           document.getElementById("album-art").style.visibility = "hidden";
-      //           document.getElementById("large-visualization").style.visibility = "visible";
-      //       },
-    
-      //       "pause": function(){
-      //           document.getElementById("album-art").style.visibility = "visible";
-      //           document.getElementById("large-visualization").style.visibility = "hidden";
-      //       }
-      //   },
-      waveforms: {
-        sample_rate: 50
-      }
-    });
+    import("amplitudejs").then(amplitude => {
+      amplitudeRef.current = amplitude.init({
+        "songs": [
+          {
+            "name": "سورة غافر بمسجد الراشد 1425 هـ",
+            "artist": "مشاري راشد العفاسي",
+            "album": "1425 ه",
+            "url": "https://archive.org/download/ghafer-1425/ghafer-1425.mp3",
+            "cover_art_url": "https://2.bp.blogspot.com/-qSLgfecTQ3c/XESBVkoA4aI/AAAAAAAANNM/GKWwhBOTgU4BWarXyxhX2vUmd5N018g0ACLcBGAs/w320-h180/%25D8%25BA%25D8%25A7%25D9%2581%25D8%25B1.jpg"
+          },
+        ],
+        // "callbacks": {
+        //       "play": function(){
+        //           document.getElementById("album-art").style.visibility = "hidden";
+        //           document.getElementById("large-visualization").style.visibility = "visible";
+        //       },
+      
+        //       "pause": function(){
+        //           document.getElementById("album-art").style.visibility = "visible";
+        //           document.getElementById("large-visualization").style.visibility = "hidden";
+        //       }
+        //   },
+        waveforms: {
+          sample_rate: 50
+        }
+      });
+    })
   }, [])
 
   const handleClickOutside = (e) => {
