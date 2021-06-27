@@ -59,6 +59,13 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "cheatsheets",
+        path: `${__dirname}/src/data/cheatsheets`,
+      },
+    },
+    {
       resolve: "gatsby-plugin-mdx",
       options: {
         gatsbyRemarkPlugins: [

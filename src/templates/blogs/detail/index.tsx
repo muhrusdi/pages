@@ -4,34 +4,12 @@ import styled from "styled-components"
 import Layout from "containers/layout"
 import Playground from "components/playground"
 import { formatDate } from "utils"
+import { ArticleStyled } from "components/utils"
 
 const ImageStyled = styled(GatsbyImage)`
   height: 200px;
   @media (min-width: 640px) {
     height: 500px;
-  }
-`
-
-export const ArticleStyled = styled.article`
-  a {
-    color: #6f66ff;
-  }
-  p {
-    code {
-      color: #6f66ff;
-    }
-    img {
-      margin-left: auto;
-      margin-right: auto;
-    }
-  }
-  pre {
-    margin-left: 0;
-    margin-right: 0;
-    @media (min-width: 640px) {
-      margin-left: -32px;
-      margin-right: -32px;
-    }
   }
 `
 

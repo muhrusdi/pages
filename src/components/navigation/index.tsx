@@ -1,9 +1,9 @@
 /* eslint-disable quotes */
 import React, { useState, useRef, useEffect } from "react"
 import { Link } from "gatsby"
-import { SiGithub } from "react-icons/si"
-import { BsPersonFill } from "react-icons/bs"
-import { CenterMenus, GithubItem } from "./styled"
+import { BsPersonFill, BsArrowRightShort } from "react-icons/bs"
+import { HiOutlineSpeakerphone } from "react-icons/hi"
+import { CenterMenus } from "./styled"
 import cv from "../../utils/cv-muhrusdi-2022.pdf"
 
 const Nav: React.FC = () => {
@@ -32,9 +32,44 @@ const Nav: React.FC = () => {
       <nav className="w-full relative z-50">
         <div className="bg-purple-700">
           <div className="container max-w-screen-lg">
-            <div className="py-2 text-center text-gray-200">
-              <span className="sm:hidden">Detail of my profile · <Link to="/profile" className="text-white font-semibold">Here</Link></span>
-              <span className="hidden sm:block">Curriculum Vitae · <a href={cv} rel="noreferrer" target="_blank" className="text-white font-semibold">Here</a></span>
+            <div className="py-2 flex justify-between items-center text-gray-200" style={{height: 40}}>
+              <div>
+                <div className="flex items-center">
+                  <div>
+                    <div className="mr-3 h-7 w-7 flex items-center justify-center rounded-md bg-purple-900">
+                      <HiOutlineSpeakerphone size={18}/>
+                    </div>
+                  </div>
+                  <div>
+                    <span className="sm:hidden flex">
+                      <span className="mr-2">My Profile.</span>
+                      <Link to="/profile" className="text-white flex items-center font-semibold">
+                        <span>Here</span>
+                        <BsArrowRightShort size={20}/>
+                      </Link></span>
+                    <span className="hidden sm:flex items-center">
+                      <span className="mr-2">Curriculum Vitae.</span>
+                      <a href={cv} rel="noreferrer" target="_blank" className="text-white flex items-center font-semibold">
+                        <span>Here</span>
+                        <BsArrowRightShort size={20}/>
+                      </a>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div className="hidden sm:block">
+                <ul className="flex -mx-2">
+                  <li className="px-2">
+                    <Link to="/murottal">Murottal</Link>
+                  </li>
+                  <li className="px-2">
+                    <Link to="/cheatsheet">Cheatsheet</Link>
+                  </li>
+                  <li className="px-2">
+                    <a href="https://github.com/muhrusdi" target="_blank" rel="noreferrer">Github</a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -86,11 +121,21 @@ const Nav: React.FC = () => {
                     <div>Profile</div>
                   </Link>
                 </li>
-                <GithubItem className="sm:px-2 sm:ml-2 py-2 px-1 rounded-md mt-2 sm:mt-0 flex justify-center bg-gray-900 sm:bg-transparent sm:p-0 sm:block">
+                <li className="px-2 sm:hidden border-t border-gray-700 mt-4">
+                  <Link to="/cheatsheet"  className="block text-gray-200 hover:text-white transition-all mt-3">
+                    <div>Cheatsheet</div>
+                  </Link>
+                </li>
+                <li className="px-2 sm:hidden">
+                  <a href="https://github.com/muhrusdi" target="_blank" rel="noreferrer" className="block text-gray-200 hover:text-white transition-all">
+                    <div>Github</div>
+                  </a>
+                </li>
+                {/* <GithubItem className="sm:px-2 sm:ml-2 py-2 px-1 rounded-md mt-2 sm:mt-0 flex justify-center bg-gray-900 sm:bg-transparent sm:p-0 sm:block">
                   <a href="https://github.com/muhrusdi" target="_blank" rel="noreferrer" className="block">
                     <SiGithub size={22}/>
                   </a>
-                </GithubItem>
+                </GithubItem> */}
               </ul>
             </CenterMenus>
             <div className="relative block sm:hidden">

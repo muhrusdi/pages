@@ -1,22 +1,14 @@
 import React from "react"
-import { Link } from "gatsby"
-import { MDXProvider } from "@mdx-js/react"
-import { MDXRenderer } from "gatsby-plugin-mdx"
 import Layout from "containers/layout"
 import { Header } from "./index"
 import { ArticleStyled } from "components/utils"
-import CodeBlock from "components/codeblock"
 import SEO from "components/seo"
+import MdxRender from "components/mdx-render"
 
 type Props = {
   pageContext: {
     data: any
   }
-}
-
-const shortcodes = {
-  Link,
-  pre: CodeBlock
 }
 
 const DetailBlogMDX: React.FC<Props> = ({pageContext}) => {
@@ -29,9 +21,7 @@ const DetailBlogMDX: React.FC<Props> = ({pageContext}) => {
         <div className="sm:pr-6 sm:pl-6 mx-auto max-w-2xl mt-24">
           <ArticleStyled className="prose prose-xl">
             {/* <h3>{data.frontmatter.abstract}</h3> */}
-            <MDXProvider components={shortcodes}>
-              <MDXRenderer frontmatter={data.frontmatter}>{data.body}</MDXRenderer>
-            </MDXProvider>
+            <MdxRender data={data}/>
           </ArticleStyled>
         </div>
       </div>

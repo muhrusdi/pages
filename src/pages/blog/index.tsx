@@ -31,23 +31,35 @@ const Blogs: React.FC = () => {
     }
 
     query {
-      featured: allMdx(
+      featured: allFile(
         limit: 1
-        sort: {fields: frontmatter___publishedOn, order: DESC}
-        filter: {frontmatter: {isPublished: {eq: true}, featured: {eq: true}}}
+        sort: {fields: childMdx___frontmatter___publishedOn, order: DESC}
+        filter: {
+          childMdx: {
+            frontmatter: {isPublished: {eq: true}, featured: {eq: true}}
+          }
+          sourceInstanceName: { eq: "blogs" }
+        }
       ) {
         edges {
           node {
-            ...Blog
+            childMdx {
+              ...Blog
+            }
           }
         }
       }
-      allMdx(
-        sort: {fields: frontmatter___publishedOn, order: DESC}
+      allFile(
+        sort: {fields: childMdx___frontmatter___publishedOn, order: DESC}
+        filter: {
+          sourceInstanceName: { eq: "blogs" }
+        }
       ) {
         edges {
           node {
-            ...Blog
+            childMdx {
+              ...Blog
+            }
           }
         }
       }
@@ -60,20 +72,20 @@ const Blogs: React.FC = () => {
       <Layout>
         <div>
           <div className="py-8">
-            <LatestBlog badge="Featured" data={featured?.node}/>
+            <LatestBlog badge="Featured" data={featured?.node.childMdx}/>
           </div>
           <div className="mt-20">
             <ul className="grid grid-cols-1 sm:grid-cols-3 gap-8">
               {
-                data?.allMdx.edges.map(({node}, key) => {
+                data?.allFile.edges.map(({node}, key) => {
                   return process.env.NODE_ENV !== "production" ? (
                     <li key={key}>
-                      <BlogItem data={node}/>
+                      <BlogItem data={node.childMdx}/>
                     </li>
                   ) : (
-                    node.frontmatter.isPublished ? (
+                    node.childMdx.frontmatter.isPublished ? (
                       <li key={key}>
-                        <BlogItem data={node}/>
+                        <BlogItem data={node.childMdx}/>
                       </li>
                     ) : null
                   )

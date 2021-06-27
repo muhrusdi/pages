@@ -38,28 +38,50 @@ exports.createPages = async ({graphql, actions}) => {
   const { createPage } = actions
   const mdxResults = await graphql(`
     query {
-      allMdx {
+      allFile(filter: { sourceInstanceName: { eq: "blogs" } }) {
         edges {
           node {
-            frontmatter {
-              title
-              publishedOn
-              seoTitle
-              abstract
-              isPublished
-              featuredImage {
-                url
-                childImageSharp {
-                  gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
+            childMdx {
+              frontmatter {
+                title
+                publishedOn
+                seoTitle
+                abstract
+                isPublished
+                featuredImage {
+                  url
+                  childImageSharp {
+                    gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
+                  }
                 }
               }
-            }
-            fields {
+              fields {
+                slug
+              }
+              body
               slug
+              excerpt
             }
-            body
-            slug
-            excerpt
+          }
+        }
+      }
+      cheatsheets: allFile(filter: { sourceInstanceName: { eq: "cheatsheets" } }) {
+        edges {
+          node {
+            childMdx {
+              frontmatter {
+                title
+                publishedOn
+                abstract
+                isPublished
+              }
+              fields {
+                slug
+              }
+              body
+              slug
+              excerpt
+            }
           }
         }
       }
@@ -78,9 +100,25 @@ exports.createPages = async ({graphql, actions}) => {
     })
   }
 
+  const createCheatsheetPage = (node) => {
+    const { slug } = node.fields
+    createPage({
+      path: `/cheatsheet/${slug}`,
+      component: path.resolve(`./src/templates/cheatsheets/detail/index.tsx`),
+      context: {
+        slug,
+        data: node
+      },
+    })
+  }
 
-  mdxResults.data.allMdx.edges.forEach(({ node }) => {
-    createMdxPage(node)
+
+  mdxResults.data.allFile.edges.forEach(({ node }) => {
+    createMdxPage(node.childMdx)
+  })
+
+  mdxResults.data.cheatsheets.edges.forEach(({ node }) => {
+    createCheatsheetPage(node.childMdx)
   })
 }
 
