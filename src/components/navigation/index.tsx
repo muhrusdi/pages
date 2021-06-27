@@ -60,6 +60,9 @@ const Nav: React.FC = () => {
               <div className="hidden sm:block">
                 <ul className="flex -mx-2">
                   <li className="px-2">
+                    <Link to="/murottal">Murottal</Link>
+                  </li>
+                  <li className="px-2">
                     <Link to="/cheatsheet">Cheatsheet</Link>
                   </li>
                   <li className="px-2">
