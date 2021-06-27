@@ -44,6 +44,17 @@ export const LeftControl = styled.div`
       outline: none;
     }
   }
+  .amplitude-repeat {
+    .repeat {
+      display: none;
+      font-size: 9px;
+    }
+    &.amplitude-repeat-on {
+      .repeat {
+        display: block;
+      }
+    }
+  }
   .amplitude-play-pause {
     .play {
       display: block;

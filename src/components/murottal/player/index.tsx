@@ -84,7 +84,8 @@ const MurottalPlayer: React.FC = () => {
                   </button>
                 </li>
                 <li className="px-2">
-                  <button className="amplitude-repeat" id="repeat">
+                  <button className="amplitude-repeat relative" id="repeat">
+                    <span className="absolute repeat top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">1</span>
                     <BsArrowRepeat size={24}/>
                   </button>
                 </li>
