@@ -146,7 +146,7 @@ const MurottalPlayer: React.FC = ({data}) => {
             </RightControl>
           </div>
         </div>
-        <button onClick={handleClose} className="absolute right-2 z-50 top-1/2 transform -translate-y-1/2 text-blueGray-500">
+        <button onClick={handleClose} className="absolute right-2 z-50 top-1/2 transform focus:outline-none -translate-y-1/2 text-blueGray-500">
           <BsX size={24}/>
         </button>
       </div>

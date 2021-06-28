@@ -49,8 +49,8 @@ const MurottalPage: React.FC = () => {
   
   useEffect(() => {
     if (data) {
-      const dataStr = JSON.stringify(data).replace("\"coverArtUrl\":", "\"cover_art_url\":")
-      const dataParse = JSON.parse(dataStr)
+      const dataStr = JSON.stringify(data)
+      const dataParse = JSON.parse(dataStr.replace(/"coverArtUrl":/g, "\"cover_art_url\":"))
       setDataMurttal(dataParse)
     }
   }, [data])
@@ -88,7 +88,7 @@ const MurottalPage: React.FC = () => {
                   <img className="absolute object-cover h-full w-full" src={item.cover_art_url} alt="" />
                 </div>
                 <div className="mt-4">
-                  <h2>{item.name}</h2>
+                  <h2 className="font-bold">{item.name}</h2>
                   <p className="mt-1 text-blueGray-400">{item.artist}</p>
                 </div>
               </GridItem>
