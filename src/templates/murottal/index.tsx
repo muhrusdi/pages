@@ -1,7 +1,7 @@
-import React, { useContext, useState } from "react"
+import React, { useState } from "react"
 import { BsFillPlayFill } from "react-icons/bs"
 import { GridItem } from "components/murottal/player/styled"
-import { Context } from "contexts"
+// import { Context } from "contexts"
 
 const MurottalPage: React.FC = () => {
   const [dataMurottal] = useState([
@@ -13,10 +13,10 @@ const MurottalPage: React.FC = () => {
       "cover_art_url": "https://2.bp.blogspot.com/-qSLgfecTQ3c/XESBVkoA4aI/AAAAAAAANNM/GKWwhBOTgU4BWarXyxhX2vUmd5N018g0ACLcBGAs/w320-h180/%25D8%25BA%25D8%25A7%25D9%2581%25D8%25B1.jpg"
     }
   ])
-  const { handleSetMurottal } = useContext(Context)
+  // const { handleSetMurottal } = useContext(Context)
 
-  const handlePlay = (song) => {
-    handleSetMurottal([song])
+  const handlePlay = () => {
+    // handleSetMurottal([song])
   }
   return (
     <div>

@@ -1,6 +1,6 @@
 import React from "react"
 import { ApolloProvider } from "@apollo/client"
-import ContextProvider from "contexts"
+// import ContextProvider from "contexts"
 import {client} from "./client"
 
 type Props = {
@@ -9,8 +9,8 @@ type Props = {
 
 export const wrapRootElement: React.FC<Props> = ({ element }) => (
  <ApolloProvider client={client}>
-   <ContextProvider>
+   {/* <ContextProvider> */}
     {element}
-   </ContextProvider>
+   {/* </ContextProvider> */}
  </ApolloProvider>
 );
