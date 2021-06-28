@@ -1,12 +1,12 @@
 import styled from "styled-components"
 
 export const StyledContent = styled.div`
-  border-radius: 3px;
   padding: 20px;
   font-size: 14px;
   color: black;
   input {
     height: 2px;
+    vertical-align: middle;
   }
   position: absolute;
   top: -90px;

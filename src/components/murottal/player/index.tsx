@@ -101,7 +101,7 @@ const MurottalPlayer: React.FC = ({data}) => {
                       <button onClick={handleClickVolume}>
                         <BsFillVolumeUpFill size={24}/>
                       </button>
-                      <StyledContent ref={volumeContentRef} className={`bg-blueGray-900 transform left-1/2 -translate-x-1/2 transition-all ${volumeToggle ? "opacity-100" : "opacity-0"}`}>
+                      <StyledContent ref={volumeContentRef} className={`bg-black border bg-opacity-60 backdrop-filter backdrop-blur rounded-lg border-gray-800 transform left-1/2 -translate-x-1/2 transition-all ${volumeToggle ? "block" : "hidden"}`}>
                         <div id="volume-container">
                           <input type="range" className="amplitude-volume-slider" step=".1"/>
                         </div>
