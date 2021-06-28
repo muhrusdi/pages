@@ -5,4 +5,4 @@
  */
 
 // You can delete this file if you're not using it
-export { wrapRootElement, wrapPageElement } from "./src/apollo/wrap-elements"
+export { wrapRootElement } from "./src/apollo/wrap-elements"

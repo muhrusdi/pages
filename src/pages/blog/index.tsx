@@ -2,6 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import BlogItem from "components/blog/blog-item"
 import LatestBlog from "components/blog/lastest"
+import Layout from "containers/layout"
 
 const Blogs: React.FC = () => {
   const data = useStaticQuery(graphql`
@@ -68,30 +69,32 @@ const Blogs: React.FC = () => {
   const [featured] = data.featured.edges
   
   return (
-    <div>
-      <div className="py-8">
-        <LatestBlog badge="Featured" data={featured?.node.childMdx}/>
-      </div>
-      <div className="mt-20">
-        <ul className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-          {
-            data?.allFile.edges.map(({node}, key) => {
-              return process.env.NODE_ENV !== "production" ? (
-                <li key={key}>
-                  <BlogItem data={node.childMdx}/>
-                </li>
-              ) : (
-                node.childMdx.frontmatter.isPublished ? (
+    <Layout>
+      <div>
+        <div className="py-8">
+          <LatestBlog badge="Featured" data={featured?.node.childMdx}/>
+        </div>
+        <div className="mt-20">
+          <ul className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+            {
+              data?.allFile.edges.map(({node}, key) => {
+                return process.env.NODE_ENV !== "production" ? (
                   <li key={key}>
                     <BlogItem data={node.childMdx}/>
                   </li>
-                ) : null
-              )
-            })
-          }
-        </ul>
+                ) : (
+                  node.childMdx.frontmatter.isPublished ? (
+                    <li key={key}>
+                      <BlogItem data={node.childMdx}/>
+                    </li>
+                  ) : null
+                )
+              })
+            }
+          </ul>
+        </div>
       </div>
-    </div>
+    </Layout>
   )
 }
 
