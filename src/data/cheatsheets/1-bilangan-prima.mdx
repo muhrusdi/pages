@@ -3,11 +3,14 @@ title: Bilangan Prima
 abstract: Dalam matematika, bilangan prima adalah bilangan asli yang lebih besar dari angka 1, yang faktor pembaginya adalah 1 dan bilangan itu sendiri. 2 dan 3 adalah bilangan prima.
 isPublished: false
 featured: false
-publishedOn: "2021-04-11"
+publishedOn: "2021-05-20"
 ---
 
 Bilangan prima adalah bilangan lebih dari 1 dan hanya bisa dibagi dengan angka 1 atau bilangan itu sendiri. Angka 2 adalah bilangan prima karena hanya bisa dibagi dengan angka 1 dan angka 2. 
 Angka 8 bukanlah bilangan prima karena selain bisa dibagi dengan angka 1 dan 8, 8 juga bisa dibagi dengan angka 2 dan 4. 
+
+Untuk mengetes bilangan prima yaitu dengan mengiterate dari 2 ke n, check apakah hasil pembagian 
+sama dengan 0.
 
 ```js
 const isPrime = (n) => {
@@ -26,3 +29,5 @@ const isPrime = (n) => {
 
 isPrime(19) // true
 ```
+
+> TIme Complexity: O(n)

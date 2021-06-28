@@ -8,6 +8,7 @@ const CheatSheet: React.FC = () => {
   const data = useStaticQuery(graphql`
     query {
       cheatsheets: allFile(
+        sort: {fields: childMdx___frontmatter___publishedOn, order: DESC}
         filter: {
           sourceInstanceName: { eq: "cheatsheets" }
         }

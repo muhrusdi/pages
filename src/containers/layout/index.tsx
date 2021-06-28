@@ -9,14 +9,14 @@ import Footer from "components/footer"
 const Layout: React.FC<LayoutType> = ({children}) => {
 
   return (
-    <>
+    <div>
       <SEO/>
       <Nav/>
       <div className="container max-w-screen-lg">
         {children}
         <Footer/>
       </div>
-    </>
+    </div>
   )
 }
 
