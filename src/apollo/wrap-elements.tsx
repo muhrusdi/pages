@@ -5,15 +5,18 @@ import {client} from "./client"
 import Layout from "containers/layout"
 
 type Props = {
-  element: React.ReactNode
+  element: React.ReactNode,
+  props: any
 }
 
 export const wrapRootElement: React.FC<Props> = ({ element }) => (
  <ApolloProvider client={client}>
-   <ContextProvider>
-    <Layout>
+    <ContextProvider>
       {element}
-    </Layout>
-   </ContextProvider>
+    </ContextProvider>
  </ApolloProvider>
 )
+
+export const wrapPageElement: React.FC<Props> = ({ element, props }) => {
+  return <Layout {...props}>{element}</Layout>
+}

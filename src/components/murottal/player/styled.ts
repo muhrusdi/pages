@@ -88,10 +88,8 @@ export const TimeContainer = styled.div`
   }
 `
 
-export const GridItem = styled.button`
-  &:focus {
-    outline: none;
-  }
+export const GridItem = styled.div`
+  cursor: pointer;
   text-align: left;
   .image {
     .play {
