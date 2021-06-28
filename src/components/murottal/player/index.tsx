@@ -14,6 +14,7 @@ import { Context } from "contexts"
 
 const MurottalPlayer: React.FC = ({data}) => {
   const [volumeToggle, setVolumeToggle] = useState(false)
+  // const [moreThan, setMoreThan] = useState(false)
   const [isPlay, setIsPlay] = useState(false)
   const volumeContentRef = useRef(null)
   const amplitudeRef = useRef(null)
@@ -27,6 +28,7 @@ const MurottalPlayer: React.FC = ({data}) => {
         "callbacks": {
               "play": () => {
                 setIsPlay(true)
+                console.log(amplitudeRef.current.getSongPlayedPercentage())
               },
       
               "pause": function(){
