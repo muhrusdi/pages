@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import MurottalPlayer from "components/murottal/player"
 
 export const Context = React.createContext(null)
 
@@ -13,7 +14,14 @@ const ContextProvider: React.FC = ({children}) => {
       murottal,
       handleSetMurottal
     }}>
-      {children}
+      <div>
+        {children}
+        {
+          murottal.length ? (
+            <MurottalPlayer data={murottal}/>
+          ) : null
+        }
+      </div>
     </Context.Provider>
   )
 }
