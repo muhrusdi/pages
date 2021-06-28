@@ -21,25 +21,29 @@ const MurottalPlayer: React.FC = ({data}) => {
   useEffect(() => {
     import("amplitudejs").then(amplitude => {
       amplitudeRef.current = amplitude
-      amplitudeRef.current.init({
-        "songs": data || [],
-        // "callbacks": {
-        //       "play": function(){
-        //           document.getElementById("album-art").style.visibility = "hidden";
-        //           document.getElementById("large-visualization").style.visibility = "visible";
-        //       },
-      
-        //       "pause": function(){
-        //           document.getElementById("album-art").style.visibility = "visible";
-        //           document.getElementById("large-visualization").style.visibility = "hidden";
-        //       }
-        //   },
-        waveforms: {
-          sample_rate: 50
-        }
-      });
+      if (data.length) {
+        amplitudeRef.current.init({
+          "songs": data || [],
+          // "callbacks": {
+          //       "play": function(){
+          //           document.getElementById("album-art").style.visibility = "hidden";
+          //           document.getElementById("large-visualization").style.visibility = "visible";
+          //       },
+        
+          //       "pause": function(){
+          //           document.getElementById("album-art").style.visibility = "visible";
+          //           document.getElementById("large-visualization").style.visibility = "hidden";
+          //       }
+          //   },
+          waveforms: {
+            sample_rate: 50
+          }
+        });
+      }
     }).then(() => {
-      amplitudeRef.current.play()
+      if (data.length) {
+        amplitudeRef.current.play()
+      }
     })
   }, [data])
 

@@ -1,13 +1,13 @@
-import React, { useContext } from "react"
+import React from "react"
 import SEO from "components/seo"
 import { LayoutType } from "types"
 import Nav from "components/navigation"
 import Footer from "components/footer"
-import MurottalPlayer from "components/murottal/player"
-import { Context } from "contexts"
+// import MurottalPlayer from "components/murottal/player"
+// import { Context } from "contexts"
 
 const Layout: React.FC<LayoutType> = ({children}) => {
-  const { murottal } = useContext(Context)
+  // const { murottal } = useContext(Context)
   return (
     <>
       <SEO/>
@@ -16,11 +16,11 @@ const Layout: React.FC<LayoutType> = ({children}) => {
         {children}
         <Footer/>
       </div>
-      {
+      {/* {
         murottal.length ? (
           <MurottalPlayer data={murottal}/>
         ) : null
-      }
+      } */}
     </>
   )
 }
