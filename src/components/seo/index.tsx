@@ -6,7 +6,6 @@
  */
 
 import React from "react"
-import { useLocation } from "@reach/router";
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import { SeoType } from "types";
@@ -28,14 +27,13 @@ const SEO: React.FC<SeoType> = ({ description, lang, title, image, author, date,
     `
   )
 
-  const { pathname } = useLocation()
   const isArticle = type === "article"
 
   const metaDescription = description || site.siteMetadata.description
   const metaTitle = title || site.siteMetadata.title
   const metaImage = image || site.siteMetadata.image
   const metaAuthor = author || site.siteMetadata.author
-  const metaUrl = slug ? `${site.siteMetadata.siteUrl}${pathname}` : site.siteMetadata.siteUrl
+  const metaUrl = slug ? `${site.siteMetadata.siteUrl}${slug}` : site.siteMetadata.siteUrl
 
   const schemaOrg = {
     "@context": "http://schema.org",

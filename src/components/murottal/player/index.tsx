@@ -8,12 +8,13 @@ import {
   BsFillVolumeUpFill,
   BsX,
   BsFillPlayFill } from "react-icons/bs"
-// import Amplitude from "amplitudejs"
+import { Link } from "gatsby"
 import { PlayerStyled, TimeContainer, LeftControl, RightControl, StyledContent } from "./styled"
 import { Context } from "contexts"
 
 const MurottalPlayer: React.FC = ({data}) => {
   const [volumeToggle, setVolumeToggle] = useState(false)
+  const [isPlay, setIsPlay] = useState(false)
   const volumeContentRef = useRef(null)
   const amplitudeRef = useRef(null)
   const { handleSetMurottal } = useContext(Context)
@@ -21,31 +22,26 @@ const MurottalPlayer: React.FC = ({data}) => {
   useEffect(() => {
     import("amplitudejs").then(amplitude => {
       amplitudeRef.current = amplitude
-      if (data.length) {
-        amplitudeRef.current.init({
-          "songs": data || [],
-          // "callbacks": {
-          //       "play": function(){
-          //           document.getElementById("album-art").style.visibility = "hidden";
-          //           document.getElementById("large-visualization").style.visibility = "visible";
-          //       },
-        
-          //       "pause": function(){
-          //           document.getElementById("album-art").style.visibility = "visible";
-          //           document.getElementById("large-visualization").style.visibility = "hidden";
-          //       }
-          //   },
-          waveforms: {
-            sample_rate: 50
-          }
-        });
-      }
+      amplitudeRef.current.init({
+        "songs": data,
+        "callbacks": {
+              "play": () => {
+                setIsPlay(true)
+              },
+      
+              "pause": function(){
+                  setIsPlay(false)
+              }
+          },
+        waveforms: {
+          sample_rate: 50
+        }
+      })
     }).then(() => {
-      if (data.length) {
-        amplitudeRef.current.play()
-      }
+      amplitudeRef.current.play()
     })
   }, [data])
+
 
   const handleClickOutside = (e) => {
     if (volumeContentRef.current && !volumeContentRef.current.contains(e.target)) {
@@ -82,7 +78,7 @@ const MurottalPlayer: React.FC = ({data}) => {
                   </button>
                 </li>
                 <li className="px-2">
-                  <button id="play-pause" className="amplitude-play-pause">
+                  <button id="play-pause" className={`amplitude-play-pause ${isPlay ? "amplitude-playing" : null}`}>
                     <BsFillPlayFill className="play" size={24}/>
                     <BsFillPauseFill className="pause" size={24}/>
                   </button>
@@ -140,9 +136,9 @@ const MurottalPlayer: React.FC = ({data}) => {
                       <p className="text-blueGray-400 line-clamp-1" data-amplitude-song-info="artist"></p>
                     </li>
                     <li className="px-2">
-                      <button>
+                      <Link to="/murottal">
                         <BsMusicNoteList size={24}/>
-                      </button>
+                      </Link>
                     </li>
                   </ul>
                 </div>

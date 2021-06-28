@@ -81,6 +81,7 @@ export const TimeContainer = styled.div`
   flex-basis: 100%;
   input {
     height: 2px;
+    cursor: pointer;
   }
   progress {
     height: 1px;
