@@ -51,7 +51,6 @@ const MurottalPage: React.FC = () => {
     if (data) {
       const dataStr = JSON.stringify(data).replace("\"coverArtUrl\":", "\"cover_art_url\":")
       const dataParse = JSON.parse(dataStr)
-      console.log(dataParse)
       setDataMurttal(dataParse)
     }
   }, [data])
