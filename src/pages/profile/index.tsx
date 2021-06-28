@@ -1,5 +1,5 @@
 import React from "react"
-// import Layout from "containers/layout"
+import Layout from "containers/layout"
 // import { Link } from "gatsby"
 import styled from "styled-components"
 import SpecItem from "components/spec-item"
@@ -29,7 +29,7 @@ const Networks = styled.div`
 
 const Home: React.FC = () => {
   return (
-    <div>
+    <Layout>
       <div className="mt-8">
         <div>
           <div className="flex flex-col sm:flex-row items-center">
@@ -75,7 +75,7 @@ const Home: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
+    </Layout>
   )
 }
 
