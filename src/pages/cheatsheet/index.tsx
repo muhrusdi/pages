@@ -1,6 +1,5 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
-// import Layout from "containers/layout"
 import { ArticleStyled } from "components/utils"
 import { BsChevronRight } from "react-icons/bs"
 import { CheatsheetMenus } from "components/cheatsheet/container"

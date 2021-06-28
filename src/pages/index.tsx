@@ -1,6 +1,5 @@
 import React from "react"
 import { useQuery, gql } from "@apollo/client"
-// import Layout from "containers/layout"
 import { useStaticQuery, graphql } from "gatsby"
 import LatestBlog from "components/blog/lastest"
 import BlogItem from "components/blog/blog-item"

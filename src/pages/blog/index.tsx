@@ -1,5 +1,4 @@
 import React from "react"
-// import Layout from "containers/layout"
 import { useStaticQuery, graphql } from "gatsby"
 import BlogItem from "components/blog/blog-item"
 import LatestBlog from "components/blog/lastest"

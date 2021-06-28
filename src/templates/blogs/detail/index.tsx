@@ -1,7 +1,6 @@
 import React from "react"
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import styled from "styled-components"
-import Layout from "containers/layout"
 import Playground from "components/playground"
 import { formatDate } from "utils"
 import { ArticleStyled } from "components/utils"
@@ -29,17 +28,15 @@ export const Header: React.FC = ({title, featuredImage, date}) => (
 
 const DetailBlog: React.FC = () => {
   return (
-    <Layout>
-      <div>
-        <Header/>
-        <div className="sm:pr-6 sm:pl-6 mx-auto max-w-2xl mt-14">
-          <ArticleStyled className="prose prose-xl">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius ipsum perspiciatis dicta, obcaecati, suscipit voluptatum voluptates sed ipsa saepe fugit quas beatae temporibus, atque voluptas pariatur dolore facere odit eos.</p>
-            <Playground/>
-          </ArticleStyled>
-        </div>
+    <div>
+      <Header/>
+      <div className="sm:pr-6 sm:pl-6 mx-auto max-w-2xl mt-14">
+        <ArticleStyled className="prose prose-xl">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius ipsum perspiciatis dicta, obcaecati, suscipit voluptatum voluptates sed ipsa saepe fugit quas beatae temporibus, atque voluptas pariatur dolore facere odit eos.</p>
+          <Playground/>
+        </ArticleStyled>
       </div>
-    </Layout>
+    </div>
   )
 }
 
