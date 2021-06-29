@@ -1,4 +1,4 @@
-const initHmtl = `
+const html = `
 <div>
   <h2>Hello Playground</h2>
   <p>
@@ -7,16 +7,16 @@ const initHmtl = `
 </div>
 `
 
-const initCss = `
+const css = `
 body {
   background: white;
 }
 `
 
-const initJs = `
+const javascript = `
 // commonjs
 `
 
 export default {
-  html: initHmtl, css: initCss, javascript: initJs
+  html, css, javascript,
 }
