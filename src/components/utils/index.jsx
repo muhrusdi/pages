@@ -32,7 +32,7 @@ export const ArticleStyled = styled.article`
       margin-right: auto;
     }
   }
-  pre {
+  pre, .code-play {
     margin-left: 0;
     margin-right: 0;
     @media (min-width: 640px) {
