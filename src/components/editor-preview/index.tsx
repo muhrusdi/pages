@@ -15,10 +15,13 @@ const EditorPreview: React.FC = ({defaultValue}) => {
 
   const initialContent = defaultValue ? defaultValue : initContent
 
-  loader.init()
-    .then(monaco => {
-      monaco.editor.defineTheme("night-owl", nightOwl)
-    })
+  if (typeof window !== "undefined") {
+    loader.init()
+      .then(monaco => {
+        monaco.editor.defineTheme("night-owl", nightOwl)
+      })
+  }
+
 
   const handleEditorDidMount = (editor) => {
     editorContainerRef.current = editor
