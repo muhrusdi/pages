@@ -1,7 +1,7 @@
 ---
 title: Custom Scrollbar di CSS
 seoTitle: Custom Scrollbar di CSS
-abstract: Merasa bosan dengan tampilan scrollbar default website kalian begitu-begitu saja?, sebenarnya kalian dapat mengubah tampilan default tersebut. 
+abstract: Merasa bosan dengan tampilan scrollbar website kalian yang biasa-biasa saja?, sebenarnya kalian dapat mengubah tampilan default tersebut. 
 isPublished: true
 featured: false
 publishedOn: "2021-06-30"
@@ -12,7 +12,14 @@ layout: Article
 import EditorPreview from "components/editor-preview"
 import {value1, value2, value3} from "components/utils/initialContent.ts"
 
-Bagi kalian yang butuh mengubah style scrollbar di browser, kalian dapat menggunakan properti css prefix `::webkit-scrollbar`.
+Dalam beberapa kasus kita perlu mengubah tampilan scrollbar di browser kita, seperti ketika 
+scrollbar element yang berada dalam container atau yang biasa disebut nested scroll, atau dikondisi lain ketika
+ingin membuat interface kita terlihat lebih konsisten ketika berada dibeberapa sistem operasi.
+
+Berikut beberapa contoh untuk mengubah style scrollbar di browser menggunakan properti css prefix `::webkit-scrollbar`:
+
+> Custom scrollbar menggunakan CSS hanya mendukung di browser yang berbasis `webkit` seperti Chrome/Safari.
+
 ## Style #1
 <EditorPreview
  defaultValue={value1}
