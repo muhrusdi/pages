@@ -1,79 +1,100 @@
-import React, { useEffect, useRef } from "react"
+import React, { useRef, useCallback, useState } from "react"
 import SplitPane from "react-split-pane"
+import Editor, { loader } from "@monaco-editor/react"
+import nightOwl from "monaco-themes/themes/Night Owl.json"
+import { EditorStyled } from "./styled"
+import { TabBar, SplitBar } from "./bars"
+import initContent from "./initialContent"
+import Preview from "./preview"
 
-// self.MonacoEnvironment = {
-// 	getWorkerUrl: function (_moduleId: any, label: string) {
-// 		if (label === 'json') {
-// 			return './json.worker.bundle.js';
-// 		}
-// 		if (label === 'css' || label === 'scss' || label === 'less') {
-// 			return './css.worker.bundle.js';
-// 		}
-// 		if (label === 'html' || label === 'handlebars' || label === 'razor') {
-// 			return './html.worker.bundle.js';
-// 		}
-// 		if (label === 'typescript' || label === 'javascript') {
-// 			return './ts.worker.bundle.js';
-// 		}
-// 		return './editor.worker.bundle.js';
-// 	}
-// }
+const EditorPreview: React.FC = ({defaultValue}) => {
+  const editorContainerRef = useRef(null)
+  const previewRef = useRef(null)
+  const [activeTab, setActiveTab] = useState("html")
+  const [split, setSplit] = useState("vertical")
 
-const Editor = () => {
-  const editorContainerRef = useRef<HTMLDivElement>(null)
-  const editorRef = useRef(null)
-  // const editorState = useRef({})
+  const initialContent = defaultValue ? defaultValue : initContent
 
-  useEffect(() => {
-    if (editorContainerRef.current) {
-      import("monaco-editor").then(monaco => {
-        editorRef.current = monaco.editor.create(editorContainerRef.current, {
-          value: [`function x() {', '\tconsole.log("Hello world!");', '}`].join("\n"),
-          language: "typescript"
-        })
-      })
-    }
+  loader.init()
+    .then(monaco => {
+      monaco.editor.defineTheme("night-owl", nightOwl)
+    })
 
-    return () => {
-      editorRef.current.dispose()
-    }
+  const handleEditorDidMount = (editor) => {
+    editorContainerRef.current = editor
+    editorContainerRef.current.updateOptions({
+      minimap: {
+        enabled: false
+      },
+      lineNumbersMinChars: 3
+    })
+  }
+
+  const inject = useCallback((content) => {
+    previewRef.current.contentWindow.postMessage(content, "*")
   }, [])
 
-  useEffect(() => {
-    console.log(editorRef.current)
-    // const { editor, documents } = editorRef.current
-    // const currentState = editor.saveViewState()
-    // const currentModel = editor.getModel()
+  const handleEditorChange = (value) => {
+    if (activeTab === "html") {
+      inject({ html: value })
+    }
+    if (activeTab === "css") {
+      inject({ css: value })
+    }
+    if (activeTab === "javascript") {
+      inject({ js: value })
+    }
+  }
 
-    // if (currentModel === documents.html.getModel()) {
-    //   editorState.current.html = currentState
-    // } else if (currentModel === documents.css.getModel()) {
-    //   editorState.current.css = currentState
-    // }
+  const handleSelectTab = useCallback((val) => {
+    setActiveTab(val)
+  }, [])
 
-    // documents[activeTab].activate()
-    // editor.restoreViewState(editorState.current[activeTab])
-    // editor.focus()
-  })
+  const tabSeleceted = (val) => activeTab === val ? "bg-gray-900" : null
+
+  const handleSplit = (val) => {
+    setSplit(val)
+  }
 
   return (
-    <div>
+    <EditorStyled className="bg-blueGray-900 rounded-md overflow-hidden code-play">
+      <div className="border-b border-blueGray-800">
+        <div className="flex justify-between h-12 items-center text-base">
+          <div className="px-4">
+            <div className="flex items-center">
+              <div>
+                <span className="text-base uppercase font-bold text-blue-light">Play</span>
+              </div>
+              <TabBar tabSeleceted={tabSeleceted} handleSelectTab={handleSelectTab}/>
+            </div>
+          </div>
+          <div className="px-4">
+            <SplitBar split={split} handleSplit={handleSplit}/>
+          </div>
+        </div>
+      </div>
       <SplitPane
-        split="vertical"
+        split={split}
         size="50%"
         style={{position: "relative"}}
       >
-        <div className="border-t border-gray-200 dark:border-gray-800 mt-10 flex-auto flex">
-          <div className="relative flex-auto">
-            <div ref={editorRef} className="absolute inset-0 w-full h-full" style={{height: 400}}/>
-          </div>
+        <div>
+          <Editor
+            height="300px"
+            defaultLanguage={activeTab}
+            path={activeTab}
+            defaultValue={initialContent[activeTab]}
+            theme="night-owl"
+            onMount={handleEditorDidMount}
+            onChange={handleEditorChange}
+          />
         </div>
-        <div className="border-t border-gray-200 dark:border-gray-800 mt-10 flex-auto flex">
-          preview
+        <div className="relative w-full h-full" style={{height: split === "horizontal" ? 300 : null}}>
+          <Preview ref={previewRef} inject={inject} initialContent={initialContent}/>
         </div>
       </SplitPane>
-    </div>
+    </EditorStyled>
   )
 }
 
-export default Editor
+export default EditorPreview
