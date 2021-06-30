@@ -28,6 +28,10 @@ const Preview = forwardRef(({initialContent, inject}, ref) => {
               @supports (font-variation-settings: normal) {
                 html { font-family: 'Inter var', sans-serif; }
               }
+
+              *, ::before, ::after {
+                box-sizing: border-box;
+              }
             
               body {
                 @apply bg-black text-white;

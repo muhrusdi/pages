@@ -6956,7 +6956,7 @@ gatsby-plugin-manifest@^3.7.1:
     semver "^7.3.5"
     sharp "^0.28.1"
 
-gatsby-plugin-mdx@^2.7.1:
+gatsby-plugin-mdx@^2.8.0:
   version "2.8.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-mdx/-/gatsby-plugin-mdx-2.8.0.tgz#5ee3b608313c382328eaedaa38e847ebcd80137d"
   integrity sha512-N404gnmS+U70HtOsU5iL94GcdDVia2Ir/InSx5PlZCJd8neCbU4ROA2IKx3yrLRd7aryNjA9ZnP4LbwqXeUneg==
@@ -7182,7 +7182,7 @@ gatsby-remark-images@^5.4.1:
     unist-util-select "^3.0.4"
     unist-util-visit-parents "^3.1.1"
 
-gatsby-source-filesystem@^3.7.1:
+gatsby-source-filesystem@^3.8.0:
   version "3.8.0"
   resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-3.8.0.tgz#d434e3dc4c297851313d56135e1208d00aa3feac"
   integrity sha512-EyyqiIOhDeZ2EzykLRy3lR9WlpDrBCeHwn5wohvvjGBmWDnA54LloScIf1r/0PxSHSn/vFtXkBuh2Slzln5eag==
@@ -7235,7 +7235,7 @@ gatsby-transformer-sharp@^3.7.1:
     semver "^7.3.4"
     sharp "^0.28.0"
 
-gatsby@^3.7.2:
+gatsby@^3.8.1:
   version "3.8.1"
   resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-3.8.1.tgz#e94f53c7bd07585ab8f6dee3fb10ad97766aff66"
   integrity sha512-IZphTACphil3F9ODtAYASA4+l8ErIae4eSTG0a5q9YSpSsfZBBCA5YblRIv+j/7Qi1XX9fP/eNnaxbyurqsPOw==
