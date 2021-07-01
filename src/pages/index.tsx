@@ -4,8 +4,8 @@ import { useStaticQuery, graphql } from "gatsby"
 import LatestBlog from "components/blog/lastest"
 import BlogItem from "components/blog/blog-item"
 import WorkItem, { WorkItemLoading } from "components/work/work-item"
-import { ViewAll } from "components/utils"
 import Layout from "containers/layout"
+import SectionHeader from "components/blog/header"
 
 const Home: React.FC = () => {
   const data = useStaticQuery(graphql`
@@ -79,12 +79,14 @@ const Home: React.FC = () => {
         <div className="py-8">
           <LatestBlog data={firstBlog.node}/>
         </div>
-        <div className="mt-14 sm:mt-20">
-          <div className="text-center mb-4 max-w-2xl container">
-            <h2 className="uppercase font-bold text-indigo-500">Blogs</h2>
-            <h3 className="font-black mt-2 text-3xl">Helpful Resources</h3>
-          </div>
-          <ul className="grid grid-cols-1 mt-8 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <div className="mt-24 sm:mt-32">
+          <SectionHeader
+            tag="Blogs"
+            title="Helpful Resources"
+            description="Here you&lsquo;ll find my collected writing on topics ranging from design and coding."
+            link="/blog"
+          />
+          <ul className="grid grid-cols-1 mt-12 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {
               blogRest.map(({node}, key) => (
                 <li key={key}>
@@ -93,18 +95,20 @@ const Home: React.FC = () => {
               ))
             }
           </ul>
-          {
+          {/* {
             blogRest.length > 5 ? (
               <ViewAll link="blog"/>
             ) : null
-          }
+          } */}
         </div>
-        <div className="mt-28">
-          <div className="text-center mb-4">
-            <h2 className="uppercase font-bold text-indigo-500">Works</h2>
-            <h3 className="font-black mt-2 text-3xl">Our Projects</h3>
-          </div>
-          <ul className="grid grid-cols-1 mt-8 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <div className="mt-36">
+          <SectionHeader
+            tag="Works"
+            title="Our Projects"
+            description="I work with forward-thinking people to design and build interactive, accessible websites and products."
+            link="/work"
+          />
+          <ul className="grid grid-cols-1 mt-12 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {
               loading ? (
                 <>
@@ -130,11 +134,11 @@ const Home: React.FC = () => {
               ) : null
             }
           </ul>
-          {
+          {/* {
             dataWorks?.workCollection.items.length > 5 ? (
               <ViewAll link="work"/>
             ) : null
-          }
+          } */}
         </div>
       </div>
     </Layout>
