@@ -6,6 +6,7 @@ import {
   BsMusicNoteList,
   BsFillPauseFill,
   BsFillVolumeUpFill,
+  BsTv,
   BsX,
   BsFillPlayFill } from "react-icons/bs"
 import { Link } from "gatsby"
@@ -72,9 +73,9 @@ const MurottalPlayer: React.FC = ({data}) => {
       <div className="fixed bottom-0 bg-black z-50 left-0 right-0 border-t border-gray-800">
         <div className="container max-w-screen-lg">
           <div className="flex items-center justify-between text-sm -mx-4" style={{height: 60}}>
-            <LeftControl className="px-4">
+            <LeftControl className="px-2 sm:px-4">
               <ul className="flex -mx-2 items-center">
-                <li className="px-2">
+                <li className="px-2 hidden sm:block">
                   <button className="amplitude-prev" id="previous">
                     <BsFillSkipStartFill size={24}/>
                   </button>
@@ -85,12 +86,12 @@ const MurottalPlayer: React.FC = ({data}) => {
                     <BsFillPauseFill className="pause" size={24}/>
                   </button>
                 </li>
-                <li className="px-2">
+                <li className="px-2 hidden sm:block">
                   <button className="amplitude-next" id="next">
                     <BsFillSkipEndFill size={24}/>
                   </button>
                 </li>
-                <li className="px-2">
+                <li className="px-2 hidden sm:block">
                   <button className="amplitude-repeat relative" id="repeat">
                     <span className="absolute repeat top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">1</span>
                     <BsArrowRepeat size={24}/>
@@ -110,7 +111,7 @@ const MurottalPlayer: React.FC = ({data}) => {
                 </li>
               </ul>
             </LeftControl>
-            <TimeContainer className="px-4">
+            <TimeContainer className="px-2 sm:px-4">
               <div id="time-container" className="flex items-center w-full">
                 <span className="current-time pr-2 block flex-none" style={{width: 48}}>
                   <span className="amplitude-current-minutes" ></span>:<span className="amplitude-current-seconds"></span>
@@ -126,14 +127,14 @@ const MurottalPlayer: React.FC = ({data}) => {
                 </span>
               </div>
             </TimeContainer>
-            <RightControl className="px-4">
+            <RightControl className="pr-8 pl-2 sm:px-4">
               <div className="flex">
                 <div>
                   <ul className="flex items-center -mx-1">
-                    <li className="px-1">
+                    <li className="px-1  hidden sm:block">
                       <img className="object-cover h-9 w-9 rounded-md album-art" data-amplitude-song-info="cover_art_url" alt="" />
                     </li>
-                    <li className="px-1">
+                    <li className="px-1 hidden sm:block">
                       <h3 className="line-clamp-1 song-name" data-amplitude-song-info="name"></h3>
                       <p className="text-blueGray-400 line-clamp-1" data-amplitude-song-info="artist"></p>
                     </li>
@@ -142,6 +143,11 @@ const MurottalPlayer: React.FC = ({data}) => {
                         <BsMusicNoteList size={24}/>
                       </Link>
                     </li>
+                    {/* <li className="px-2 sm:hidden">
+                      <button>
+                        <BsTv size={20}/>
+                      </button>
+                    </li> */}
                   </ul>
                 </div>
               </div>
