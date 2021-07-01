@@ -80,7 +80,7 @@ const MurottalPage: React.FC = () => {
         {
           dataMurottal?.murottalCollection?.items.map((item, i) => (
             <GridItem key={i}>
-              <div className="image relative h-44 rounded-md overflow-hidden flex justify-center items-center" onClick={() => handlePlay(item)}>
+              <div className="image relative h-36 sm:h-44 rounded-md overflow-hidden flex justify-center items-center" onClick={() => handlePlay(item)}>
                 <div className="relative z-10 play transition-all">
                   <BsFillPlayFill size={60}/>
                 </div>
