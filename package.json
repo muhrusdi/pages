@@ -13,6 +13,7 @@
     "@mdx-js/react": "^1.6.22",
     "@monaco-editor/react": "^4.2.1",
     "@radix-ui/react-tooltip": "^0.0.19",
+    "@react-three/drei": "^7.0.5",
     "@tailwindcss/line-clamp": "^0.2.1",
     "@tailwindcss/typography": "^0.4.1",
     "amplitudejs": "^5.3.2",
@@ -44,9 +45,11 @@
     "react-helmet": "^6.1.0",
     "react-icons": "^4.2.0",
     "react-split-pane": "^2.0.3",
+    "react-three-fiber": "^6.0.13",
     "slugify": "^1.5.3",
     "styled-components": "^5.3.0",
-    "tailwindcss": "^2.2.2"
+    "tailwindcss": "^2.2.2",
+    "three": "^0.130.0"
   },
   "devDependencies": {
     "@types/react-helmet": "^6.1.1",
