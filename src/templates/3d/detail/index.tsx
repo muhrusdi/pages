@@ -31,7 +31,7 @@ const Model = ({ url }) => {
 const DetailThreeD: React.FC = () => {
   return (
     <div>
-      <div className="grid gap-8 grid-cols-2">
+      <div className="grid gap-8 grid-cols-1 sm:grid-cols-2">
         <div>
           <div className="bg-blueGray-900 rounded-md" style={{height: 400}}>
             <Canvas shadowMap camera={{ position: [0, 0, 15] }} className="rounded-md">

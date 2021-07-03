@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 const ThreeDPage: React.FC = () => {
   return (
     <div>
-      <div className="grid grid-cols-4 gap-8">
+      <div className="grid gird-cols-2 sm:grid-cols-4 gap-8">
         <div>
           <Link to="/3d/shoes" className="block">
             <img className="object-cover rounded-lg h-44 w-full" src="https://res.cloudinary.com/muhrusdi/image/upload/v1625136846/sepatuh.jpg" alt="" />
