@@ -1,0 +1,31 @@
+---
+title: Decimal to Binary
+abstract: Decimal ke binary menggunakan metode rekursif.
+isPublished: true
+featured: false
+publishedOn: "2021-06-13"
+---
+
+Kita akan membuat program yang akan mengubah bilangan desimal menjadi bilangan biner 
+dengan menggunakan recursive.
+
+```js
+const base10ToString = (n) => {
+  let binaryString = ''
+  function base10ToStringHelper(n) {
+    if (n < 2) {
+      binaryString += n
+      return
+    } else {
+      base10ToStringHelper(Math.floor(n / 2))
+      base10ToStringHelper(n % 2)
+    }
+  }
+  base10ToStringHelper(n)
+  return binaryString
+}
+
+base10ToString(1234) // 10011010010
+```
+
+> TIme Complexity: : O(log2(n)) atau logartichmic

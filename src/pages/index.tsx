@@ -10,30 +10,37 @@ import SectionHeader from "components/blog/header"
 const Home: React.FC = () => {
   const data = useStaticQuery(graphql`
     query {
-      allMdx(
+      allFile(
         limit: 6
-        sort: {fields: frontmatter___publishedOn, order: DESC}
-        filter: {frontmatter: {isPublished: {eq: true}}}
+        sort: {fields: childMdx___frontmatter___publishedOn, order: DESC}
+        filter: {
+          childMdx: {
+            frontmatter: {isPublished: {eq: true}}
+          }
+          sourceInstanceName: { eq: "blogs" }
+        }
       ) {
         edges {
           node {
-            frontmatter {
-              title
-              publishedOn
-              seoTitle
-              abstract
-              featuredImage {
-                childImageSharp {
-                  gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
+            childMdx {
+              frontmatter {
+                title
+                publishedOn
+                seoTitle
+                abstract
+                featuredImage {
+                  childImageSharp {
+                    gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
+                  }
                 }
               }
-            }
-            fields {
+              fields {
+                slug
+              }
+              body
               slug
+              excerpt
             }
-            body
-            slug
-            excerpt
           }
         }
       }
@@ -71,13 +78,13 @@ const Home: React.FC = () => {
 
   const { loading, data: dataWorks } = useQuery(WORK_COLLECTION)
 
-  const [firstBlog, ...blogRest] = data.allMdx.edges
+  const [firstBlog, ...blogRest] = data.allFile.edges
 
   return (
     <Layout>
       <div>
         <div className="py-8">
-          <LatestBlog data={firstBlog.node}/>
+          <LatestBlog data={firstBlog.node.childMdx}/>
         </div>
         <div className="mt-24 sm:mt-32">
           <SectionHeader
@@ -90,7 +97,7 @@ const Home: React.FC = () => {
             {
               blogRest.map(({node}, key) => (
                 <li key={key}>
-                  <BlogItem data={node}/>
+                  <BlogItem data={node.childMdx}/>
                 </li>
               ))
             }
