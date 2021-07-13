@@ -1,0 +1,49 @@
+---
+title: Flat Dictionary
+abstract: Mengubah kumpulan key-value (Nested Object) pada dictionary ke dictionary yang hanya memiliki key-value.
+isPublished: true
+featured: false
+publishedOn: "2021-06-13"
+---
+
+Algoritma yang digunakan untuk mengubah kumpulan dictionary menjadi flat.
+
+```js
+const dict = {
+  key1: 2,
+  key2: 23,
+  nested: {
+    a: 34,
+    b: 24,
+    nested: {
+      c: 'qwerty',
+      d: 'asdf'
+    }
+  }
+}
+
+function flatDict(dictionary) {
+  let initDict = {}
+
+  function dictHelper(dict, propName) {
+    if (typeof dict !== 'object') {
+      initDict[propName] = dict
+      return
+    }
+    for (const prop in dict) {
+      // if (propName == '') {
+        dictHelper(dict[prop], prop)
+      // } else {
+      //   dictHelper(dict[prop], propName+'.'+prop)
+      // }
+    }
+  }
+
+  dictHelper(dictionary, '')
+  return initDict
+}
+
+flatDict(dict) // { key1: 2, key2: 23, a: 34, b: 24, c: 'qwerty', d: 'asdf' }
+```
+
+> TIme Complexity: : O(log2(n)) atau logartichmic

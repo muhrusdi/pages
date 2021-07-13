@@ -7,6 +7,10 @@ import MdxRender from "components/mdx-render"
 const CheatsheetContent = styled(ArticleStyled)`
   & > pre {
     margin: 0 !important;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
   }
 `
 
@@ -28,7 +32,7 @@ const CheatsheetContainer: React.FC = ({dataCheatsheets, data, slug}) => (
       </div>
       <CheatsheetMenus data={dataCheatsheets} slug={slug}/>
     </div>
-    <div className="sm:px-14">
+    <div className="sm:pl-14 w-full" style={{width: "calc(100% - 240px)"}}>
       <div>
         <h1 className="text-4xl sm:text-5xl font-black">{data.frontmatter.title}</h1>
         <h4 className="text-xl leading-relaxed mt-6">{data.frontmatter.abstract}</h4>
