@@ -2074,10 +2074,10 @@
     utility-types "^3.10.0"
     zustand "^3.5.1"
 
-"@shipless/play@^0.0.17":
-  version "0.0.17"
-  resolved "https://registry.yarnpkg.com/@shipless/play/-/play-0.0.17.tgz#4c66d18e944cdc500d1eb7b285bb49315404a609"
-  integrity sha512-CEgf5NhImUsRoJWuF/u58ohX5bBT4FWOp1QxCfZAsc1OIUfJmnabdmKXSiaDa1Xzayhd0cFV52hkq4jYdZb6SA==
+"@shipless/play@^0.0.19":
+  version "0.0.19"
+  resolved "https://registry.yarnpkg.com/@shipless/play/-/play-0.0.19.tgz#0d7215496b2754aca05039e6f1a112b9536157a2"
+  integrity sha512-a2VwPoRip2OqhVBRPExjYQNhpWI0wy2hbsxcpJqw4srCqGswvm8hhvzfdDqG61sv2wFyJ/mcAwbmADlQd1tT4A==
   dependencies:
     "@babel/runtime" "^7.13.10"
     "@monaco-editor/react" "^4.2.1"
