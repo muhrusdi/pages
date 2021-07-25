@@ -9,7 +9,7 @@ featuredImage: https://res.cloudinary.com/muhrusdi/image/upload/v1625017672/scro
 layout: Article
 ---
 
-import EditorPreview from "components/editor-preview"
+import Preview from "@shipless/play"
 import {value1, value2, value3} from "components/utils/initialContent.ts"
 
 Dalam beberapa kasus kita perlu mengubah tampilan scrollbar di browser kita, seperti ketika 
@@ -21,17 +21,17 @@ Berikut beberapa contoh untuk mengubah style scrollbar di browser menggunakan pr
 > Custom scrollbar menggunakan CSS hanya mendukung di browser yang berbasis `webkit` seperti Chrome/Safari.
 
 ## Style #1
-<EditorPreview
+<Preview
  defaultValue={value1}
 />
 
 ## Style #2
-<EditorPreview
+<Preview
  defaultValue={value2}
 />
 
 ## Style #3
-<EditorPreview
+<Preview
  defaultValue={value3}
 />
 
