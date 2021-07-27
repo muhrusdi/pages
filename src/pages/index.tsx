@@ -87,7 +87,7 @@ const Home: React.FC = () => {
         <div className="py-8">
           <PlayCode/>
         </div>
-        <div className="mt-24 sm:mt-32">
+        <div className="mt-24">
           <SectionHeader
             tag="Blogs"
             title="Helpful Resources"

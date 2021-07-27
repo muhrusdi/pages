@@ -65,7 +65,7 @@ const PlayCode: React.FC = () => {
     <div className="md:flex -mx-6 items-center">
       {parse(value)}
       <div className="w-full sm:w-1/2 px-6 mt-12 sm:mt-0">
-        <EditorStyled>
+        <EditorStyled className="sm:pr-4">
           <div className="relative z-20">
             <div className="relative w-full flex flex-col bg-blueGray-900 rounded-2xl overflow-hidden">
               <div className="flex-none h-11 flex items-center px-4 border-b border-blueGray-800">
