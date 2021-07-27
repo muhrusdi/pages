@@ -15,7 +15,7 @@ export const EditorStyled = styled.div`
     border-radius: 16px;
     @media (min-width: 640px) {
       left: -30px;
-      right: -30px;
+      right: -10px;
     }
   }
   /* &:before {
