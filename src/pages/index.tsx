@@ -2,6 +2,7 @@ import React from "react"
 import { useQuery, gql } from "@apollo/client"
 import { useStaticQuery, graphql } from "gatsby"
 import LatestBlog from "components/blog/lastest"
+import PlayCode from "components/playcode"
 import BlogItem from "components/blog/blog-item"
 import WorkItem, { WorkItemLoading } from "components/work/work-item"
 import Layout from "containers/layout"
@@ -84,7 +85,7 @@ const Home: React.FC = () => {
     <Layout>
       <div>
         <div className="py-8">
-          <LatestBlog data={firstBlog.node.childMdx}/>
+          <PlayCode/>
         </div>
         <div className="mt-24 sm:mt-32">
           <SectionHeader
