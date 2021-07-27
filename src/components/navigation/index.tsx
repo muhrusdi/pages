@@ -125,13 +125,16 @@ const Nav: React.FC = () => {
                   </Link>
                 </li>
                 <li className="px-2 sm:hidden border-t border-gray-700 mt-4">
-                  <Link to="/cheatsheet"  className="block text-gray-200 hover:text-white transition-all mt-3">
-                    <div>Cheatsheet</div>
+                  <Link to="/3d"  className="block text-gray-200 hover:text-white transition-all mt-3">
+                    <div>3D</div>
                   </Link>
                 </li>
                 <li className="px-2 sm:hidden">
-                    <Link to="/murottal">Murottal</Link>
-                  </li>
+                  <Link to="/cheatsheet">Cheatsheet</Link>
+                </li>
+                <li className="px-2 sm:hidden">
+                  <Link to="/murottal">Murottal</Link>
+                </li>
                 <li className="px-2 sm:hidden">
                   <a href="https://github.com/muhrusdi" target="_blank" rel="noreferrer" className="block text-gray-200 hover:text-white transition-all">
                     <div>Github</div>
