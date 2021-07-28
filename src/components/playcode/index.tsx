@@ -1,6 +1,6 @@
 import React, { useRef, useState, memo, useCallback } from "react"
 import Editor, { loader } from "@monaco-editor/react"
-import parse from "string-to-react"
+import Parse from "string-to-react"
 import nightOwl from "monaco-themes/themes/Night Owl.json"
 import { EditorStyled } from "./styled"
 
@@ -28,14 +28,23 @@ const PlayCode: React.FC = () => {
   const [value, setValue] = useState(`<div className="w-full md:w-1/2 px-6">
   <div>
     <div className="bg-blueGray-700 rounded-full inline-flex items-center text-xs uppercase pr-4">
-      <span className="bg-indigo-600 rounded-l-full px-3 text-xs font-medium py-1 mr-2">Package</span>
+      <span className="bg-indigo-600 rounded-l-full px-3 text-xs font-medium py-1 mr-2">
+        Package
+      </span>
       Play
     </div>
-    <h2 className="text-4xl sm:text-5xl sm:leading-12 mt-6 font-black line-clamp-3">Shipless Play</h2>
-    <p className="mt-4 sm:mt-8 text-lg text-gray-400 line-clamp-2">React simple playground for HTML, CSS and JavaScript</p>
+    <h2 className="text-4xl sm:text-5xl sm:leading-12 mt-6 font-black line-clamp-3">
+      Shipless Play
+    </h2>
+    <p className="mt-4 sm:mt-8 text-lg text-gray-400 line-clamp-2">
+      React simple playground for HTML, CSS and JavaScript
+    </p>
     <a href="https://github.com/shipless/play" target="_blank" rel="noreferrer" className="mt-8 sm:mt-10 inline-block text-lg">
       <div className="flex items-center">
-        <span>Get Package</span> <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <span>
+          Get Package
+        </span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
         </svg>
       </div>
@@ -63,7 +72,7 @@ const PlayCode: React.FC = () => {
 
   return (
     <div className="md:flex -mx-6 items-center">
-      {parse(value)}
+      {Parse(value)}
       <div className="w-full sm:w-1/2 px-6 mt-12 sm:mt-0">
         <EditorStyled className="sm:pr-4">
           <div className="relative z-20">

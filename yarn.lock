@@ -2005,10 +2005,10 @@
     utility-types "^3.10.0"
     zustand "^3.5.1"
 
-"@shipless/play@^0.0.19":
-  version "0.0.19"
-  resolved "https://registry.yarnpkg.com/@shipless/play/-/play-0.0.19.tgz#0d7215496b2754aca05039e6f1a112b9536157a2"
-  integrity sha512-a2VwPoRip2OqhVBRPExjYQNhpWI0wy2hbsxcpJqw4srCqGswvm8hhvzfdDqG61sv2wFyJ/mcAwbmADlQd1tT4A==
+"@shipless/play@^0.0.21":
+  version "0.0.21"
+  resolved "https://registry.yarnpkg.com/@shipless/play/-/play-0.0.21.tgz#818632de990e17ce08282204da45f063fe97569a"
+  integrity sha512-gMa16z5lAgvHSaaP7Nm6NzcTrPLficCe/oLl2yExqJ6gt/35svE+sjieXxeRohK1CT1iO2WgYSevuZYPDrasMg==
   dependencies:
     "@babel/runtime" "^7.13.10"
     "@monaco-editor/react" "^4.2.1"
