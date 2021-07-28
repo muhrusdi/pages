@@ -1,6 +1,6 @@
 import React, { useRef, useState, memo, useCallback } from "react"
 import Editor, { loader } from "@monaco-editor/react"
-import parse from "string-to-react"
+import Parse from "string-to-react"
 import nightOwl from "monaco-themes/themes/Night Owl.json"
 import { EditorStyled } from "./styled"
 
@@ -72,7 +72,7 @@ const PlayCode: React.FC = () => {
 
   return (
     <div className="md:flex -mx-6 items-center">
-      {parse(value)}
+      {Parse(value)}
       <div className="w-full sm:w-1/2 px-6 mt-12 sm:mt-0">
         <EditorStyled className="sm:pr-4">
           <div className="relative z-20">
