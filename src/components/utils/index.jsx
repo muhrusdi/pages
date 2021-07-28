@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import styled, { keyframes } from "styled-components"
 import { Content, Arrow, Trigger, Root } from "@radix-ui/react-tooltip"
+import { Parser } from "acorn"
 import ExperiencesItem from "../spec-item/experiences"
 import StacksItem from "../spec-item/stacks"
 import ProfileItem from "../spec-item/profile"
@@ -193,3 +194,45 @@ export const TooltipIcon = ({icon, text}) => (
     </TooltipContentStyled>
   </Root>
 )
+
+const acornParser = Parser.extend(require("acorn-jsx")())
+
+export const parseToReact = (str) => {
+  function buildElement(nodeList) {
+    const elements = []
+
+    nodeList.map(node => {
+      if (node.type === "JSXElement") {
+        const { children, openingElement } = node
+        const { attributes } = openingElement
+        const attsObj = {}
+
+        attributes.forEach((item) => {
+          attsObj[item.name.name] = item.value.value;
+        })
+
+        const el = React.createElement(
+          openingElement.name.name,
+          { key: Math.random().toString(36).substring(7), ...attsObj },
+          buildElement(children || [])
+        )
+
+        elements.push(el)
+      } else if (node.type === "JSXText") {
+        const { value } = node
+        elements.push(value)
+      }
+    })
+
+    return elements
+  }
+
+  try {
+    const astTree = acornParser.parse(str)
+    const expression = astTree.body[0].expression
+    return buildElement([expression])
+  } catch {
+    return null
+  }
+
+}
