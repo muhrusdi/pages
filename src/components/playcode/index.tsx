@@ -4,6 +4,32 @@ import Parse from "string-to-react"
 import nightOwl from "monaco-themes/themes/Night Owl.json"
 import { EditorStyled } from "./styled"
 
+const snippet = `<div>
+  <div className="bg-blueGray-700 rounded-full inline-flex items-center text-xs uppercase pr-4">
+    <span className="bg-indigo-600 rounded-l-full px-3 text-xs font-medium py-1 mr-2">
+      Package
+    </span>
+    Play
+  </div>
+  <h2 className="text-4xl sm:text-5xl sm:leading-12 mt-6 font-black line-clamp-3">
+    Shipless Play
+  </h2>
+  <p className="mt-4 sm:mt-8 text-lg text-gray-400 line-clamp-2">
+    React simple playground for HTML, CSS and JavaScript
+  </p>
+  <a href="https://github.com/shipless/play" target="_blank" rel="noreferrer" className="mt-8 sm:mt-10 inline-block text-lg">
+    <div className="flex items-center">
+      <span>
+        Get Package
+      </span>
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+      </svg>
+    </div>
+  </a>
+</div>
+`
+
 const MemoEditor = memo(({defaultValue, onMount, onChange}) => (
   <Editor
     height="300px"
@@ -25,33 +51,7 @@ if (typeof window !== "undefined") {
 
 const PlayCode: React.FC = () => {
   const editorContainerRef = useRef(null)
-  const [value, setValue] = useState(`<div className="w-full md:w-1/2 px-6">
-  <div>
-    <div className="bg-blueGray-700 rounded-full inline-flex items-center text-xs uppercase pr-4">
-      <span className="bg-indigo-600 rounded-l-full px-3 text-xs font-medium py-1 mr-2">
-        Package
-      </span>
-      Play
-    </div>
-    <h2 className="text-4xl sm:text-5xl sm:leading-12 mt-6 font-black line-clamp-3">
-      Shipless Play
-    </h2>
-    <p className="mt-4 sm:mt-8 text-lg text-gray-400 line-clamp-2">
-      React simple playground for HTML, CSS and JavaScript
-    </p>
-    <a href="https://github.com/shipless/play" target="_blank" rel="noreferrer" className="mt-8 sm:mt-10 inline-block text-lg">
-      <div className="flex items-center">
-        <span>
-          Get Package
-        </span>
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-        </svg>
-      </div>
-    </a>
-  </div>
-</div>
-`)
+  const [value, setValue] = useState(snippet)
 
   
 
@@ -70,9 +70,15 @@ const PlayCode: React.FC = () => {
     setValue(value)
   }, [])
 
+  const transform = function() {
+    return "div"
+  }
+
   return (
     <div className="md:flex -mx-6 items-center">
-      {Parse(value)}
+      <div className="w-full md:w-1/2 px-6">
+        {Parse(value || snippet, transform)}
+      </div>
       <div className="w-full sm:w-1/2 px-6 mt-12 sm:mt-0">
         <EditorStyled className="sm:pr-4">
           <div className="relative z-20">
