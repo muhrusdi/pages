@@ -11,14 +11,14 @@ const FeaturedWork: React.FC = () => {
           <div>
             <div className="bg-blueGray-700 rounded-full inline-flex items-center text-xs uppercase pr-4">
               <span className="bg-indigo-600 rounded-l-full px-3 text-xs font-medium py-1 mr-2">Featured</span>
-              Senja
+              Sen
             </div>
             <div>
               <h2 className="text-4xl sm:text-5xl leading-tight sm:leading-12 font-black mt-6">The modern Next.js and GraphQL boilerplate</h2>
             </div>
             <ul className="mt-12 flex -mx-2 items-center">
               <li className="px-2">
-                <a href="https://github.com/jamastek/senja" target="_blank" rel="noreferrer" className="text-lg flex items-center mr-2 sm:mr-4">
+                <a href="https://github.com/jamastek/sen" target="_blank" rel="noreferrer" className="text-lg flex items-center mr-2 sm:mr-4">
                   <span className="mr-2">Github</span>
                   <FiChevronRight/>
                 </a>
