@@ -8,19 +8,30 @@ export const EntityCompanyGroup = styled.ul`
   }
 `
 
+export const IconStyled = styled.div`
+  width: 60px;
+  height: 60px;
+  @media (min-width: 640px) {
+    width: 135px;
+    height: 135px;
+  }
+  svg {
+    width: 40px;
+    height: 40px;
+  }
+  @media (min-width: 640px) {
+    svg {
+      width: 80px;
+      height: 80px;
+    }
+  }
+`
+
 export const SpecsGroup = styled.div`
   .icon-wrapper {
     padding-right: 1rem;
-    svg {
-      width: 60px;
-      height: 60px;
-    }
     @media (min-width: 640px) {
       padding-right: 2rem;
-      svg {
-        width: 135px;
-        height: 135px;
-      }
     }
   }
   .content {

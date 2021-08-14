@@ -5,6 +5,7 @@ import { BsPersonFill, BsArrowRightShort } from "react-icons/bs"
 import { HiOutlineSpeakerphone } from "react-icons/hi"
 import { CenterMenus } from "./styled"
 import cv from "../../utils/cv-muhrusdi-2022.pdf"
+import { SiGithub } from "react-icons/si"
 
 const Nav: React.FC = () => {
   const [toggle, setToggle] = useState(false)
@@ -57,19 +58,24 @@ const Nav: React.FC = () => {
                   </div>
                 </div>
               </div>
-              <div className="hidden sm:block">
+              <div className="">
                 <ul className="flex -mx-2">
-                  <li className="px-2">
+                  <li className="px-2 hidden sm:block">
                     <Link to="/3d">3D</Link>
                   </li>
-                  <li className="px-2">
+                  <li className="px-2 hidden sm:block">
                     <Link to="/murottal">Murottal</Link>
                   </li>
-                  <li className="px-2">
+                  <li className="px-2 hidden sm:block">
                     <Link to="/cheatsheet">Cheatsheet</Link>
                   </li>
-                  <li className="px-2">
+                  <li className="px-2 hidden sm:block">
                     <a href="https://github.com/muhrusdi" target="_blank" rel="noreferrer">Github</a>
+                  </li>
+                  <li className="px-2 sm:hidden">
+                    <a href="https://github.com/muhrusdi" target="_blank" rel="noreferrer">
+                      <SiGithub size={20}/>
+                    </a>
                   </li>
                 </ul>
               </div>
