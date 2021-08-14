@@ -84,9 +84,9 @@ const SpecItem: React.FC<PropsType> = ({data: {title, description}}) => {
           animate={toggle ? "open" : "closed"}
           variants={buttonVariants}
           className="close focus:outline-none" onClick={handleClick} >
-          <svg viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M27 0.5V53.5" stroke="white"/>
-          <path d="M0.25 27L53.25 27" stroke="white"/>
+          <svg viewBox="0 0 54 54" fill="none" stroke="#6B7280" xmlns="http://www.w3.org/2000/svg">
+          <path d="M27 0.5V53.5" />
+          <path d="M0.25 27L53.25 27"/>
           </svg>
         </motion.button>
       </div>
