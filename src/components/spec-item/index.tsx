@@ -16,42 +16,42 @@ const SpecItem: React.FC<PropsType> = ({data: {title, description}}) => {
   const specs: any = {
     "Profile": {
       icon: (
-        <IconStyled className="flex items-center justify-center rounded-2xl sm:rounded-4xl bg-gradient-to-br from-pink-400 to-pink-600">
+        <IconStyled className="flex items-center justify-center rounded-2xl sm:rounded-4xl bg-gradient-to-br from-pink-400 to-pink-700">
           <HiOutlineUserCircle className="h-6 w-6"/>
         </IconStyled>
       )
     },
     "Career": {
       icon: (
-        <IconStyled className="flex items-center justify-center rounded-2xl sm:rounded-4xl bg-gradient-to-br from-purple-400 to-purple-600">
+        <IconStyled className="flex items-center justify-center rounded-2xl sm:rounded-4xl bg-gradient-to-br from-purple-400 to-purple-700">
           <HiOutlineOfficeBuilding className="h-6 w-6"/>
         </IconStyled>
       ),
     },
     "Education": {
       icon: (
-        <IconStyled className="flex items-center justify-center rounded-2xl sm:rounded-4xl bg-gradient-to-br from-yellow-400 to-yellow-600">
+        <IconStyled className="flex items-center justify-center rounded-2xl sm:rounded-4xl bg-gradient-to-br from-yellow-400 to-yellow-700">
           <HiOutlineBookOpen className="h-6 w-6"/>
         </IconStyled>
       )
     },
     "Stack": {
       icon: (
-        <IconStyled className="flex items-center justify-center rounded-2xl sm:rounded-4xl bg-gradient-to-br from-blue-400 to-blue-600">
+        <IconStyled className="flex items-center justify-center rounded-2xl sm:rounded-4xl bg-gradient-to-br from-blue-400 to-blue-700">
           <HiOutlineCollection className="h-6 w-6"/>
         </IconStyled>
       )
     },
     "Skill": {
       icon: (
-        <IconStyled className="flex items-center justify-center rounded-2xl sm:rounded-4xl bg-gradient-to-br from-indigo-400 to-indigo-600">
+        <IconStyled className="flex items-center justify-center rounded-2xl sm:rounded-4xl bg-gradient-to-br from-indigo-400 to-indigo-700">
           <HiOutlineCode className="h-6 w-6"/>
         </IconStyled>
       )
     },
     "Work": {
       icon: (
-        <IconStyled className="flex items-center justify-center rounded-2xl sm:rounded-4xl bg-gradient-to-br from-green-400 to-green-600">
+        <IconStyled className="flex items-center justify-center rounded-2xl sm:rounded-4xl bg-gradient-to-br from-green-400 to-green-700">
           <HiOutlineViewGrid className="h-6 w-6"/>
         </IconStyled>
       )

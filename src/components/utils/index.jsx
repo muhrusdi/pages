@@ -206,7 +206,7 @@ export const parseToReact = (str) => {
         const { children, openingElement } = node
         const { attributes } = openingElement
         const attsObj = {}
-
+        console.log(node)
         attributes.forEach((item) => {
           attsObj[item.name.name] = item.value.value;
         })
@@ -214,7 +214,7 @@ export const parseToReact = (str) => {
         const el = React.createElement(
           openingElement.name.name,
           { key: Math.random().toString(36).substring(7), ...attsObj },
-          buildElement(children || [])
+          children.length ? buildElement(children || []) : null
         )
 
         elements.push(el)
