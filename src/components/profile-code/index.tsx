@@ -43,7 +43,11 @@ if (typeof window !== "undefined") {
     })
 }
 
-const PlayCode: React.FC = () => {
+type Props = {
+  isPreview: boolean
+}
+
+const PlayCode: React.FC<Props> = ({isPreview}) => {
   const editorContainerRef = useRef(null)
   const [value, setValue] = useState(snippet)
 
@@ -66,10 +70,10 @@ const PlayCode: React.FC = () => {
 
   return (
     <div className="flex flex-col sm:flex-row -mx-4">
-      <div className="w-full sm:w-1/2 sm:px-4">
+      <div className={`w-full sm:w-1/2 sm:px-4 sm:block ${isPreview ? "block" : "hidden"}`}>
         {parseToReact(value || snippet)}
       </div>
-      <div className="w-full sm:w-1/2 px-4 hidden sm:block">
+      <div className={`w-full sm:w-1/2 sm:px-4 sm:block  ${!isPreview ? "block" : "hidden"}`}>
         <EditorStyled>
           <div className="relative z-20">
             <div className="relative w-full flex flex-col bg-blueGray-900 rounded-2xl overflow-hidden">

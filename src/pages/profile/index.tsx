@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useCallback } from "react"
 import Layout from "containers/layout"
 // import { Link } from "gatsby"
 import styled from "styled-components"
@@ -12,6 +12,12 @@ import cv from "../../utils/cv-muhrusdi-2022.pdf"
 import ProfileCode from "components/profile-code"
 
 const Home: React.FC = () => {
+  const [preview, setPreview] = useState("preview")
+
+  const handlePreview = useCallback((v) => setPreview(v), [])
+
+  const isPreview = preview === "preview"
+
   return (
     <Layout>
       <div>
@@ -22,9 +28,19 @@ const Home: React.FC = () => {
               <div className="w-full flex-none rounded-3xl transform shadow-lg bg-gradient-to-br from-purple-600 to-purple-900 -rotate-2" style={{marginLeft: "-100%"}}></div>
             </div>
             <div className="relative col-end-2 col-start-4 col-span-full row-end-4 self-center" style={{height: "27.25rem"}}>
-              <ProfileCode/>
+              <ProfileCode isPreview={isPreview}/>
             </div>
           </GridStyled>
+          <div className="sm:hidden">
+            <div className="flex justify-center text-sm text-gray-400">
+              <div>
+                <button onClick={() => handlePreview("preview")} className={`px-4 py-1 focus:outline-none border border-blueGray-500 rounded-tl-full rounded-bl-full uppercase font-semibold ${isPreview ? "bg-blueGray-800" : null}`}>Preview</button>
+              </div>
+              <div>
+                <button onClick={() => handlePreview("editor")} className={`px-4 py-1 focus:outline-none border border-l-0 border-blueGray-500 rounded-tr-full rounded-br-full uppercase font-semibold ${!isPreview ? "bg-blueGray-800" : null}`}>Editor</button>
+              </div>
+            </div>
+          </div>
           {/* <div className="flex flex-col sm:flex-row items-center">
             <div>
               <StaticImage className="object-cover rounded-full sm:rounded-5xl" style={{height: 200, width: 200}} src="https://res.cloudinary.com/muhrusdi/image/upload/v1616335341/thumb-612467.png" alt="muhrusdi"/>
