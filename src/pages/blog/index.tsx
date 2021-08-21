@@ -110,7 +110,7 @@ const Blogs: React.FC = () => {
                     <BlogItem data={node.childMdx || node}/>
                   </li>
                 ) : (
-                  node.childMdx.frontmatter.isPublished ? (
+                  node?.childMdx?.frontmatter?.isPublished || node.isPublished ? (
                     <li key={key}>
                       <BlogItem data={node.childMdx || node}/>
                     </li>
