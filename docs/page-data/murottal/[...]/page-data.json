@@ -1,1 +1,6 @@
-{"componentChunkName":"component---src-pages-murottal-tsx","path":"/murottal/[...]/","matchPath":"/murottal/*","result":{"pageContext":{"matchPath":"/murottal/*"}},"staticQueryHashes":["45326706"]}
+{
+    "componentChunkName": "component---src-pages-murottal-tsx",
+    "path": "/murottal/[...]/",
+    "result": {"pageContext":{"matchPath":"/murottal/*"}},
+    "staticQueryHashes": ["45326706"],
+    "matchPath": "/murottal/*"}

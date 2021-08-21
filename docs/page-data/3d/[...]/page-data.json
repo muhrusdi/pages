@@ -1,1 +1,6 @@
-{"componentChunkName":"component---src-pages-3-d-tsx","path":"/3d/[...]/","matchPath":"/3d/*","result":{"pageContext":{"matchPath":"/3d/*"}},"staticQueryHashes":["45326706"]}
+{
+    "componentChunkName": "component---src-pages-3-d-tsx",
+    "path": "/3d/[...]/",
+    "result": {"pageContext":{"matchPath":"/3d/*"}},
+    "staticQueryHashes": ["45326706"],
+    "matchPath": "/3d/*"}
