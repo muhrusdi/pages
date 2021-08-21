@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import BlogItem from "components/blog/blog-item"
 import LatestBlog from "components/blog/lastest"
 import Layout from "containers/layout"
+import { transformBlog } from "utils/"
 
 const Blogs: React.FC = () => {
   const data = useStaticQuery(graphql`
@@ -87,13 +88,7 @@ const Blogs: React.FC = () => {
 
   const [featured] = data.featured.edges
 
-  const composeBlogs = [...data?.allFile.edges, ...data?.allContentfulArticle.edges]
-
-  const composeBlogsSort = composeBlogs.sort((a,b) => {
-    const current = a.node?.childMdx?.frontmatter?.publishedOn || a.node.createdAt
-    const next = b.node?.childMdx?.frontmatter?.publishedOn || b.node.createdAt
-    return current > next ? -1 : 1
-  })
+  const composeBlogsSort = transformBlog(data)
   
   return (
     <Layout>
