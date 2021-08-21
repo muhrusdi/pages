@@ -15,7 +15,7 @@ const snippet = `<div>
     Shipless Play
   </h2>
   <p className="mt-4 sm:mt-8 text-lg text-gray-400 line-clamp-2">
-    React simple playground for HTML, CSS and JavaScript
+    Simple playground for HTML, CSS and JavaScript
   </p>
   <a href="https://github.com/shipless/play" target="_blank" rel="noreferrer" className="mt-8 sm:mt-10 inline-block text-lg">
     <div className="flex items-center">
