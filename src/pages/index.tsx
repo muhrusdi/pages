@@ -115,11 +115,21 @@ const Home: React.FC = () => {
           />
           <ul className="grid grid-cols-1 mt-12 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {
-              composeBlogsSort.map(({node}, key) => key < 6 ? (
-                <li key={key}>
-                  <BlogItem data={node.childMdx || node}/>
-                </li>
-              ): null) 
+              composeBlogsSort.map(({node}, key) => {
+                if (key < 6) {
+                  return process.env.NODE_ENV !== "production" ? (
+                    <li key={key}>
+                      <BlogItem data={node.childMdx || node}/>
+                    </li>
+                  ) : (
+                    node?.childMdx?.frontmatter?.isPublished || node.isPublished ? (
+                      <li key={key}>
+                        <BlogItem data={node.childMdx || node}/>
+                      </li>
+                    ) : null
+                  )
+                }
+              })
             }
           </ul>
           {/* {
