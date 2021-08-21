@@ -1,12 +1,13 @@
 import React from "react"
 import { useQuery, gql } from "@apollo/client"
 import { useStaticQuery, graphql } from "gatsby"
-import LatestBlog from "components/blog/lastest"
+// import LatestBlog from "components/blog/lastest"
 import PlayCode from "components/playcode"
 import BlogItem from "components/blog/blog-item"
 import WorkItem, { WorkItemLoading } from "components/work/work-item"
 import Layout from "containers/layout"
 import SectionHeader from "components/blog/header"
+import { transformBlog } from "utils/"
 
 const Home: React.FC = () => {
   const data = useStaticQuery(graphql`
@@ -45,6 +46,22 @@ const Home: React.FC = () => {
           }
         }
       }
+      allContentfulArticle {
+        edges {
+          node {
+            title
+            createdAt
+            isPublished
+            seoTitle
+            abstract {
+              abstract
+            }
+            featuredImage {
+              gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
+            }
+          }
+        }
+      }
     }
   `)
 
@@ -79,7 +96,9 @@ const Home: React.FC = () => {
 
   const { loading, data: dataWorks } = useQuery(WORK_COLLECTION)
 
-  const [firstBlog, ...blogRest] = data.allFile.edges
+  // const [firstBlog, ...blogRest] = data.allFile.edges
+
+  const composeBlogsSort = transformBlog(data)
 
   return (
     <Layout>
@@ -96,11 +115,11 @@ const Home: React.FC = () => {
           />
           <ul className="grid grid-cols-1 mt-12 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {
-              blogRest.map(({node}, key) => (
+              composeBlogsSort.map(({node}, key) => key < 6 ? (
                 <li key={key}>
-                  <BlogItem data={node.childMdx}/>
+                  <BlogItem data={node.childMdx || node}/>
                 </li>
-              ))
+              ): null) 
             }
           </ul>
           {/* {

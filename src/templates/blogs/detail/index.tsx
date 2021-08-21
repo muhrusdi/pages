@@ -1,8 +1,10 @@
 import React from "react"
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import styled from "styled-components"
+import { renderRichText } from "gatsby-source-contentful/rich-text"
 import { formatDate } from "utils"
 import { ArticleStyled } from "components/utils"
+import Layout from "containers/layout"
 
 const ImageStyled = styled(GatsbyImage)`
   height: 200px;
@@ -25,16 +27,17 @@ export const Header: React.FC = ({title, featuredImage, date}) => (
   </header>
 )
 
-const DetailBlog: React.FC = () => {
+const DetailBlog: React.FC = ({pageContext}) => {
+  const {data } = pageContext
   return (
-    <div>
-      <Header/>
-      <div className="sm:pr-6 sm:pl-6 mx-auto max-w-2xl mt-14">
+    <Layout>
+      <Header title={data.seoTitle} description={data.abstract} date={data.createdAt} featuredImage={data.featuredImage}/>
+      <div className="sm:pr-6 sm:pl-6 mx-auto max-w-2xl mt-24">
         <ArticleStyled className="prose prose-xl">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius ipsum perspiciatis dicta, obcaecati, suscipit voluptatum voluptates sed ipsa saepe fugit quas beatae temporibus, atque voluptas pariatur dolore facere odit eos.</p>
+          {renderRichText(data.body)}
         </ArticleStyled>
       </div>
-    </div>
+    </Layout>
   )
 }
 

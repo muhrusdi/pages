@@ -65,6 +65,25 @@ exports.createPages = async ({graphql, actions}) => {
           }
         }
       }
+      allContentfulArticle {
+        edges {
+          node {
+            title
+            createdAt
+            isPublished
+            seoTitle
+            body {
+              raw
+            }
+            abstract {
+              abstract
+            }
+            featuredImage {
+              gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
+            }
+          }
+        }
+      }
       cheatsheets: allFile(filter: { sourceInstanceName: { eq: "cheatsheets" } }) {
         edges {
           node {
@@ -100,6 +119,18 @@ exports.createPages = async ({graphql, actions}) => {
     })
   }
 
+  const createBlogPage = (node) => {
+    const slug = slugify(node.title, {lower: true, remove: /[*+~.()'"!:@]/g})
+    createPage({
+      path: `/blog/${slug}`,
+      component: path.resolve(`./src/templates/blogs/detail/index.tsx`),
+      context: {
+        slug,
+        data: node
+      },
+    })
+  }
+
   const createCheatsheetPage = (node) => {
     const { slug } = node.fields
     createPage({
@@ -115,6 +146,10 @@ exports.createPages = async ({graphql, actions}) => {
 
   mdxResults.data.allFile.edges.forEach(({ node }) => {
     createMdxPage(node.childMdx)
+  })
+  
+  mdxResults.data.allContentfulArticle.edges.forEach(({ node }) => {
+    createBlogPage(node)
   })
 
   mdxResults.data.cheatsheets.edges.forEach(({ node }) => {
@@ -154,7 +189,7 @@ exports.onCreateNode = ({ node, actions, createNodeId, cache, store }) => {
       value: slug,
     })
   }
-
+  
   if (
     node.internal.type === "Mdx" &&
     node.frontmatter &&

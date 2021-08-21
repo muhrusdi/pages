@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import BlogItem from "components/blog/blog-item"
 import LatestBlog from "components/blog/lastest"
 import Layout from "containers/layout"
+import { transformBlog } from "utils/"
 
 const Blogs: React.FC = () => {
   const data = useStaticQuery(graphql`
@@ -63,10 +64,31 @@ const Blogs: React.FC = () => {
           }
         }
       }
+      allContentfulArticle {
+        edges {
+          node {
+            title
+            createdAt
+            isPublished
+            seoTitle
+            body {
+              raw
+            }
+            abstract {
+              abstract
+            }
+            featuredImage {
+              gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
+            }
+          }
+        }
+      }
     }
   `)
 
   const [featured] = data.featured.edges
+
+  const composeBlogsSort = transformBlog(data)
   
   return (
     <Layout>
@@ -77,15 +99,15 @@ const Blogs: React.FC = () => {
         <div className="mt-20">
           <ul className="grid grid-cols-1 sm:grid-cols-3 gap-8">
             {
-              data?.allFile.edges.map(({node}, key) => {
+              composeBlogsSort.map(({node}, key) => {
                 return process.env.NODE_ENV !== "production" ? (
                   <li key={key}>
-                    <BlogItem data={node.childMdx}/>
+                    <BlogItem data={node.childMdx || node}/>
                   </li>
                 ) : (
-                  node.childMdx.frontmatter.isPublished ? (
+                  node?.childMdx?.frontmatter?.isPublished || node.isPublished ? (
                     <li key={key}>
-                      <BlogItem data={node.childMdx}/>
+                      <BlogItem data={node.childMdx || node}/>
                     </li>
                   ) : null
                 )
