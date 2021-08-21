@@ -63,10 +63,37 @@ const Blogs: React.FC = () => {
           }
         }
       }
+      allContentfulArticle {
+        edges {
+          node {
+            title
+            createdAt
+            isPublished
+            seoTitle
+            body {
+              raw
+            }
+            abstract {
+              abstract
+            }
+            featuredImage {
+              gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
+            }
+          }
+        }
+      }
     }
   `)
 
   const [featured] = data.featured.edges
+
+  const composeBlogs = [...data?.allFile.edges, ...data?.allContentfulArticle.edges]
+
+  const composeBlogsSort = composeBlogs.sort((a,b) => {
+    const current = a.node?.childMdx?.frontmatter?.publishedOn || a.node.createdAt
+    const next = b.node?.childMdx?.frontmatter?.publishedOn || b.node.createdAt
+    return current > next ? -1 : 1
+  })
   
   return (
     <Layout>
@@ -77,15 +104,15 @@ const Blogs: React.FC = () => {
         <div className="mt-20">
           <ul className="grid grid-cols-1 sm:grid-cols-3 gap-8">
             {
-              data?.allFile.edges.map(({node}, key) => {
+              composeBlogsSort.map(({node}, key) => {
                 return process.env.NODE_ENV !== "production" ? (
                   <li key={key}>
-                    <BlogItem data={node.childMdx}/>
+                    <BlogItem data={node.childMdx || node}/>
                   </li>
                 ) : (
                   node.childMdx.frontmatter.isPublished ? (
                     <li key={key}>
-                      <BlogItem data={node.childMdx}/>
+                      <BlogItem data={node.childMdx || node}/>
                     </li>
                   ) : null
                 )

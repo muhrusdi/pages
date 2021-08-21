@@ -30,6 +30,14 @@ module.exports = {
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `gyshnlhzhaow`,
+        // Learn about environment variables: https://gatsby.dev/env-vars
+        accessToken: `uzjZsN_6OoeahBbqrxK9byRPvee9aHtLeMMShWGtZpc`,
+      },
+    },
+    {
       resolve: "gatsby-plugin-manifest",
       options: {
         name: "Muhammad Rusdi",
