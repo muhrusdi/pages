@@ -28,6 +28,7 @@ const Home: React.FC = () => {
               frontmatter {
                 title
                 publishedOn
+                isPublished
                 seoTitle
                 abstract
                 featuredImage {
@@ -99,6 +100,8 @@ const Home: React.FC = () => {
   // const [firstBlog, ...blogRest] = data.allFile.edges
 
   const composeBlogsSort = transformBlog(data)
+
+  console.log(composeBlogsSort)
 
   return (
     <Layout>
