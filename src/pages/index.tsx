@@ -101,8 +101,6 @@ const Home: React.FC = () => {
 
   const composeBlogsSort = transformBlog(data)
 
-  console.log(composeBlogsSort)
-
   return (
     <Layout>
       <div>
