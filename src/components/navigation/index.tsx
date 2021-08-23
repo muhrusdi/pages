@@ -49,7 +49,7 @@ const Nav: React.FC = () => {
                         <BsArrowRightShort size={20}/>
                       </Link></span>
                     <span className="hidden sm:flex items-center">
-                      <span className="mr-2">Curriculum Vitae.</span>
+                      <span className="mr-2">Resume.</span>
                       <a href={cv} rel="noreferrer" target="_blank" className="text-white flex items-center font-semibold">
                         <span>Here</span>
                         <BsArrowRightShort size={20}/>
