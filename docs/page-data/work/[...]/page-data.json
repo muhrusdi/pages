@@ -1,0 +1,6 @@
+{
+    "componentChunkName": "component---src-pages-work-tsx",
+    "path": "/work/[...]/",
+    "result": {"pageContext":{"matchPath":"/work/*"}},
+    "staticQueryHashes": ["45326706"],
+    "matchPath": "/work/*"}
