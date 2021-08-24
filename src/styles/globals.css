@@ -17,5 +17,9 @@
     @apply bg-black text-white;
   }
 
+  .gatsby-highlight {
+    @apply text-base;
+  }
+
   @import url('@shipless/play/dist/style.css');
 }

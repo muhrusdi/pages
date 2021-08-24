@@ -27,6 +27,14 @@ module.exports = {
       },
     },
     "gatsby-transformer-sharp",
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          `gatsby-remark-prismjs`,
+        ],
+      },
+    },
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     {

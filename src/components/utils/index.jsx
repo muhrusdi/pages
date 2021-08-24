@@ -155,6 +155,11 @@ export const ArticleStyled = styled.article`
       margin-right: auto;
     }
   }
+  .gatsby-highlight {
+    & > pre {
+      padding: 32px;
+    }
+  }
   pre, .shipless-play {
     margin-left: 0;
     margin-right: 0;
