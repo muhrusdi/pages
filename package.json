@@ -6,7 +6,6 @@
   "author": "muhrusdi",
   "dependencies": {
     "@apollo/client": "^3.4.7",
-    "@contentful/rich-text-types": "^15.1.0",
     "@mapbox/rehype-prism": "^0.7.0",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
