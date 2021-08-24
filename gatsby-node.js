@@ -73,7 +73,9 @@ exports.createPages = async ({graphql, actions}) => {
             isPublished
             seoTitle
             body {
-              raw
+              childMarkdownRemark {
+                html
+              }
             }
             abstract {
               abstract

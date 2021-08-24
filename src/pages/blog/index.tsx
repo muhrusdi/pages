@@ -71,9 +71,6 @@ const Blogs: React.FC = () => {
             createdAt
             isPublished
             seoTitle
-            body {
-              raw
-            }
             abstract {
               abstract
             }
