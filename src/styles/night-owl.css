@@ -6,8 +6,8 @@
  * Added by Souvik Mandal [@SimpleIndian]
  */
 
- code[class*="language-"],
- pre[class*="language-"] {
+ .gatsby-highlight code[class*="language-"],
+ .gatsby-highlight pre[class*="language-"] {
    color: #d6deeb;
    font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
    text-align: left;
@@ -28,38 +28,38 @@
    hyphens: none;
  }
  
- pre[class*="language-"]::-moz-selection,
- pre[class*="language-"] ::-moz-selection,
- code[class*="language-"]::-moz-selection,
- code[class*="language-"] ::-moz-selection {
+ .gatsby-highlight pre[class*="language-"]::-moz-selection,
+ .gatsby-highlight pre[class*="language-"] ::-moz-selection,
+ .gatsby-highlight code[class*="language-"]::-moz-selection,
+ .gatsby-highlight code[class*="language-"] ::-moz-selection {
    text-shadow: none;
    background: rgba(29, 59, 83, 0.99);
  }
  
- pre[class*="language-"]::selection,
- pre[class*="language-"] ::selection,
- code[class*="language-"]::selection,
- code[class*="language-"] ::selection {
+ .gatsby-highlight pre[class*="language-"]::selection,
+ .gatsby-highlight pre[class*="language-"] ::selection,
+ .gatsby-highlight code[class*="language-"]::selection,
+ .gatsby-highlight code[class*="language-"] ::selection {
    text-shadow: none;
    background: rgba(29, 59, 83, 0.99);
  }
  
  @media print {
-   code[class*="language-"],
-   pre[class*="language-"] {
+  .gatsby-highlight code[class*="language-"],
+  .gatsby-highlight pre[class*="language-"] {
      text-shadow: none;
    }
  }
  
  /* Code blocks */
- pre[class*="language-"] {
+ .gatsby-highlight pre[class*="language-"] {
    padding: 1em;
    margin: 0.5em 0;
    overflow: auto;
  }
  
  :not(pre) > code[class*="language-"],
- pre[class*="language-"] {
+ .gatsby-highlight pre[class*="language-"] {
    color: white;
    background: #011627;
  }
