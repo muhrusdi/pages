@@ -52,7 +52,7 @@ const DetailBlog: React.FC = ({pageContext}) => {
     <Layout>
       <Header title={data.seoTitle} description={data.abstract} date={data.createdAt} featuredImage={data.featuredImage}/>
       <div className="sm:pr-6 sm:pl-6 mx-auto max-w-2xl mt-24">
-        <ArticleStyled className="prose prose-xl" dangerouslySetInnerHTML={{__html: data?.body?.childMarkdownRemark?.html}}/>
+        <ArticleStyled className="prose prose-xl contentful" dangerouslySetInnerHTML={{__html: data?.body?.childMarkdownRemark?.html}}/>
       </div>
     </Layout>
   )
