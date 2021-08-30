@@ -10,7 +10,7 @@ const snippet = `<!-- code editor -->
   <img className="object-cover rounded-full m-auto w-36 h-36 sm:w-52 sm:h-52" src="https://res.cloudinary.com/muhrusdi/image/upload/v1616335341/thumb-612467.png" alt="muhrusdi"/>
   <div className="mt-6">
     <p className="font-semibold">
-      &quot;I’m Front End Engineer with 5+ years of experience in web development. I like to code things from scratch and enjoy bringing ideas to life in the browser.&quot;
+      &quot;I’m Front End Engineer with 4+ years of experience in web development. I like to code things from scratch and enjoy bringing ideas to life in the browser.&quot;
     </p>
     <div className="mt-6">
       <p className="text-blue-600 font-medium text-lg">
