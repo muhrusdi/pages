@@ -212,12 +212,12 @@ exports.onCreateNode = ({ node, actions, createNodeId, cache, store }) => {
   }
 }
 
-exports.onPostBuild = () => {
-  const publicDir = path.join(__dirname, "public");
-  const docsDir = path.join(__dirname, "docs");
-  // if (fs.existsSync) {
-  //   fs.rmdirSync(docsDir, {recursive: true})
-  // }
-  fs.removeSync(docsDir)
-  fs.copySync(publicDir, docsDir, { overwrite: true });
-}
+// exports.onPostBuild = () => {
+//   const publicDir = path.join(__dirname, "public");
+//   const docsDir = path.join(__dirname, "docs");
+//   // if (fs.existsSync) {
+//   //   fs.rmdirSync(docsDir, {recursive: true})
+//   // }
+//   fs.removeSync(docsDir)
+//   fs.copySync(publicDir, docsDir, { overwrite: true });
+// }
