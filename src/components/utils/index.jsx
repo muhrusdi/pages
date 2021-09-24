@@ -240,3 +240,10 @@ export const BlogItemFooter = styled.div`
     }
   }
 `
+
+export const AlbumSection = styled.div`
+  & > div:first-of-type {
+    grid-column: span 3 / span 3;
+    grid-row: 2fr;
+  }
+`
