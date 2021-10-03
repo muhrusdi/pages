@@ -4,6 +4,7 @@ import styled from "styled-components"
 import { formatDate } from "utils"
 import { ArticleStyled } from "components/utils"
 import Layout from "containers/layout"
+import SEO from "components/seo"
 
 const ImageStyled = styled(GatsbyImage)`
   height: 200px;
@@ -50,6 +51,7 @@ const DetailBlog: React.FC = ({pageContext}) => {
 
   return (
     <Layout>
+      <SEO title="Blog" description="Here you‘ll find my collected writing on topics ranging from design and coding."/>
       <Header title={data.seoTitle} description={data.abstract} date={data.createdAt} featuredImage={data.featuredImage}/>
       <div className="sm:pr-6 sm:pl-6 mx-auto max-w-2xl mt-24">
         <ArticleStyled className="prose prose-xl contentful" dangerouslySetInnerHTML={{__html: data?.body?.childMarkdownRemark?.html}}/>
