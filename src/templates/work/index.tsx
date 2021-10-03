@@ -4,6 +4,7 @@ import { useQuery, gql } from "@apollo/client"
 // import { useStaticQuery, graphql } from "gatsby"
 import WorkItem, { WorkItemLoading } from "components/work/work-item"
 import FeaturedWork from "components/work/featured"
+import SEO from "components/seo"
 
 const Works: React.FC = () => {
   const WORK_COLLECTION = gql`
@@ -47,6 +48,7 @@ const Works: React.FC = () => {
 
   return (
     <div>
+      <SEO title="Work - Muhammad Rusdi" description="I work with forward-thinking people to design and build interactive, accessible websites and products."/>
       <div className="mt-8">
         <FeaturedWork/>
       </div>
