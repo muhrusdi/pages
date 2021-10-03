@@ -48,7 +48,7 @@ const Works: React.FC = () => {
 
   return (
     <div>
-      <SEO title="Work" description="I work with forward-thinking people to design and build interactive, accessible websites and products."/>
+      <SEO title="Work - Muhammad Rusdi" description="I work with forward-thinking people to design and build interactive, accessible websites and products."/>
       <div className="mt-8">
         <FeaturedWork/>
       </div>
