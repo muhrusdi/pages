@@ -70,10 +70,10 @@ const Nav: React.FC = () => {
                     <Link to="/cheatsheet">Cheatsheet</Link>
                   </li>
                   <li className="px-2 hidden sm:block">
-                    <a href="https://github.com/muhrusdi" target="_blank" rel="noreferrer">Github</a>
+                    <a href="https://github.com/muhrusdi/pages" target="_blank" rel="noreferrer">Github</a>
                   </li>
                   <li className="px-2 sm:hidden">
-                    <a href="https://github.com/muhrusdi" target="_blank" rel="noreferrer">
+                    <a href="https://github.com/muhrusdi/pages" target="_blank" rel="noreferrer">
                       <SiGithub size={20}/>
                     </a>
                   </li>
@@ -142,7 +142,7 @@ const Nav: React.FC = () => {
                   <Link to="/murottal">Murottal</Link>
                 </li>
                 <li className="px-2 sm:hidden">
-                  <a href="https://github.com/muhrusdi" target="_blank" rel="noreferrer" className="block text-gray-200 hover:text-white transition-all">
+                  <a href="https://github.com/muhrusdi/pages" target="_blank" rel="noreferrer" className="block text-gray-200 hover:text-white transition-all">
                     <div>Github</div>
                   </a>
                 </li>
