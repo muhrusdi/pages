@@ -12,7 +12,7 @@ const authLink = setContext((_, { headers }) => {
   return {
     headers: {
       ...headers,
-      Authorization: `Bearer uzjZsN_6OoeahBbqrxK9byRPvee9aHtLeMMShWGtZpc`,
+      Authorization: `Bearer ${process.env.GATSBY_CONTENTFUL_TOKEN}`,
     }
   }
 })
