@@ -5,9 +5,9 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: "Muhammad Rusdi",
-    description: "Front End Engineer, JAMStack Enthusiast",
+    description: "Front End Engineer, JAMstack Enthusiast",
     author: "@muhrusdi",
-    siteUrl: "https://github.com/muhrusdi/muhrusdi.github.io",
+    siteUrl: "https://github.com/muhrusdi/pages",
     image: "https://res.cloudinary.com/muhrusdi/image/upload/v1624511269/muhrusdi-cover.jpg"
   },
   flags: {
