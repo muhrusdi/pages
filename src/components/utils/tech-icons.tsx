@@ -3,8 +3,8 @@ import {
   SiHtml5,
   SiCss3,
   SiGraphql,
-  SiVueDotJs,
-  SiGatsby, SiNextDotJs, SiReact, SiStyledComponents, SiTailwindcss, SiTypescript } from "react-icons/si"
+  SiVuedotjs,
+  SiGatsby, SiNextdotjs, SiReact, SiStyledcomponents, SiTailwindcss, SiTypescript } from "react-icons/si"
 
 const icons = {
   "Javascript": {
@@ -21,11 +21,11 @@ const icons = {
   },
   "Vue": {
     name: "Vue",
-    icon: <SiVueDotJs color="#1ab45a"/>
+    icon: <SiVuedotjs color="#1ab45a"/>
   },
   "Nextjs": {
     name: "Nextjs",
-    icon: <SiNextDotJs color="#d1d5db"/>
+    icon: <SiNextdotjs color="#d1d5db"/>
   },
   "Gatsbyjs": {
     name: "Gatsbyjs",
@@ -33,7 +33,7 @@ const icons = {
   },
   "Styled Components": {
     name: "Styled Components",
-    icon: <SiStyledComponents color="orange"/>
+    icon: <SiStyledcomponents color="orange"/>
   },
   "Tailwindcss": {
     name: "Tailwindcss",

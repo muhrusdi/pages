@@ -1,5 +1,5 @@
 {
-  "parser": "babel-eslint", // uses babel-eslint transforms
+  "parser": "@typescript-eslint/parser", // uses babel-eslint transforms
   "settings": {
     "react": {
       "version": "detect" // detect react version
