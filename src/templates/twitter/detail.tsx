@@ -7,12 +7,12 @@ import ReactCanvasConfetti from "react-canvas-confetti";
 const DetailTwitter: React.FC = () => {
   const confettiRef = useRef(null)
 
-  useEffect(() => {
-    fetch("https://mytweetapi.herokuapp.com/api/mhmrus")
-      .then(d => {
-        console.log(d)
-      })
-  }, [])
+  // useEffect(() => {
+  //   fetch("https://mytweetapi.herokuapp.com/api/mhmrus")
+  //     .then(d => {
+  //       console.log(d)
+  //     })
+  // }, [])
 
   const makeShot = (particleRatio, opts) => {
     confettiRef.current({
