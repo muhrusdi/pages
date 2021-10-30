@@ -7,7 +7,11 @@ import { CenterMenus } from "./styled"
 import cv from "../../utils/cv-muhrusdi-2022.pdf"
 import { SiGithub } from "react-icons/si"
 
-const Nav: React.FC = () => {
+type Props = {
+  type?: string
+}
+
+const Nav: React.FC<Props> = ({type}) => {
   const [toggle, setToggle] = useState(false)
   const menusRef = useRef(null)
   const handleClick = () => {
@@ -32,7 +36,7 @@ const Nav: React.FC = () => {
     <>
       <nav className="w-full relative z-50">
         <div className="bg-purple-700">
-          <div className="container max-w-screen-lg">
+          <div className={`container ${type === "fluid" ? "max-w-full" : "max-w-screen-lg" }`}>
             <div className="py-2 flex justify-between items-center text-gray-200" style={{height: 40}}>
               <div>
                 <div className="flex items-center">
@@ -82,7 +86,7 @@ const Nav: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="container max-w-screen-lg">
+        <div className={`container ${type === "fluid" ? "max-w-full" : "max-w-screen-lg" }`}>
           <div className="flex py-7 sm:py-6 justify-between items-center">
             <div className="relative z-50">
               <Link to="/">
