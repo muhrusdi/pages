@@ -32,6 +32,26 @@ const Nav: React.FC<Props> = ({type}) => {
     return () => document.removeEventListener("click", handleClickOutside)
   }, [toggle])
 
+  const miniMenus = [
+    {
+      title: "3D",
+      path: "/3d",
+      className: "border-t border-gray-700 mt-4"
+    },
+    {
+      title: "Murottal",
+      path: "/murottal"
+    },
+    {
+      title: "Cheatsheet",
+      path: "/cheatsheet"
+    },
+    {
+      title: "Twitter",
+      path: "/twitter"
+    },
+  ]
+
   return (
     <>
       <nav className="w-full relative z-50">
@@ -64,15 +84,13 @@ const Nav: React.FC<Props> = ({type}) => {
               </div>
               <div className="">
                 <ul className="flex -mx-2">
-                  <li className="px-2 hidden sm:block">
-                    <Link to="/3d">3D</Link>
-                  </li>
-                  <li className="px-2 hidden sm:block">
-                    <Link to="/murottal">Murottal</Link>
-                  </li>
-                  <li className="px-2 hidden sm:block">
-                    <Link to="/cheatsheet">Cheatsheet</Link>
-                  </li>
+                  {
+                    miniMenus.map((item, i) => (
+                      <li key={i} className="px-2 hidden sm:block">
+                        <Link to={item.path}>{item.title}</Link>
+                      </li>
+                    ))
+                  }
                   <li className="px-2 hidden sm:block">
                     <a href="https://github.com/muhrusdi/pages" target="_blank" rel="noreferrer">Github</a>
                   </li>
@@ -134,17 +152,15 @@ const Nav: React.FC<Props> = ({type}) => {
                     <div>Profile</div>
                   </Link>
                 </li>
-                <li className="px-2 sm:hidden border-t border-gray-700 mt-4">
-                  <Link to="/3d"  className="block text-gray-200 hover:text-white transition-all mt-3">
-                    <div>3D</div>
-                  </Link>
-                </li>
-                <li className="px-2 sm:hidden">
-                  <Link to="/cheatsheet">Cheatsheet</Link>
-                </li>
-                <li className="px-2 sm:hidden">
-                  <Link to="/murottal">Murottal</Link>
-                </li>
+                {
+                  miniMenus.map((item, i) => (
+                    <li key={i} className={`px-2 sm:hidden ${item?.className || null}`}>
+                      <Link to="/3d"  className={`block text-gray-200 hover:text-white transition-all ${item?.className ? "mt-3" : null}`}>
+                        <span>{item.title}</span>
+                      </Link>
+                    </li>
+                  ))
+                }
                 <li className="px-2 sm:hidden">
                   <a href="https://github.com/muhrusdi/pages" target="_blank" rel="noreferrer" className="block text-gray-200 hover:text-white transition-all">
                     <div>Github</div>

@@ -89,7 +89,7 @@ const DetailTwitter: React.FC = () => {
           {/* <p className="mt-4">1,100 Tweets</p> */}
         </div>
       </header>
-      <ul className="grid grid-cols-6 gap-6 mt-16">
+      <ul className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 mt-16">
         <li>
           <TweetItem/>
         </li>
