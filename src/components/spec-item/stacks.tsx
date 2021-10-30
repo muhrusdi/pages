@@ -7,7 +7,7 @@ import {
   SiReact,
   SiGraphql,
   SiTailwindcss,
-  SiNextDotJs,
+  SiNextdotjs,
   SiGatsby,
 } from "react-icons/si"
 import { BiServer } from "react-icons/bi"
@@ -143,7 +143,7 @@ const StacksItem: React.FC = () => (
             </li>
             <li className="mt-4 px-3 py-3">
               <div className="flex flex-col items-center">
-                <SiNextDotJs size={60} color="#d1d5db"/>
+                <SiNextdotjs size={60} color="#d1d5db"/>
                 <span className="text-sm uppercase mt-4">Next.js</span>
               </div>
             </li>

@@ -7,7 +7,11 @@ import { CenterMenus } from "./styled"
 import cv from "../../utils/cv-muhrusdi-2022.pdf"
 import { SiGithub } from "react-icons/si"
 
-const Nav: React.FC = () => {
+type Props = {
+  type?: string
+}
+
+const Nav: React.FC<Props> = ({type}) => {
   const [toggle, setToggle] = useState(false)
   const menusRef = useRef(null)
   const handleClick = () => {
@@ -28,11 +32,31 @@ const Nav: React.FC = () => {
     return () => document.removeEventListener("click", handleClickOutside)
   }, [toggle])
 
+  const miniMenus = [
+    {
+      title: "3D",
+      path: "/3d",
+      className: "border-t border-gray-700 mt-4"
+    },
+    {
+      title: "Murottal",
+      path: "/murottal"
+    },
+    {
+      title: "Cheatsheet",
+      path: "/cheatsheet"
+    },
+    {
+      title: "Twitter",
+      path: "/twitter"
+    },
+  ]
+
   return (
     <>
       <nav className="w-full relative z-50">
         <div className="bg-purple-700">
-          <div className="container max-w-screen-lg">
+          <div className={`container ${type === "fluid" ? "max-w-full" : "max-w-screen-lg" }`}>
             <div className="py-2 flex justify-between items-center text-gray-200" style={{height: 40}}>
               <div>
                 <div className="flex items-center">
@@ -60,15 +84,13 @@ const Nav: React.FC = () => {
               </div>
               <div className="">
                 <ul className="flex -mx-2">
-                  <li className="px-2 hidden sm:block">
-                    <Link to="/3d">3D</Link>
-                  </li>
-                  <li className="px-2 hidden sm:block">
-                    <Link to="/murottal">Murottal</Link>
-                  </li>
-                  <li className="px-2 hidden sm:block">
-                    <Link to="/cheatsheet">Cheatsheet</Link>
-                  </li>
+                  {
+                    miniMenus.map((item, i) => (
+                      <li key={i} className="px-2 hidden sm:block">
+                        <Link to={item.path}>{item.title}</Link>
+                      </li>
+                    ))
+                  }
                   <li className="px-2 hidden sm:block">
                     <a href="https://github.com/muhrusdi/pages" target="_blank" rel="noreferrer">Github</a>
                   </li>
@@ -82,7 +104,7 @@ const Nav: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="container max-w-screen-lg">
+        <div className={`container ${type === "fluid" ? "max-w-full" : "max-w-screen-lg" }`}>
           <div className="flex py-7 sm:py-6 justify-between items-center">
             <div className="relative z-50">
               <Link to="/">
@@ -130,17 +152,15 @@ const Nav: React.FC = () => {
                     <div>Profile</div>
                   </Link>
                 </li>
-                <li className="px-2 sm:hidden border-t border-gray-700 mt-4">
-                  <Link to="/3d"  className="block text-gray-200 hover:text-white transition-all mt-3">
-                    <div>3D</div>
-                  </Link>
-                </li>
-                <li className="px-2 sm:hidden">
-                  <Link to="/cheatsheet">Cheatsheet</Link>
-                </li>
-                <li className="px-2 sm:hidden">
-                  <Link to="/murottal">Murottal</Link>
-                </li>
+                {
+                  miniMenus.map((item, i) => (
+                    <li key={i} className={`px-2 sm:hidden ${item?.className || null}`}>
+                      <Link to="/3d"  className={`block text-gray-200 hover:text-white transition-all ${item?.className ? "mt-3" : null}`}>
+                        <span>{item.title}</span>
+                      </Link>
+                    </li>
+                  ))
+                }
                 <li className="px-2 sm:hidden">
                   <a href="https://github.com/muhrusdi/pages" target="_blank" rel="noreferrer" className="block text-gray-200 hover:text-white transition-all">
                     <div>Github</div>

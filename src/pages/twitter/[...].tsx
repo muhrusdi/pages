@@ -1,20 +1,20 @@
 import React from "react"
 import { Router } from "@reach/router"
-import Detail from "components/work/detail"
-import Work from "templates/work"
+import Detail from "templates/twitter/detail"
+import TwitterPage from "templates/twitter"
 import Layout from "containers/layout"
 import SEO from "components/seo"
 
-const DetailWork: React.FC = () => {
+const Twitter: React.FC = () => {
   return (
-    <Layout>
+    <Layout type="fluid">
       <SEO title="Work - Muhammad Rusdi"/>
-      <Router basepath="/work">
-        <Work path="/"/>
+      <Router basepath="/twitter">
+        <TwitterPage path="/"/>
         <Detail path="/:slug"/>
       </Router>
     </Layout>
   )
 }
 
-export default DetailWork
+export default Twitter
