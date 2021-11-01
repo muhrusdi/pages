@@ -29,7 +29,6 @@ const MurottalPlayer: React.FC = ({data}) => {
         "callbacks": {
               "play": () => {
                 setIsPlay(true)
-                console.log(amplitudeRef.current.getSongPlayedPercentage())
               },
       
               "pause": function(){

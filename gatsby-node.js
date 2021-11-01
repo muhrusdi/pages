@@ -5,6 +5,7 @@ const path = require("path")
 const slugify = require("slugify")
 const fs = require("fs-extra")
 const { createRemoteFileNode } = require(`gatsby-source-filesystem`)
+const CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin")
 // const MonacoWebpackPlugin = require("monaco-editor-webpack-plugin")
 
 const aliases = {
@@ -20,7 +21,7 @@ const aliases = {
 }
 
 
-exports.onCreateWebpackConfig = ({actions, plugins}) => { //stage, getConfig, rules, loaders, actions
+exports.onCreateWebpackConfig = ({actions, stage, plugins}) => { //stage, getConfig, rules, loaders, actions
   actions.setWebpackConfig({
     resolve: {
       alias: aliases
@@ -32,6 +33,12 @@ exports.onCreateWebpackConfig = ({actions, plugins}) => { //stage, getConfig, ru
     //   })
     // ]
   });
+
+  // if (stage === "develop" || stage === "build-javascript") {
+  //   actions.setWebpackConfig({
+  //     plugins: [new CaseSensitivePathsPlugin()],
+  //   });
+  // }
 }
 
 exports.createPages = async ({graphql, actions}) => {

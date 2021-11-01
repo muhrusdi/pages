@@ -4,21 +4,18 @@ import { parseToReact } from "components/utils"
 import nightOwl from "monaco-themes/themes/Night Owl.json"
 import { EditorStyled } from "./styled"
 
+const year = new Date().getFullYear() - new Date(2017)
+
 const snippet = `<!-- code editor -->
 
-<div className="bg-white rounded-4xl overflow-hidden p-8 text-center text-black">
+<div className="bg-blueGray-900 text-white rounded-4xl overflow-hidden p-8 text-center text-black">
   <img className="object-cover rounded-full m-auto w-36 h-36 sm:w-52 sm:h-52" src="https://res.cloudinary.com/muhrusdi/image/upload/v1616335341/thumb-612467.png" alt="muhrusdi"/>
   <div className="mt-6">
     <p className="font-semibold">
-      &quot;I’m Front End Engineer with 4+ years of experience in web development. I like to code things from scratch and enjoy bringing ideas to life in the browser.&quot;
+      <img src="https://res.cloudinary.com/muhrusdi/image/upload/v1635326398/Hello.png" className="h-6 inline-block -top-1 relative mx-auto" alt="" /> my name is Rusdi, i’m Front End Engineer with ${year}+ years of experience in web development. I like to code things from scratch and enjoy bringing ideas to life in the browser.
     </p>
     <div className="mt-6">
-      <p className="text-blue-600 font-medium text-lg">
-        Muhammad Rusdi
-      </p>
-      <p className="text-blueGray-700">
-        Front End Engineer
-      </p>
+      <img src="https://res.cloudinary.com/muhrusdi/image/upload/v1635760403/muhrusdi-letter-white.png" className="h-9 mx-auto" alt="" />
     </div>
   </div>
 </div>
