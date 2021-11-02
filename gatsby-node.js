@@ -87,7 +87,7 @@ exports.createPages = async ({graphql, actions}) => {
               abstract
             }
             featuredImage {
-              gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
+              gatsbyImageData
             }
           }
         }
