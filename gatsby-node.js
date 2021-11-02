@@ -5,7 +5,6 @@ const path = require("path")
 const slugify = require("slugify")
 const fs = require("fs-extra")
 const { createRemoteFileNode } = require(`gatsby-source-filesystem`)
-const CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin")
 // const MonacoWebpackPlugin = require("monaco-editor-webpack-plugin")
 
 const aliases = {
@@ -88,7 +87,7 @@ exports.createPages = async ({graphql, actions}) => {
               abstract
             }
             featuredImage {
-              gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
+              gatsbyImageData
             }
           }
         }
