@@ -1,10 +1,11 @@
 import React from "react"
 import { HiOutlineCalendar, HiOutlineMail, HiOutlineNewspaper, HiOutlinePhone } from "react-icons/hi"
 import { SiGithub, SiInstagram, SiLinkedin, SiTwitter, SiUplabs } from "react-icons/si"
+import { bio } from "utils/"
 
 const ProfileItem: React.FC = () => (
   <div>
-    <p>I’m Front End Engineer with 4+ years of experience in web development. I like to code things from scratch and enjoy bringing ideas to life in the browser.</p>
+    <p>I’m {bio}</p>
     <ul className="mt-8 whitespace-nowrap">
       <li>
         <div className="sm:flex bg-gray-900 rounded-md py-2 px-4 mt-4">

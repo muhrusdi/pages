@@ -16,3 +16,7 @@ export const transformBlog = (data) => {
 
   return composeBlogsSort
 }
+
+const year = new Date().getFullYear() - new Date(2017)
+
+export const bio = `a Front End Engineer with ${year}+ years of experience in web development. I like to code things from scratch and enjoy bringing ideas to life in the browser.`
