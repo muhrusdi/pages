@@ -1,5 +1,3 @@
 import { styled } from "@/styled"
 
-export const LayoutStyled = styled("div", {
-  background: "white",
-})
+export const LayoutStyled = styled("div", {})

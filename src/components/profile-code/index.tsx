@@ -7,7 +7,7 @@ import { bio } from "@/utils"
 
 const snippet = `<!-- code editor -->
 
-<div className="bg-blueGray-900 text-white rounded-4xl overflow-hidden p-8 text-center text-black">
+<div className="bg-blueGray-900 text-white rounded-4xl overflow-hidden p-8 text-center">
   <img className="object-cover rounded-full m-auto w-36 h-36 sm:w-52 sm:h-52" src="https://res.cloudinary.com/muhrusdi/image/upload/v1616335341/thumb-612467.png" alt="muhrusdi"/>
   <div className="mt-6">
     <p className="font-semibold">
