@@ -21,5 +21,5 @@ const link = from([authLink, httpLink])
 
 export const client = new ApolloClient({
   link,
-  cache: new InMemoryCache()
-});
+  cache: new InMemoryCache(),
+})

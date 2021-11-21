@@ -8,9 +8,18 @@
 import React from "react"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
-import { SeoType } from "types";
+import { SeoType } from "@/types"
 
-const SEO: React.FC<SeoType> = ({ description, lang, title, image, author, date, slug, type }) => {
+const SEO: React.FC<SeoType> = ({
+  description,
+  lang,
+  title,
+  image,
+  author,
+  date,
+  slug,
+  type,
+}) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -126,7 +135,7 @@ const SEO: React.FC<SeoType> = ({ description, lang, title, image, author, date,
 SEO.defaultProps = {
   lang: "id",
   description: "",
-  type: "website"
+  type: "website",
 }
 
 export default SEO

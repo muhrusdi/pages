@@ -1,13 +1,13 @@
 import React from "react"
 import { useQuery, gql } from "@apollo/client"
 import { useStaticQuery, graphql } from "gatsby"
-// import LatestBlog from "components/blog/lastest"
-import PlayCode from "components/playcode"
-import BlogItem from "components/blog/blog-item"
-import WorkItem, { WorkItemLoading } from "components/work/work-item"
-import Layout from "containers/layout"
-import SectionHeader from "components/blog/header"
-import { transformBlog } from "utils/"
+// import LatestBlog from "@/components/blog/lastest"
+import PlayCode from "@/components/playcode"
+import BlogItem from "@/components/blog/blog-item"
+import WorkItem, { WorkItemLoading } from "@/components/work/work-item"
+import { Layout } from "@/containers/layout"
+import SectionHeader from "@/components/blog/header"
+import { transformBlog } from "@/utils/"
 
 const Home: React.FC = () => {
   const data = useStaticQuery(graphql`

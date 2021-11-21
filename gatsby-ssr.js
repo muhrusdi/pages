@@ -1,8 +1,3 @@
-/**
- * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/ssr-apis/
- */
+import "./src/styles/globals.css"
 
-// You can delete this file if you're not using it
-export { wrapRootElement } from "./src/apollo/wrap-elements"
+export { onRenderBody } from "./src/containers/wrap-elements"

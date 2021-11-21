@@ -1,1 +1,1 @@
-export { default } from "templates/404"
+export { default } from "@/templates/404"

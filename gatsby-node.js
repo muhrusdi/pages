@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 /* eslint-disable @typescript-eslint/no-unused-vars */
-  
+
 const path = require("path")
 const slugify = require("slugify")
 const fs = require("fs-extra")
