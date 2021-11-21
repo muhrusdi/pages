@@ -1,7 +1,7 @@
 import React from "react"
 import { HiOutlineCalendar, HiOutlineMail, HiOutlineNewspaper, HiOutlinePhone } from "react-icons/hi"
 import { SiGithub, SiInstagram, SiLinkedin, SiTwitter, SiUplabs } from "react-icons/si"
-import { bio } from "utils/"
+import { bio } from "@/utils/"
 
 const ProfileItem: React.FC = () => (
   <div>

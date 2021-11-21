@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react"
 import { BiHeart, BiMessage } from "react-icons/bi"
-import TweetItem from "components/tweet-item"
+import TweetItem from "@/components/tweet-item"
 import CountUp from "react-countup"
 import ReactCanvasConfetti from "react-canvas-confetti";
 

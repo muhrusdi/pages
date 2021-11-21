@@ -2,7 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import { BsChevronRight } from "react-icons/bs"
 import CheatsheetContainer from "@/components/cheatsheet/container"
-import Layout from "@/containers/layout"
+import { Layout } from "@/containers/layout"
 
 const CheatSheet: React.FC = ({pageContext}) => {
   const dataCheatsheets = useStaticQuery(graphql`

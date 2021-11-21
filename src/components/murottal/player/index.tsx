@@ -11,7 +11,7 @@ import {
   BsFillPlayFill } from "react-icons/bs"
 import { Link } from "gatsby"
 import { PlayerStyled, TimeContainer, LeftControl, RightControl, StyledContent } from "./styled"
-import { Context } from "contexts"
+import { Context } from "@/contexts"
 
 const MurottalPlayer: React.FC = ({data}) => {
   const [volumeToggle, setVolumeToggle] = useState(false)

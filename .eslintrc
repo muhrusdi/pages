@@ -1,7 +1,4 @@
 {
-<<<<<<< HEAD
-  "parser": "@typescript-eslint/parser", // uses babel-eslint transforms
-=======
   "root": true,
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -11,7 +8,6 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
->>>>>>> 972cf62010942ff5b49a72c1f71a570bbbb2cd1b
   "settings": {
     "react": {
       "version": "detect"
