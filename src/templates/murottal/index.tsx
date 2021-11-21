@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from "react"
 import { BsFillPlayFill } from "react-icons/bs"
 import { useQuery, gql } from "@apollo/client"
-import { GridItem } from "components/murottal/player/styled"
-import { Context } from "contexts"
+import { GridItem } from "@/components/murottal/player/styled"
+import { Context } from "@/contexts"
 
 const GridItemLoading: React.FC = () => (
   <div className="bg-blueGray-900 rounded-lg" style={{height: 200}}></div>

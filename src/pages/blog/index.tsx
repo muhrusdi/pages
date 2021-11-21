@@ -1,9 +1,9 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import BlogItem from "components/blog/blog-item"
-import LatestBlog from "components/blog/lastest"
-import Layout from "containers/layout"
-import { transformBlog } from "utils/"
+import BlogItem from "@/components/blog/blog-item"
+import LatestBlog from "@/components/blog/lastest"
+import { Layout } from "@/containers/layout"
+import { transformBlog } from "@/utils"
 
 const Blogs: React.FC = () => {
   const data = useStaticQuery(graphql`

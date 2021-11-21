@@ -1,9 +1,9 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
-import { ArticleStyled } from "components/utils"
+import { ArticleStyled } from "@/components/utils"
 import { BsChevronRight } from "react-icons/bs"
-import { CheatsheetMenus } from "components/cheatsheet/container"
-import Layout from "containers/layout"
+import { CheatsheetMenus } from "@/components/cheatsheet/container"
+import { Layout } from "@/containers/layout"
 
 const CheatSheet: React.FC = () => {
   const data = useStaticQuery(graphql`

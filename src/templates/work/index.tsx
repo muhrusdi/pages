@@ -2,9 +2,9 @@ import React from "react"
 import { useQuery, gql } from "@apollo/client"
 // import Layout from "containers/layout"
 // import { useStaticQuery, graphql } from "gatsby"
-import WorkItem, { WorkItemLoading } from "components/work/work-item"
-import FeaturedWork from "components/work/featured"
-import SEO from "components/seo"
+import WorkItem, { WorkItemLoading } from "@/components/work/work-item"
+import FeaturedWork from "@/components/work/featured"
+import SEO from "@/components/seo"
 
 const Works: React.FC = () => {
   const WORK_COLLECTION = gql`

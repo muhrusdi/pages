@@ -1,9 +1,9 @@
 import React from "react"
 import { Header } from "./index"
-import { ArticleStyled } from "components/utils"
-import SEO from "components/seo"
-import MdxRender from "components/mdx-render"
-import Layout from "containers/layout"
+import { ArticleStyled } from "@/components/utils"
+import SEO from "@/components/seo"
+import MdxRender from "@/components/mdx-render"
+import { Layout } from "@/containers/layout"
 
 type Props = {
   pageContext: {

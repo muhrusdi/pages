@@ -1,15 +1,15 @@
 import React, { useState, useCallback } from "react"
-import Layout from "containers/layout"
+import { Layout } from "@/containers/layout"
 // import { Link } from "gatsby"
 import styled from "styled-components"
-import SpecItem from "components/spec-item"
-import { mocks } from "components/utils"
+import SpecItem from "@/components/spec-item"
+import { mocks } from "@/components/utils"
 // import LatestBlog from "components/blog/lastest"
 import { SiTwitter, SiInstagram, SiLinkedin, SiGithub, SiUplabs } from "react-icons/si"
 import { StaticImage } from "gatsby-plugin-image"
 import { BsArrowDown } from "react-icons/bs"
 import cv from "../../utils/cv-muhrusdi-2022.pdf"
-import ProfileCode from "components/profile-code"
+import ProfileCode from "@/components/profile-code"
 
 const Home: React.FC = () => {
   const [preview, setPreview] = useState("preview")

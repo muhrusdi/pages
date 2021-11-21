@@ -1,10 +1,10 @@
 import React from "react"
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import styled from "styled-components"
-import { formatDate } from "utils"
-import { ArticleStyled } from "components/utils"
-import Layout from "containers/layout"
-import SEO from "components/seo"
+import { formatDate } from "@/utils"
+import { ArticleStyled } from "@/components/utils"
+import { Layout } from "@/containers/layout"
+import SEO from "@/components/seo"
 
 const ImageStyled = styled(GatsbyImage)`
   height: 200px;

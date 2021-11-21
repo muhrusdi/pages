@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import MurottalPlayer from "components/murottal/player"
+import MurottalPlayer from "@/components/murottal/player"
 
 export const Context = React.createContext(null)
 

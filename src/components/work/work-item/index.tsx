@@ -1,10 +1,10 @@
 import React from "react"
 import { Link } from "gatsby"
 // import { StaticImage } from "gatsby-plugin-image"
-import { BlogItemFooter, TooltipIcon } from "components/utils"
+import { BlogItemFooter, TooltipIcon } from "@/components/utils"
 // import { SiGatsby, SiNextDotJs, SiReact, SiStyledComponents, SiTailwindcss, SiTypescript } from "react-icons/si"
 import { TechIcon } from "./styled"
-import techIcons from "components/utils/tech-icons"
+import techIcons from "@/components/utils/tech-icons"
 import { SiGithub } from "react-icons/si"
 import { FiArrowRight } from "react-icons/fi"
 

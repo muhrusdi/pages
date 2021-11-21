@@ -1,9 +1,9 @@
 import React from "react"
 import { Router } from "@reach/router"
-import Detail from "templates/twitter/detail"
-import TwitterPage from "templates/twitter"
-import Layout from "containers/layout"
-import SEO from "components/seo"
+import Detail from "@/templates/twitter/detail"
+import TwitterPage from "@/templates/twitter"
+import { Layout } from "@/containers/layout"
+import SEO from "@/components/seo"
 
 const Twitter: React.FC = () => {
   return (

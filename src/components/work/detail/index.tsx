@@ -1,10 +1,10 @@
 import React from "react"
 import { useQuery, gql } from "@apollo/client"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
-import { TooltipIcon, ArticleStyled } from "components/utils/"
-import techIcons from "components/utils/tech-icons"
+import { TooltipIcon, ArticleStyled } from "@/components/utils/"
+import techIcons from "@/components/utils/tech-icons"
 import { Grid, IconList, ImageStyled } from "./styled"
-import SEO from "components/seo"
+import SEO from "@/components/seo"
 
 const Detail: React.FC = (props) => {
   const WORK_COLLECTION = gql`

@@ -2,8 +2,8 @@ import React from "react"
 import { Link } from "gatsby"
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import { BiChevronRight } from "react-icons/bi"
-import { BlogItemFooter } from "components/utils"
-import { formatDate, slugify } from "utils"
+import { BlogItemFooter } from "@/components/utils"
+import { formatDate, slugify } from "@/utils"
 
 const BlogItem: React.FC = ({data}) => {
   return (

@@ -1,6 +1,6 @@
 import React, { useRef, useState, memo, useCallback } from "react"
 import Editor, { loader } from "@monaco-editor/react"
-import { parseToReact } from "components/utils"
+import { parseToReact } from "@/components/utils"
 import nightOwl from "monaco-themes/themes/Night Owl.json"
 import { EditorStyled } from "./styled"
 

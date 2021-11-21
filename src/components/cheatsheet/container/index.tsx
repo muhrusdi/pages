@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "styled-components"
-import CheatsheetItem from "components/cheatsheet/item"
-import { ArticleStyled } from "components/utils"
-import MdxRender from "components/mdx-render"
+import CheatsheetItem from "@/components/cheatsheet/item"
+import { ArticleStyled } from "@/components/utils"
+import MdxRender from "@/components/mdx-render"
 
 const CheatsheetContent = styled(ArticleStyled)`
   & > pre {

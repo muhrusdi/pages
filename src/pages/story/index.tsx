@@ -1,7 +1,7 @@
 import React from "react"
 import { useQuery, gql } from "@apollo/client"
-import Layout from "containers/layout"
-import { AlbumSection } from "components/utils"
+import { Layout } from "@/containers/layout"
+import { AlbumSection } from "@/components/utils"
 
 const Story: React.FC = () => {
   const STORY_COLLECTION = gql`

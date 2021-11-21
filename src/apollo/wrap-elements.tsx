@@ -1,8 +1,8 @@
 import React from "react"
 import { ApolloProvider } from "@apollo/client"
-import ContextProvider from "contexts"
+import ContextProvider from "@/contexts"
 import {client} from "./client"
-import Layout from "containers/layout"
+import { Layout } from "@/containers/layout"
 
 type Props = {
   element: React.ReactNode,
