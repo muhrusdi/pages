@@ -11,7 +11,7 @@ const snippet = `<!-- code editor -->
   <img className="object-cover rounded-full m-auto w-36 h-36 sm:w-52 sm:h-52" src="https://res.cloudinary.com/muhrusdi/image/upload/v1616335341/thumb-612467.png" alt="muhrusdi"/>
   <div className="mt-6">
     <p className="font-semibold">
-      <img src="https://res.cloudinary.com/muhrusdi/image/upload/v1635326398/Hello.png" className="h-6 inline-block -top-1 relative mx-auto" alt="" /> my name is Rusdi, i’m ${bio}.
+      <img src="https://res.cloudinary.com/muhrusdi/image/upload/v1635326398/Hello.png" className="h-6 inline-block -top-1 relative mx-auto" alt="" /> my name is Rusdi, i’m ${bio}
     </p>
     <div className="mt-6">
       <img src="https://res.cloudinary.com/muhrusdi/image/upload/v1635760403/muhrusdi-letter-white.png" className="h-9 mx-auto" alt="" />
