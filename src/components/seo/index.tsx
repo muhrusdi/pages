@@ -8,9 +8,18 @@
 import React from "react"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
-import { SeoType } from "types";
+import { SeoType } from "@/types"
 
-const SEO: React.FC<SeoType> = ({ description, lang, title, image, author, date, slug, type }) => {
+const SEO: React.FC<SeoType> = ({
+  description,
+  lang,
+  title,
+  image,
+  author,
+  date,
+  slug,
+  type,
+}) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -33,7 +42,9 @@ const SEO: React.FC<SeoType> = ({ description, lang, title, image, author, date,
   const metaTitle = title || site.siteMetadata.title
   const metaImage = image || site.siteMetadata.image
   const metaAuthor = author || site.siteMetadata.author
-  const metaUrl = slug ? `${site.siteMetadata.siteUrl}${slug}` : site.siteMetadata.siteUrl
+  const metaUrl = slug
+    ? `${site.siteMetadata.siteUrl}${slug}`
+    : site.siteMetadata.siteUrl
 
   const schemaOrg = {
     "@context": "http://schema.org",
@@ -117,8 +128,16 @@ const SEO: React.FC<SeoType> = ({ description, lang, title, image, author, date,
     >
       <title>{metaTitle}</title>
       {/* <script data-ad-client="ca-pub-6628628466268276" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> */}
-      {isArticle && <script type="application/ld+json">{JSON.stringify(schemaOrg)}</script>}\
-      <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "2bd8976300b840faae07e9a2aa6f3f40"}'></script>
+      {isArticle && (
+        <script type="application/ld+json">{JSON.stringify(schemaOrg)}</script>
+      )}
+      \
+      <script
+        defer
+        src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon='{"token": "2bd8976300b840faae07e9a2aa6f3f40"}'
+      >
+      </script>
     </Helmet>
   )
 }
@@ -126,7 +145,7 @@ const SEO: React.FC<SeoType> = ({ description, lang, title, image, author, date,
 SEO.defaultProps = {
   lang: "id",
   description: "",
-  type: "website"
+  type: "website",
 }
 
 export default SEO

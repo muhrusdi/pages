@@ -24,8 +24,8 @@ export const Grid = styled.div`
 export const IconList = styled.ul({
   svg: {
     height: 20,
-    width: 20
-  }
+    width: 20,
+  },
 })
 
 export const ImageStyled = styled.img`

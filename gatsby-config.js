@@ -1,6 +1,6 @@
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
-});
+})
 
 module.exports = {
   siteMetadata: {
@@ -8,7 +8,8 @@ module.exports = {
     description: "Front End Engineer, JAMstack Enthusiast",
     author: "@muhrusdi",
     siteUrl: "https://github.com/muhrusdi/pages",
-    image: "https://res.cloudinary.com/muhrusdi/image/upload/v1624511269/muhrusdi-cover.jpg"
+    image:
+      "https://res.cloudinary.com/muhrusdi/image/upload/v1624511269/muhrusdi-cover.jpg",
   },
   flags: {
     PRESERVE_WEBPACK_CACHE: false,
@@ -18,7 +19,6 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-styled-components",
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -26,13 +26,25 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "docs",
+        path: `${__dirname}/src/data/docs`,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-mdx",
+      options: {
+        gatsbyRemarkPlugins: ["gatsby-remark-images"],
+        extensions: [".mdx", ".md"],
+      },
+    },
     "gatsby-transformer-sharp",
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        plugins: [
-          `gatsby-remark-prismjs`,
-        ],
+        plugins: [`gatsby-remark-prismjs`],
       },
     },
     "gatsby-plugin-image",
@@ -65,7 +77,7 @@ module.exports = {
         extensions: ["js", "jsx"],
         exclude: ["node_modules", ".cache", "public"],
         // Any eslint-webpack-plugin options below
-      }
+      },
     },
     {
       resolve: "gatsby-source-filesystem",
@@ -84,9 +96,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-mdx",
       options: {
-        gatsbyRemarkPlugins: [
-          `gatsby-remark-images`
-        ],
+        gatsbyRemarkPlugins: [`gatsby-remark-images`],
         extensions: [".mdx", ".md"],
       },
     },

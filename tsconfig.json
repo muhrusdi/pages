@@ -1,7 +1,7 @@
 {
   "include": [
     "./src/**/*.ts",
-    "./src/**/*.tsx"
+    "./src/**/*.tsx",
   ],
   "exclude": [
     "node_modules"
@@ -17,26 +17,32 @@
     // "allowJs": true,
     // "checkJs": true,
     "jsx": "react",
-    "strict": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "moduleResolution": "node",
     "noEmit": true,
     "skipLibCheck": true,
-    "baseUrl": "./src",
+    "baseUrl": "./",
+    "rootDirs": [
+      "./src",
+    ],
     "paths": {
-      "components/*": ["components/*"],
-      "components/utils/*": ["components/utils/*"],
-      "containers/*": ["containers/*"],
-      "templates/*": ["templates/*"],
-      "layout": ["containers/layout"],
-      "images/*": ["images/*"],
-      "types/*": ["types/*"],
-      "hooks/*": ["hooks/*"],
-      "contexts/*": ["contexts/*"],
-      "styles/*": ["styles/*"],
-      "utils/*": ["utils/*"],
+      "@/*": [
+        "./src/*",
+      ],
+      "@/components/utils/*": ["components/utils/*"],
+      "@/utils/*": ["utils/*"],
+      "@/components/*": ["src/components/*"],
+      "@/containers/*": ["src/containers/*"],
+      "@/templates/*": ["src/templates/*"],
+      "@/layout": ["src/containers/layout"],
+      "@/images/*": ["src/images/*"],
+      "@/types": ["src/types"],
+      "@/hooks/*": ["src/hooks/*"],
+      "@/contexts/*": ["src/contexts/*"],
+      "@/styles/*": ["src/styles/*"],
+      "@/styled": ["stitches.config.js"],
     }
   }
 }

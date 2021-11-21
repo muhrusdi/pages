@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 /* eslint-disable @typescript-eslint/no-unused-vars */
-  
+
 const path = require("path")
 const slugify = require("slugify")
 const fs = require("fs-extra")
@@ -8,22 +8,23 @@ const { createRemoteFileNode } = require(`gatsby-source-filesystem`)
 // const MonacoWebpackPlugin = require("monaco-editor-webpack-plugin")
 
 const aliases = {
-  containers: path.resolve(__dirname, "src/containers"),
-  components: path.resolve(__dirname, "src/components"),
-  templates: path.resolve(__dirname, "src/templates"),
-  images: path.resolve(__dirname, "src/images"),
-  layout: path.resolve(__dirname, "src/containers/layout"),
-  hooks: path.resolve(__dirname, "src/hooks"),
-  types: path.resolve(__dirname, "src/types"),
-  contexts: path.resolve(__dirname, "src/contexts"),
-  utils: path.resolve(__dirname, "src/utils"),
+  "@/containers": path.resolve(__dirname, "src/containers"),
+  "@/components": path.resolve(__dirname, "src/components"),
+  "@/templates": path.resolve(__dirname, "src/templates"),
+  "@/images": path.resolve(__dirname, "src/images"),
+  "@/layout": path.resolve(__dirname, "src/containers/layout"),
+  "@/hooks": path.resolve(__dirname, "src/hooks"),
+  "@/types": path.resolve(__dirname, "src/types"),
+  "@/contexts": path.resolve(__dirname, "src/contexts"),
+  "@/utils": path.resolve(__dirname, "src/utils"),
+  "@/styled": path.resolve(__dirname, "./stitches.config.js"),
 }
 
-
-exports.onCreateWebpackConfig = ({actions, stage, plugins}) => { //stage, getConfig, rules, loaders, actions
+exports.onCreateWebpackConfig = ({ actions, stage, plugins }) => {
+  //stage, getConfig, rules, loaders, actions
   actions.setWebpackConfig({
     resolve: {
-      alias: aliases
+      alias: aliases,
     },
     // plugins: [
     //   new MonacoWebpackPlugin({
@@ -31,7 +32,7 @@ exports.onCreateWebpackConfig = ({actions, stage, plugins}) => { //stage, getCon
     //     filename: "static/chunks/[name].worker.js",
     //   })
     // ]
-  });
+  })
 
   // if (stage === "develop" || stage === "build-javascript") {
   //   actions.setWebpackConfig({
@@ -40,7 +41,7 @@ exports.onCreateWebpackConfig = ({actions, stage, plugins}) => { //stage, getCon
   // }
 }
 
-exports.createPages = async ({graphql, actions}) => {
+exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const mdxResults = await graphql(`
     query {
@@ -92,7 +93,9 @@ exports.createPages = async ({graphql, actions}) => {
           }
         }
       }
-      cheatsheets: allFile(filter: { sourceInstanceName: { eq: "cheatsheets" } }) {
+      cheatsheets: allFile(
+        filter: { sourceInstanceName: { eq: "cheatsheets" } }
+      ) {
         edges {
           node {
             childMdx {
@@ -115,47 +118,46 @@ exports.createPages = async ({graphql, actions}) => {
     }
   `)
 
-  const createMdxPage = (node) => {
+  const createMdxPage = node => {
     const { slug } = node.fields
     createPage({
       path: `/blog/${slug}`,
       component: path.resolve(`./src/templates/blogs/detail/mdx.tsx`),
       context: {
         slug,
-        data: node
+        data: node,
       },
     })
   }
 
-  const createBlogPage = (node) => {
-    const slug = slugify(node.title, {lower: true, remove: /[*+~.()'"!:@]/g})
+  const createBlogPage = node => {
+    const slug = slugify(node.title, { lower: true, remove: /[*+~.()'"!:@]/g })
     createPage({
       path: `/blog/${slug}`,
       component: path.resolve(`./src/templates/blogs/detail/index.tsx`),
       context: {
         slug,
-        data: node
+        data: node,
       },
     })
   }
 
-  const createCheatsheetPage = (node) => {
+  const createCheatsheetPage = node => {
     const { slug } = node.fields
     createPage({
       path: `/cheatsheet/${slug}`,
       component: path.resolve(`./src/templates/cheatsheets/detail/index.tsx`),
       context: {
         slug,
-        data: node
+        data: node,
       },
     })
   }
 
-
   mdxResults.data.allFile.edges.forEach(({ node }) => {
     createMdxPage(node.childMdx)
   })
-  
+
   mdxResults.data.allContentfulArticle.edges.forEach(({ node }) => {
     createBlogPage(node)
   })
@@ -166,7 +168,7 @@ exports.createPages = async ({graphql, actions}) => {
 }
 
 exports.createSchemaCustomization = ({ actions, schema }) => {
-  const { createTypes, printTypeDefinitions } = actions;
+  const { createTypes, printTypeDefinitions } = actions
 
   createTypes(`
     type Mdx implements Node {
@@ -182,22 +184,25 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
       featuredImage: File @link(by: "url")
       embeddedImagesLocal: [File] @fileByRelativePath
     }
-    `);
+    `)
 
   // printTypeDefinitions({ path: "./typeDefs.txt" });
 }
 
 exports.onCreateNode = ({ node, actions, createNodeId, cache, store }) => {
-  const { createNodeField, createNode  } = actions
+  const { createNodeField, createNode } = actions
   if (node.internal.type === `Mdx`) {
-    const slug = slugify(node.frontmatter.title, {lower: true, remove: /[*+~.()'"!:@]/g})
+    const slug = slugify(node.frontmatter.title, {
+      lower: true,
+      remove: /[*+~.()'"!:@]/g,
+    })
     createNodeField({
       node,
       name: `slug`,
       value: slug,
     })
   }
-  
+
   if (
     node.internal.type === "Mdx" &&
     node.frontmatter &&
@@ -210,10 +215,10 @@ exports.onCreateNode = ({ node, actions, createNodeId, cache, store }) => {
         createNode,
         createNodeId,
         cache,
-        store
-      });
+        store,
+      })
     } catch (error) {
-      console.error(error);
+      console.error(error)
     }
   }
 }

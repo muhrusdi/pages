@@ -5,12 +5,17 @@
 @tailwind utilities;
 
 @layer base {
-  @import url('https://rsms.me/inter/inter.css');
+  @import url("https://rsms.me/inter/inter.css");
   html {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-feature-settings: "ss03", "zero", "cv08", "cv11" 1;
   }
   @supports (font-variation-settings: normal) {
-    html { font-family: 'Inter var', sans-serif; }
+    html {
+      font-family: "Inter var", sans-serif;
+    }
   }
 
   body {
@@ -21,5 +26,5 @@
     @apply text-base;
   }
 
-  @import url('@shipless/play/dist/style.css');
+  @import url("@shipless/play/dist/style.css");
 }

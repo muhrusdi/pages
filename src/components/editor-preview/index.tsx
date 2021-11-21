@@ -7,7 +7,7 @@ import { TabBar, SplitBar } from "./bars"
 import initContent from "./initialContent"
 import Preview from "./preview"
 
-const EditorPreview: React.FC = ({defaultValue}) => {
+const EditorPreview: React.FC = ({ defaultValue }) => {
   const editorContainerRef = useRef(null)
   const previewRef = useRef(null)
   const [activeTab, setActiveTab] = useState("html")
@@ -16,28 +16,26 @@ const EditorPreview: React.FC = ({defaultValue}) => {
   const initialContent = defaultValue ? defaultValue : initContent
 
   if (typeof window !== "undefined") {
-    loader.init()
-      .then(monaco => {
-        monaco.editor.defineTheme("night-owl", nightOwl)
-      })
-  }
-
-
-  const handleEditorDidMount = (editor) => {
-    editorContainerRef.current = editor
-    editorContainerRef.current.updateOptions({
-      minimap: {
-        enabled: false
-      },
-      lineNumbersMinChars: 3
+    loader.init().then(monaco => {
+      monaco.editor.defineTheme("night-owl", nightOwl)
     })
   }
 
-  const inject = useCallback((content) => {
+  const handleEditorDidMount = editor => {
+    editorContainerRef.current = editor
+    editorContainerRef.current.updateOptions({
+      minimap: {
+        enabled: false,
+      },
+      lineNumbersMinChars: 3,
+    })
+  }
+
+  const inject = useCallback(content => {
     previewRef.current.contentWindow.postMessage(content, "*")
   }, [])
 
-  const handleEditorChange = (value) => {
+  const handleEditorChange = value => {
     if (activeTab === "html") {
       inject({ html: value })
     }
@@ -49,13 +47,13 @@ const EditorPreview: React.FC = ({defaultValue}) => {
     }
   }
 
-  const handleSelectTab = useCallback((val) => {
+  const handleSelectTab = useCallback(val => {
     setActiveTab(val)
   }, [])
 
-  const tabSeleceted = (val) => activeTab === val ? "bg-gray-900" : null
+  const tabSeleceted = val => (activeTab === val ? "bg-gray-900" : null)
 
-  const handleSplit = (val) => {
+  const handleSplit = val => {
     setSplit(val)
   }
 
@@ -66,21 +64,22 @@ const EditorPreview: React.FC = ({defaultValue}) => {
           <div className="px-4">
             <div className="flex items-center">
               <div>
-                <span className="text-base uppercase font-bold text-blue-light">Play</span>
+                <span className="text-base uppercase font-bold text-blue-light">
+                  Play
+                </span>
               </div>
-              <TabBar tabSeleceted={tabSeleceted} handleSelectTab={handleSelectTab}/>
+              <TabBar
+                tabSeleceted={tabSeleceted}
+                handleSelectTab={handleSelectTab}
+              />
             </div>
           </div>
           <div className="px-4">
-            <SplitBar split={split} handleSplit={handleSplit}/>
+            <SplitBar split={split} handleSplit={handleSplit} />
           </div>
         </div>
       </div>
-      <SplitPane
-        split={split}
-        size="50%"
-        style={{position: "relative"}}
-      >
+      <SplitPane split={split} size="50%" style={{ position: "relative" }}>
         <div>
           <Editor
             height="300px"
@@ -92,8 +91,15 @@ const EditorPreview: React.FC = ({defaultValue}) => {
             onChange={handleEditorChange}
           />
         </div>
-        <div className="relative w-full h-full" style={{height: split === "horizontal" ? 300 : null}}>
-          <Preview ref={previewRef} inject={inject} initialContent={initialContent}/>
+        <div
+          className="relative w-full h-full"
+          style={{ height: split === "horizontal" ? 300 : null }}
+        >
+          <Preview
+            ref={previewRef}
+            inject={inject}
+            initialContent={initialContent}
+          />
         </div>
       </SplitPane>
     </EditorStyled>

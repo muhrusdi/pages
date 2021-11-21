@@ -86,7 +86,7 @@ export const EntityPositionGroup = styled.ul`
         position: absolute;
         bottom: 5px;
         border-radius: 1px;
-        background: rgba(100, 116, 139, .5);
+        background: rgba(100, 116, 139, 0.5);
         top: 38px;
       }
     }

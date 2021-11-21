@@ -1,6 +1,7 @@
 const colors = require("tailwindcss/colors")
 
 module.exports = {
+  mode: "jit",
   future: {
     // removeDeprecatedGapUtilities: true,
     // purgeLayersByDefault: true,
@@ -9,19 +10,19 @@ module.exports = {
   theme: {
     container: {
       center: true,
-      padding: "1.5rem"
+      padding: "1.5rem",
     },
     extend: {
       borderRadius: {
         "4xl": "2rem",
-        "5xl": "2.5rem"
+        "5xl": "2.5rem",
       },
       lineHeight: {
-        "11": "3rem",
-        "12": "3.5rem",
+        11: "3rem",
+        12: "3.5rem",
       },
       fontSize: {
-        tiny: "0.94rem"
+        tiny: "0.94rem",
       },
       colors: {
         blueGray: colors.blueGray,
@@ -43,37 +44,37 @@ module.exports = {
               padding: "32px 0",
             },
             p: {
-              color: "#acb5c3"
+              color: "#acb5c3",
             },
             h1: {
-              color: "white"
+              color: "white",
             },
             h2: {
-              color: "white"
+              color: "white",
             },
             h3: {
-              color: "white"
+              color: "white",
             },
             h4: {
-              color: "white"
+              color: "white",
             },
             h5: {
-              color: "white"
+              color: "white",
             },
             h6: {
-              color: "white"
+              color: "white",
             },
           },
         },
-        "xl": {
+        xl: {
           css: {
             pre: {
               padding: "32px 0",
             },
-          }
-        }
-      }
-    }
+          },
+        },
+      },
+    },
   },
   variants: {},
   plugins: [

@@ -1,22 +1,38 @@
 {
-  "parser": "@typescript-eslint/parser", // uses babel-eslint transforms
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true,
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
   "settings": {
     "react": {
-      "version": "detect" // detect react version
+      "version": "detect"
     }
   },
   "env": {
-    "node": true // defines things like process.env when generating through node
+    "node": true
   },
   "extends": [
-    "eslint:recommended", // use recommended configs
+    "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "prettier"
   ],
+  "plugins": ["@typescript-eslint", "react"],
   "rules": {
     "react/react-in-jsx-scope": 0,
     "react/display-name": 0,
     "react/prop-types": 0,
+    "react/jsx-closing-tag-location": 1,
+    "react/jsx-closing-bracket-location": 1,
+    "react/jsx-props-no-multi-spaces": 1,
+    "react/jsx-wrap-multilines": "error",
+    "react/jsx-equals-spacing": [2, "never"],
     "quotes": [
       "error",
       "double",
@@ -37,6 +53,15 @@
         "argsIgnorePattern": "^_"
       }
     ],
-    "no-console": "off"
+    "semi": ["error", "never"],
+    "no-console": [
+      2,
+      {
+        "allow": [
+          "warn",
+          "error"
+        ]
+      }
+    ]
   }
 }

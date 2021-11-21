@@ -1,9 +1,9 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import BlogItem from "components/blog/blog-item"
-import LatestBlog from "components/blog/lastest"
-import Layout from "containers/layout"
-import { transformBlog } from "utils/"
+import BlogItem from "@/components/blog/blog-item"
+import LatestBlog from "@/components/blog/lastest"
+import { Layout } from "@/containers/layout"
+import { transformBlog } from "@/utils"
 
 const Blogs: React.FC = () => {
   const data = useStaticQuery(graphql`
@@ -34,10 +34,10 @@ const Blogs: React.FC = () => {
     query {
       featured: allFile(
         limit: 1
-        sort: {fields: childMdx___frontmatter___publishedOn, order: DESC}
+        sort: { fields: childMdx___frontmatter___publishedOn, order: DESC }
         filter: {
           childMdx: {
-            frontmatter: {isPublished: {eq: true}, featured: {eq: true}}
+            frontmatter: { isPublished: { eq: true }, featured: { eq: true } }
           }
           sourceInstanceName: { eq: "blogs" }
         }
@@ -51,10 +51,8 @@ const Blogs: React.FC = () => {
         }
       }
       allFile(
-        sort: {fields: childMdx___frontmatter___publishedOn, order: DESC}
-        filter: {
-          sourceInstanceName: { eq: "blogs" }
-        }
+        sort: { fields: childMdx___frontmatter___publishedOn, order: DESC }
+        filter: { sourceInstanceName: { eq: "blogs" } }
       ) {
         edges {
           node {
@@ -86,30 +84,27 @@ const Blogs: React.FC = () => {
   const [featured] = data.featured.edges
 
   const composeBlogsSort = transformBlog(data)
-  
+
   return (
     <Layout>
       <div>
         <div className="py-8">
-          <LatestBlog badge="Featured" data={featured?.node.childMdx}/>
+          <LatestBlog badge="Featured" data={featured?.node.childMdx} />
         </div>
         <div className="mt-20">
           <ul className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-            {
-              composeBlogsSort.map(({node}, key) => {
-                return process.env.NODE_ENV !== "production" ? (
-                  <li key={key}>
-                    <BlogItem data={node.childMdx || node}/>
-                  </li>
-                ) : (
-                  node?.childMdx?.frontmatter?.isPublished || node.isPublished ? (
-                    <li key={key}>
-                      <BlogItem data={node.childMdx || node}/>
-                    </li>
-                  ) : null
-                )
-              })
-            }
+            {composeBlogsSort.map(({ node }, key) => {
+              return process.env.NODE_ENV !== "production" ? (
+                <li key={key}>
+                  <BlogItem data={node.childMdx || node} />
+                </li>
+              ) : node?.childMdx?.frontmatter?.isPublished ||
+                node.isPublished ? (
+                <li key={key}>
+                  <BlogItem data={node.childMdx || node} />
+                </li>
+              ) : null
+            })}
           </ul>
         </div>
       </div>

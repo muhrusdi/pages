@@ -20,9 +20,13 @@ const Newsletter: React.FC = () => {
             </div>
             <div className="mt-6 flex items-center -mx-4">
               <div className="px-4">
-                <button onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className="py-2 font-semibold rounded-md px-4 hover:bg-indigo-700 transition-all bg-indigo-600">
+                <button
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                  className="py-2 font-semibold rounded-md px-4 hover:bg-indigo-700 transition-all bg-indigo-600"
+                >
                   <a href="mailto:mhmrofficial@gmail.com">Contact me</a>
-                </button>  
+                </button>
               </div>
               <div className="px-4">
                 <Link to="/profile">About Us</Link>
@@ -30,7 +34,14 @@ const Newsletter: React.FC = () => {
             </div>
           </div>
         </div>
-        <img className={`object-cover w-full transform ${isHover ? "translate-x-6" : "translate-x-0"} transition-all duration-1000`} style={{height: 200}} src="https://res.cloudinary.com/muhrusdi/image/upload/v1624698813/beams-bottom.jpg" alt=""/>
+        <img
+          className={`object-cover w-full transform ${
+            isHover ? "translate-x-6" : "translate-x-0"
+          } transition-all duration-1000`}
+          style={{ height: 200 }}
+          src="https://res.cloudinary.com/muhrusdi/image/upload/v1624698813/beams-bottom.jpg"
+          alt=""
+        />
       </div>
     </div>
   )

@@ -1,6 +1,6 @@
 import React, { forwardRef } from "react"
 
-const Preview = forwardRef(({initialContent, inject}, ref) => {
+const Preview = forwardRef(({ initialContent, inject }, ref) => {
   return (
     <iframe
       ref={ref}

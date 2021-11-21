@@ -26,7 +26,6 @@ export const StyledArrow = styled.span`
   left: 79.5px;
 `
 
-
 export const PlayerStyled = styled.div`
   ul {
     li {

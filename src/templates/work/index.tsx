@@ -2,9 +2,9 @@ import React from "react"
 import { useQuery, gql } from "@apollo/client"
 // import Layout from "containers/layout"
 // import { useStaticQuery, graphql } from "gatsby"
-import WorkItem, { WorkItemLoading } from "components/work/work-item"
-import FeaturedWork from "components/work/featured"
-import SEO from "components/seo"
+import WorkItem, { WorkItemLoading } from "@/components/work/work-item"
+import FeaturedWork from "@/components/work/featured"
+import SEO from "@/components/seo"
 
 const Works: React.FC = () => {
   const WORK_COLLECTION = gql`
@@ -48,36 +48,35 @@ const Works: React.FC = () => {
 
   return (
     <div>
-      <SEO title="Work - Muhammad Rusdi" description="I work with forward-thinking people to design and build interactive, accessible websites and products."/>
+      <SEO
+        title="Work - Muhammad Rusdi"
+        description="I work with forward-thinking people to design and build interactive, accessible websites and products."
+      />
       <div className="mt-8">
-        <FeaturedWork/>
+        <FeaturedWork />
       </div>
       <div className="mt-32">
         <ul className="grid grid-cols-1 mt-8 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          {
-            loading ? (
-              <>
-                <li>
-                  <WorkItemLoading/>
-                </li>
-                <li>
-                  <WorkItemLoading/>
-                </li>
-                <li>
-                  <WorkItemLoading/>
-                </li>
-              </>
-            ) : null
-          }
-          {
-            dataWorks ? (
-              dataWorks.workCollection.items.map((data, i) => (
+          {loading ? (
+            <>
+              <li>
+                <WorkItemLoading />
+              </li>
+              <li>
+                <WorkItemLoading />
+              </li>
+              <li>
+                <WorkItemLoading />
+              </li>
+            </>
+          ) : null}
+          {dataWorks
+            ? dataWorks.workCollection.items.map((data, i) => (
                 <li key={i}>
-                  <WorkItem data={data}/>
+                  <WorkItem data={data} />
                 </li>
               ))
-            ) : null
-          }
+            : null}
         </ul>
       </div>
       <div className="mt-32">
@@ -85,13 +84,11 @@ const Works: React.FC = () => {
           <h2 className="text-2xl font-bold">Open Source Contribution</h2>
         </div>
         <ul className="grid grid-cols-1 mt-8 sm:grid-cols-3 md:grid-cols-4 gap-8">
-          {
-            dataWorks?.openSourceCollection.items.map((item, i) => (
-              <li key={i}>
-                <WorkItem.Mini data={item}/>
-              </li>
-            ))
-          }
+          {dataWorks?.openSourceCollection.items.map((item, i) => (
+            <li key={i}>
+              <WorkItem.Mini data={item} />
+            </li>
+          ))}
         </ul>
       </div>
     </div>
