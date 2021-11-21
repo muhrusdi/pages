@@ -7,7 +7,7 @@ const Murottal: React.FC = () => {
   return (
     <Layout>
       <Router basepath="/murottal">
-        <MurottalRoot path="/"/>
+        <MurottalRoot path="/" />
       </Router>
     </Layout>
   )

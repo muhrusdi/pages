@@ -5,7 +5,7 @@ import fetch from "cross-fetch"
 
 const httpLink = new HttpLink({
   uri: "https://graphql.contentful.com/content/v1/spaces/gyshnlhzhaow",
-  fetch
+  fetch,
 })
 
 const authLink = setContext((_, { headers }) => {
@@ -13,7 +13,7 @@ const authLink = setContext((_, { headers }) => {
     headers: {
       ...headers,
       Authorization: `Bearer ${process.env.GATSBY_CONTENTFUL_TOKEN}`,
-    }
+    },
   }
 })
 

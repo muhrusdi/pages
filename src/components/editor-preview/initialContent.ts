@@ -18,5 +18,7 @@ const javascript = `
 `
 
 export default {
-  html, css, javascript,
+  html,
+  css,
+  javascript,
 }

@@ -11,26 +11,25 @@ const TweetItem: React.FC = () => (
         <span className="text-gray-400">@mhmrus</span>
       </div>
     </div>
-    <p className="mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore assumenda mollitia eaque velit sapiente?</p>
+    <p className="mt-3">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
+      assumenda mollitia eaque velit sapiente?
+    </p>
     <div className="flex mt-3 space-x-4">
       <div>
         <div className="flex items-center text-yellow-500 space-x-2">
           <div>
-            <BiMessage/>
+            <BiMessage />
           </div>
-          <div>
-            3
-          </div>
+          <div>3</div>
         </div>
       </div>
       <div>
         <div className="flex items-center text-pink-500 space-x-2">
           <div>
-            <BiHeart/>
+            <BiHeart />
           </div>
-          <div>
-            3
-          </div>
+          <div>3</div>
         </div>
       </div>
     </div>

@@ -8,8 +8,8 @@ const ThreeDPage: React.FC = () => {
   return (
     <Layout>
       <Router basepath="/3d">
-        <ThreeD path="/"/>
-        <DetailThreeD path="/:slug"/>
+        <ThreeD path="/" />
+        <DetailThreeD path="/:slug" />
       </Router>
     </Layout>
   )

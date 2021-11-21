@@ -2,65 +2,65 @@ import React, { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { PropsType } from "./props-type"
 import { SpecsGroup, IconStyled } from "./styled"
-import { 
+import {
   HiOutlineBookOpen,
   HiOutlineCode,
   HiOutlineCollection,
   HiOutlineOfficeBuilding,
   HiOutlineUserCircle,
-  HiOutlineViewGrid
+  HiOutlineViewGrid,
 } from "react-icons/hi"
 
-const SpecItem: React.FC<PropsType> = ({data: {title, description}}) => {
-  const [toggle, setToggle] = useState(false);
+const SpecItem: React.FC<PropsType> = ({ data: { title, description } }) => {
+  const [toggle, setToggle] = useState(false)
   const specs: any = {
-    "Profile": {
+    Profile: {
       icon: (
         <IconStyled className="flex items-center justify-center rounded-2xl sm:rounded-4xl bg-gradient-to-br from-pink-400 to-pink-700">
-          <HiOutlineUserCircle className="h-6 w-6"/>
-        </IconStyled>
-      )
-    },
-    "Career": {
-      icon: (
-        <IconStyled className="flex items-center justify-center rounded-2xl sm:rounded-4xl bg-gradient-to-br from-purple-400 to-purple-700">
-          <HiOutlineOfficeBuilding className="h-6 w-6"/>
+          <HiOutlineUserCircle className="h-6 w-6" />
         </IconStyled>
       ),
     },
-    "Education": {
+    Career: {
+      icon: (
+        <IconStyled className="flex items-center justify-center rounded-2xl sm:rounded-4xl bg-gradient-to-br from-purple-400 to-purple-700">
+          <HiOutlineOfficeBuilding className="h-6 w-6" />
+        </IconStyled>
+      ),
+    },
+    Education: {
       icon: (
         <IconStyled className="flex items-center justify-center rounded-2xl sm:rounded-4xl bg-gradient-to-br from-yellow-400 to-yellow-700">
-          <HiOutlineBookOpen className="h-6 w-6"/>
+          <HiOutlineBookOpen className="h-6 w-6" />
         </IconStyled>
-      )
+      ),
     },
-    "Stack": {
+    Stack: {
       icon: (
         <IconStyled className="flex items-center justify-center rounded-2xl sm:rounded-4xl bg-gradient-to-br from-blue-400 to-blue-700">
-          <HiOutlineCollection className="h-6 w-6"/>
+          <HiOutlineCollection className="h-6 w-6" />
         </IconStyled>
-      )
+      ),
     },
-    "Skill": {
+    Skill: {
       icon: (
         <IconStyled className="flex items-center justify-center rounded-2xl sm:rounded-4xl bg-gradient-to-br from-indigo-400 to-indigo-700">
-          <HiOutlineCode className="h-6 w-6"/>
+          <HiOutlineCode className="h-6 w-6" />
         </IconStyled>
-      )
+      ),
     },
-    "Work": {
+    Work: {
       icon: (
         <IconStyled className="flex items-center justify-center rounded-2xl sm:rounded-4xl bg-gradient-to-br from-green-400 to-green-700">
-          <HiOutlineViewGrid className="h-6 w-6"/>
+          <HiOutlineViewGrid className="h-6 w-6" />
         </IconStyled>
-      )
-    }
+      ),
+    },
   }
 
   const buttonVariants = {
-    open: {rotate: 45},
-    closed: {rotate: 0}
+    open: { rotate: 45 },
+    closed: { rotate: 0 },
   }
 
   const handleClick = () => {
@@ -72,9 +72,7 @@ const SpecItem: React.FC<PropsType> = ({data: {title, description}}) => {
       <div className="flex py-6 sm:py-12 justify-between items-center">
         <div className="flex items-center">
           <div className="icon-wrapper">
-            <div>
-              {specs[title].icon}
-            </div>
+            <div>{specs[title].icon}</div>
           </div>
           <div className="select-none">
             <h3 className="text-2xl sm:text-5xl font-black">{title}</h3>
@@ -83,40 +81,51 @@ const SpecItem: React.FC<PropsType> = ({data: {title, description}}) => {
         <motion.button
           animate={toggle ? "open" : "closed"}
           variants={buttonVariants}
-          className="close focus:outline-none" onClick={handleClick} >
-          <svg viewBox="0 0 54 54" fill="none" stroke="#6B7280" xmlns="http://www.w3.org/2000/svg">
-          <path d="M27 0.5V53.5" />
-          <path d="M0.25 27L53.25 27"/>
+          className="close focus:outline-none"
+          onClick={handleClick}
+        >
+          <svg
+            viewBox="0 0 54 54"
+            fill="none"
+            stroke="#6B7280"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M27 0.5V53.5" />
+            <path d="M0.25 27L53.25 27" />
           </svg>
         </motion.button>
       </div>
       <div className="content">
         <AnimatePresence initial={false}>
-          {
-            toggle && (
+          {toggle && (
+            <motion.div
+              variants={{
+                open: { height: "auto" },
+                collapsed: { height: 0, transition: { delay: 0.1 } },
+              }}
+              animate="open"
+              initial="collapsed"
+              transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
+              exit="collapsed"
+            >
               <motion.div
                 variants={{
-                  open: { height: "auto" },
-                  collapsed: { height: 0, transition: {delay: .1} }
+                  open: { top: 0, opacity: 1 },
+                  collapsed: {
+                    top: -40,
+                    opacity: 0,
+                    transition: { duration: 0.5 },
+                  },
                 }}
-                animate="open"
                 initial="collapsed"
-                transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
-                exit="collapsed">
-                <motion.div
-                  variants={{
-                    open: { top: 0, opacity: 1 },
-                    collapsed: { top: -40, opacity: 0, transition: {duration: .5} }
-                  }}
-                  initial="collapsed"
-                  animate="open"
-                  exit="collapsed"
-                  className="pt-10 pb-16 text-xl text-gray-300 leading-loose relative">
-                  {description}
-                </motion.div>
+                animate="open"
+                exit="collapsed"
+                className="pt-10 pb-16 text-xl text-gray-300 leading-loose relative"
+              >
+                {description}
               </motion.div>
-            )
-          }
+            </motion.div>
+          )}
         </AnimatePresence>
       </div>
     </SpecsGroup>

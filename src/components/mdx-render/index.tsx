@@ -4,10 +4,10 @@ import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import CodeBlock from "../codeblock"
 
-const MdxRender = ({data}: {data: any}) => {
+const MdxRender = ({ data }: { data: any }) => {
   const shortcodes = {
     Link,
-    pre: CodeBlock
+    pre: CodeBlock,
   }
 
   return (

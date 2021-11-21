@@ -30,7 +30,7 @@ const snippet = `<div>
 </div>
 `
 
-const MemoEditor = memo(({defaultValue, onMount, onChange}) => (
+const MemoEditor = memo(({ defaultValue, onMount, onChange }) => (
   <Editor
     height="300px"
     defaultLanguage="html"
@@ -43,26 +43,23 @@ const MemoEditor = memo(({defaultValue, onMount, onChange}) => (
 ))
 
 if (typeof window !== "undefined") {
-  loader.init()
-    .then(monaco => {
-      monaco.editor.defineTheme("night-owl", nightOwl)
-    })
+  loader.init().then(monaco => {
+    monaco.editor.defineTheme("night-owl", nightOwl)
+  })
 }
 
 const PlayCode: React.FC = () => {
   const editorContainerRef = useRef(null)
   const [value, setValue] = useState(snippet)
 
-  
-
-  const handleEditorDidMount = useCallback((editor) => {
+  const handleEditorDidMount = useCallback(editor => {
     editorContainerRef.current = editor
     editorContainerRef.current.updateOptions({
       minimap: {
-        enabled: false
+        enabled: false,
       },
       fontSize: 16,
-      lineNumbersMinChars: 3
+      lineNumbersMinChars: 3,
     })
   }, [])
 
@@ -81,12 +78,9 @@ const PlayCode: React.FC = () => {
             <div className="relative w-full flex flex-col bg-blueGray-900 rounded-2xl overflow-hidden">
               <div className="flex-none h-11 flex items-center px-4 border-b border-blueGray-800">
                 <div className="flex space-x-1.5">
-                  <div className="w-3 h-3 border-2 rounded-full border-red-500">
-                  </div>
-                  <div className="w-3 h-3 border-2 rounded-full border-amber-400">
-                  </div>
-                  <div className="w-3 h-3 border-2 rounded-full border-green-400">
-                  </div>
+                  <div className="w-3 h-3 border-2 rounded-full border-red-500"></div>
+                  <div className="w-3 h-3 border-2 rounded-full border-amber-400"></div>
+                  <div className="w-3 h-3 border-2 rounded-full border-green-400"></div>
                 </div>
               </div>
               <div>
@@ -107,5 +101,5 @@ const PlayCode: React.FC = () => {
 export default PlayCode
 
 PlayCode.defaultProps = {
-  badge: "Latest from the blog"
+  badge: "Latest from the blog",
 }

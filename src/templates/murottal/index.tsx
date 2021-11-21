@@ -5,7 +5,7 @@ import { GridItem } from "@/components/murottal/player/styled"
 import { Context } from "@/contexts"
 
 const GridItemLoading: React.FC = () => (
-  <div className="bg-blueGray-900 rounded-lg" style={{height: 200}}></div>
+  <div className="bg-blueGray-900 rounded-lg" style={{ height: 200 }}></div>
 )
 
 const MurottalPage: React.FC = () => {
@@ -46,17 +46,18 @@ const MurottalPage: React.FC = () => {
   `
 
   const { data, loading } = useQuery(MUROTTAL_COLLECTION)
-  
+
   useEffect(() => {
     if (data) {
       const dataStr = JSON.stringify(data)
-      const dataParse = JSON.parse(dataStr.replace(/"coverArtUrl":/g, "\"cover_art_url\":"))
+      const dataParse = JSON.parse(
+        dataStr.replace(/"coverArtUrl":/g, "\"cover_art_url\":")
+      )
       setDataMurttal(dataParse)
     }
   }, [data])
 
-
-  const handlePlay = (song) => {
+  const handlePlay = song => {
     handleSetMurottal([song])
   }
 
@@ -64,35 +65,40 @@ const MurottalPage: React.FC = () => {
     <div>
       <div>
         <h1 className="font-black text-5xl">Murottal</h1>
-        <p className="text-gray-400 text-2xl mt-4">Lantunan indah Al Qur&apos;an</p>
+        <p className="text-gray-400 text-2xl mt-4">
+          Lantunan indah Al Qur&apos;an
+        </p>
       </div>
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 mt-12">
-        {
-          loading ? (
-            <>
-              <GridItemLoading/>
-              <GridItemLoading/>
-              <GridItemLoading/>
-              <GridItemLoading/>
-            </>
-          ) : null
-        }
-        {
-          dataMurottal?.murottalCollection?.items.map((item, i) => (
-            <GridItem key={i}>
-              <div className="image relative h-36 sm:h-44 rounded-md overflow-hidden flex justify-center items-center" onClick={() => handlePlay(item)}>
-                <div className="relative z-10 play transition-all">
-                  <BsFillPlayFill size={60}/>
-                </div>
-                <img className="absolute object-cover h-full w-full" src={item.cover_art_url} alt="" />
+        {loading ? (
+          <>
+            <GridItemLoading />
+            <GridItemLoading />
+            <GridItemLoading />
+            <GridItemLoading />
+          </>
+        ) : null}
+        {dataMurottal?.murottalCollection?.items.map((item, i) => (
+          <GridItem key={i}>
+            <div
+              className="image relative h-36 sm:h-44 rounded-md overflow-hidden flex justify-center items-center"
+              onClick={() => handlePlay(item)}
+            >
+              <div className="relative z-10 play transition-all">
+                <BsFillPlayFill size={60} />
               </div>
-              <div className="mt-4">
-                <h2 className="font-bold">{item.name}</h2>
-                <p className="mt-1 text-blueGray-400">{item.artist}</p>
-              </div>
-            </GridItem>
-          ))
-        }
+              <img
+                className="absolute object-cover h-full w-full"
+                src={item.cover_art_url}
+                alt=""
+              />
+            </div>
+            <div className="mt-4">
+              <h2 className="font-bold">{item.name}</h2>
+              <p className="mt-1 text-blueGray-400">{item.artist}</p>
+            </div>
+          </GridItem>
+        ))}
       </div>
     </div>
   )

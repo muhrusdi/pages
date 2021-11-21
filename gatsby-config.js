@@ -8,7 +8,8 @@ module.exports = {
     description: "Front End Engineer, JAMstack Enthusiast",
     author: "@muhrusdi",
     siteUrl: "https://github.com/muhrusdi/pages",
-    image: "https://res.cloudinary.com/muhrusdi/image/upload/v1624511269/muhrusdi-cover.jpg"
+    image:
+      "https://res.cloudinary.com/muhrusdi/image/upload/v1624511269/muhrusdi-cover.jpg",
   },
   flags: {
     PRESERVE_WEBPACK_CACHE: false,
@@ -43,9 +44,7 @@ module.exports = {
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        plugins: [
-          `gatsby-remark-prismjs`,
-        ],
+        plugins: [`gatsby-remark-prismjs`],
       },
     },
     "gatsby-plugin-image",
@@ -78,7 +77,7 @@ module.exports = {
         extensions: ["js", "jsx"],
         exclude: ["node_modules", ".cache", "public"],
         // Any eslint-webpack-plugin options below
-      }
+      },
     },
     {
       resolve: "gatsby-source-filesystem",
@@ -97,9 +96,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-mdx",
       options: {
-        gatsbyRemarkPlugins: [
-          `gatsby-remark-images`
-        ],
+        gatsbyRemarkPlugins: [`gatsby-remark-images`],
         extensions: [".mdx", ".md"],
       },
     },

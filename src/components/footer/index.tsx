@@ -1,14 +1,16 @@
 import React from "react"
 import Newsletter from "../newsletter"
 
-
 const Footer: React.FC = () => {
   const date = new Date()
   return (
     <footer className="mt-36">
-      <Newsletter/>
+      <Newsletter />
       <div className="text-center py-16 mt-20">
-        <span>© {date.getFullYear()} Made with <span className="text-red-500">♥</span> - Muhammad Rusdi</span>
+        <span>
+          © {date.getFullYear()} Made with{" "}
+          <span className="text-red-500">♥</span> - Muhammad Rusdi
+        </span>
       </div>
     </footer>
   )

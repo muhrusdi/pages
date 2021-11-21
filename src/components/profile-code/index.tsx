@@ -20,7 +20,7 @@ const snippet = `<!-- code editor -->
 </div>
 `
 
-const MemoEditor = memo(({defaultValue, onMount, onChange}) => (
+const MemoEditor = memo(({ defaultValue, onMount, onChange }) => (
   <Editor
     height="400px"
     defaultLanguage="html"
@@ -33,30 +33,27 @@ const MemoEditor = memo(({defaultValue, onMount, onChange}) => (
 ))
 
 if (typeof window !== "undefined") {
-  loader.init()
-    .then(monaco => {
-      monaco.editor.defineTheme("night-owl", nightOwl)
-    })
+  loader.init().then(monaco => {
+    monaco.editor.defineTheme("night-owl", nightOwl)
+  })
 }
 
 type Props = {
   isPreview: boolean
 }
 
-const PlayCode: React.FC<Props> = ({isPreview}) => {
+const PlayCode: React.FC<Props> = ({ isPreview }) => {
   const editorContainerRef = useRef(null)
   const [value, setValue] = useState(snippet)
 
-  
-
-  const handleEditorDidMount = useCallback((editor) => {
+  const handleEditorDidMount = useCallback(editor => {
     editorContainerRef.current = editor
     editorContainerRef.current.updateOptions({
       minimap: {
-        enabled: false
+        enabled: false,
       },
       fontSize: 16,
-      lineNumbersMinChars: 3
+      lineNumbersMinChars: 3,
     })
   }, [])
 
@@ -66,24 +63,29 @@ const PlayCode: React.FC<Props> = ({isPreview}) => {
 
   return (
     <div className="flex flex-col sm:flex-row -mx-4">
-      <div className={`w-full sm:w-1/2 sm:px-4 sm:block ${isPreview ? "block" : "hidden"}`}>
+      <div
+        className={`w-full sm:w-1/2 sm:px-4 sm:block ${
+          isPreview ? "block" : "hidden"
+        }`}
+      >
         {parseToReact(value || snippet)}
       </div>
-      <div className={`w-full sm:w-1/2 sm:px-4 sm:block  ${!isPreview ? "block" : "hidden"}`}>
+      <div
+        className={`w-full sm:w-1/2 sm:px-4 sm:block  ${
+          !isPreview ? "block" : "hidden"
+        }`}
+      >
         <EditorStyled>
           <div className="relative z-20">
             <div className="relative w-full flex flex-col bg-blueGray-900 rounded-2xl overflow-hidden">
               <div className="flex-none h-11 flex items-center px-4 border-b border-blueGray-800">
                 <div className="flex space-x-1.5">
-                  <div className="w-3 h-3 border-2 rounded-full border-red-500">
-                  </div>
-                  <div className="w-3 h-3 border-2 rounded-full border-amber-400">
-                  </div>
-                  <div className="w-3 h-3 border-2 rounded-full border-green-400">
-                  </div>
+                  <div className="w-3 h-3 border-2 rounded-full border-red-500"></div>
+                  <div className="w-3 h-3 border-2 rounded-full border-amber-400"></div>
+                  <div className="w-3 h-3 border-2 rounded-full border-green-400"></div>
                 </div>
               </div>
-              <div style={{background: "#011627"}}>
+              <div style={{ background: "#011627" }}>
                 <MemoEditor
                   defaultValue={value}
                   onMount={handleEditorDidMount}
@@ -101,5 +103,5 @@ const PlayCode: React.FC<Props> = ({isPreview}) => {
 export default PlayCode
 
 PlayCode.defaultProps = {
-  badge: "Latest from the blog"
+  badge: "Latest from the blog",
 }

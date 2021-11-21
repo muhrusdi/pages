@@ -8,10 +8,10 @@ import SEO from "@/components/seo"
 const Twitter: React.FC = () => {
   return (
     <Layout type="fluid">
-      <SEO title="Work - Muhammad Rusdi"/>
+      <SEO title="Work - Muhammad Rusdi" />
       <Router basepath="/twitter">
-        <TwitterPage path="/"/>
-        <Detail path="/:slug"/>
+        <TwitterPage path="/" />
+        <Detail path="/:slug" />
       </Router>
     </Layout>
   )

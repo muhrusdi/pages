@@ -8,7 +8,7 @@ export const CenterMenus = styled.div`
   right: 0;
   top: 38px;
   padding: 18px 20px;
-  @media (min-width: 640px)  {
+  @media (min-width: 640px) {
     position: relative;
     top: 0;
   }

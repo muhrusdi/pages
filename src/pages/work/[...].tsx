@@ -8,10 +8,10 @@ import SEO from "@/components/seo"
 const DetailWork: React.FC = () => {
   return (
     <Layout>
-      <SEO title="Work - Muhammad Rusdi"/>
+      <SEO title="Work - Muhammad Rusdi" />
       <Router basepath="/work">
-        <Work path="/"/>
-        <Detail path="/:slug"/>
+        <Work path="/" />
+        <Detail path="/:slug" />
       </Router>
     </Layout>
   )

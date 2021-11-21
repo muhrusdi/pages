@@ -45,7 +45,7 @@ body {
   padding: 10px;
 }
   `,
-  javascript: ``
+  javascript: ``,
 }
 
 export const value2 = {
@@ -101,7 +101,7 @@ body {
   padding: 10px;
 }
   `,
-  javascript: ``
+  javascript: ``,
 }
 
 export const value3 = {
@@ -158,5 +158,5 @@ body {
   padding: 10px;
 }
   `,
-  javascript: ``
+  javascript: ``,
 }
