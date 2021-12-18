@@ -4,7 +4,7 @@ import { EntityPositionGroup, CompanyLogo, EntityCompanyGroup } from "./styled"
 const ExperiencesItem: React.FC = () => (
   <div>
     <EntityCompanyGroup>
-      <li>
+      {/*<li>
         <div>
           <div className="flex items-center">
             <CompanyLogo className="mr-6">
@@ -27,7 +27,7 @@ const ExperiencesItem: React.FC = () => (
               <h4 className="leading-tight font-bold text-xl">
                 PT. Astra Graphia Information Technology (AGIT)
               </h4>
-              {/* <span className="text-blueGray-500">Currently</span> */}
+              <span className="text-blueGray-500">Currently</span>
             </div>
           </div>
           <EntityPositionGroup>
@@ -39,7 +39,7 @@ const ExperiencesItem: React.FC = () => (
                 </h5>
                 <p className="text-blueGray-500 mt-3 sm:mt-0">
                   Nov 2021 - Currently{" "}
-                  {/* <span className="text-indigo-500">4 mos</span> */}
+                  <span className="text-indigo-500">4 mos</span>
                 </p>
                 <p className="text-blueGray-500 mt-3 sm:mt-0">
                   Makassar, South Sulawesi, Indonesia
@@ -49,6 +49,7 @@ const ExperiencesItem: React.FC = () => (
           </EntityPositionGroup>
         </div>
       </li>
+      /*}
       {/* <li>
         <div>
           <div className="flex items-center">
