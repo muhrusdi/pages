@@ -8,10 +8,14 @@ import { Tooltip, TooltipTrigger, StyledContent, StyledArrow } from "../tooltip"
 
 const snippet = `<h2 className="text-4xl sm:text-4xl sm:leading-12 mt-6 font-black line-clamp-3">
   Developed
-  <span className="text-pink-500">high-quality</span> 
-  user
-  interface using
-  <span className="text-blue-light">React</span>{" "}
+  <span className="text-pink-500">
+    high-quality
+  </span> 
+  user interface using
+  <span className="text-blue-light">
+    React
+  </span>
+  {" "}
   ecosystem.
 </h2>
 `
