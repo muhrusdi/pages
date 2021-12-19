@@ -15,7 +15,6 @@ const snippet = `<h2 className="text-4xl sm:text-4xl sm:leading-12 mt-6 font-bla
   <span className="text-blue-light">
     React
   </span>
-  {" "}
   ecosystem.
 </h2>
 `
