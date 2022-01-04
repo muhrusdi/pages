@@ -5,8 +5,9 @@ import { parseToReact } from "@/components/utils"
 import nightOwl from "monaco-themes/themes/Night Owl.json"
 import { EditorStyled } from "./styled"
 import { Tooltip, TooltipTrigger, StyledContent, StyledArrow } from "../tooltip"
+import ReactCanvasConfetti from "react-canvas-confetti"
 
-const snippet = `<h2 className="text-4xl sm:text-4xl sm:leading-12 mt-6 font-black line-clamp-3">
+const snippet = `<h2 className="text-4xl sm:text-4xl sm:leading-12 mt-6 font-black">
   Developed
   <span className="text-pink-500">
     high-quality
@@ -40,6 +41,7 @@ if (typeof window !== "undefined") {
 const PlayCode: React.FC = () => {
   const editorContainerRef = useRef(null)
   const [value, setValue] = useState(snippet)
+  const confettiRef = useRef(null)
 
   const handleEditorDidMount = useCallback(editor => {
     editorContainerRef.current = editor
@@ -56,12 +58,77 @@ const PlayCode: React.FC = () => {
     setValue(value)
   }, [])
 
+  const makeShot = (particleRatio, opts) => {
+    confettiRef.current({
+      ...opts,
+      origin: { y: 0.7 },
+      particleCount: Math.floor(200 * particleRatio),
+    })
+  }
+
+  const handleEnd = () => {
+    makeShot(0.25, {
+      spread: 26,
+      startVelocity: 55,
+    })
+
+    makeShot(0.2, {
+      spread: 60,
+    })
+
+    makeShot(0.35, {
+      spread: 100,
+      decay: 0.91,
+      scalar: 0.8,
+    })
+
+    makeShot(0.1, {
+      spread: 120,
+      startVelocity: 25,
+      decay: 0.92,
+      scalar: 1.2,
+    })
+
+    makeShot(0.1, {
+      spread: 120,
+      startVelocity: 45,
+    })
+  }
+
+  const canvasStyles = {
+    position: "absolute",
+    pointerEvents: "none",
+    width: "600px",
+    height: "600px",
+    top: -20,
+    left: 0,
+  }
+
+  const getInstance = instance => {
+    confettiRef.current = instance
+  }
+
+  const onOpenChanged = e => {
+    let timeOut
+    if (e) {
+      timeOut = setTimeout(() => {
+        handleEnd()
+      }, 300)
+    } else {
+      clearTimeout(timeOut)
+    }
+  }
+
   return (
     <div className="md:flex -mx-6 items-center">
       <div className="w-full md:w-1/2 px-6">
         <div>
           <div>
-            <Tooltip>
+            <ReactCanvasConfetti
+              refConfetti={getInstance}
+              style={canvasStyles}
+            />
+            <Tooltip onOpenChange={onOpenChanged} delayDuration={100}>
               <TooltipTrigger asChild>
                 <img
                   className="h-12 w-12 object-cover cursor-pointer rounded-full ring-4 ring-purple-600"
@@ -110,7 +177,7 @@ const PlayCode: React.FC = () => {
           </Link>
         </div>
       </div>
-      <div className="w-full sm:w-1/2 px-6 mt-12 sm:mt-0">
+      <div className="w-full md:w-1/2 px-6 mt-12 md:mt-0">
         <EditorStyled className="sm:pr-4">
           <div className="relative z-20">
             <div className="relative w-full flex flex-col bg-blueGray-900 rounded-2xl overflow-hidden">
