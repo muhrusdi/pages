@@ -96,11 +96,11 @@ const PlayCode: React.FC = () => {
   }
 
   const canvasStyles = {
-    position: "absolute",
+    position: "fixed",
     pointerEvents: "none",
-    width: "600px",
-    height: "600px",
-    top: -20,
+    width: "100%",
+    height: "100%",
+    top: 0,
     left: 0,
   }
 
