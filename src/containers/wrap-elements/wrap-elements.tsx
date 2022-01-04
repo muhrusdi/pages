@@ -3,6 +3,7 @@ import { ApolloProvider } from "@apollo/client"
 import { client } from "../../apollo/client"
 import { Layout } from "@/containers/layout"
 import { getCssText } from "@/styled"
+import ContextProvider from "@/contexts"
 
 type Props = {
   element: React.ReactNode
@@ -14,7 +15,9 @@ type RenderBodyProps = {
 }
 
 export const wrapRootElement: React.FC<Props> = ({ element }) => (
-  <ApolloProvider client={client}>{element}</ApolloProvider>
+  <ApolloProvider client={client}>
+    <ContextProvider>{element}</ContextProvider>
+  </ApolloProvider>
 )
 
 export const wrapPageElement: React.FC<Props> = ({ element, props }) => (
