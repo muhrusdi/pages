@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from "react"
 import { Link } from "gatsby"
 import { BsPersonFill, BsArrowRightShort } from "react-icons/bs"
 import { HiOutlineSpeakerphone } from "react-icons/hi"
-import { CenterMenus } from "./styled"
+import { CenterMenus, BGAnimated } from "./styled"
 import cv from "../../utils/cv-muhrusdi-2022.pdf"
 import { SiGithub } from "react-icons/si"
 
@@ -55,7 +55,7 @@ const Nav: React.FC<Props> = ({ type }) => {
   return (
     <>
       <nav className="w-full relative z-50">
-        <div className="bg-purple-700">
+        <BGAnimated>
           <div
             className={`container ${
               type === "fluid" ? "max-w-full" : "max-w-screen-lg"
@@ -127,7 +127,7 @@ const Nav: React.FC<Props> = ({ type }) => {
               </div>
             </div>
           </div>
-        </div>
+        </BGAnimated>
         <div
           className={`container ${
             type === "fluid" ? "max-w-full" : "max-w-screen-lg"

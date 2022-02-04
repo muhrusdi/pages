@@ -1,6 +1,18 @@
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
 
 export const GithubItem = styled.li``
+
+const anim = keyframes`
+  0%{background-position:0% 14%}
+  50%{background-position:100% 87%}
+  100%{background-position:0% 14%}
+`
+
+export const BGAnimated = styled.div`
+  background: linear-gradient(45deg, #7e22ce, #4c1d95);
+  background-size: 400% 400%;
+  animation: ${anim} 10s ease infinite;
+`
 
 export const CenterMenus = styled.div`
   position: absolute;
