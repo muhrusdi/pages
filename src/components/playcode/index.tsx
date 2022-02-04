@@ -138,7 +138,7 @@ const PlayCode: React.FC = () => {
               </TooltipTrigger>
               <StyledContent side="right" sideOffset={5}>
                 <span className="font-bold">
-                  Hi there, i&apos;m Rusdi, a Front End Engineer.
+                  Hi there, i&apos;m a Front End Engineer.
                 </span>
                 <StyledArrow />
               </StyledContent>
