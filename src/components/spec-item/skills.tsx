@@ -8,6 +8,7 @@ import {
   SiGraphql,
   SiAdobexd,
 } from "react-icons/si"
+import { StaticImage } from "gatsby-plugin-image"
 import { DiPhotoshop } from "react-icons/di"
 
 const SkillsItem: React.FC = () => (
@@ -43,8 +44,9 @@ const SkillsItem: React.FC = () => (
             </li>
             <li className="mt-4 px-3">
               <div className="flex flex-col items-center">
-                <img
-                  style={{ height: 60 }}
+                <StaticImage
+                  height={60}
+                  placeholder="blurred"
                   src="https://cdn.pixabay.com/photo/2015/04/23/17/41/node-js-736399_960_720.png"
                   alt=""
                 />
@@ -126,8 +128,9 @@ const SkillsItem: React.FC = () => (
             </li>
             <li className="mt-4 px-3">
               <div className="flex flex-col items-center">
-                <img
-                  style={{ height: 60 }}
+                <StaticImage
+                  height={60}
+                  placeholder="blurred"
                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Sketch_Logo.svg/1200px-Sketch_Logo.svg.png"
                   alt=""
                 />

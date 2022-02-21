@@ -124,7 +124,7 @@ const ExperiencesItem: React.FC = () => (
                   Front End Engineer
                 </h5>
                 <p className="text-blueGray-500 mt-3 sm:mt-0">
-                  Aprl 2021 - Currently
+                  Oct 2019 - Currently
                 </p>
                 <p className="text-blueGray-500 mt-3 sm:mt-0">
                   Makassar, South Sulawesi, Indonesia
@@ -166,7 +166,7 @@ const ExperiencesItem: React.FC = () => (
           </EntityPositionGroup>
         </div>
       </li>
-      <li>
+      {/* <li>
         <div>
           <div className="flex items-center">
             <CompanyLogo className="mr-6">
@@ -209,7 +209,7 @@ const ExperiencesItem: React.FC = () => (
             </li>
           </EntityPositionGroup>
         </div>
-      </li>
+      </li> */}
       <li>
         <div>
           <div className="flex items-center">
