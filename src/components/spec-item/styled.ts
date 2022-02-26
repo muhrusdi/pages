@@ -66,6 +66,11 @@ export const EntityPositionGroup = styled.ul`
     p {
       color: rgba(100, 116, 139, var(--tw-text-opacity));
     }
+    &.deactive {
+      &:after {
+        background-color: rgba(209, 213, 219, var(--tw-bg-opacity));
+      }
+    }
     &:after {
       content: " ";
       margin: 13px 0;

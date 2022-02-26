@@ -126,7 +126,7 @@ const PlayCode: React.FC = () => {
           <div>
             <ReactCanvasConfetti
               refConfetti={getInstance}
-              style={canvasStyles}
+              style={canvasStyles as React.CSSProperties}
             />
             <Tooltip onOpenChange={onOpenChanged} delayDuration={100}>
               <TooltipTrigger asChild>

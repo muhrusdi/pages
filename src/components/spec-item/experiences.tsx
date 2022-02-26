@@ -4,7 +4,7 @@ import { EntityPositionGroup, CompanyLogo, EntityCompanyGroup } from "./styled"
 const ExperiencesItem: React.FC = () => (
   <div>
     <EntityCompanyGroup>
-      {/*<li>
+      <li>
         <div>
           <div className="flex items-center">
             <CompanyLogo className="mr-6">
@@ -38,8 +38,7 @@ const ExperiencesItem: React.FC = () => (
                   <span className="text-blueGray-500">Remote</span>
                 </h5>
                 <p className="text-blueGray-500 mt-3 sm:mt-0">
-                  Nov 2021 - Currently{" "}
-                  <span className="text-indigo-500">4 mos</span>
+                  Nov 2021 - Currently
                 </p>
                 <p className="text-blueGray-500 mt-3 sm:mt-0">
                   Makassar, South Sulawesi, Indonesia
@@ -49,8 +48,7 @@ const ExperiencesItem: React.FC = () => (
           </EntityPositionGroup>
         </div>
       </li>
-      /*}
-      {/* <li>
+      <li>
         <div>
           <div className="flex items-center">
             <CompanyLogo className="mr-6">
@@ -92,7 +90,7 @@ const ExperiencesItem: React.FC = () => (
             </li>
           </EntityPositionGroup>
         </div>
-      </li> */}
+      </li>
       <li>
         <div>
           <div className="flex items-center">
@@ -121,7 +119,8 @@ const ExperiencesItem: React.FC = () => (
             <li>
               <div className="leading-relaxed">
                 <h5 className="leading-normal sm:leading-loose">
-                  Front End Engineer
+                  Front End Engineer{" "}
+                  <span className="text-blueGray-500">Remote</span>
                 </h5>
                 <p className="text-blueGray-500 mt-3 sm:mt-0">
                   Oct 2019 - Currently
@@ -151,7 +150,7 @@ const ExperiencesItem: React.FC = () => (
             </div>
           </div>
           <EntityPositionGroup>
-            <li>
+            <li className="deactive">
               <div className="leading-relaxed">
                 <h5 className="leading-normal sm:leading-loose">
                   Front End Engineer{" "}
@@ -249,7 +248,7 @@ const ExperiencesItem: React.FC = () => (
             </div>
           </div>
           <EntityPositionGroup>
-            <li>
+            <li className="deactive">
               <div className="leading-relaxed">
                 <h5 className="leading-normal sm:leading-loose">
                   Lead Front End Engineer
@@ -263,7 +262,7 @@ const ExperiencesItem: React.FC = () => (
                 </p>
               </div>
             </li>
-            <li>
+            <li className="deactive">
               <div className="leading-relaxed">
                 <h5 className="leading-normal sm:leading-loose">
                   Front End Engineer
