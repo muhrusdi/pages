@@ -128,21 +128,23 @@ const PlayCode: React.FC = () => {
               refConfetti={getInstance}
               style={canvasStyles as React.CSSProperties}
             />
-            <Tooltip onOpenChange={onOpenChanged} delayDuration={100}>
-              <TooltipTrigger asChild>
-                <img
-                  className="h-12 w-12 object-cover cursor-pointer rounded-full ring-4 ring-purple-600"
-                  src="https://res.cloudinary.com/muhrusdi/image/upload/v1616335341/thumb-612467.png"
-                  alt=""
-                />
-              </TooltipTrigger>
-              <StyledContent side="right" sideOffset={5}>
-                <span className="font-bold">
-                  Hi there, i&apos;m a Front End Engineer.
-                </span>
-                <StyledArrow />
-              </StyledContent>
-            </Tooltip>
+            <div onClick={onOpenChanged}>
+              <Tooltip onOpenChange={onOpenChanged} delayDuration={100}>
+                <TooltipTrigger asChild>
+                  <img
+                    className="h-12 w-12 object-cover cursor-pointer rounded-full ring-4 ring-purple-600"
+                    src="https://res.cloudinary.com/muhrusdi/image/upload/v1616335341/thumb-612467.png"
+                    alt=""
+                  />
+                </TooltipTrigger>
+                <StyledContent side="right" sideOffset={5}>
+                  <span className="font-bold">
+                    Hi there, i&apos;m a Front End Engineer.
+                  </span>
+                  <StyledArrow />
+                </StyledContent>
+              </Tooltip>
+            </div>
           </div>
           {parseToReact(value || snippet)}
           {/* <h2 className="text-4xl sm:text-4xl sm:leading-12 mt-6 font-black line-clamp-3">
