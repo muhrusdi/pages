@@ -6,6 +6,8 @@ import { HiOutlineSpeakerphone } from "react-icons/hi"
 import { CenterMenus, BGAnimated } from "./styled"
 import cv from "../../utils/cv-muhrusdi-2022.pdf"
 import { SiGithub } from "react-icons/si"
+import Slider from "react-slick"
+import "~slick-carousel/slick/slick.css"
 
 type Props = {
   type?: string
@@ -16,6 +18,16 @@ const Nav: React.FC<Props> = ({ type }) => {
   const menusRef = useRef(null)
   const handleClick = () => {
     setToggle(t => !t)
+  }
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    vertical: true,
+    verticalSwiping: true,
+    swipeToSlide: true,
   }
 
   const handleClickOutside = e => {
@@ -62,7 +74,7 @@ const Nav: React.FC<Props> = ({ type }) => {
             }`}
           >
             <div
-              className="py-2 flex justify-between items-center text-gray-200"
+              className="flex justify-between items-center text-gray-200"
               style={{ height: 40 }}
             >
               <div>
@@ -73,6 +85,26 @@ const Nav: React.FC<Props> = ({ type }) => {
                     </div>
                   </div>
                   <div>
+                    <Slider {...settings}>
+                      <div>
+                        <h3>1</h3>
+                      </div>
+                      <div>
+                        <h3>2</h3>
+                      </div>
+                      <div>
+                        <h3>3</h3>
+                      </div>
+                      <div>
+                        <h3>4</h3>
+                      </div>
+                      <div>
+                        <h3>5</h3>
+                      </div>
+                      <div>
+                        <h3>6</h3>
+                      </div>
+                    </Slider>
                     <span className="sm:hidden flex">
                       <span className="mr-2">My Profile.</span>
                       <Link
