@@ -128,7 +128,7 @@ const PlayCode: React.FC = () => {
               refConfetti={getInstance}
               style={canvasStyles as React.CSSProperties}
             />
-            <div onClick={onOpenChanged}>
+            <div onClick={onOpenChanged} className="inline-block">
               <Tooltip onOpenChange={onOpenChanged} delayDuration={100}>
                 <TooltipTrigger asChild>
                   <img

@@ -3,11 +3,14 @@ import React, { useState, useRef, useEffect } from "react"
 import { Link } from "gatsby"
 import { BsPersonFill, BsArrowRightShort } from "react-icons/bs"
 import { HiOutlineSpeakerphone } from "react-icons/hi"
-import { CenterMenus, BGAnimated } from "./styled"
+import { CenterMenus, BGAnimated, SlickStyled, SlickItem } from "./styled"
 import cv from "../../utils/cv-muhrusdi-2022.pdf"
 import { SiGithub } from "react-icons/si"
 import Slider from "react-slick"
-import "~slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
+import thisrtBanner from "@/images/tshirt-banner.png"
+import { StaticImage } from "gatsby-plugin-image"
 
 type Props = {
   type?: string
@@ -21,13 +24,16 @@ const Nav: React.FC<Props> = ({ type }) => {
   }
 
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
-    slidesToShow: 3,
+    slidesToShow: 2,
     slidesToScroll: 1,
+    arrows: false,
     vertical: true,
     verticalSwiping: true,
     swipeToSlide: true,
+    autoplaySpeed: 3000,
+    autoplay: true,
   }
 
   const handleClickOutside = e => {
@@ -77,35 +83,72 @@ const Nav: React.FC<Props> = ({ type }) => {
               className="flex justify-between items-center text-gray-200"
               style={{ height: 40 }}
             >
-              <div>
+              <div className="w-1/2">
                 <div className="flex items-center">
                   <div>
                     <div className="mr-3 h-7 w-7 flex items-center justify-center rounded-md bg-purple-900">
                       <HiOutlineSpeakerphone size={18} />
                     </div>
                   </div>
-                  <div>
-                    <Slider {...settings}>
-                      <div>
-                        <h3>1</h3>
-                      </div>
-                      <div>
-                        <h3>2</h3>
-                      </div>
-                      <div>
-                        <h3>3</h3>
-                      </div>
-                      <div>
-                        <h3>4</h3>
-                      </div>
-                      <div>
-                        <h3>5</h3>
-                      </div>
-                      <div>
-                        <h3>6</h3>
-                      </div>
-                    </Slider>
-                    <span className="sm:hidden flex">
+                  <div className="w-full">
+                    <SlickStyled {...settings}>
+                      <SlickItem>
+                        <div className="flex space-x-2">
+                          <div className="flex-none">
+                            <img
+                              className="h-[40px]"
+                              src={thisrtBanner}
+                              alt=""
+                            />
+                          </div>
+                          <div>
+                            <span className="flex">
+                              <span className="mr-2 whitespace-nowrap">
+                                Get your Tshirt.
+                              </span>
+                              <Link
+                                to="/profile"
+                                className="text-white flex items-center font-semibold"
+                              >
+                                <span>Here</span>
+                                <BsArrowRightShort size={20} />
+                              </Link>
+                            </span>
+                          </div>
+                        </div>
+                      </SlickItem>
+                      <SlickItem>
+                        <div>
+                          <span className="flex">
+                            <span className="mr-2">My Profile.</span>
+                            <Link
+                              to="/profile"
+                              className="text-white flex items-center font-semibold"
+                            >
+                              <span>Here</span>
+                              <BsArrowRightShort size={20} />
+                            </Link>
+                          </span>
+                        </div>
+                      </SlickItem>
+                      <SlickItem>
+                        <div>
+                          <span className="hidden sm:flex items-center">
+                            <span className="mr-2">Resume.</span>
+                            <a
+                              href={cv}
+                              rel="noreferrer"
+                              target="_blank"
+                              className="text-white flex items-center font-semibold"
+                            >
+                              <span>Here</span>
+                              <BsArrowRightShort size={20} />
+                            </a>
+                          </span>
+                        </div>
+                      </SlickItem>
+                    </SlickStyled>
+                    {/* <span className="sm:hidden flex">
                       <span className="mr-2">My Profile.</span>
                       <Link
                         to="/profile"
@@ -126,11 +169,11 @@ const Nav: React.FC<Props> = ({ type }) => {
                         <span>Here</span>
                         <BsArrowRightShort size={20} />
                       </a>
-                    </span>
+                    </span> */}
                   </div>
                 </div>
               </div>
-              <div className="">
+              <div>
                 <ul className="flex -mx-2">
                   {miniMenus.map((item, i) => (
                     <li key={i} className="px-2 hidden sm:block">

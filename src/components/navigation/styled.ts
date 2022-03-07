@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components"
+import Slider from "react-slick"
 
 export const GithubItem = styled.li``
 
@@ -54,5 +55,41 @@ export const CenterMenus = styled.div`
         }
       }
     }
+  }
+`
+
+export const SlickStyled = styled(Slider)`
+  .slick-list {
+    height: 40px !important;
+    .slick-track {
+      & > div {
+        border: none;
+        height: 40px;
+      }
+    }
+  }
+  .slick-dots {
+    top: 0;
+    left: -66px;
+    li {
+      display: block;
+      height: 8px;
+      width: 8px;
+      &.slick-active {
+        button {
+          &:before {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+`
+
+export const SlickItem = styled("div")`
+  & > div {
+    height: 40px;
+    display: flex;
+    align-items: center;
   }
 `
