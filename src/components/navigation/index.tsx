@@ -39,7 +39,6 @@ const Nav: React.FC<Props> = ({ type }) => {
   const handleClickOutside = e => {
     if (menusRef.current && !menusRef.current.contains(e.target)) {
       if (toggle) {
-        console.log("test", toggle)
         setToggle(false)
       }
     }
@@ -83,7 +82,7 @@ const Nav: React.FC<Props> = ({ type }) => {
               className="flex justify-between items-center text-gray-200"
               style={{ height: 40 }}
             >
-              <div className="w-1/2">
+              <div className="w-4/5 sm:w-1/2">
                 <div className="flex items-center">
                   <div>
                     <div className="mr-3 h-7 w-7 flex items-center justify-center rounded-md bg-purple-900">
@@ -103,14 +102,15 @@ const Nav: React.FC<Props> = ({ type }) => {
                           </div>
                           <div>
                             <span className="flex">
-                              <span className="mr-2 whitespace-nowrap">
+                              <span className="hidden sm:block mr-2 whitespace-nowrap">
                                 Get your Tshirt.
                               </span>
                               <Link
                                 to="/profile"
                                 className="text-white flex items-center font-semibold"
                               >
-                                <span>Here</span>
+                                <span className="hidden sm:block">Here</span>
+                                <span className="sm:hidden">Tshirt</span>
                                 <BsArrowRightShort size={20} />
                               </Link>
                             </span>
@@ -133,7 +133,7 @@ const Nav: React.FC<Props> = ({ type }) => {
                       </SlickItem>
                       <SlickItem>
                         <div>
-                          <span className="hidden sm:flex items-center">
+                          <span className="flex items-center">
                             <span className="mr-2">Resume.</span>
                             <a
                               href={cv}
