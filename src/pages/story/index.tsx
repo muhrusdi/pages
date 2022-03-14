@@ -61,7 +61,23 @@ const Story: React.FC = () => {
             <StaticImage
               className="rounded-lg"
               placeholder="blurred"
+              src="https://res.cloudinary.com/muhrusdi/image/upload/v1647282245/20220315_012721.jpg"
+              alt=""
+            />
+          </div>
+          <div>
+            <StaticImage
+              className="rounded-lg"
+              placeholder="blurred"
               src="https://images.unsplash.com/photo-1647251532593-0e852a2f0abb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+              alt=""
+            />
+          </div>
+          <div>
+            <StaticImage
+              className="rounded-lg"
+              placeholder="blurred"
+              src="https://res.cloudinary.com/muhrusdi/image/upload/v1647282402/20220312_000827.jpg"
               alt=""
             />
           </div>
