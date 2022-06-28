@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "icon:generate": "npx @svgr/cli --out-dir assets/icons --ignore-existing --typescript -- assets/icons/svg",
     "lint": "next lint"
   },
   "dependencies": {
