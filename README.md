@@ -10,7 +10,6 @@
 - ✅ React Query
 - ✅ React Hook Form
 - ✅ Framer Motion
-- ✅ React Hook Form
 - ✅ Storybookjs
 - ✅ React Testing Library
 - ✅ React Icons
