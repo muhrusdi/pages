@@ -27,8 +27,8 @@
       "@/containers/*": [
         "containers/*"
       ],
-      "@/layout": [
-        "containers/layout"
+      "@/layouts": [
+        "containers/layouts"
       ],
       "@/images/*": [
         "images/*"
