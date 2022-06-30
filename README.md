@@ -6,9 +6,9 @@
 - ✅ Tailwindcss
 - ✅ Typescript
 - ✅ Apollo GraphQL
-- ✅ Prisma
-- ✅ Nexus
 - ✅ Stitches
+- ✅ React Query
+- ✅ React Hook Form
 - ✅ Framer Motion
 - ✅ React Hook Form
 - ✅ Storybookjs
