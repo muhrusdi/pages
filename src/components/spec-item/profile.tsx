@@ -179,7 +179,7 @@ const ProfileItem: React.FC = () => (
             <span>
               <a
                 className="bg-indigo-500 text-sm px-4 py-1 inline-block font-semibold rounded-full text-white"
-                href="https://uplabs.com/muhrusdi"
+                href="https://rus.pages.dev/static/cv-muhrusdi-2022-6a53d3ae117821f6ec663b2cc9718035.pdf"
                 target="_blank"
                 rel="noreferrer"
               >
