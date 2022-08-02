@@ -1,8 +1,5 @@
-import { IncomingMessage } from "http";
 import jwtDecode, { JwtPayload } from "jwt-decode"
 import { GetServerSideProps } from "next"
-import App from "next/app";
-import { NextRequest } from "next/server";
 
 export const jwtDecoder = (token: string) => {
   if (token) {
