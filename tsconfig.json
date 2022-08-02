@@ -36,6 +36,12 @@
       "@/types/*": [
         "types/*"
       ],
+      "@/icons": [
+        "assets/icons/index.ts"
+      ],
+      "@/libs/*": [
+        "libs/*"
+      ],
       "@/hooks/*": [
         "hooks/*"
       ],
