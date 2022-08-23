@@ -25,7 +25,7 @@ const ExperiencesItem: React.FC = () => (
             </CompanyLogo>
             <div>
               <h4 className="leading-tight font-bold text-xl">
-                PT. Astra Graphia Information Technology (AGIT)
+                PT. Astra Graphia Information Technology (STAR PROJECT)
               </h4>
               <span className="text-blueGray-500">Currently</span>
             </div>
