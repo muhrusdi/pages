@@ -9,7 +9,7 @@ export const useSampleApi = ({options, variables}: ParamsType) => {
       paths += `${key}=${variables[key]}&`
     })
   }
-  return useQuery(["sample-list", {...variables}], () => {
+  return useQuery(["sample-list", variables], () => {
     return axios.get(serviceURL("sample-api" + paths))
   }, options)
 }
