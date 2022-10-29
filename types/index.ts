@@ -1,13 +1,7 @@
-import type { ReactElement, ReactNode } from 'react'
-import type { NextPage } from 'next'
-import type { AppProps } from 'next/app'
+import React from 'react'
 
-export type NextPageWithLayout = NextPage & {
-  getLayout?: (page: ReactElement) => ReactNode
-}
-
-export type AppPropsWithLayout = AppProps & {
-  Component: NextPageWithLayout
+export type RootLayoutType = {
+  children: React.ReactNode
 }
 
 export type RecordType = {

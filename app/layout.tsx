@@ -1,8 +1,7 @@
-type Props = {
-  children: React.ReactNode
-}
+import { RootLayoutType } from "@/types"
+import "../styles/globals.css"
 
-const RootLayout: React.FC<Props> = ({ children }) => {
+const RootLayout: React.FC<RootLayoutType> = ({ children }) => {
   return (
     <html lang="en">
       <head>
