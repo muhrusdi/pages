@@ -4,6 +4,11 @@ export type RootLayoutType = {
   children: React.ReactNode
 }
 
+export type ErrorPageType = {
+  error: Error
+  reset: () => void
+}
+
 export type RecordType = {
   [key: string]: string
 }

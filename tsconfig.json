@@ -61,9 +61,6 @@
       "@/utils/*": [
         "utils/*"
       ],
-      "@/styled": [
-        "stitches.config.js"
-      ]
     },
     "incremental": true,
     "plugins": [
