@@ -1,10 +1,10 @@
-import { Overview } from "@/containers/overview"
+import NextOverview from "@/containers/next"
 import type { NextPage } from "next"
 
 const Home: NextPage = () => {
   return (
     <div>
-      <Overview />
+      <NextOverview />
     </div>
   )
 }
