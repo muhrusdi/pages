@@ -2,6 +2,7 @@ import { RootLayoutType } from "@/types"
 import { Inter } from "@next/font/google"
 import clsx from "clsx"
 import "../styles/globals.css"
+import "../styles/nextglobal.css"
 
 const inter = Inter({
   subsets: ["latin"],
