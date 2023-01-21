@@ -24,43 +24,7 @@
     "paths": {
       "@/*": [
         "./*"
-      ],
-      "@/components/*": [
-        "components/*"
-      ],
-      "@/containers/*": [
-        "containers/*"
-      ],
-      "@/layouts": [
-        "containers/layouts"
-      ],
-      "@/images/*": [
-        "images/*"
-      ],
-      "@/types/*": [
-        "types/*"
-      ],
-      "@/icons": [
-        "assets/icons/index.ts"
-      ],
-      "@/libs/*": [
-        "libs/*"
-      ],
-      "@/hooks/*": [
-        "hooks/*"
-      ],
-      "@/apollo/*": [
-        "apollo/*"
-      ],
-      "@/styles/*": [
-        "styles/*"
-      ],
-      "@/services/*": [
-        "services/*"
-      ],
-      "@/utils/*": [
-        "utils/*"
-      ],
+      ]
     },
     "incremental": true,
     "plugins": [
