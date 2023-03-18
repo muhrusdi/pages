@@ -10,12 +10,12 @@ export const removeCookie = (key: string) => cookie.remove(key)
 export const removeToken = () => cookie.remove("accessToken")
 export const isBrowser = typeof window !== "undefined"
 
-const dateIsValid = (date: string) => {
-  return !Number.isNaN(new Date(date).getTime())
-}
+// const dateIsValid = (date: string) => {
+//   return !Number.isNaN(new Date(date).getTime())
+// }
 
-export const formatDate = (val: string = new Date().toISOString(), str = "dd-MMM-yy") => {
-  return format(new Date(dateIsValid(val) ? val : new Date().toISOString()), str)
+export const formatDate = (val?: string, str = "dd-MMM-yy") => {
+  return format(new Date(val || ""), str)
 }
 
 export const money = (val: number) => {
