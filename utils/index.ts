@@ -21,3 +21,9 @@ export const formatDate = (val?: string, str = "dd-MMM-yy") => {
 export const money = (val: number) => {
   return numeral(val).format("0,0")
 }
+
+export const wait = (ms: number) => {
+  return new Promise(resolve => {
+    setTimeout(resolve, ms)
+  })
+}
