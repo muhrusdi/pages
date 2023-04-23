@@ -22,6 +22,6 @@
   }
 }
 .underline {
-  @apply rounded-md bg-black contrast-[94%] h-[44px] absolute left-0 right-0 top-0;
+  @apply rounded-md bg-gray-900 contrast-[94%] h-[44px] absolute left-0 right-0 top-0;
   z-index: -1;
 }

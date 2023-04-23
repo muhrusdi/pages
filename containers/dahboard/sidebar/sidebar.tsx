@@ -29,7 +29,7 @@ const Sidebar = () => {
   return (
     <nav className={styles.nav}>
       <div className="p-6 font-black text-lg">
-        <h3>NDASH</h3>
+        <h3>NEXT</h3>
       </div>
       <ul>
         {list.map((item, i) => (
