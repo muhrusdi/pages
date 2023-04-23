@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react"
+import { useState, useId } from "react"
 import styles from "./styles.module.scss"
 import { motion } from "framer-motion"
 import Link from "next/link"
@@ -8,6 +8,7 @@ import { FiHome, FiBook } from "react-icons/fi"
 
 const Sidebar = () => {
   const [selected, setSelected] = useState("dashboard")
+  const id = useId()
   const router = useRouter()
   const pathname = usePathname()
 
@@ -33,7 +34,7 @@ const Sidebar = () => {
       </div>
       <ul>
         {list.map((item, i) => (
-          <li key={i}>
+          <li key={id + i}>
             <div>
               <Link href={item.path}>
                 <div className="flex items-center space-x-4">
