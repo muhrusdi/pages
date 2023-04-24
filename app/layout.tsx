@@ -2,7 +2,7 @@ import { RootLayoutType } from "@/types"
 import { Inter } from "next/font/google"
 import clsx from "clsx"
 import "../styles/globals.css"
-import "../styles/nextglobal.css"
+import { Navigation } from "@/components/naviagation"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -12,10 +12,13 @@ const RootLayout: React.FC<RootLayoutType> = ({ children }) => {
   return (
     <html lang="en" className={clsx(inter.className, "dark")}>
       <head>
-        <title>Sen.js</title>
+        <title>Muhammad Rusdi</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
-      <body className="dark:bg-slate-900 dark:text-white">{children}</body>
+      <body className="dark:bg-black dark:text-white">
+        <Navigation />
+        {children}
+      </body>
     </html>
   )
 }
