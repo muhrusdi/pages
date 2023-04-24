@@ -1,0 +1,21 @@
+.navigation {
+  a {
+    &:hover {
+      color: white !important;
+    }
+    transition: all .8s ease;
+  }
+  &:global(.isHovered) {
+    a {
+      @apply text-gray-500;
+    }
+  }
+  
+  .menus {
+    & > div {
+      &:not(:last-of-type) {
+        margin-right: 24px;
+      }
+    }
+  }
+}

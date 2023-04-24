@@ -2,11 +2,7 @@ import NextOverview from "@/containers/next"
 import type { NextPage } from "next"
 
 const Home: NextPage = () => {
-  return (
-    <div>
-      <NextOverview />
-    </div>
-  )
+  return <div>asdf</div>
 }
 
 export default Home
