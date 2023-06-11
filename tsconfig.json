@@ -22,7 +22,6 @@
       "@/*": [
         "./*"
       ],
-      "@/components/*": ["components/*"]
     },
     "incremental": true,
     "plugins": [
