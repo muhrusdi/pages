@@ -3,6 +3,7 @@ import { Inter } from "next/font/google"
 import clsx from "clsx"
 import "../styles/globals.css"
 import { Navigation } from "@/components/naviagation"
+import styles from "@/styles/global.module.scss"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -15,7 +16,7 @@ const RootLayout: React.FC<RootLayoutType> = ({ children }) => {
         <title>Muhammad Rusdi</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
-      <body className="dark:bg-black dark:text-white">
+      <body className={clsx("dark:bg-black dark:text-white", styles.bg)}>
         <Navigation />
         {children}
       </body>

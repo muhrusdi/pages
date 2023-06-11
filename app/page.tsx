@@ -1,7 +1,6 @@
 import { Banner } from "@/components/banner"
 import { Footer } from "@/components/footer"
 import type { NextPage } from "next"
-import { KvLightBitmotif } from "@/assets/icons"
 import Link from "next/link"
 
 const Home: NextPage = () => {
@@ -30,9 +29,6 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
-      </div>
-      <div className="">
-        <KvLightBitmotif className="absolute -bottom-1/2 left-0 right-0" />
       </div>
     </div>
   )
