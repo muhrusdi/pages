@@ -14,12 +14,12 @@ import {
   useTransform,
 } from "framer-motion"
 import { usePathname } from "next/navigation"
+import { FiAlertCircle } from "react-icons/fi"
 
 const Navigation = () => {
   const [isHovered, setIsHovered] = useState(false)
   const pathname = usePathname()
 
-  const [isPresent] = usePresence()
   const y = useMotionValue(0)
 
   const handleMouseOver = () => {
@@ -31,59 +31,85 @@ const Navigation = () => {
   }
 
   return (
-    <nav className={clsx("uppercase", styles.navigation, { isHovered })}>
-      <div className="container">
-        <div className="flex justify-between h-[74px] items-center">
-          <div>
-            <Link
-              href="/"
-              onMouseOver={handleMouseOver}
-              onMouseOut={handleMouseOut}
-            >
-              MR
-            </Link>
-          </div>
-          <div className={clsx("flex", styles.menus)}>
-            {menus.map((item, i) => {
-              return (
-                <div key={item.id} className="py-[22px] relative">
-                  <Link
-                    href={item.path}
-                    onMouseOver={handleMouseOver}
-                    onMouseOut={handleMouseOut}
-                  >
-                    <span>{item.label}</span>
-                  </Link>
-                  <AnimatePresence>
-                    {pathname === item.path ? (
-                      <motion.div
-                        layoutId="underline"
-                        initial={y.get() !== 0 ? { y: -10 } : false}
-                        animate={false}
-                        exit={{ y: -10 }}
-                        className={clsx(
-                          "h-1 absolute w-full left-0 top-0 rounded-b-lg",
-                          styles.underline
-                        )}
-                      />
-                    ) : null}
-                  </AnimatePresence>
-                </div>
-              )
-            })}
-          </div>
-          <div>
-            <button
-              className="uppercase"
-              onMouseOver={handleMouseOver}
-              onMouseOut={handleMouseOut}
-            >
-              <span>Menu</span>
-            </button>
+    <>
+      <div className="bg-white text-gray-600">
+        <div className="container">
+          <div className="flex items-center h-[40px] uppercase text-sm">
+            <span className="block pr-2">
+              <FiAlertCircle size={20} />
+            </span>
+            <span>
+              This site still under construction. Visit{" "}
+              <a href="https://2022-rus.pages.dev">
+                <b>old site</b>
+              </a>
+            </span>
           </div>
         </div>
       </div>
-    </nav>
+      <nav className={clsx("uppercase", styles.navigation, { isHovered })}>
+        <div className="container">
+          <div className="flex justify-between h-[80px] items-center">
+            <div>
+              <div className="flex items-center space-x-2">
+                <div>
+                  <Link
+                    href="/"
+                    onMouseOver={handleMouseOver}
+                    onMouseOut={handleMouseOut}
+                  >
+                    MR
+                  </Link>
+                </div>
+                <div>
+                  <span className="block text-xs border border-gray-600 text-gray-400 px-2 py-1 rounded-lg uppercase">
+                    dev
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div className={clsx("flex", styles.menus)}>
+              {menus.map((item, i) => {
+                return (
+                  <div key={item.id} className="py-[22px] relative">
+                    <Link
+                      href={item.path}
+                      onMouseOver={handleMouseOver}
+                      onMouseOut={handleMouseOut}
+                    >
+                      <span>{item.label}</span>
+                    </Link>
+                    <AnimatePresence>
+                      {pathname === item.path ? (
+                        <motion.div
+                          layoutId="underline"
+                          initial={y.get() !== 0 ? { y: -10 } : false}
+                          animate={false}
+                          exit={{ y: -10 }}
+                          className={clsx(
+                            "h-1 absolute w-full left-0 top-0 rounded-b-lg",
+                            styles.underline
+                          )}
+                        />
+                      ) : null}
+                    </AnimatePresence>
+                  </div>
+                )
+              })}
+            </div>
+            <div>
+              <button
+                className="uppercase"
+                onMouseOver={handleMouseOver}
+                onMouseOut={handleMouseOut}
+              >
+                <span>Menu</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </>
   )
 }
 
