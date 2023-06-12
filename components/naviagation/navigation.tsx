@@ -34,7 +34,7 @@ const Navigation = () => {
     <>
       <div className="bg-white text-gray-600">
         <div className="container">
-          <div className="flex items-center h-[40px] uppercase text-sm">
+          <div className="flex items-center h-[36px] uppercase text-sm">
             <span className="block pr-2">
               <FiAlertCircle size={20} />
             </span>
