@@ -1,5 +1,5 @@
-import { Banner } from "@/components/banner"
-import { Footer } from "@/components/footer"
+import { Banner } from "../components/banner"
+import { Footer } from "../components/footer"
 import type { NextPage } from "next"
 import Link from "next/link"
 
