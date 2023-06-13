@@ -2,7 +2,7 @@ import { Hello } from "@/assets/icons"
 import styles from "./banner.module.scss"
 import clsx from "clsx"
 
-const Banner = () => {
+export const Banner = () => {
   return (
     <div>
       <div className="container">
@@ -13,5 +13,3 @@ const Banner = () => {
     </div>
   )
 }
-
-export default Banner
