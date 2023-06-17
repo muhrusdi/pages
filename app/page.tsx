@@ -1,5 +1,6 @@
 import { Banner } from "@/components/banner"
 import { Footer } from "@/components/footer"
+import { Section } from "@/components/section"
 import type { NextPage } from "next"
 import Link from "next/link"
 
@@ -7,7 +8,14 @@ const Home: NextPage = () => {
   return (
     <div>
       <Banner />
-      <div className="absolute bottom-0 left-0 right-0 py-6">
+      <Section
+        tag="Our Blog"
+        title="Latest blog posts"
+        description="Tool and strategies modern teams need to help their companies grow."
+      >
+        <div>test</div>
+      </Section>
+      {/* <div className="absolute bottom-0 left-0 right-0 py-6">
         <div className="container">
           <div className="flex items-center justify-between">
             <div>
@@ -29,7 +37,7 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }
