@@ -1,5 +1,6 @@
 import { Banner } from "@/components/banner"
 import { BlogItem } from "@/components/blog/blog-item"
+import { Button } from "@/components/button"
 import { Footer } from "@/components/footer"
 import { Section } from "@/components/section"
 import { faker } from "@faker-js/faker"
@@ -14,6 +15,31 @@ const Home: NextPage = () => {
         tag="Our Blog"
         title="Latest blog posts"
         description="Tool and strategies modern teams need to help their companies grow."
+        footer={<Button>View All</Button>}
+      >
+        <div className="grid-blog">
+          <BlogItem
+            title={faker.lorem.lines(2)}
+            description={faker.lorem.lines(2)}
+            image={faker.image.abstract(1234, 2345, true)}
+          />
+          <BlogItem
+            title={faker.lorem.lines(2)}
+            description={faker.lorem.lines(2)}
+            image={faker.image.abstract(1234, 2345, true)}
+          />
+          <BlogItem
+            title={faker.lorem.lines(2)}
+            description={faker.lorem.lines(2)}
+            image={faker.image.abstract(1234, 2345, true)}
+          />
+        </div>
+      </Section>
+      <Section
+        tag="Our Work"
+        title="Latest works"
+        description="Tool and strategies modern teams need to help their companies grow."
+        footer={<Button>View All</Button>}
       >
         <div className="grid-blog">
           <BlogItem
