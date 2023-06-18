@@ -13,6 +13,7 @@
   }
   
   .menus {
+    @apply hidden sm:flex;
     & > div {
       &:not(:last-of-type) {
         margin-right: 24px;

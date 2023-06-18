@@ -7,3 +7,13 @@
     @apply max-w-[992px];
   }
 }
+
+@layer components {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500;
+  }
+
+  .grid-blog {
+    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8;
+  }
+}

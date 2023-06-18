@@ -16,7 +16,7 @@ import {
 import { usePathname } from "next/navigation"
 import { FiAlertCircle } from "react-icons/fi"
 
-const Navigation = () => {
+export const Navigation = () => {
   const [isHovered, setIsHovered] = useState(false)
   const pathname = usePathname()
 
@@ -39,7 +39,10 @@ const Navigation = () => {
               <FiAlertCircle size={20} />
             </span>
             <span>
-              This site still under construction. Visit{" "}
+              <span className="hidden sm:inline-block mr-1">
+                This site still
+              </span>
+              under construction. Visit{" "}
               <a href="https://2022-rus.pages.dev">
                 <b>old site</b>
               </a>
@@ -112,5 +115,3 @@ const Navigation = () => {
     </>
   )
 }
-
-export default Navigation
