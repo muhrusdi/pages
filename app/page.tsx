@@ -1,11 +1,9 @@
 import { Banner } from "@/components/banner"
 import { BlogItem } from "@/components/blog/blog-item"
 import { Button } from "@/components/button"
-import { Footer } from "@/components/footer"
 import { Section } from "@/components/section"
 import { faker } from "@faker-js/faker"
 import type { NextPage } from "next"
-import Link from "next/link"
 
 const Home: NextPage = () => {
   return (

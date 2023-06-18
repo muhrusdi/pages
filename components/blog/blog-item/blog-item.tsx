@@ -13,15 +13,18 @@ export const BlogItem: React.FC<Props> = ({ title, description, image }) => {
         <Image
           src={image}
           alt=""
-          width={1000}
+          width={600}
           style={{ objectFit: "cover" }}
           height={200}
-          className="h-[200px]"
+          className="h-[200px] w-full rounded-lg"
         />
       </div>
       <div className="mt-6">
-        <h3 className="text-bold">{title}</h3>
-        <p className="text-gray-400 mt-2">{description}</p>
+        <span className="font-bold text-sm uppercase text-gradient">
+          17 Oct 2023
+        </span>
+        <h3 className="text-bold mt-2 line-clamp-2">{title}</h3>
+        <p className="text-gray-400 mt-2 line-clamp-3">{description}</p>
       </div>
     </div>
   )
