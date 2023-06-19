@@ -1,0 +1,30 @@
+.footer {
+  margin-top: 8rem;
+  .git {
+    background: url('../../assets/images/bg-git.png') no-repeat center top;
+    background-size: contain;
+    height: 340px;
+    position: relative;
+    display: grid;
+    @apply grid place-items-center;
+    border: 1px solid #111;
+    border-radius: 14px;
+    .text {
+      background: radial-gradient(52.8% 5448.97% at 50% 50%, #FFFFFF 0%, #323232 100%);
+      @apply bg-clip-text text-transparent text-6xl font-bold;
+    }
+    &:after {
+      position: absolute;
+      content: "";
+      z-index: -1;
+      inset: 0;
+      background: linear-gradient(0deg, #000000, #090909), radial-gradient(67.56% 96.43% at 50% -16.71%, #0a0909 0%, #000000 100%);
+    }
+
+  }
+  .year {
+    background: linear-gradient(180deg, #373737 -94.54%, #050505 89.42%);
+    @apply bg-clip-text text-transparent leading-none;
+    line-height: 240px;
+  }
+}
