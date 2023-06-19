@@ -25,6 +25,17 @@
   .year {
     background: linear-gradient(180deg, #373737 -94.54%, #050505 89.42%);
     @apply bg-clip-text text-transparent leading-none;
-    line-height: 240px;
+    line-height: 246px;
+  }
+  .blur {
+    background: radial-gradient(29.73% 87.14% at 50% -14.29%, rgb(155 155 155 / 13%) 0%, rgb(6 6 6 / 18%) 100%);
+  }
+  .line {
+    background: linear-gradient(90deg, #000000 -1.53%, black -1.52%, #454545 50%, black);
+    width: 100%;
+    position: absolute;
+    height: 1px;
+    top: -1px;
+    z-index: 2;
   }
 }

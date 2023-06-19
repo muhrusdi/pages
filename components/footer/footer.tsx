@@ -28,9 +28,15 @@ export const Footer = () => {
             </span>
           </div>
         </div>
-        <div className="backdrop-blur-lg absolute border-t border-[#121212d4] left-0 right-0 bottom-0">
+        <div
+          className={clsx(
+            "backdrop-blur-lg absolute border-t border-[#121212d4] left-0 right-0 bottom-0",
+            styles.blur
+          )}
+        >
+          <div className={styles.line}></div>
           <div className="container">
-            <div className="justify-center h-[78px] flex items-center">
+            <div className="justify-center h-[76px] flex items-center">
               <span className="uppercase font-bold">muhrus.dev</span>
             </div>
           </div>
