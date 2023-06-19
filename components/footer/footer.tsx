@@ -20,7 +20,7 @@ export const Footer = () => {
           </div>
         </div>
       </div>
-      <footer className="mt-[16rem] relative">
+      <footer className="mt-[14rem] relative">
         <div className="container">
           <div className="text-center overflow-hidden">
             <span className={clsx("text-[20rem] font-black", styles.year)}>
@@ -30,7 +30,7 @@ export const Footer = () => {
         </div>
         <div
           className={clsx(
-            "backdrop-blur-lg absolute border-t border-[#121212d4] left-0 right-0 bottom-0",
+            "backdrop-blur-lg absolute left-0 right-0 bottom-0",
             styles.blur
           )}
         >
