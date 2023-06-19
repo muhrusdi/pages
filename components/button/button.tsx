@@ -1,5 +1,5 @@
 import clsx from "clsx"
-import styles from "./styles.module.scss"
+import styles from "./button.module.scss"
 
 const sizes = {
   small: styles.small,
