@@ -19,17 +19,17 @@ const Home: NextPage = () => {
           <BlogItem
             title={faker.lorem.lines(2)}
             description={faker.lorem.lines(2)}
-            image={faker.image.abstract(1234, 2345, true)}
+            image={faker.image.urlLoremFlickr()}
           />
           <BlogItem
             title={faker.lorem.lines(2)}
             description={faker.lorem.lines(2)}
-            image={faker.image.abstract(1234, 2345, true)}
+            image={faker.image.urlLoremFlickr()}
           />
           <BlogItem
             title={faker.lorem.lines(2)}
             description={faker.lorem.lines(2)}
-            image={faker.image.abstract(1234, 2345, true)}
+            image={faker.image.urlLoremFlickr()}
           />
         </div>
       </Section>
@@ -43,17 +43,17 @@ const Home: NextPage = () => {
           <BlogItem
             title={faker.lorem.lines(2)}
             description={faker.lorem.lines(2)}
-            image={faker.image.abstract(1234, 2345, true)}
+            image={faker.image.urlLoremFlickr()}
           />
           <BlogItem
             title={faker.lorem.lines(2)}
             description={faker.lorem.lines(2)}
-            image={faker.image.abstract(1234, 2345, true)}
+            image={faker.image.urlLoremFlickr()}
           />
           <BlogItem
             title={faker.lorem.lines(2)}
             description={faker.lorem.lines(2)}
-            image={faker.image.abstract(1234, 2345, true)}
+            image={faker.image.urlLoremFlickr()}
           />
         </div>
       </Section>
