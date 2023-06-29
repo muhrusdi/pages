@@ -1,34 +1,16 @@
 "use client"
 import clsx from "clsx"
 import styles from "./navigation.module.scss"
-import { useState, useTransition } from "react"
 import Link from "next/link"
 import { menus } from "@/utils/menus"
-import {
-  AnimatePresence,
-  motion,
-  useIsPresent,
-  useMotionValue,
-  useMotionValueEvent,
-  usePresence,
-  useTransform,
-} from "framer-motion"
+import { AnimatePresence, motion, useMotionValue } from "framer-motion"
 import { usePathname } from "next/navigation"
 import { FiAlertCircle } from "react-icons/fi"
 
 export const Navigation = () => {
-  const [isHovered, setIsHovered] = useState(false)
   const pathname = usePathname()
 
   const y = useMotionValue(0)
-
-  const handleMouseOver = () => {
-    setIsHovered(true)
-  }
-
-  const handleMouseOut = () => {
-    setIsHovered(false)
-  }
 
   return (
     <>
@@ -50,16 +32,15 @@ export const Navigation = () => {
           </div>
         </div>
       </div>
-      <nav className={clsx("uppercase", styles.navigation, { isHovered })}>
+      <nav className={clsx("uppercase", styles.navigation)}>
         <div className="container">
-          <div className="flex justify-between h-[80px] items-center">
+          <div className="flex [&:not(:hover)_.link]:opacity-100 justify-between h-[80px] items-center">
             <div>
               <div className="flex items-center space-x-2">
                 <div>
                   <Link
+                    className="[&:not(:hover)]:opacity-50 py-[22px] link"
                     href="/"
-                    onMouseOver={handleMouseOver}
-                    onMouseOut={handleMouseOut}
                   >
                     MR
                   </Link>
@@ -74,11 +55,10 @@ export const Navigation = () => {
             <div className={clsx("flex", styles.menus)}>
               {menus.map((item, i) => {
                 return (
-                  <div key={item.id} className="py-[22px] relative">
+                  <div key={item.id} className="relative px-3 py-1">
                     <Link
                       href={item.path}
-                      onMouseOver={handleMouseOver}
-                      onMouseOut={handleMouseOut}
+                      className="[&:not(:hover)]:opacity-50 py-[22px] link"
                     >
                       <span>{item.label}</span>
                     </Link>
@@ -88,7 +68,6 @@ export const Navigation = () => {
                           layoutId="underline"
                           initial={y.get() !== 0 ? { y: -10 } : false}
                           animate={false}
-                          exit={{ y: -10 }}
                           className={clsx(
                             "h-1 absolute w-full left-0 top-0 rounded-b-lg",
                             styles.underline
@@ -101,11 +80,7 @@ export const Navigation = () => {
               })}
             </div>
             <div>
-              <button
-                className="uppercase"
-                onMouseOver={handleMouseOver}
-                onMouseOut={handleMouseOut}
-              >
+              <button className="uppercase [&:not(:hover)]:opacity-50 py-[22px] link">
                 <span>Menu</span>
               </button>
             </div>

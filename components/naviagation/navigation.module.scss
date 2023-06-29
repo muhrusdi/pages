@@ -1,37 +1,26 @@
 .navigation {
   a, button {
-    @apply text-gray-400;
-    &:hover {
-      color: white !important;
-    }
     transition: all .8s ease;
   }
-  &:global(.isHovered) {
-    a, button {
-      @apply text-gray-700;
-    }
-  }
-  
   .menus {
     @apply hidden sm:flex;
     & > div {
       &:not(:last-of-type) {
-        margin-right: 24px;
+        margin-right: 20px;
       }
     }
   }
   .underline {
+    @apply h-full;
+    z-index: -1;
     &:after {
       content: " ";
-      width: 30px;
-      background-color: #4338ca;
+      @apply backdrop-blur bg-gray-600/40 border border-gray-700/30;
       position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
+      width: 100%;
       top: 0;
-      height: 4px;
-      border-bottom-left-radius: 6px;
-      border-bottom-right-radius: 6px;
+      bottom: 0;
+      border-radius: 6px;
     }
   }
 }
