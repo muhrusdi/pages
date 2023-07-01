@@ -1,10 +1,17 @@
 import type { NextPage } from "next"
 import Image from "next/image"
+import styles from "@/styles/global.module.scss"
+import clsx from "clsx"
 
 const Profile: NextPage = () => {
   return (
     <div>
-      <div className="border-t border-b border-gray-900/70  backdrop-blur">
+      <div
+        className={clsx(
+          "border-t border-b border-gray-900/70  backdrop-blur",
+          styles["gradient-nav"]
+        )}
+      >
         <div className="container">
           <div className="flex justify-center h-[40px] text-gray-400 text-sm items-center space-x-6 uppercase">
             <div>
@@ -60,6 +67,14 @@ const Profile: NextPage = () => {
                 delivering high-quality code while meeting project timelines and
                 exceeding client expectations.
               </p>
+              <div className="pt-8">
+                <Image
+                  src="https://res.cloudinary.com/muhrusdi/image/upload/v1669999334/sign-mr.png"
+                  width={160}
+                  height={600}
+                  alt=""
+                />
+              </div>
             </div>
           </div>
         </div>
