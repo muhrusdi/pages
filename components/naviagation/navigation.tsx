@@ -63,7 +63,7 @@ export const Navigation = () => {
                       <span>{item.label}</span>
                     </Link>
                     <AnimatePresence>
-                      {pathname === item.path ? (
+                      {pathname.startsWith(item.path) ? (
                         <motion.div
                           layoutId="underline"
                           initial={y.get() !== 0 ? { y: -10 } : false}
