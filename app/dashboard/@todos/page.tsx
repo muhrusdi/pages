@@ -1,4 +1,3 @@
-import Button from "@/components/button"
 import { getData, postData } from "@/libs/api"
 import { wait } from "@/utils"
 
