@@ -1,6 +1,8 @@
 import cookie from "js-cookie"
 import { format } from "date-fns"
 import numeral from "numeral"
+import { type ClassValue, clsx } from "clsx"
+import { twMerge } from "tailwind-merge"
 
 export const getToken = () => cookie.get("accessToken")
 export const getCookie = (key: string) => cookie.get(key)
@@ -26,4 +28,8 @@ export const wait = (ms: number) => {
   return new Promise(resolve => {
     setTimeout(resolve, ms)
   })
+}
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
 }
