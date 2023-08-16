@@ -1,8 +1,5 @@
-import { BlogList } from "@/containers/blog"
 import { getData } from "@/libs/api"
 import { wait } from "@/utils"
-import { Suspense } from "react"
-import Error from "./error"
 
 type TodoType = {
   title: string
@@ -10,6 +7,7 @@ type TodoType = {
 }
 
 const Dashboard = async () => {
+  await wait(6000)
   const data = await getData<TodoType[]>("todos")
 
   return (
@@ -21,9 +19,6 @@ const Dashboard = async () => {
           </li>
         ))}
       </ul>
-      <Suspense fallback={<p>Blog Loading</p>}>
-        <BlogList />
-      </Suspense>
     </div>
   )
 }

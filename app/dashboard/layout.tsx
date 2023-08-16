@@ -5,15 +5,18 @@ import Loading from "./loading"
 
 type LayoutType = {
   children: React.ReactNode
+  todos: React.ReactNode
+  blogs: React.ReactNode
 }
 
-const Layout: React.FC<LayoutType> = ({ children }) => {
+const Layout: React.FC<LayoutType> = ({ children, todos, blogs }) => {
   return (
     <div className={styles.layout}>
       <Sidebar />
-      <Suspense fallback={<Loading />}>
-        <div className="left-[280px] relative">{children}</div>
-      </Suspense>
+      <div className="left-[280px] relative">
+        {todos}
+        {blogs}
+      </div>
     </div>
   )
 }
