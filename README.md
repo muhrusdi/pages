@@ -2,7 +2,7 @@
 
 ## Features
 
-- ✅ Next.js
+- ✅ Next.js v13
 - ✅ Tailwindcss
 - ✅ Typescript
 - ✅ React Hook Form
@@ -36,32 +36,20 @@ You can start editing the page by modifying `pages/index.js`. The page auto-upda
 ## Structures
 
 ```text
-nextjs-boilerplate
-├── apollo
-│   ├── models
-│   │   └── index.ts
-│   ├── mutations
-│   │   └── index.ts
-│   ├── queries
-│   │   └── index.ts
-│   ├── states
-│   │   └── index.ts
-│   ├── cache.ts
-│   ├── client.ts
+senjs-boilerplate
 ├── components
 │   ├── button
 │   │   └── index.ts
 ├── containers
 │   ├── layout
 │   │   └── index.ts
-├── pages
+├── app
 │   ├── api
-│   │   └── graphql
-│   │       └── index.ts
-│   ├── index.ts
+│   │   └── hello.ts
+│   ├── page.ts
 ├── public
 ├── styles
-│   ├── global.css
+│   ├── globals.css
 ├── .gitignore
 ├── next-env.d.ts
 ├── next.config.js
@@ -96,9 +84,6 @@ To learn more about Next.js, take a look at the following resources:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-- [Learn Apollo GraphQL](https://www.apollographql.com/)
-- [Learn Nexus](https://nexusjs.org/)
-- [Learn Styled Components](https://styled-components.com/)
 - [Learn Typescript](https://www.typescriptlang.org/)
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
