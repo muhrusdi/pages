@@ -1,27 +1,27 @@
 import { BlogList } from "@/containers/blog"
+import { getData } from "@/libs/api"
 import { wait } from "@/utils"
 import { Suspense } from "react"
+import Error from "./error"
 
-const getData = async () => {
-  await wait(3000)
-  return fetch("https://api.placeholderjson.dev/credit-card").then(r =>
-    r.json()
-  )
+type TodoType = {
+  title: string
+  id: string
 }
 
 const Dashboard = async () => {
-  const data = await getData()
+  const data = await getData<TodoType[]>("todos")
+
   return (
     <div>
       <ul>
         {data.map((item: any, i: number) => (
           <li key={i}>
-            {item.type} {item.number}
+            {item.title} {item.id}
           </li>
         ))}
       </ul>
       <Suspense fallback={<p>Blog Loading</p>}>
-        {/* @ts-expect-error Server Component */}
         <BlogList />
       </Suspense>
     </div>
