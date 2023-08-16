@@ -5,9 +5,6 @@
 - ✅ Next.js
 - ✅ Tailwindcss
 - ✅ Typescript
-- ✅ Apollo GraphQL
-- ✅ Stitches
-- ✅ React Query
 - ✅ React Hook Form
 - ✅ Framer Motion
 - ✅ Storybookjs

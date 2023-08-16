@@ -2,12 +2,12 @@ import { APIs } from "@/utils/endpoints"
 
 const BASE_URL = process.env.API_BASE_URL
 
-const query = (path: string, options?: RequestInit) =>
+export const query = (path: string, options?: RequestInit) =>
   fetch(BASE_URL + path, options)
 
-type PathsType = typeof APIs
+export type PathsType = typeof APIs
 
-type PathsKeyType = {
+export type PathsKeyType = {
   [K in keyof PathsType]: string
 }
 
