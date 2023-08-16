@@ -7,8 +7,8 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: "/api",
-        destination: "https://jsonplaceholder.typicode.com",
+        source: "/api/:path*",
+        destination: "https://dummyjson.com/:path*",
       },
     ]
   },

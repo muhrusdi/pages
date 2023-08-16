@@ -1,19 +1,22 @@
-import { getData } from "@/libs/api"
+import Button from "@/components/button"
+import { getData, postData } from "@/libs/api"
 import { wait } from "@/utils"
 
 type TodoType = {
-  title: string
-  id: string
+  products: {
+    title: string
+    id: string
+  }[]
 }
 
 const Dashboard = async () => {
-  await wait(6000)
-  const data = await getData<TodoType[]>("todos")
+  await wait(3000)
+  const data = await getData<TodoType>("products")
 
   return (
     <div>
       <ul>
-        {data.map((item: any, i: number) => (
+        {data.products.map((item: any, i: number) => (
           <li key={i}>
             {item.title} {item.id}
           </li>

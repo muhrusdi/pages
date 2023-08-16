@@ -1,7 +1,4 @@
 import { Sidebar } from "@/containers/dahboard/sidebar"
-import styles from "./styles.module.scss"
-import { Suspense } from "react"
-import Loading from "./loading"
 
 type LayoutType = {
   children: React.ReactNode
@@ -9,9 +6,11 @@ type LayoutType = {
   blogs: React.ReactNode
 }
 
+export const dynamic = "force-dynamic"
+
 const Layout: React.FC<LayoutType> = ({ children, todos, blogs }) => {
   return (
-    <div className={styles.layout}>
+    <div>
       <Sidebar />
       <div className="left-[280px] relative">
         {todos}
