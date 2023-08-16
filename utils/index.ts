@@ -1,13 +1,6 @@
-import cookie from "js-cookie"
 import { format } from "date-fns"
 import numeral from "numeral"
 
-export const getToken = () => cookie.get("accessToken")
-export const getCookie = (key: string) => cookie.get(key)
-export const setToken = (value: string) => cookie.set("accessToken", value)
-export const setCookie = (key: string, value: string) => cookie.set(key, value)
-export const removeCookie = (key: string) => cookie.remove(key)
-export const removeToken = () => cookie.remove("accessToken")
 export const isBrowser = typeof window !== "undefined"
 
 // const dateIsValid = (date: string) => {

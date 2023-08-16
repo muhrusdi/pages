@@ -16,7 +16,6 @@
     "clsx": "^2.0.0",
     "date-fns": "^2.30.0",
     "framer-motion": "^10.15.1",
-    "js-cookie": "^3.0.5",
     "next": "^13.4.13",
     "numeral": "^2.0.6",
     "postcss": "^8.4.27",
