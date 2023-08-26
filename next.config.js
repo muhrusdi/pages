@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  experimental: {
+    mdxRs: true,
+  },
   images: {
     remotePatterns: [
       {
@@ -19,4 +22,5 @@ const nextConfig = {
   },
 }
 
-module.exports = nextConfig
+const withMDX = require("@next/mdx")()
+module.exports = withMDX(nextConfig)
