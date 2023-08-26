@@ -986,10 +986,10 @@
     "@babel/helper-validator-identifier" "^7.22.5"
     to-fast-properties "^2.0.0"
 
-"@cloudflare/next-on-pages@^1.5.1":
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/@cloudflare/next-on-pages/-/next-on-pages-1.5.1.tgz#b45acf3a73fe93b1ff04536d01c0a391f941d7c0"
-  integrity sha512-CVkKqT7V04NDu/hfzFxEjsmo4yOLoLzWotBADEoqCxtSYuWBiDJZQiftIKyZiU08iIFkTGxgZRdyO1ngDazwdg==
+"@cloudflare/next-on-pages@1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@cloudflare/next-on-pages/-/next-on-pages-1.5.0.tgz#6e7d54f01015367ddfd8939d86f95bfaccb586fe"
+  integrity sha512-Avejy7cgfdTKawoRtCL7vl6PsXoeuUDeYaCqVQ5PLXGfZZraKO4MpqPLMdw4l9MxgOW25YE0VbcX21yAgukhTQ==
   dependencies:
     acorn "^8.8.0"
     ast-types "^0.14.2"
