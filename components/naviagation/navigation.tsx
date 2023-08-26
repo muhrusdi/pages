@@ -89,7 +89,7 @@ export const Navigation = () => {
                   <div key={item.id} className="relative px-3 py-1">
                     <Link
                       href={item.path}
-                      className="[&:not(:hover)]:opacity-50 py-[22px] link"
+                      className="[&:not(:hover)]:opacity-50  link"
                     >
                       <span>{item.label}</span>
                     </Link>
@@ -113,7 +113,7 @@ export const Navigation = () => {
             <div>
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <button className="uppercase [&:not(:hover)]:opacity-50 py-[22px] link">
+                  <button className="uppercase [&:not(:hover)]:opacity-50 link">
                     Menu
                   </button>
                 </DropdownMenuTrigger>
