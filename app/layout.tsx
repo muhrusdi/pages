@@ -17,7 +17,7 @@ const RootLayout: React.FC<RootLayoutType> = ({ children }) => {
         <title>Muhammad Rusdi</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
-      <body className={clsx("dark:bg-black dark:text-white", styles.bg)}>
+      <body className={clsx("dark:bg-black dark:text-white")}>
         <Navigation />
         {children}
         <Footer />
