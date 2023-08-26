@@ -17,16 +17,19 @@ const Home: NextPage = () => {
       >
         <div className="grid-blog">
           <BlogItem
+            path="/blog"
             title={faker.lorem.lines(2)}
             description={faker.lorem.lines(2)}
             image={faker.image.urlLoremFlickr()}
           />
           <BlogItem
+            path="/blog"
             title={faker.lorem.lines(2)}
             description={faker.lorem.lines(2)}
             image={faker.image.urlLoremFlickr()}
           />
           <BlogItem
+            path="/blog"
             title={faker.lorem.lines(2)}
             description={faker.lorem.lines(2)}
             image={faker.image.urlLoremFlickr()}
