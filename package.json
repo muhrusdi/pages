@@ -10,29 +10,29 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@tanstack/react-query": "^4.32.6",
+    "@tanstack/react-query": "^4.35.0",
     "autoprefixer": "^10.4.15",
-    "axios": "^1.4.0",
+    "axios": "^1.5.0",
     "clsx": "^2.0.0",
     "date-fns": "^2.30.0",
-    "framer-motion": "^10.15.2",
-    "next": "^13.4.16",
+    "framer-motion": "^10.16.4",
+    "next": "^13.4.19",
     "numeral": "^2.0.6",
-    "postcss": "^8.4.28",
+    "postcss": "^8.4.29",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-hook-form": "^7.45.4",
-    "react-icons": "^4.10.1",
-    "sass": "^1.65.1",
+    "react-hook-form": "^7.46.1",
+    "react-icons": "^4.11.0",
+    "sass": "^1.66.1",
     "tailwindcss": "^3.3.3"
   },
   "devDependencies": {
-    "@types/node": "20.5.0",
+    "@types/node": "20.6.0",
     "@types/numeral": "^2.0.2",
-    "@types/react": "18.2.20",
+    "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
-    "eslint": "8.47.0",
-    "eslint-config-next": "^13.4.16",
-    "typescript": "^5.1.6"
+    "eslint": "8.49.0",
+    "eslint-config-next": "^13.4.19",
+    "typescript": "^5.2.2"
   }
 }
