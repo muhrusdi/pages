@@ -1,3 +1,4 @@
+import { RecordType } from "@/types"
 import { format } from "date-fns"
 import { ReadonlyURLSearchParams } from "next/navigation"
 import numeral from "numeral"
@@ -22,23 +23,16 @@ export const wait = (ms: number) => {
   })
 }
 
-type StringRecordType = Record<string, any>
-
-export const generateQueries = (query?: StringRecordType) => {
-  const obj = new URLSearchParams()
+export const generateQueries = (query?: RecordType) => {
+  const obj = new URLSearchParams(query)
   if (query) {
-    Object.keys(query).forEach(key => {
-      if (query[key]) {
-        obj.set(key, query[key])
-      }
-    })
     return "?" + obj.toString()
   }
 
   return ""
 }
 
-export const getRawQuery = (
+export const createUrl = (
   pathname: string,
   params: URLSearchParams | ReadonlyURLSearchParams
 ) => {
@@ -48,7 +42,7 @@ export const getRawQuery = (
   return `${pathname}${queryString}`
 }
 
-export const generateParams = (params?: StringRecordType) => {
+export const generateParams = (params?: RecordType) => {
   let paramsString = ""
   if (params) {
     if (Array.isArray(params)) {
@@ -57,7 +51,7 @@ export const generateParams = (params?: StringRecordType) => {
       })
     } else {
       Object.keys(params).forEach(key => {
-        paramsString += `/${(params as StringRecordType)[key]}`
+        paramsString += `/${(params as RecordType)[key]}`
       })
     }
   }
