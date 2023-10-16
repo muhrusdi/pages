@@ -1,6 +1,6 @@
 import { RecordType } from "@/types"
 import { format } from "date-fns"
-import { ReadonlyURLSearchParams } from "next/navigation"
+import { ReadonlyURLSearchParams, useSearchParams } from "next/navigation"
 import numeral from "numeral"
 
 export const isBrowser = typeof window !== "undefined"

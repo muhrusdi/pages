@@ -1,6 +1,7 @@
+import { generateParams, generateQueries } from "@/utils"
 import { APIs } from "@/utils/endpoints"
 
-const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL
+const BASE_URL = process.env.API_BASE_URL
 
 type Options = {
   params?: Record<string, any>
@@ -22,23 +23,15 @@ export const getData = async <TData>(
   path: keyof PathsKeyType,
   options?: Pick<Options, "options" | "params" | "query">
 ) => {
-  let paramsString = ""
-  let queriesString = ""
+  const paramsString = generateParams(options?.params)
+  const queriesString = generateQueries(options?.query)
 
-  if (options?.params) {
-    for (const key in options.params) {
-      paramsString += `/${options.params[key]}`
-    }
-  }
-
-  if (options?.query) {
-    queriesString = "?"
-    for (const key in options.params) {
-      queriesString += `${key}=${options.params[key]}&`
-    }
-  }
-
-  const res = await query(APIs[path] + paramsString + queriesString)
+  const res = await query(APIs[path] + paramsString + queriesString, {
+    headers: {
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1NjcyY2U0MjY4MDk1MTI4OGE2OWZjZmE2YTA3NTkyOSIsInN1YiI6IjY1MGUxNmUwZTFmYWVkMDExZDVkNDhlMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.rgswMtK-5K4JnHk2h9ExgXCYGioC5e6d-_iqbKeGqAs",
+    },
+  })
 
   if (!res.ok) {
     throw new Error("Failed to fetch data on the " + BASE_URL + APIs[path])
@@ -48,21 +41,8 @@ export const getData = async <TData>(
 }
 
 export const postData = async (path: keyof PathsKeyType, options?: Options) => {
-  let paramsString = ""
-  let queriesString = ""
-
-  if (options?.params) {
-    for (const key in options.params) {
-      paramsString += `/${options.params[key]}`
-    }
-  }
-
-  if (options?.query) {
-    queriesString = "?"
-    for (const key in options.query) {
-      queriesString += `${key}=${options.query[key]}&`
-    }
-  }
+  const paramsString = generateParams(options?.params)
+  const queriesString = generateQueries(options?.query)
 
   const res = await query(APIs[path] + paramsString + queriesString, {
     method: "post",
@@ -76,3 +56,5 @@ export const postData = async (path: keyof PathsKeyType, options?: Options) => {
 
   return res
 }
+
+export const GET = () => {}
