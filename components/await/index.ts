@@ -1,1 +1,1 @@
-export { default as Await, Suspense } from "./await"
+export { default as Await } from "./await"

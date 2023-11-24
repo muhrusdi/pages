@@ -6,6 +6,7 @@ type Props<T> = {
   children: (result: T) => JSX.Element
   sleep?: number
   fallback?: string | React.ReactNode
+  id?: string | number
 }
 
 const Promise = async <T,>({ children, data, sleep }: Props<T>) => {
@@ -18,9 +19,13 @@ const Promise = async <T,>({ children, data, sleep }: Props<T>) => {
   return children(result)
 }
 
-const Await = async <T,>({ fallback = "Loading...", ...props }: Props<T>) => {
+const Await = async <T,>({
+  fallback = "Loading...",
+  id,
+  ...props
+}: Props<T>) => {
   return (
-    <Suspense fallback={fallback}>
+    <Suspense key={id} fallback={fallback}>
       <Promise {...props} />
     </Suspense>
   )

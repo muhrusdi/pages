@@ -7,11 +7,14 @@ import type { NextPage } from "next"
 import { headers } from "next/headers"
 
 const Home: NextPage = ({ searchParams }: any) => {
+  const { sort_by } = searchParams
+
   return (
     <div>
       <Header />
       <Await
         sleep={4000}
+        id={sort_by}
         data={getData<{ results: Movie[] }>("/discover/movie", {
           query: searchParams,
         })}
