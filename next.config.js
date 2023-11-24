@@ -2,11 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   experimental: {
-    serverActions: true,
-    logging: {
-      level: "verbose",
-      fullUrl: true,
-    },
+    ppr: true,
   },
   async rewrites() {
     return [

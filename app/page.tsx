@@ -1,4 +1,4 @@
-import { Await, Suspense } from "@/components/await"
+import { Await } from "@/components/await"
 import NextOverview from "@/containers/next"
 import Header from "@/containers/next/header"
 import { getData } from "@/libs/api"
@@ -10,22 +10,20 @@ const Home: NextPage = ({ searchParams }: any) => {
   return (
     <div>
       <Header />
-      <Suspense>
-        <Await
-          sleep={4000}
-          promise={getData<{ results: Movie[] }>("/discover/movie", {
-            query: searchParams,
-          })}
-        >
-          {movies => (
-            <ul>
-              {movies.results.map(item => (
-                <li key={item.id}>{item.title}</li>
-              ))}
-            </ul>
-          )}
-        </Await>
-      </Suspense>
+      <Await
+        sleep={4000}
+        data={getData<{ results: Movie[] }>("/discover/movie", {
+          query: searchParams,
+        })}
+      >
+        {movies => (
+          <ul>
+            {movies.results.map(item => (
+              <li key={item.id}>{item.title}</li>
+            ))}
+          </ul>
+        )}
+      </Await>
     </div>
   )
 }

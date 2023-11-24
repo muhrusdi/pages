@@ -1,24 +1,29 @@
-import { Suspense as ReactSuspense } from "react"
+import { Suspense } from "react"
 import { wait } from "@/utils"
 
 type Props<T> = {
-  promise: Promise<T>
+  data: Promise<T>
   children: (result: T) => JSX.Element
   sleep?: number
+  fallback?: string | React.ReactNode
 }
 
-export const Suspense = ({ children }: { children: React.ReactNode }) => {
-  return <ReactSuspense fallback="Loading...">{children}</ReactSuspense>
-}
-
-const Await = async <T,>({ children, promise, sleep }: Props<T>) => {
+const Promise = async <T,>({ children, data, sleep }: Props<T>) => {
   if (sleep) {
     await wait(sleep)
   }
 
-  let result = await promise
+  let result = await data
 
   return children(result)
+}
+
+const Await = async <T,>({ fallback = "Loading...", ...props }: Props<T>) => {
+  return (
+    <Suspense fallback={fallback}>
+      <Promise {...props} />
+    </Suspense>
+  )
 }
 
 export default Await
