@@ -5,6 +5,7 @@ import { getData } from "@/libs/api"
 import { Movie } from "@/types/movie"
 import type { NextPage } from "next"
 import { headers } from "next/headers"
+import { Suspense } from "react"
 
 const Home: NextPage = ({ searchParams }: any) => {
   const { sort_by } = searchParams
