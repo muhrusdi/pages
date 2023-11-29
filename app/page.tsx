@@ -8,14 +8,14 @@ import { headers } from "next/headers"
 import { Suspense } from "react"
 
 const Home: NextPage = ({ searchParams }: any) => {
-  const { sort_by } = searchParams
+  const params = searchParams
 
   return (
     <div>
       <Header />
       <Await
-        sleep={4000}
-        id={sort_by}
+        sleep={params?.__delay || 6000}
+        id={JSON.stringify(params)}
         data={getData<{ results: Movie[] }>("/discover/movie", {
           query: searchParams,
         })}
