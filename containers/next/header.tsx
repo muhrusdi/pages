@@ -1,5 +1,6 @@
 "use client"
 import { useFilterSearch } from "@/hooks"
+import Link from "next/link"
 
 const Header = () => {
   const { removeFilter, setFilter, clearFilter, searchParams } =
@@ -22,6 +23,7 @@ const Header = () => {
         filter3
       </button>
       <button onClick={() => clearFilter()}>clear</button>
+      <Link href="/form-action">Form</Link>
       <form
         onSubmit={e => {
           e.preventDefault()
