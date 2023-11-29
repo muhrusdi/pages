@@ -1,5 +1,10 @@
-import { Suspense } from "react"
+import { Fragment, Suspense } from "react"
 import { wait } from "@/utils"
+import ErrorComponent from "../errors/error"
+import {
+  ErrorBoundary as NextErrorBoundary,
+  ErrorComponent as ErrorComponentType,
+} from "next/dist/client/components/error-boundary"
 
 type Props<T> = {
   data: Promise<T>
@@ -7,6 +12,7 @@ type Props<T> = {
   sleep?: number
   fallback?: string | React.ReactNode
   id?: string | number
+  errorComponent?: ErrorComponentType
 }
 
 const Promise = async <T,>({ children, data, sleep }: Props<T>) => {
@@ -22,12 +28,17 @@ const Promise = async <T,>({ children, data, sleep }: Props<T>) => {
 const Await = async <T,>({
   fallback = "Loading...",
   id,
+  errorComponent = ErrorComponent,
   ...props
 }: Props<T>) => {
+  const ErrorBoundary = errorComponent ? NextErrorBoundary : Fragment
+
   return (
-    <Suspense key={id} fallback={fallback}>
-      <Promise {...props} />
-    </Suspense>
+    <ErrorBoundary errorComponent={errorComponent}>
+      <Suspense key={id} fallback={fallback}>
+        <Promise {...props} />
+      </Suspense>
+    </ErrorBoundary>
   )
 }
 
