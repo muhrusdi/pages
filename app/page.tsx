@@ -5,6 +5,7 @@ import { getData } from "@/libs/api"
 import { Movie } from "@/types/movie"
 import type { NextPage } from "next"
 import { headers } from "next/headers"
+import Link from "next/link"
 import { Suspense } from "react"
 
 const Home: NextPage = ({ searchParams }: any) => {
@@ -23,7 +24,9 @@ const Home: NextPage = ({ searchParams }: any) => {
         {movies => (
           <ul>
             {movies.results.map(item => (
-              <li key={item.id}>{item.title}</li>
+              <li key={item.id}>
+                <Link href={`/movie/${item.id}`}>{item.title}</Link>
+              </li>
             ))}
           </ul>
         )}

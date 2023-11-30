@@ -1,10 +1,17 @@
 "use client"
 import { useFilterSearch } from "@/hooks"
 import Link from "next/link"
+import { useState } from "react"
 
 const Header = () => {
   const { removeFilter, setFilter, clearFilter, searchParams } =
     useFilterSearch()
+  const [error, setError] = useState(false)
+
+  if (error) {
+    throw new Error("oopps")
+  }
+
   return (
     <div className="flex space-x-3">
       <button onClick={() => setFilter({ q: "test", firstDate: "test" })}>
@@ -36,6 +43,15 @@ const Header = () => {
       >
         <input placeholder="search" name="search" />
       </form>
+      <div>
+        <button
+          onClick={() => {
+            setError(true)
+          }}
+        >
+          Catch
+        </button>
+      </div>
     </div>
   )
 }
