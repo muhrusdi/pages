@@ -17,12 +17,14 @@ const Header = () => {
       <button onClick={() => setFilter({ q: "test", firstDate: "test" })}>
         filter
       </button>
-      <button onClick={() => setFilter({ sort_by: "popularity.asc" })}>
+      <button onClick={() => setFilter("sort_by", "popularity.asc")}>
         sort asc
       </button>
-      <button onClick={() => setFilter({ sort_by: "popularity.desc" })}>
+      <button onClick={() => setFilter("sort_by", "popularity.desc")}>
         sort
       </button>
+      <button onClick={() => setFilter({ page: "1" })}>1</button>
+      <button onClick={() => setFilter({ page: "2" })}>2</button>
       <button onClick={() => removeFilter("q")}>remove</button>
       <button
         onClick={() => setFilter({ q: "test-test", lastDate: "test-22" })}

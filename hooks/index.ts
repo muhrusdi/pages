@@ -26,7 +26,7 @@ export function useFilterSearch() {
         }
       }
 
-      router.push(pathname + "?" + params?.toString())
+      router.replace(pathname + "?" + params?.toString())
     },
     [filters, router, pathname]
   )

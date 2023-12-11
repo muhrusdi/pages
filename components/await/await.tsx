@@ -1,4 +1,4 @@
-import { Fragment, Suspense } from "react"
+import { Fragment, Suspense, use } from "react"
 import { wait } from "@/utils"
 import ErrorComponent from "../errors/error"
 import {
@@ -11,23 +11,23 @@ type Props<T> = {
   children: (result: T) => JSX.Element
   sleep?: number
   fallback?: string | React.ReactNode
-  id?: string | number
+  tags?: string[]
   errorComponent?: ErrorComponentType
 }
 
-const Promise = async <T,>({ children, data, sleep }: Props<T>) => {
+const Promise = <T,>({ children, data, sleep }: Props<T>) => {
   if (sleep) {
-    await wait(sleep)
+    use(wait(sleep))
   }
 
-  let result = await data
+  let result = use(data)
 
   return children(result)
 }
 
-const Await = async <T,>({
+const Await = <T,>({
   fallback = "Loading...",
-  id,
+  tags,
   errorComponent = ErrorComponent,
   ...props
 }: Props<T>) => {
@@ -35,7 +35,7 @@ const Await = async <T,>({
 
   return (
     <ErrorBoundary errorComponent={errorComponent}>
-      <Suspense key={id} fallback={fallback}>
+      <Suspense key={tags?.join(",")} fallback={fallback}>
         <Promise {...props} />
       </Suspense>
     </ErrorBoundary>

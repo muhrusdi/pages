@@ -7,5 +7,7 @@ export const APIs = {
   "products/add": `${PREFIX}/products/add`,
   revalidate: `${PREFIX}/revalidate`,
   "/discover/movie": `${PREFIX}/discover/movie`,
+  "/discover/tv": `${PREFIX}/discover/tv`,
+  "/review": `${PREFIX}/reviews`,
   "/movie/:id": `${PREFIX}/movie`,
 }
