@@ -1,6 +1,6 @@
 {
   "name": "sen",
-  "version": "2.4.0",
+  "version": "2.5.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbo",
@@ -10,12 +10,12 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@tanstack/react-query": "^5.17.15",
+    "@tanstack/react-query": "^5.17.19",
     "autoprefixer": "^10.4.17",
-    "axios": "^1.6.5",
+    "axios": "^1.6.7",
     "clsx": "^2.1.0",
-    "date-fns": "^3.2.0",
-    "framer-motion": "^10.18.0",
+    "date-fns": "^3.3.1",
+    "framer-motion": "^11.0.3",
     "next": "^14.1.0",
     "numeral": "^2.0.6",
     "postcss": "^8.4.33",
@@ -28,7 +28,7 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@types/node": "20.11.5",
+    "@types/node": "20.11.8",
     "@types/numeral": "^2.0.5",
     "@types/react": "18.2.48",
     "@types/react-dom": "18.2.18",
