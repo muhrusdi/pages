@@ -42,8 +42,6 @@ export const getData = async <TData>(
     },
   })
 
-  console.log(res)
-
   if (!res.ok) {
     throw new Error(
       `${res.status} ${res.statusText}. Failed to fetch data on the ${
@@ -70,5 +68,3 @@ export const postData = async (path: keyof PathsKeyType, options?: Options) => {
 
   return res.json()
 }
-
-export const GET = () => {}
