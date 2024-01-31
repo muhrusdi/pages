@@ -3,9 +3,10 @@ import {
   DefinedInitialDataOptions,
   QueryKey,
   UndefinedInitialDataOptions,
+  UseMutationOptions,
   UseQueryOptions,
 } from "@tanstack/react-query"
-import { AxiosHeaders } from "axios"
+import { AxiosHeaders, RawAxiosRequestHeaders } from "axios"
 
 export type PathsType = typeof APIs
 
@@ -30,5 +31,15 @@ export type ParamsType<
   variables?: {
     query?: Record<string, any>
     params?: Array<string | number> | Record<string, any>
+  }
+}
+
+export type MutationParamsType<TData, TError, TVariables, TContext> = {
+  options?: UseMutationOptions<TData, TError, TVariables, TContext>
+  headers?: RawAxiosRequestHeaders
+  method?: "post" | "put" | "delete"
+  variables?: {
+    query?: Record<string, any>
+    params?: Array<string | number>
   }
 }

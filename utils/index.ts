@@ -42,18 +42,13 @@ export const createUrl = (
   return `${pathname}${queryString}`
 }
 
-export const generateParams = (params?: RecordType) => {
+export const generateParams = (params?: Array<string | number>) => {
   let paramsString = ""
+
   if (params) {
-    if (Array.isArray(params)) {
-      params.forEach(item => {
-        paramsString += `/${item}`
-      })
-    } else {
-      Object.keys(params).forEach(key => {
-        paramsString += `/${(params as RecordType)[key]}`
-      })
-    }
+    params.forEach(item => {
+      paramsString += `/${item}`
+    })
   }
 
   return paramsString

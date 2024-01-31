@@ -12,8 +12,3 @@ export type ErrorPageType = {
 export type RecordType = {
   [key: string]: string
 }
-
-export type ParamsType = {
-  options?: object
-  variables?: Record<string, any>
-}

@@ -1,4 +1,4 @@
-const PREFIX = "/api/3"
+const PREFIX = "/api/v1"
 
 export const APIs = {
   blogs: `${PREFIX}/blogs`,
@@ -10,4 +10,5 @@ export const APIs = {
   "/discover/tv": `${PREFIX}/discover/tv`,
   "/review": `${PREFIX}/reviews`,
   "/movie/:id": `${PREFIX}/movie`,
+  "/movies": "/api/movie",
 }

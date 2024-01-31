@@ -9,7 +9,12 @@ import {
   useMutation as mutation,
   useQuery as query,
 } from "@tanstack/react-query"
-import { KeyofPathsKeyType, ParamsType, PathsKeyType } from "@/types/api"
+import {
+  KeyofPathsKeyType,
+  MutationParamsType,
+  ParamsType,
+  PathsKeyType,
+} from "@/types/api"
 import { APIs } from "@/utils/endpoints"
 import { generateParams, generateQueries } from "@/utils"
 import { axios } from "./axios"
@@ -60,11 +65,12 @@ export const useQuery = <
 
 export const useMutation = <
   TData = unknown,
-  TError = unknown,
+  TError = DefaultError,
+  TVariables = void,
   TContext = unknown
 >(
   path: keyof PathsKeyType,
-  params?: any
+  params?: MutationParamsType<TData, TError, TVariables, TContext>
 ) => {
   const paramsString = generateParams(params?.variables?.params)
   const queriesString = generateQueries(params?.variables?.query)
@@ -73,7 +79,7 @@ export const useMutation = <
 
   const signal = controller?.signal
 
-  return mutation({
+  return mutation<TData, TError, TVariables, TContext>({
     mutationFn: async formData => {
       const d = await axios({
         url: APIs[path] + paramsString + queriesString,

@@ -1,14 +1,15 @@
 import { generateParams, generateQueries } from "@/utils"
 import { APIs } from "@/utils/endpoints"
-import { cookies } from "next/headers"
+import { cookies, headers } from "next/headers"
 
-const BASE_URL = process.env.API_BASE_URL
+const BASE_URL = process.env.HOST_URL
 const ACCESS_TOKEN = process.env.ACCESS_TOKEN
 
 type Options = {
-  params?: Record<string, any>
+  params?: Array<string | number>
   query?: Record<string, any>
   options?: RequestInit
+  type?: "api"
   body?: FormData | string
 }
 
@@ -23,23 +24,21 @@ export type PathsKeyType = {
 
 export const getData = async <TData>(
   path: keyof PathsKeyType,
-  options?: Pick<Options, "options" | "params" | "query">
+  options?: Pick<Options, "options" | "params" | "query" | "type">
 ) => {
   const paramsString = generateParams(options?.params)
   const queriesString = generateQueries(options?.query)
 
-  const accessToken = cookies().get("accessToken") || ACCESS_TOKEN
+  const accessToken = cookies().get("accessToken")?.value
 
-  const headers: Record<string, string> = {}
+  const _headers: Headers = new Headers(headers())
 
   if (accessToken) {
-    headers["Authorization"] = `Bearer ${accessToken}`
+    _headers.append("Authorization", `Bearer ${accessToken}`)
   }
 
   const res = await query(APIs[path] + paramsString + queriesString, {
-    headers: {
-      ...headers,
-    },
+    headers: _headers,
   })
 
   if (!res.ok) {

@@ -5,10 +5,10 @@ axios.defaults.baseURL = process.env.HOST_URL
 export { axios }
 
 axios.interceptors.request.use(
-  function (config) {
+  config => {
     if (config?.headers?.get("x-request-id") === "basic-location") {
     } else {
-      config.baseURL = process.env.HOST_URL
+      config.baseURL = "/"
     }
 
     if (config?.headers?.get("x-request-id") === "auth") {
@@ -34,16 +34,16 @@ axios.interceptors.request.use(
 
     return config
   },
-  function (error) {
+  error => {
     return Promise.reject(error)
   }
 )
 
 axios.interceptors.response.use(
-  function (response) {
+  response => {
     return response
   },
-  function (error) {
+  error => {
     if (error.response?.status === 401 || error.response?.status === 403) {
       if (typeof window !== "undefined") {
         const path = window.location.pathname
