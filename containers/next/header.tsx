@@ -1,12 +1,14 @@
 "use client"
+import { StateContext } from "@/app/providers"
 import { useFilterSearch } from "@/hooks"
 import Link from "next/link"
-import { useState } from "react"
+import { useContext, useState } from "react"
 
 const Header = () => {
   const { removeFilter, setFilter, clearFilter, searchParams } =
     useFilterSearch()
   const [error, setError] = useState(false)
+  const store = useContext(StateContext)
 
   if (error) {
     throw new Error("oopps")
@@ -33,6 +35,9 @@ const Header = () => {
       </button>
       <button onClick={() => clearFilter()}>clear</button>
       <Link href="/form-action">Form</Link>
+      <button onClick={() => store?.onChange({ data: 1 })}>
+        Update context
+      </button>
       <form
         onSubmit={e => {
           e.preventDefault()

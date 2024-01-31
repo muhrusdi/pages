@@ -1,6 +1,8 @@
-import axios, { AxiosRequestHeaders } from "axios"
+import axios, { AxiosHeaders, AxiosRequestHeaders } from "axios"
 
 axios.defaults.baseURL = process.env.HOST_URL
+
+const BASE_URL = process.env.HOST_URL
 
 export { axios }
 
@@ -55,3 +57,16 @@ axios.interceptors.response.use(
     return Promise.reject(error)
   }
 )
+
+export const axiosQuery = (
+  path: string,
+  options?: {
+    headers?: AxiosHeaders
+    method?: string
+    body?: FormData | string
+    signal?: AbortSignal
+  }
+) =>
+  axios(path, {
+    ...options,
+  }).then(d => d.data)

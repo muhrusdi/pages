@@ -17,8 +17,7 @@ import {
 } from "@/types/api"
 import { APIs } from "@/utils/endpoints"
 import { generateParams, generateQueries } from "@/utils"
-import { axios } from "./axios"
-import { AxiosHeaders } from "axios"
+import { axios, axiosQuery } from "./axios"
 
 let controller: AbortController | null = null
 
@@ -52,10 +51,10 @@ export const useQuery = <
         { ...params?.variables?.query, ...params?.variables?.params },
       ],
       queryFn: async () => {
-        return axios(APIs[path] + paramsString + queriesString, {
+        return axiosQuery(APIs[path] + paramsString + queriesString, {
           signal,
           headers: params?.headers,
-        }).then(d => d.data)
+        })
       },
       ...params?.options,
     },
@@ -81,14 +80,15 @@ export const useMutation = <
 
   return mutation<TData, TError, TVariables, TContext>({
     mutationFn: async formData => {
-      const d = await axios({
+      const res = await axios({
         url: APIs[path] + paramsString + queriesString,
         data: formData,
         method: params?.method || "post",
         signal,
         headers: params?.headers,
-      })
-      return d.data
+      }).then(d => d.data)
+
+      return res
     },
     ...params?.options,
   })
