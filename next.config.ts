@@ -6,6 +6,16 @@ const nextConfig: NextConfig = {
       fullUrl: true,
     },
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+        port: '',
+        pathname: '/muhrusdi/**',
+      },
+    ],
+  },
   async rewrites() {
     return [
       {
