@@ -15,8 +15,10 @@ const RootLayout: React.FC<RootLayoutType> = ({ children }) => {
         <title>Sen.js</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
-      <body>
-        <Providers>{children}</Providers>
+      <body className="bg-white dark:bg-black dark:text-white">
+        <Providers>
+          <div className="container max-w-2xl">{children}</div>
+        </Providers>
       </body>
     </html>
   )
