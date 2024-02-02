@@ -2,6 +2,7 @@ import type { NextPage } from "next"
 import { Header } from "@/components/header"
 import { Section } from "@/components/section"
 import { CompanyItem } from "@/components/company-item"
+import { ProjectItem } from "@/components/project-item"
 import { SearchParamsType } from "@/lib/definitions"
 
 type Props = {
@@ -71,6 +72,25 @@ const Home = async ({ searchParams }: Props) => {
                 role="Frontend Engineer"
                 year="2017 - 2019"
               />
+            </li>
+          </ul>
+        </Section>
+        <Section title="Work">
+          <ul className="grid grid-cols-2 gap-3">
+            <li>
+              <ProjectItem />
+            </li>
+            <li>
+              <ProjectItem />
+            </li>
+            <li>
+              <ProjectItem />
+            </li>
+            <li>
+              <ProjectItem />
+            </li>
+            <li>
+              <ProjectItem />
             </li>
           </ul>
         </Section>
