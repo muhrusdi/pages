@@ -1,5 +1,6 @@
-import { GlobeAltIcon } from "@heroicons/react/24/outline"
+import { EnvelopeIcon, GlobeAltIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
+import { WIP } from "../utils"
 
 const Header = () => {
   return (
@@ -7,7 +8,14 @@ const Header = () => {
       <div className="flex justify-between items-center">
         <div className="w-2/3">
           <div>
-            <h1 className="font-bold text-2xl">Muhammad Rusdi</h1>
+            <div className="flex items-center space-x-3">
+              <div>
+                <h1 className="font-bold text-2xl">Muhammad Rusdi</h1>
+              </div>
+              <span>
+                <WIP />
+              </span>
+            </div>
             <p className="mt-2">
               Frontend Engineer focused on building user interface with extra
               attention to detail.
@@ -37,6 +45,14 @@ const Header = () => {
         </div>
       </div>
       <ul className="mt-3 flex space-x-2 fill-white [&>li>a>svg]:w-4 [&>li>a>svg]:h-4">
+        <li>
+          <a
+            href="#"
+            className="flex items-center justify-center w-7 h-7 border border-gray-600 rounded-md"
+          >
+            <EnvelopeIcon />
+          </a>
+        </li>
         <li>
           <a
             href="#"
