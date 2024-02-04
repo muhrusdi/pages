@@ -1,18 +1,18 @@
 import { ProjectItemType } from "@/types"
 import { Tag } from "../tag"
 
-type Props = {
-  data: ProjectItemType
-}
-
-const ProjectItem: React.FC<Props> = ({ data }) => {
+const ProjectItem: React.FC<ProjectItemType> = ({
+  title,
+  description,
+  stacks,
+}) => {
   return (
     <div className="border rounded-lg border-gray-700 p-3">
-      <h4 className="font-semibold">{data.title}</h4>
-      <p className="text-sm mt-2 line-clamp-3">{data.description}</p>
+      <h4 className="font-semibold">{title}</h4>
+      <p className="text-sm mt-2 line-clamp-3">{description}</p>
       <ul className="mt-2 flex space-x-2">
-        {data.stacks?.map(item => (
-          <li>
+        {stacks?.map((item, i) => (
+          <li key={i}>
             <Tag>{item}</Tag>
           </li>
         ))}
