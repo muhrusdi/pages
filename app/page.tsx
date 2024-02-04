@@ -4,6 +4,7 @@ import { Section } from "@/components/section"
 import { CompanyItem } from "@/components/company-item"
 import { ProjectItem } from "@/components/project-item"
 import { SearchParamsType } from "@/lib/definitions"
+import { totalOfExper } from "@/utils"
 
 type Props = {
   searchParams: SearchParamsType<{ sort_by: string; page: string }>
@@ -16,10 +17,10 @@ const Home = async ({ searchParams }: Props) => {
       <div>
         <Section title="About">
           <p>
-            As a Frontend Engineer, I have successfully taken multiple products
+            As a Frontend Engineer, I have successfully taken multiple projects
             from scratch to production. Currently, I work mostly with
-            TypeScript, React, Vuejs, and GraphQL. I have over 6 years of
-            experience in web development.
+            Typescript, React, Vuejs, and GraphQL. I have over {totalOfExper()}+
+            years of experience in web development.
           </p>
         </Section>
         <Section title="Education">

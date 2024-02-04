@@ -54,3 +54,10 @@ export const generateParams = (params?: Array<string | number>) => {
 
   return paramsString
 }
+
+export const totalOfExper = () => {
+  const start = new Date(new Date().setFullYear(2018)).getFullYear()
+  const current = new Date().getFullYear()
+
+  return current - start
+}

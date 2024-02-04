@@ -12,7 +12,7 @@ const RootLayout: React.FC<RootLayoutType> = ({ children }) => {
   return (
     <html lang="en" className={clsx(inter.className, "font-normal")}>
       <head>
-        <title>Sen.js</title>
+        <title>Muhammad Rusdi</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
       <body className="bg-white dark:bg-black dark:text-white">

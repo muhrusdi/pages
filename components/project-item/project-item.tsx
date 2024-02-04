@@ -3,7 +3,7 @@ import { Tag } from "../tag"
 const ProjectItem = () => {
   return (
     <div className="border rounded-lg border-gray-700 p-3">
-      <h4 className="font-semibold">Eproc</h4>
+      <h4 className="font-semibold">Envoy</h4>
       <p className="text-sm mt-2">
         Lorem ipsum dolor sit amet consectetur adipisicing elit.
       </p>
