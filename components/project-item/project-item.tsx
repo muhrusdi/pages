@@ -1,22 +1,21 @@
+import { ProjectItemType } from "@/types"
 import { Tag } from "../tag"
 
-const ProjectItem = () => {
+type Props = {
+  data: ProjectItemType
+}
+
+const ProjectItem: React.FC<Props> = ({ data }) => {
   return (
     <div className="border rounded-lg border-gray-700 p-3">
-      <h4 className="font-semibold">Envoy</h4>
-      <p className="text-sm mt-2">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      </p>
+      <h4 className="font-semibold">{data.title}</h4>
+      <p className="text-sm mt-2 line-clamp-3">{data.description}</p>
       <ul className="mt-2 flex space-x-2">
-        <li>
-          <Tag>Typescript</Tag>
-        </li>
-        <li>
-          <Tag>React</Tag>
-        </li>
-        <li>
-          <Tag>Next.js</Tag>
-        </li>
+        {data.stacks?.map(item => (
+          <li>
+            <Tag>{item}</Tag>
+          </li>
+        ))}
       </ul>
     </div>
   )

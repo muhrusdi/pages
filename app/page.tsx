@@ -5,6 +5,7 @@ import { CompanyItem } from "@/components/company-item"
 import { ProjectItem } from "@/components/project-item"
 import { SearchParamsType } from "@/lib/definitions"
 import { totalOfExper } from "@/utils"
+import { projects } from "@/utils/mock"
 
 type Props = {
   searchParams: SearchParamsType<{ sort_by: string; page: string }>
@@ -78,21 +79,11 @@ const Home = async ({ searchParams }: Props) => {
         </Section>
         <Section title="Work">
           <ul className="grid grid-cols-2 gap-3">
-            <li>
-              <ProjectItem />
-            </li>
-            <li>
-              <ProjectItem />
-            </li>
-            <li>
-              <ProjectItem />
-            </li>
-            <li>
-              <ProjectItem />
-            </li>
-            <li>
-              <ProjectItem />
-            </li>
+            {projects.map(item => (
+              <li>
+                <ProjectItem data={item} />
+              </li>
+            ))}
           </ul>
         </Section>
       </div>
