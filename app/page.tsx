@@ -79,8 +79,8 @@ const Home = async ({ searchParams }: Props) => {
         </Section>
         <Section title="Work">
           <ul className="grid grid-cols-2 gap-3">
-            {projects.map(item => (
-              <li>
+            {projects.map((item, i) => (
+              <li key={i}>
                 <ProjectItem data={item} />
               </li>
             ))}
