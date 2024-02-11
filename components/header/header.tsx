@@ -44,10 +44,11 @@ const Header = () => {
           />
         </div>
       </div>
-      <ul className="mt-3 flex space-x-2 fill-white [&>li>a>svg]:w-4 [&>li>a>svg]:h-4">
+      <ul className="mt-3 flex space-x-2 [&>li>a>svg]:w-4 [&>li>a>svg]:h-4">
         <li>
           <a
-            href="#"
+            href="mailto:murusdev@gmail.com"
+            title="Email"
             className="flex items-center justify-center w-7 h-7 border border-gray-600 rounded-md"
           >
             <EnvelopeIcon />
@@ -55,8 +56,11 @@ const Header = () => {
         </li>
         <li>
           <a
-            href="#"
-            className="flex items-center justify-center w-7 h-7 border border-gray-600 rounded-md"
+            href="https://x.com/muhrusdev"
+            rel="noopener"
+            target="_blank"
+            title="X"
+            className="flex [&>svg]:fill-white items-center justify-center w-7 h-7 border border-gray-600 rounded-md"
           >
             <svg
               role="img"
@@ -70,8 +74,11 @@ const Header = () => {
         </li>
         <li>
           <a
-            href="#"
-            className="flex items-center justify-center w-7 h-7 border border-gray-600 rounded-md"
+            href="https://github.com/muhrusdi"
+            rel="noopener"
+            target="_blank"
+            title="Github"
+            className="flex [&>svg]:fill-white items-center justify-center w-7 h-7 border border-gray-600 rounded-md"
           >
             <svg
               role="img"
@@ -85,8 +92,11 @@ const Header = () => {
         </li>
         <li>
           <a
-            href="#"
-            className="flex items-center justify-center w-7 h-7 border border-gray-600 rounded-md"
+            href="https://www.linkedin.com/in/muhrusdi/"
+            rel="noopener"
+            title="Linkedin"
+            target="_blank"
+            className="flex [&>svg]:fill-white items-center justify-center w-7 h-7 border border-gray-600 rounded-md"
           >
             <svg
               role="img"
@@ -100,8 +110,11 @@ const Header = () => {
         </li>
         <li>
           <a
-            href="#"
-            className="flex items-center justify-center w-7 h-7 border border-gray-600 rounded-md"
+            href="https://www.instagram.com/muhrusdev"
+            rel="noopener"
+            target="_blank"
+            title="Instagram"
+            className="flex [&>svg]:fill-white items-center justify-center w-7 h-7 border border-gray-600 rounded-md"
           >
             <svg
               role="img"
