@@ -1,7 +1,9 @@
 "use client"
+import { UseFormHook } from "@/types"
 import { usePathname, useSearchParams } from "next/navigation"
 import { useRouter } from "next/navigation"
-import { useCallback } from "react"
+import { SyntheticEvent, useCallback, useTransition } from "react"
+import { useFormState } from "react-dom"
 
 export function useFilterSearch() {
   const router = useRouter()
@@ -52,4 +54,30 @@ export function useFilterSearch() {
     removeFilter,
     searchParams,
   } as const
+}
+
+export function useForm<FormState>(
+  action: (
+    formState: Awaited<FormState>,
+    formData: FormData
+  ) => Promise<FormState>,
+  initialState: Awaited<FormState>
+): UseFormHook<FormState> {
+  const [isLoading, startTransition] = useTransition()
+  const [formState, formAction] = useFormState(action, initialState)
+
+  const onSubmit = (event: SyntheticEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    const formData = new FormData(event.currentTarget)
+    startTransition(() => {
+      formAction(formData)
+    })
+  }
+
+  return {
+    formState,
+    isLoading,
+    formAction,
+    onSubmit,
+  }
 }

@@ -4,6 +4,9 @@ import { useFormStatus, useFormState } from "react-dom"
 import { actionForm, ResSchema } from "./actions"
 import z from "zod"
 import { schema } from "./actions"
+import { useForm } from "@/hooks"
+
+type ResSchemaType = z.infer<typeof ResSchema>
 
 const Button = () => {
   const { pending, data } = useFormStatus()
@@ -13,27 +16,41 @@ const Button = () => {
 }
 
 const FormAction = () => {
-  const initialState: z.infer<typeof ResSchema> = {
+  const initialState: ResSchemaType = {
     message: "",
-    errors: [],
+    errors: {},
   }
 
-  const [state, formAction] = useFormState(actionForm, initialState)
+  const { isLoading, formAction, formState, onSubmit } = useForm<ResSchemaType>(
+    actionForm,
+    initialState
+  )
 
   return (
     <div>
-      <form action={formAction} noValidate>
+      <form action={formAction} onSubmit={onSubmit} noValidate>
         <div className="flex flex-col max-w-lg gap-3 p-4">
           <input
             name="email"
+            aria-label="email"
             required
             type="text"
             className="border-gray-700 border"
           />
-          <pre>{state?.errors?.email}</pre>
-          <input name="date" type="text" className="border-gray-700 border" />
-          <input name="name" type="text" className="border-gray-700 border" />
-          <Button />
+          <pre>{formState?.errors?.email}</pre>
+          <input
+            name="date"
+            aria-label="date"
+            type="text"
+            className="border-gray-700 border"
+          />
+          <input
+            name="name"
+            aria-label="name"
+            type="text"
+            className="border-gray-700 border"
+          />
+          <button type="submit">{isLoading ? "Loading..." : "Submit"}</button>
         </div>
       </form>
     </div>

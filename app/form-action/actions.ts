@@ -3,13 +3,13 @@ import z from "zod"
 
 export const ResSchema = z.object({
   message: z.string(),
-  errors: z.union([z.string().array(), z.string()]).optional(),
+  errors: z.record(z.string()).optional(),
 })
 
 export const schema = z.object({
-  email: z.string().email().min(1).default(""),
-  name: z.string().default(""),
-  date: z.string().default(""),
+  email: z.string().min(1, "Email is required").email("Invalid email :)"),
+  name: z.string(),
+  date: z.string(),
 })
 
 export type FormType = z.infer<typeof schema>
