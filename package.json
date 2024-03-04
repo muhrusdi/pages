@@ -17,7 +17,7 @@
     "axios": "^1.6.7",
     "clsx": "^2.1.0",
     "date-fns": "^3.3.1",
-    "framer-motion": "^11.0.6",
+    "framer-motion": "^11.0.8",
     "next": "^14.1.0",
     "numeral": "^2.0.6",
     "postcss": "^8.4.35",
@@ -30,9 +30,9 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@types/node": "20.11.22",
+    "@types/node": "20.11.24",
     "@types/numeral": "^2.0.5",
-    "@types/react": "18.2.60",
+    "@types/react": "18.2.61",
     "@types/react-dom": "18.2.19",
     "eslint": "8.57.0",
     "eslint-config-next": "^14.1.0",
