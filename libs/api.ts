@@ -1,6 +1,6 @@
 import { generateParams, generateQueries } from "@/utils"
 import { APIs } from "@/utils/endpoints"
-import { axios } from "../hooks/api/axios"
+import { axios, axiosQuery } from "../hooks/api/axios"
 import { cookies } from "next/headers"
 import { AxiosHeaders } from "axios"
 
@@ -12,18 +12,6 @@ type Options = {
   options?: RequestInit
   body?: FormData | string
 }
-
-export const query = (
-  path: string,
-  options?: {
-    headers?: AxiosHeaders
-    method?: string
-    body?: FormData | string
-  }
-) =>
-  axios(BASE_URL + path, {
-    ...options,
-  }).then(d => d.data)
 
 export type PathsType = typeof APIs
 
@@ -46,7 +34,7 @@ export const getData = async <TData>(
     _headers.set("Authorization", `Bearer ${accessToken}`)
   }
 
-  const res = await query(APIs[path] + paramsString + queriesString, {
+  const res = await axiosQuery(APIs[path] + paramsString + queriesString, {
     headers: _headers,
   })
 
