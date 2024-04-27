@@ -20,7 +20,7 @@ const Promise = <T,>({ children, data, sleep }: Props<T>) => {
     use(wait(sleep))
   }
 
-  let result = use(data)
+  const result = use(data)
 
   return children(result)
 }

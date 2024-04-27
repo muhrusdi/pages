@@ -1,4 +1,4 @@
-import { getData } from "@/libs/api"
+import { getData } from "@/lib/api"
 import { Movie } from "@/types/movie"
 import { wait } from "@/utils"
 import { cookies } from "next/headers"

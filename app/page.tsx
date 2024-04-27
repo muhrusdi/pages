@@ -1,37 +1,24 @@
 import { Await } from "@/components/await"
 import Header from "@/containers/next/header"
-import { getData } from "@/libs/api"
+import { getData } from "@/lib/api"
 import { Movie } from "@/types/movie"
 import type { NextPage } from "next"
 import { cookies } from "next/headers"
 import Link from "next/link"
+import Filter from "./filter"
 
 const Home: NextPage = () => {
-  const actions = async (formData: FormData) => {
-    "use server"
-    cookies().set("sort_by", formData.get("sort_by") as string, { maxAge: 0 })
-    cookies().set("page", formData.get("page") as string, { maxAge: 0 })
-  }
   const sort_by = cookies().get("sort_by")
   const page = cookies().get("page")
 
   return (
     <div>
       <Header />
-      <form action={actions}>
-        <button name="sort_by" value="popularity.desc">
-          Desc
-        </button>
-        <button name="sort_by" value="popularity.asc">
-          Asc
-        </button>
-        <button name="page" value={Number(page?.value) + 1}>
-          Page {Number(page?.value || 0) + 1}
-        </button>
-      </form>
+      <Filter sort_by={sort_by?.value} page={page?.value} />
       <div>
         <Await
           tags={[sort_by?.value as string]}
+          sleep={3000}
           data={getData<{ results: Movie[] }>("/discover/movie", {
             query: { sort_by: sort_by?.value || "" },
           })}
@@ -51,6 +38,7 @@ const Home: NextPage = () => {
       </div>
       <div>
         <Await
+          sleep={4000}
           tags={[page?.value as string]}
           data={getData<{ results: Movie[] }>("/discover/tv", {
             query: { page: (page?.value as string) || 1 },

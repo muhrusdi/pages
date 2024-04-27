@@ -1,4 +1,4 @@
-import { getData } from "@/libs/api"
+import { getData } from "@/lib/api"
 import { wait } from "@/utils"
 
 const Dashboard = async () => {

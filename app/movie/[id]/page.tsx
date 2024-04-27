@@ -1,5 +1,5 @@
 import { Await } from "@/components/await"
-import { getData } from "@/libs/api"
+import { getData } from "@/lib/api"
 import Link from "next/link"
 
 const DetailMovie = ({ params }: { params: { id: string } }) => {

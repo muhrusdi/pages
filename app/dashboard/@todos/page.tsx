@@ -1,4 +1,4 @@
-import { getData, postData } from "@/libs/api"
+import { getData, postData } from "@/lib/api"
 import { wait } from "@/utils"
 
 type TodoType = {
