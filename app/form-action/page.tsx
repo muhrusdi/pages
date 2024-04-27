@@ -5,6 +5,7 @@ import { actionForm, ResSchema } from "./actions"
 import z from "zod"
 import { schema } from "./actions"
 import { useForm } from "@/hooks"
+import { Input } from "@/components/forms/input"
 
 type ResSchemaType = z.infer<typeof ResSchema>
 
@@ -37,6 +38,7 @@ const FormAction = () => {
             type="text"
             className="border-gray-700 border"
           />
+          <Input name="select" />
           <pre>{formState?.errors?.email}</pre>
           <input
             name="date"

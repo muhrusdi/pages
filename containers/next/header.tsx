@@ -1,5 +1,5 @@
 "use client"
-import { StateContext } from "@/app/providers"
+import { StoreContext } from "@/app/providers"
 import { useFilterSearch } from "@/hooks"
 import Link from "next/link"
 import { useContext, useState } from "react"
@@ -8,7 +8,7 @@ const Header = () => {
   const { removeFilter, setFilter, clearFilter, searchParams } =
     useFilterSearch()
   const [error, setError] = useState(false)
-  const store = useContext(StateContext)
+  const store = useContext(StoreContext)
 
   if (error) {
     throw new Error("oopps")
