@@ -3,6 +3,7 @@ import { Inter } from "next/font/google"
 import clsx from "clsx"
 import "./globals.css"
 import { Providers } from "./providers"
+import { Footer } from "@/components/footer"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -17,7 +18,10 @@ const RootLayout: React.FC<RootLayoutType> = ({ children }) => {
       </head>
       <body className="bg-white dark:bg-black dark:text-white">
         <Providers>
-          <div className="container max-w-2xl">{children}</div>
+          <div className="container max-w-2xl">
+            {children}
+            <Footer />
+          </div>
         </Providers>
       </body>
     </html>
