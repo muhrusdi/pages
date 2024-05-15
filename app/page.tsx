@@ -25,7 +25,7 @@ const Home = async ({ searchParams }: Props) => {
           </p>
         </Section>
         <Section title="Education">
-          <div className="flex justify-between">
+          <div className="flex sm:flex-row flex-col-reverse justify-between">
             <div>
               <h4>State Polytechnic of Ujung Pandang</h4>
               <p>Computer and Network Engineering</p>
@@ -78,7 +78,7 @@ const Home = async ({ searchParams }: Props) => {
           </ul>
         </Section>
         <Section title="Work">
-          <ul className="grid grid-cols-2 gap-3">
+          <ul className="grid sm:grid-cols-2 grid-cols-1 gap-3">
             {projects.map((item, i) => (
               <li key={i}>
                 <ProjectItem

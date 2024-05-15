@@ -7,19 +7,20 @@ type Props = {
 
 const CompanyItem: React.FC<Props> = ({ name, role, year, type }) => {
   return (
-    <div className="flex justify-between">
+    <div className="flex sm:flex-row flex-col-reverse justify-between">
       <div>
         <div className="flex space-x-2 items-center">
           <div>
-            <h4>{name}</h4>
+            <h4>
+              {name}
+              {"  "}
+              {type ? (
+                <span className="inline-block bg-gray-700 px-2 rounded-full text-sm">
+                  Remote
+                </span>
+              ) : null}
+            </h4>
           </div>
-          {type ? (
-            <div>
-              <span className="block bg-gray-700 px-2 rounded-full text-sm">
-                Remote
-              </span>
-            </div>
-          ) : null}
         </div>
         <p>{role}</p>
       </div>
