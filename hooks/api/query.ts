@@ -1,11 +1,6 @@
 import {
   DefaultError,
-  DefinedInitialDataOptions,
   QueryClient,
-  QueryFunction,
-  QueryKey,
-  UndefinedInitialDataOptions,
-  UseQueryOptions,
   useMutation as mutation,
   useQuery as query,
 } from "@tanstack/react-query"
@@ -19,7 +14,7 @@ import { APIs } from "@/utils/endpoints"
 import { generateParams, generateQueries } from "@/utils"
 import { axios, axiosQuery } from "./axios"
 
-let controller: AbortController | null = null
+let controller: AbortController | null = new AbortController()
 
 export const invalidateQueries = (
   keys: KeyofPathsKeyType[],
@@ -39,8 +34,6 @@ export const useQuery = <
 ) => {
   const paramsString = generateParams()
   const queriesString = generateQueries(params?.variables?.query)
-
-  if (controller) controller.abort()
 
   const signal = controller?.signal
 
@@ -73,8 +66,6 @@ export const useMutation = <
 ) => {
   const paramsString = generateParams(params?.variables?.params)
   const queriesString = generateQueries(params?.variables?.query)
-
-  if (controller) controller.abort()
 
   const signal = controller?.signal
 
