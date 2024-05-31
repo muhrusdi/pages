@@ -2,8 +2,6 @@ import axios, { AxiosHeaders, AxiosRequestHeaders } from "axios"
 
 axios.defaults.baseURL = process.env.HOST_URL
 
-const BASE_URL = process.env.HOST_URL
-
 export { axios }
 
 axios.interceptors.request.use(
