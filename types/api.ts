@@ -30,7 +30,7 @@ export type ParamsType<
   baseURL?: string
   variables?: {
     query?: Record<string, any>
-    params?: Array<string | number> | Record<string, any>
+    params?: Array<string | number>
   }
 }
 

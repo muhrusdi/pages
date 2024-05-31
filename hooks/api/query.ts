@@ -14,7 +14,7 @@ import { APIs } from "@/utils/endpoints"
 import { generateParams, generateQueries } from "@/utils"
 import { axios, axiosQuery } from "./axios"
 
-let controller: AbortController | null = new AbortController()
+let controller: AbortController = new AbortController()
 
 export const invalidateQueries = (
   keys: KeyofPathsKeyType[],
@@ -32,7 +32,7 @@ export const useQuery = <
   params?: ParamsType<TQueryFnData, TError, TData>,
   queryClient?: QueryClient
 ) => {
-  const paramsString = generateParams()
+  const paramsString = generateParams(params?.variables?.params)
   const queriesString = generateQueries(params?.variables?.query)
 
   const signal = controller?.signal

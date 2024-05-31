@@ -1,6 +1,6 @@
 const PREFIX = "/api/v1"
 
-export const APIs = {
+export const APIs: Record<string, string> = {
   blogs: `${PREFIX}/blogs`,
   todos: `${PREFIX}/todos`,
   products: `${PREFIX}/products?limit=0`,
