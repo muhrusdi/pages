@@ -1,5 +1,6 @@
 {
   "arrowParens": "avoid",
   "semi": false,
-  "endOfLine":"auto"
+  "endOfLine":"auto",
+  "plugins": ["prettier-plugin-tailwindcss"]
 }

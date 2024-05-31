@@ -24,19 +24,19 @@ const FormAction = () => {
 
   const { isLoading, formAction, formState, onSubmit } = useForm<ResSchemaType>(
     actionForm,
-    initialState
+    initialState,
   )
 
   return (
     <div>
       <form action={formAction} onSubmit={onSubmit} noValidate>
-        <div className="flex flex-col max-w-lg gap-3 p-4">
+        <div className="flex max-w-lg flex-col gap-3">
           <input
             name="email"
             aria-label="email"
             required
             type="text"
-            className="border-gray-700 border"
+            className="border border-gray-700"
           />
           <Input name="select" />
           <pre>{formState?.errors?.email}</pre>
@@ -44,13 +44,13 @@ const FormAction = () => {
             name="date"
             aria-label="date"
             type="text"
-            className="border-gray-700 border"
+            className="border border-gray-700"
           />
           <input
             name="name"
             aria-label="name"
             type="text"
-            className="border-gray-700 border"
+            className="border border-gray-700"
           />
           <button type="submit">{isLoading ? "Loading..." : "Submit"}</button>
         </div>

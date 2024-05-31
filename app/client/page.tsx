@@ -8,16 +8,18 @@ const Client = () => {
 
   console.log(data)
 
-  const mutation = useMutation<{ title: string }, null, { error: 3 }>(
-    "/movies",
-    {
-      options: {
-        onSuccess: (data, vars, context) => {
-          data.title
-        },
+  const mutation = useMutation<{ title: string }, { error: 3 }>("/movies", {
+    variables: {},
+    options: {
+      onSuccess: (data, vars, context) => {
+        data.title
       },
-    }
-  )
+      onError(error, variables, context) {
+        error.error
+        context
+      },
+    },
+  })
 
   console.log(data)
   return (
