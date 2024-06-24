@@ -1,5 +1,4 @@
 import { Await } from "@/components/await"
-import Header from "@/containers/next/header"
 import { getData } from "@/lib/api"
 import { Movie } from "@/types/movie"
 import type { NextPage } from "next"
@@ -13,7 +12,6 @@ const Home: NextPage = () => {
 
   return (
     <div>
-      <Header />
       <Filter sort_by={sort_by?.value} page={page?.value} />
       <div>
         <Await
