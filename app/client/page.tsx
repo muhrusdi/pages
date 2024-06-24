@@ -1,6 +1,6 @@
 "use client"
 
-import { useMutation, useQuery } from "@/hooks/api"
+import { useMutation, useQuery } from "@/lib/api"
 import { Movie } from "@/types/movie"
 
 const Client = () => {

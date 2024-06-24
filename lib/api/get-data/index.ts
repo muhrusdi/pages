@@ -1,6 +1,6 @@
 import { generateParams, generateQueries } from "@/utils"
 import { APIs } from "@/utils/endpoints"
-import { axios } from "../hooks/api/axios"
+import { axios } from "../axios"
 import { cookies } from "next/headers"
 import { AxiosHeaders } from "axios"
 
