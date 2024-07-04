@@ -4,6 +4,8 @@ import clsx from "clsx"
 import "./globals.css"
 import { Providers } from "./providers"
 import { Footer } from "@/components/footer"
+import { Dock } from "@/components/magicui/dock"
+import DockIcons from "@/components/magicui/dock-icons"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,6 +22,11 @@ const RootLayout: React.FC<RootLayoutType> = ({ children }) => {
         <Providers>
           <div className="container max-w-2xl">
             {children}
+            <div className="fixed bottom-4 left-1/2 -translate-x-1/2">
+              <Dock>
+                <DockIcons />
+              </Dock>
+            </div>
             <Footer />
           </div>
         </Providers>
