@@ -11,7 +11,7 @@ const DockIcons = () => {
           rel="noopener"
           target="_blank"
           className="w-full h-full flex justify-center items-center"
-          title="X"
+          title="Github"
         >
           <GithubIcon />
         </a>
@@ -22,7 +22,7 @@ const DockIcons = () => {
           rel="noopener"
           target="_blank"
           className="w-full h-full flex justify-center items-center"
-          title="X"
+          title="Instagram"
         >
           <InstagramIcon />
         </a>
@@ -33,7 +33,7 @@ const DockIcons = () => {
           rel="noopener"
           target="_blank"
           className="w-full h-full flex justify-center items-center"
-          title="X"
+          title="Linkedin"
         >
           <LinkedinIcon />
         </a>

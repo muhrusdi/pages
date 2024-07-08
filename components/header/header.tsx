@@ -12,9 +12,9 @@ const Header = () => {
               <div>
                 <h1 className="font-bold text-2xl">Muhammad Rusdi</h1>
               </div>
-              <span>
+              {/* <span>
                 <WIP />
-              </span>
+              </span> */}
             </div>
             <p className="mt-2">
               Frontend Engineer focused on building user interface with extra
