@@ -1,13 +1,12 @@
 "use client"
 import { useForm } from "@conform-to/react"
 import { parseWithZod } from "@conform-to/zod"
-import { useFormState } from "react-dom"
 import { login } from "./action"
 import { loginSchema } from "@/types"
-import { Submit } from "@/components/submit"
+import { useActionState } from "react"
 
 const Conform = () => {
-  const [lastResult, action] = useFormState(login, undefined)
+  const [lastResult, action, pending] = useActionState(login, undefined)
   const [form, fields] = useForm({
     lastResult,
     onValidate({ formData }) {
@@ -41,13 +40,7 @@ const Conform = () => {
             name={fields.remember.name}
           />
         </div>
-        <Submit>
-          {status => (
-            <button type="submit">
-              {status.pending ? "Loading..." : "Submit"}
-            </button>
-          )}
-        </Submit>
+        <button type="submit">{pending ? "Loading..." : "Submit"}</button>
       </form>
     </div>
   )

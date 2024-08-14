@@ -2,8 +2,12 @@
 import { UseFormHook } from "@/types"
 import { usePathname, useSearchParams } from "next/navigation"
 import { useRouter } from "next/navigation"
-import { SyntheticEvent, useCallback, useTransition } from "react"
-import { useFormState } from "react-dom"
+import {
+  SyntheticEvent,
+  useActionState,
+  useCallback,
+  useTransition,
+} from "react"
 
 export function useFilterSearch() {
   const router = useRouter()
@@ -30,7 +34,7 @@ export function useFilterSearch() {
 
       router.replace(pathname + "?" + params?.toString())
     },
-    [filters, router, pathname]
+    [filters, router, pathname],
   )
 
   const clearFilter = useCallback(() => {
@@ -44,7 +48,7 @@ export function useFilterSearch() {
       params.delete(key)
       router.push(pathname + "?" + params.toString())
     },
-    [router, pathname, searchParams]
+    [router, pathname, searchParams],
   )
 
   return {
@@ -59,24 +63,24 @@ export function useFilterSearch() {
 export function useForm<FormState>(
   action: (
     formState: Awaited<FormState>,
-    formData: FormData
+    formData: FormData,
   ) => Promise<FormState>,
-  initialState: Awaited<FormState>
+  initialState: Awaited<FormState>,
 ): UseFormHook<FormState> {
-  const [isLoading, startTransition] = useTransition()
-  const [formState, formAction] = useFormState(action, initialState)
+  const [formState, formAction, isPending] = useActionState(
+    action,
+    initialState,
+  )
 
   const onSubmit = (event: SyntheticEvent<HTMLFormElement>) => {
     event.preventDefault()
     const formData = new FormData(event.currentTarget)
-    startTransition(() => {
-      formAction(formData)
-    })
+    formAction(formData)
   }
 
   return {
     formState,
-    isLoading,
+    isPending,
     formAction,
     onSubmit,
   }

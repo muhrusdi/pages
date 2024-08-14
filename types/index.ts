@@ -16,7 +16,7 @@ export type RecordType = {
 
 export type UseFormHook<FormState> = {
   formState: FormState
-  isLoading: boolean
+  isPending: boolean
   formAction: (payload: FormData) => void
   onSubmit: (event: SyntheticEvent<HTMLFormElement>) => void
 }

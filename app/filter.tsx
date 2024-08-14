@@ -1,17 +1,32 @@
 "use client"
-import { useContext } from "react"
+import { useCallback, useContext } from "react"
 import { filterAction } from "./actions"
 import { StoreContext } from "./providers"
 import { revalidatePath } from "next/cache"
-import { useRouter } from "next/navigation"
+import { usePathname, useRouter, useSearchParams } from "next/navigation"
 
 const AsyncFilter = ({ sort_by, page }) => {
   const { startTransition } = useContext(StoreContext)
+  const pathname = usePathname()
   const router = useRouter()
+  const searchParams = useSearchParams()
+
+  const createQueryString = useCallback(
+    (name: string, value: string) => {
+      const params = new URLSearchParams(searchParams.toString())
+      params.set(name, value)
+
+      return params.toString()
+    },
+    [searchParams],
+  )
 
   const handleAction = async (formData: FormData) => {
     startTransition(() => {
-      filterAction(formData)
+      // filterAction(formData)
+      router.push(
+        pathname + "?" + createQueryString("sort_by", formData.get("sort_by")),
+      )
     })
   }
 

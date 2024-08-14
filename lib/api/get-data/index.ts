@@ -19,7 +19,7 @@ export const query = (
     headers?: AxiosHeaders
     method?: string
     body?: FormData | string
-  }
+  },
 ) =>
   axios(BASE_URL + path, {
     ...options,
@@ -33,7 +33,7 @@ export type PathsKeyType = {
 
 export const getData = async <TData>(
   path: keyof PathsKeyType,
-  options?: Pick<Options, "options" | "params" | "query">
+  options?: Pick<Options, "options" | "params" | "query">,
 ) => {
   const paramsString = generateParams(options?.params)
   const queriesString = generateQueries(options?.query)
@@ -55,7 +55,7 @@ export const getData = async <TData>(
 
 export const postData = async <TData>(
   path: keyof PathsKeyType,
-  options?: Options
+  options?: Options,
 ) => {
   const paramsString = generateParams(options?.params)
 

@@ -22,7 +22,7 @@ const FormAction = () => {
     errors: {},
   }
 
-  const { isLoading, formAction, formState, onSubmit } = useForm<ResSchemaType>(
+  const { isPending, formAction, formState, onSubmit } = useForm<ResSchemaType>(
     actionForm,
     initialState,
   )
@@ -52,7 +52,7 @@ const FormAction = () => {
             type="text"
             className="border border-gray-700"
           />
-          <button type="submit">{isLoading ? "Loading..." : "Submit"}</button>
+          <button type="submit">{isPending ? "Loading..." : "Submit"}</button>
         </div>
       </form>
     </div>
