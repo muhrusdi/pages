@@ -8,7 +8,7 @@ const inter = Inter({
   subsets: ["latin"],
 })
 
-export const fetchCache = "default-no-store"
+// export const fetchCache = "default-no-store"
 
 const RootLayout: React.FC<RootLayoutType> = ({ children }) => {
   return (

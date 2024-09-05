@@ -9,7 +9,7 @@ const Home: NextPage = ({ searchParams: { sort_by } }) => {
     <div>
       <AsyncFilter page={1} sort_by={sort_by} />
       <div>
-        <Await sleep={4000} tags={[sort_by as string]} data={getUsers()}>
+        <Await sleep={5000} tags={[sort_by as string]} data={getUsers()}>
           {movies => (
             <ul>
               {movies?.map(item => (
