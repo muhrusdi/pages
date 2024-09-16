@@ -24,7 +24,7 @@
     "drizzle-kit": "^0.24.2",
     "drizzle-orm": "^0.33.0",
     "framer-motion": "^11.5.2",
-    "next": "^14.2.8",
+    "next": "^14.2.11",
     "numeral": "^2.0.6",
     "postcss": "^8.4.45",
     "react": "^18.3.1",
