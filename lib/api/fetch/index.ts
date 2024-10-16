@@ -2,7 +2,7 @@ import { generateParams, generateQueries } from "@/utils"
 import { APIs } from "@/utils/endpoints"
 import { axios } from "../axios"
 import { cookies } from "next/headers"
-import { AxiosHeaders } from "axios"
+import { AxiosHeaders, AxiosRequestConfig } from "axios"
 
 const BASE_URL = process.env.HOST_URL
 
@@ -10,8 +10,7 @@ type Options = {
   params?: Array<string | number>
   query?: Record<string, any>
   options?: RequestInit
-  body?: FormData | string
-}
+} & AxiosRequestConfig<string | FormData>
 
 export const query = (
   path: string,
@@ -38,7 +37,8 @@ export const getData = async <TData>(
   const paramsString = generateParams(options?.params)
   const queriesString = generateQueries(options?.query)
 
-  const accessToken = cookies().get("accessToken")?.value
+  const { get } = await cookies()
+  const accessToken = get("accessToken")?.value
 
   const _headers: AxiosHeaders = new AxiosHeaders()
 
@@ -46,7 +46,7 @@ export const getData = async <TData>(
     _headers.set("Authorization", `Bearer ${accessToken}`)
   }
 
-  const res = await query(APIs[path] + paramsString + queriesString, {
+  const res = query(APIs[path] + paramsString + queriesString, {
     headers: _headers,
   })
 
@@ -61,8 +61,8 @@ export const postData = async <TData>(
 
   const res = await axios({
     url: APIs[path] + paramsString,
-    data: options?.body,
     method: "post",
+    ...options,
   }).then(d => d.data)
 
   return res as TData

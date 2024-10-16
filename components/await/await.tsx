@@ -1,33 +1,26 @@
-import { Fragment, Suspense, use } from "react"
-import { wait } from "@/utils"
+import { Fragment, Suspense, type JSX } from "react"
 import ErrorComponent from "../errors/error"
 import {
   ErrorBoundary as NextErrorBoundary,
   ErrorComponent as ErrorComponentType,
 } from "next/dist/client/components/error-boundary"
+import Loading from "./loading"
+import Promise from "./promise"
 
-type Props<T> = {
+export type Props<T> = {
   data: Promise<T>
   children: (result: T) => JSX.Element
   sleep?: number
+  name?: string
   fallback?: string | React.ReactNode
   tags?: string[]
   errorComponent?: ErrorComponentType
 }
 
-const Promise = <T,>({ children, data, sleep }: Props<T>) => {
-  if (sleep) {
-    use(wait(sleep))
-  }
-
-  const result = use(data)
-
-  return children(result)
-}
-
 const Await = <T,>({
   fallback = "Loading...",
   tags,
+  name,
   errorComponent = ErrorComponent,
   ...props
 }: Props<T>) => {
@@ -35,8 +28,10 @@ const Await = <T,>({
 
   return (
     <ErrorBoundary errorComponent={errorComponent}>
-      <Suspense key={tags?.join(",")} fallback={fallback}>
-        <Promise {...props} />
+      <Suspense fallback={fallback}>
+        <Loading tags={tags} name={name} fallback={fallback}>
+          <Promise {...props} />
+        </Loading>
       </Suspense>
     </ErrorBoundary>
   )

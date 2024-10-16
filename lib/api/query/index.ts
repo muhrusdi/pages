@@ -14,11 +14,9 @@ import { APIs } from "@/utils/endpoints"
 import { generateParams, generateQueries } from "@/utils"
 import { axios, axiosQuery } from "../axios"
 
-let controller: AbortController = new AbortController()
-
 export const invalidateQueries = (
   keys: KeyofPathsKeyType[],
-  client: QueryClient
+  client: QueryClient,
 ) => {
   return client.invalidateQueries({ queryKey: keys })
 }
@@ -26,16 +24,14 @@ export const invalidateQueries = (
 export const useQuery = <
   TQueryFnData = unknown,
   TError = DefaultError,
-  TData = TQueryFnData
+  TData = TQueryFnData,
 >(
   path: keyof PathsKeyType,
   params?: ParamsType<TQueryFnData, TError, TData>,
-  queryClient?: QueryClient
+  queryClient?: QueryClient,
 ) => {
   const paramsString = generateParams(params?.variables?.params)
   const queriesString = generateQueries(params?.variables?.query)
-
-  const signal = controller?.signal
 
   return query<TQueryFnData, TError, TData>(
     {
@@ -43,7 +39,7 @@ export const useQuery = <
         path,
         { ...params?.variables?.query, ...params?.variables?.params },
       ],
-      queryFn: async () => {
+      queryFn: async ({ signal }) => {
         return axiosQuery(APIs[path] + paramsString + queriesString, {
           signal,
           headers: params?.headers,
@@ -51,7 +47,7 @@ export const useQuery = <
       },
       ...params?.options,
     },
-    queryClient
+    queryClient,
   )
 }
 
@@ -59,15 +55,13 @@ export const useMutation = <
   TData = unknown,
   TError = DefaultError,
   TVariables = void,
-  TContext = unknown
+  TContext = unknown,
 >(
   path: keyof PathsKeyType,
-  params?: MutationParamsType<TData, TError, TVariables, TContext>
+  params?: MutationParamsType<TData, TError, TVariables, TContext>,
 ) => {
   const paramsString = generateParams(params?.variables?.params)
   const queriesString = generateQueries(params?.variables?.query)
-
-  const signal = controller?.signal
 
   return mutation<TData, TError, TVariables, TContext>({
     mutationFn: async formData => {
@@ -75,7 +69,6 @@ export const useMutation = <
         url: APIs[path] + paramsString + queriesString,
         data: formData,
         method: params?.method || "post",
-        signal,
         headers: params?.headers,
       }).then(d => d.data)
 
