@@ -1,14 +1,12 @@
 import { RootLayoutType } from "@/types"
 import { Inter } from "next/font/google"
 import clsx from "clsx"
-import "../styles/globals.css"
+import "./globals.css"
 import { Providers } from "./providers"
 
 const inter = Inter({
   subsets: ["latin"],
 })
-
-// export const fetchCache = "default-no-store"
 
 const RootLayout: React.FC<RootLayoutType> = ({ children }) => {
   return (

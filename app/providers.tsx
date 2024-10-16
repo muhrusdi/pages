@@ -1,36 +1,65 @@
 "use client"
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
-import { TransitionStartFunction, createContext, useTransition } from "react"
+import {
+  TransitionFunction,
+  TransitionStartFunction,
+  createContext,
+  useRef,
+  useState,
+  useTransition,
+} from "react"
 
 type Props = {
   children: React.ReactNode
 }
 
-type ProviderContextType = {
+type LoadingContextType = {
   isPending: boolean
-  startTransition: TransitionStartFunction
-  data?: Record<string, any>
-  onChange?: (val: string | number | Record<string, any>) => void
+  pending?: string | null
+  startTransition: (cb: TransitionFunction, name?: string) => void
 }
 
-const ProviderContext = createContext<ProviderContextType>({
+export const LoadingContext = createContext<LoadingContextType>({
   isPending: false,
+  pending: null,
   startTransition: () => {},
 })
 
-const queryClient = new QueryClient()
+function queryClient() {
+  return new QueryClient({
+    defaultOptions: {
+      queries: {
+        experimental_prefetchInRender: true,
+      },
+    },
+  })
+}
 
 export const Providers: React.FC<Props> = ({ children }) => {
   const [isPending, startTransition] = useTransition()
+  const pending = useRef<string | null>(null)
+
+  const handleTransition = (cb: TransitionFunction, name?: string) => {
+    if (name) {
+      pending.current = name
+    }
+    startTransition(() => {
+      cb()
+    })
+  }
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <ProviderContext.Provider value={{ isPending, startTransition }}>
+    <QueryClientProvider client={queryClient()}>
+      <LoadingContext
+        value={{
+          isPending,
+          pending: pending.current,
+          startTransition: handleTransition,
+        }}
+      >
         {children}
-      </ProviderContext.Provider>
+      </LoadingContext>
     </QueryClientProvider>
   )
 }
-
-export const StoreContext = ProviderContext
