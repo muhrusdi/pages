@@ -13,13 +13,11 @@ export type Props<T> = {
   sleep?: number
   name?: string
   fallback?: string | React.ReactNode
-  tags?: string[]
   errorComponent?: ErrorComponentType
 }
 
 const Await = <T,>({
   fallback = "Loading...",
-  tags,
   name,
   errorComponent = ErrorComponent,
   ...props
@@ -29,7 +27,7 @@ const Await = <T,>({
   return (
     <ErrorBoundary errorComponent={errorComponent}>
       <Suspense fallback={fallback}>
-        <Loading tags={tags} name={name} fallback={fallback}>
+        <Loading name={name} fallback={fallback}>
           <Promise {...props} />
         </Loading>
       </Suspense>

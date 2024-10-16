@@ -15,7 +15,6 @@ const Home: NextPage = async ({ searchParams }) => {
       <div>
         <Await
           sleep={3000}
-          tags={params}
           name="sort_by"
           data={getData<{ results: Movie[] }>("/discover/movie", {
             query: params,
@@ -37,7 +36,6 @@ const Home: NextPage = async ({ searchParams }) => {
       <div>
         <Await
           sleep={5000}
-          tags={params}
           name="page"
           data={getData<{ results: Movie[] }>("/discover/tv")}
         >
