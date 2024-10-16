@@ -1,5 +1,6 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import { Config } from "tailwindcss"
+
+const config: Config = {
   darkMode: "class",
   content: [
     "./app/**/*.{js,ts,jsx,tsx}",
@@ -9,13 +10,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "border-primary": "#0f0f0f"
+        "border-primary": "#0f0f0f",
       },
       container: {
         center: true,
-        padding: "1.5rem"
+        padding: "1.5rem",
       },
     },
   },
   plugins: [],
 }
+
+export default config

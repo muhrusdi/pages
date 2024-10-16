@@ -1,5 +1,6 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+import { NextConfig } from "next"
+
+const nextConfig: NextConfig = {
   logging: {
     fetches: {
       fullUrl: true,
@@ -15,4 +16,4 @@ const nextConfig = {
   },
 }
 
-module.exports = nextConfig
+export default nextConfig
