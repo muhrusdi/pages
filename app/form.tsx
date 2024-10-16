@@ -1,6 +1,6 @@
 "use client"
 import { cookies } from "next/headers"
-import { useFormState } from "react-dom"
+import { useActionState } from "react-dom"
 import { actions } from "./actions"
 
 const Form = () => {
@@ -9,7 +9,7 @@ const Form = () => {
 
   // console.log("--000", sort_by?.value)
   // console.log("--0022", page?.value)
-  const [state] = useFormState(actions, null)
+  const [state] = useActionState(actions, null)
   return (
     <div>
       <form action={actions}>

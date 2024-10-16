@@ -5,7 +5,7 @@ import { cookies } from "next/headers"
 import Link from "next/link"
 
 const Page = async () => {
-  const sort_by = cookies().get("page")?.value || ""
+  const sort_by = (await cookies()).get("page")?.value || ""
   const data = await getData<{ results: Movie[] }>("/discover/tv", {
     query: { page: sort_by },
   })

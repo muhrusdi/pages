@@ -2,11 +2,12 @@ import { useRouter } from "next/navigation"
 import Filter from "./filter"
 import { wait } from "@/utils"
 
-const Demo1 = async ({
-  searchParams,
-}: {
-  searchParams: { [key: string]: string | string[] | undefined }
-}) => {
+const Demo1 = async (
+  props: {
+    searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+  }
+) => {
+  const searchParams = await props.searchParams;
   const genres = Array.isArray(searchParams.genre)
     ? searchParams.genre
     : searchParams.genre

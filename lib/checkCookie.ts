@@ -1,6 +1,6 @@
 import "server-only"
-import { cookies } from "next/headers"
+import { cookies, type UnsafeUnwrappedCookies } from "next/headers"
 
-export const checkCookie = () => {
-  return cookies().get("accessToken")?.value
+export const checkCookie = async () => {
+  return (await cookies()).get("accessToken")?.value
 }

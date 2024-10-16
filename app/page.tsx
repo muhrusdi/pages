@@ -3,19 +3,30 @@ import type { NextPage } from "next"
 import Link from "next/link"
 import { getUsers } from "@/drizzle/db"
 import AsyncFilter from "./filter"
+import { getData, useQuery } from "@/lib/api"
+import { Movie } from "@/types/movie"
 
-const Home: NextPage = ({ searchParams: { sort_by } }) => {
+const Home: NextPage = async ({ searchParams }) => {
+  const params = await searchParams
+
   return (
     <div>
-      <AsyncFilter page={1} sort_by={sort_by} />
+      <AsyncFilter page={1} sort_by={params.sort_by} />
       <div>
-        <Await sleep={5000} tags={[sort_by as string]} data={getUsers()}>
+        <Await
+          sleep={3000}
+          tags={params}
+          name="sort_by"
+          data={getData<{ results: Movie[] }>("/discover/movie", {
+            query: params,
+          })}
+        >
           {movies => (
             <ul>
-              {movies?.map(item => (
+              {movies.results.map(item => (
                 <li key={item.id}>
-                  <Link prefetch href={`/movie/${item.id}`}>
-                    {item.name}, {item.email}
+                  <Link href={`/movie/${item.id}`}>
+                    {item?.title}, {item?.adult}
                   </Link>
                 </li>
               ))}
@@ -24,13 +35,18 @@ const Home: NextPage = ({ searchParams: { sort_by } }) => {
         </Await>
       </div>
       <div>
-        <Await sleep={3000} data={getUsers()}>
+        <Await
+          sleep={5000}
+          tags={params}
+          name="page"
+          data={getData<{ results: Movie[] }>("/discover/tv")}
+        >
           {movies => (
             <ul>
-              {movies?.map(item => (
+              {movies?.results.map(item => (
                 <li key={item.id}>
-                  <Link prefetch href={`/movie/${item.id}`}>
-                    {item.name}, {item.email}
+                  <Link href={`/movie/${item.id}`}>
+                    {item.name}, {item.release_date}
                   </Link>
                 </li>
               ))}

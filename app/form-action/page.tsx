@@ -1,6 +1,6 @@
 "use client"
 
-import { useFormStatus, useFormState } from "react-dom"
+import { useFormStatus, useActionState } from "react-dom"
 import { actionForm, ResSchema } from "./actions"
 import z from "zod"
 import { schema } from "./actions"

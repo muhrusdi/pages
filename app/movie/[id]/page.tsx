@@ -2,7 +2,8 @@ import { Await } from "@/components/await"
 import { getData } from "@/lib/api"
 import Link from "next/link"
 
-const DetailMovie = ({ params }: { params: { id: string } }) => {
+const DetailMovie = async (props: { params: Promise<{ id: string }> }) => {
+  const params = await props.params;
   return (
     <div>
       <div>
