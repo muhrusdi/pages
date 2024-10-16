@@ -2,10 +2,11 @@
 
 ## Features
 
-- ✅ Next.js v13
+- ✅ Next.js v15
+- ✅ React Query
+- ✅ React Hook Form
 - ✅ Tailwindcss
 - ✅ Typescript
-- ✅ React Hook Form
 - ✅ Framer Motion
 - ✅ Storybookjs
 - ✅ React Testing Library
