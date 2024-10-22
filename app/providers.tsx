@@ -20,13 +20,7 @@ export const LoadingContext = createContext<LoadingContextType>({
 })
 
 function queryClient() {
-  return new QueryClient({
-    defaultOptions: {
-      queries: {
-        experimental_prefetchInRender: true,
-      },
-    },
-  })
+  return new QueryClient()
 }
 
 export const Providers: React.FC<Props> = ({ children }) => {

@@ -10,7 +10,7 @@ const inter = Inter({
 
 const RootLayout: React.FC<RootLayoutType> = ({ children }) => {
   return (
-    <html lang="en" className={clsx(inter.className, "dark font-normal")}>
+    <html lang="en" className={clsx(inter.className, "font-normal")}>
       <head>
         <title>Sen.js</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />

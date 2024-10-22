@@ -2099,9 +2099,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"drizzle-kit@npm:^0.26.1":
-  version: 0.26.1
-  resolution: "drizzle-kit@npm:0.26.1"
+"drizzle-kit@npm:^0.26.2":
+  version: 0.26.2
+  resolution: "drizzle-kit@npm:0.26.2"
   dependencies:
     "@drizzle-team/brocli": "npm:^0.10.1"
     "@esbuild-kit/esm-loader": "npm:^2.5.5"
@@ -2109,18 +2109,19 @@ __metadata:
     esbuild-register: "npm:^3.5.0"
   bin:
     drizzle-kit: bin.cjs
-  checksum: 10c0/228763afae36ea17058adb6465aa65c67376686576c18f53521b5aa76339db58fee1854601d4f7c56fe01d813e382b65be6baa66c178940df7a6ac6ba40067f9
+  checksum: 10c0/5c94b92ebc2fa32df5e0192837cb4c677e9864bf2d2bcb1c417f52ddaa0bd61927c703e15b1f6a6c3243d4516375f999415847890ce51bbfba6eeea6df0d8fa3
   languageName: node
   linkType: hard
 
-"drizzle-orm@npm:^0.35.0":
-  version: 0.35.0
-  resolution: "drizzle-orm@npm:0.35.0"
+"drizzle-orm@npm:^0.35.3":
+  version: 0.35.3
+  resolution: "drizzle-orm@npm:0.35.3"
   peerDependencies:
     "@aws-sdk/client-rds-data": ">=3"
     "@cloudflare/workers-types": ">=3"
     "@electric-sql/pglite": ">=0.1.1"
     "@libsql/client": ">=0.10.0"
+    "@libsql/client-wasm": ">=0.10.0"
     "@neondatabase/serverless": ">=0.1"
     "@op-engineering/op-sqlite": ">=2"
     "@opentelemetry/api": ^1.4.1
@@ -2201,7 +2202,7 @@ __metadata:
       optional: true
     sqlite3:
       optional: true
-  checksum: 10c0/d8436ae437e074af4f928c2faaa6583a6b003879bc90189f372b66ea126152e093ae8cc2c1898a6e642b22115ee925ae756fcaf3b48ec2261c21f144874c2f6f
+  checksum: 10c0/91b8beb6d5c34d8ee3c7d30116916d98f1f7e41988c609c9d766a3eec0fd9c7703a0e72e9e873ee887d16b274f571991a8e6e1afc51f496e5bce23398fc24c98
   languageName: node
   linkType: hard
 
@@ -5026,8 +5027,8 @@ __metadata:
     axios: "npm:^1.7.7"
     clsx: "npm:^2.1.1"
     date-fns: "npm:^4.1.0"
-    drizzle-kit: "npm:^0.26.1"
-    drizzle-orm: "npm:^0.35.0"
+    drizzle-kit: "npm:^0.26.2"
+    drizzle-orm: "npm:^0.35.3"
     eslint: "npm:9.12.0"
     eslint-config-next: "npm:15.0.0"
     framer-motion: "npm:^11.11.9"
