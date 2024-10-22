@@ -14,7 +14,7 @@ export const money = (val: number) => {
   return numeral(val).format("0,0")
 }
 
-export const tm = (classList: ClassNameValue) => {
+export const cn = (...classList: ClassNameValue[]) => {
   return twMerge(classList)
 }
 

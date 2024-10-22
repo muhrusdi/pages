@@ -1,13 +1,13 @@
-import { use } from "react"
+import { pending } from "@/utils"
 import { Props } from "./await"
 import { setTimeout } from "timers/promises"
 
-const Promise = <T,>({ children, data, sleep }: Props<T>) => {
+const Promise = async <T,>({ children, data, sleep }: Props<T>) => {
   if (sleep) {
-    use(setTimeout(sleep))
+    await pending(sleep)
   }
 
-  const result = use(data)
+  const result = await data
 
   return children(result)
 }

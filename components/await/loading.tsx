@@ -5,15 +5,18 @@ import { use } from "react"
 
 type Props = {
   children: React.ReactNode
-  fallback?: string | React.ReactNode
   name?: string
 }
 
-const Loading = ({ children, name, fallback }: Props) => {
+const Loading = ({ children, name }: Props) => {
   const { isPending, pending } = use(LoadingContext)
   const isLoading = pending === name && isPending
 
-  return isLoading ? fallback : children
+  if (isLoading) {
+    throw new Promise(() => {})
+  }
+
+  return children
 }
 
 export default Loading

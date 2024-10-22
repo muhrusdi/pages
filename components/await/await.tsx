@@ -27,7 +27,7 @@ const Await = <T,>({
   return (
     <ErrorBoundary errorComponent={errorComponent}>
       <Suspense fallback={fallback}>
-        <Loading name={name} fallback={fallback}>
+        <Loading name={name}>
           <Promise {...props} />
         </Loading>
       </Suspense>
