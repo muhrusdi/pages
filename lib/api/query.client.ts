@@ -1,28 +1,14 @@
 import { generateParams, generateQueries } from "@/utils"
 import { APIs } from "@/utils/endpoints"
-import { axios } from "../axios"
+import { axios } from "./axios"
 import { cookies } from "next/headers"
 import { AxiosHeaders, AxiosRequestConfig } from "axios"
-
-const BASE_URL = process.env.HOST_URL
 
 type Options = {
   params?: Array<string | number>
   query?: Record<string, any>
   options?: RequestInit
 } & AxiosRequestConfig<string | FormData>
-
-export const query = (
-  path: string,
-  options?: {
-    headers?: AxiosHeaders
-    method?: string
-    body?: FormData | string
-  },
-) =>
-  axios(BASE_URL + path, {
-    ...options,
-  }).then(d => d.data)
 
 export type PathsType = typeof APIs
 
@@ -46,9 +32,9 @@ export const getData = async <TData>(
     _headers.set("Authorization", `Bearer ${accessToken}`)
   }
 
-  const res = query(APIs[path] + paramsString + queriesString, {
+  const res = axios(APIs[path] + paramsString + queriesString, {
     headers: _headers,
-  })
+  }).then(d => d.data)
 
   return res as TData
 }

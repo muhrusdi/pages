@@ -2,8 +2,6 @@ import axios, { AxiosHeaders, AxiosRequestHeaders } from "axios"
 
 axios.defaults.baseURL = process.env.HOST_URL
 
-export { axios }
-
 axios.interceptors.request.use(
   config => {
     if (config?.headers?.get("x-request-id") === "basic-location") {
@@ -36,7 +34,7 @@ axios.interceptors.request.use(
   },
   error => {
     return Promise.reject(error)
-  }
+  },
 )
 
 axios.interceptors.response.use(
@@ -53,7 +51,7 @@ axios.interceptors.response.use(
       }
     }
     return Promise.reject(error)
-  }
+  },
 )
 
 export const axiosQuery = (
@@ -63,8 +61,10 @@ export const axiosQuery = (
     method?: string
     body?: FormData | string
     signal?: AbortSignal
-  }
+  },
 ) =>
   axios(path, {
     ...options,
   }).then(d => d.data)
+
+export { axios }

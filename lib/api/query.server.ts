@@ -12,7 +12,7 @@ import {
 } from "@/types/api"
 import { APIs } from "@/utils/endpoints"
 import { generateParams, generateQueries } from "@/utils"
-import { axios, axiosQuery } from "../axios"
+import { axios, axiosQuery } from "./axios"
 
 export const invalidateQueries = (
   keys: KeyofPathsKeyType[],
