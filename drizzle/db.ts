@@ -1,4 +1,4 @@
-import "@/drizzle/envConfig"
+import "@/env.config"
 import { drizzle } from "drizzle-orm/libsql"
 import { createClient } from "@libsql/client"
 import { UserType, user } from "./schema"
@@ -11,7 +11,10 @@ const client = createClient({
 
 export const db = drizzle(client, { schema })
 
-export const getUsers = () => db.query.user.findMany()
+export const getUsers = () =>
+  db.query.user.findMany({
+    orderBy: (users, { desc }) => [desc(users.createdAt)],
+  })
 
 export const insertUser = async (_user: UserType) => {
   return db.insert(user).values(_user).returning()

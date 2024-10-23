@@ -1,4 +1,4 @@
-import { Fragment, Suspense, type JSX } from "react"
+import { Fragment, ReactElement, Suspense, type JSX } from "react"
 import ErrorComponent from "../errors/error"
 import {
   ErrorBoundary as NextErrorBoundary,
@@ -9,7 +9,7 @@ import Promise from "./promise"
 
 export type Props<T> = {
   data: Promise<T>
-  children: (result: T) => JSX.Element
+  children: (result: T) => JSX.Element | JSX.Element[] | ReactElement<any, any>
   sleep?: number
   name?: string
   fallback?: string | React.ReactNode

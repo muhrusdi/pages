@@ -1,6 +1,5 @@
 import { pending } from "@/utils"
 import { Props } from "./await"
-import { setTimeout } from "timers/promises"
 
 const Promise = async <T,>({ children, data, sleep }: Props<T>) => {
   if (sleep) {
