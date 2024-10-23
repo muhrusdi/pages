@@ -1,6 +1,6 @@
 "use client"
 import { Input } from "@/components/forms/input"
-import { startTransition, useActionState } from "react"
+import { startTransition, useActionState, useTransition } from "react"
 import { createUserForm } from "./actions"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { schema } from "./zod"
@@ -9,14 +9,15 @@ import { z } from "zod"
 import { Select } from "@/components/forms/select"
 
 const FormPage = () => {
-  const [, createUser, isPending] = useActionState(createUserForm, null)
+  const [isPending, startTransition] = useTransition()
   const methods = useForm<z.infer<typeof schema>>({
     resolver: zodResolver(schema),
   })
 
   const onCreateUser: SubmitHandler<z.infer<typeof schema>> = async data => {
     startTransition(async () => {
-      createUser(data)
+      await createUserForm(data)
+      methods.reset()
     })
   }
 

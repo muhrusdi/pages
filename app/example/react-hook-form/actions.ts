@@ -1,16 +1,11 @@
 "use server"
 
 import { insertUser } from "@/drizzle/db"
-import { schema, RoleSchema, ActionState } from "./zod"
+import { schema, RoleSchema } from "./zod"
 import { z } from "zod"
-import { FieldErrors } from "react-hook-form"
-import { UserType } from "@/drizzle/schema"
 import { revalidatePath } from "next/cache"
 
-export const createUserForm = async (
-  prev: any,
-  formData: z.infer<typeof schema>,
-) => {
+export const createUserForm = async (formData: z.infer<typeof schema>) => {
   const validatedFields = schema.safeParse(formData)
 
   if (!validatedFields.success) {

@@ -2,12 +2,7 @@
 import { UseFormHook } from "@/types"
 import { usePathname, useSearchParams } from "next/navigation"
 import { useRouter } from "next/navigation"
-import {
-  SyntheticEvent,
-  useActionState,
-  useCallback,
-  useTransition,
-} from "react"
+import { SyntheticEvent, useActionState, useCallback } from "react"
 
 export function useFilterSearch() {
   const router = useRouter()
