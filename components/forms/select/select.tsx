@@ -1,14 +1,14 @@
 "use client"
-import { InputHTMLAttributes } from "react"
+import { SelectHTMLAttributes } from "react"
 import { Controller, useFormContext } from "react-hook-form"
-import Input from "."
+import Select from "."
 
 type Props = {
   name: string
   errors?: Record<string, any>
-} & InputHTMLAttributes<HTMLInputElement>
+} & SelectHTMLAttributes<HTMLSelectElement>
 
-export const FormInput: React.FC<Props> = ({ required, errors, ...props }) => {
+export const FormSelect: React.FC<Props> = ({ required, errors, ...props }) => {
   const form = useFormContext()
   const error = (form.formState.errors || errors)[props.name]
   const errorMessage = error?.message as string
@@ -17,13 +17,14 @@ export const FormInput: React.FC<Props> = ({ required, errors, ...props }) => {
     <>
       <Controller
         render={({ field }) => {
-          return <Input {...field} />
+          return <Select {...field} />
         }}
         rules={{ required }}
         control={form.control}
         {...props}
       />
-      {errorMessage ? <div className="text-red-500">{errorMessage}</div> : null}
+
+      <div>{errorMessage}</div>
     </>
   )
 }

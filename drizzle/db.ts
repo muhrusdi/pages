@@ -13,6 +13,7 @@ export const db = drizzle(client, { schema })
 
 export const getUsers = () =>
   db.query.user.findMany({
+    limit: 12,
     orderBy: (users, { desc }) => [desc(users.createdAt)],
   })
 

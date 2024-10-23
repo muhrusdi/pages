@@ -1,3 +1,4 @@
+import { FieldError, FieldErrors } from "react-hook-form"
 import { z } from "zod"
 
 export const RoleSchema = z.union([z.literal("admin"), z.literal("customer")])
@@ -7,10 +8,12 @@ export const schema = z.object({
   email: z.string().email(),
   password: z.string().min(5),
   role: RoleSchema,
+  id: z.string().nullish(),
+  createdAt: z.string().nullish(),
+  updatedAt: z.string().nullish(),
 })
 
 export type ActionState = {
-  error?: z.infer<typeof schema>
-  data?: Record<string, any>
-  [key: string]: any
+  error?: FieldErrors
+  data?: z.infer<typeof schema>
 }

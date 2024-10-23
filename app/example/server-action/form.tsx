@@ -5,25 +5,32 @@ import { createUser } from "./actions"
 import { LoadingContext } from "@/app/providers"
 import Form from "next/form"
 import { useFormStatus } from "react-dom"
-
-const Button = () => {
-  const { pending } = useFormStatus()
-  return <button>{pending ? "Loading..." : "Submit"}</button>
-}
+import { z } from "zod"
+import { ActionState, schema } from "./zod"
 
 const FormPage = () => {
-  const [data, createUserAction, isPending] = useActionState(createUser, null)
+  const [data, createUserAction, isPending] = useActionState<
+    ActionState | null,
+    FormData
+  >(createUser, null)
 
-  const handleCreateUser = async (formData: FormData) => {
-    createUserAction(formData)
-  }
   return (
-    <Form action={handleCreateUser}>
+    <form>
       <div>
-        <Input name="name" placeholder="Full name" error={data?.error} />
+        <Input
+          name="name"
+          placeholder="Full name"
+          defaultValue={data?.data?.name}
+          error={data?.error}
+        />
       </div>
       <div>
-        <Input name="email" placeholder="Email" error={data?.error} />
+        <Input
+          name="email"
+          placeholder="Email"
+          defaultValue={data?.data?.email}
+          error={data?.error}
+        />
       </div>
       <div>
         <Input name="password" placeholder="Password" error={data?.error} />
@@ -37,9 +44,11 @@ const FormPage = () => {
         <p className="text-red-500">{data?.error?.role}</p>
       </div>
       <div>
-        <Button />
+        <button type="submit" formAction={createUserAction}>
+          {isPending ? "Loading..." : "Submit"}
+        </button>
       </div>
-    </Form>
+    </form>
   )
 }
 
