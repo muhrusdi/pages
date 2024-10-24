@@ -2,7 +2,7 @@ const Footer = () => {
   return (
     <footer>
       <div className="container">
-        <div className="text-center py-8">
+        <div className="text-center pt-8 pb-24">
           <span>
             {new Date().getFullYear()} Made with{" "}
             <span className="text-pink-500 font-sans text-lg">♥</span> -

@@ -18,7 +18,7 @@ const DEFAULT_MAGNIFICATION = 60
 const DEFAULT_DISTANCE = 140
 
 const dockVariants = cva(
-  "mx-auto w-max mt-8 h-[58px] p-2 flex items-end gap-2 rounded-2xl border"
+  "mx-auto w-max mt-8 h-[58px] p-2 flex items-center gap-2 rounded-2xl border"
 )
 
 const Dock = React.forwardRef<HTMLDivElement, DockProps>(
@@ -45,13 +45,21 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
     }
 
     return (
-      <motion.div
-        ref={ref}
-        {...props}
-  
-      >
-        {renderChildren()}
-      </motion.div>
+      <div className={cn(
+        dockVariants({ className }),
+        className,
+        "backdrop-blur bg-gray-950/40 border-gray-700"
+      )}>
+        <motion.div
+          ref={ref}
+          onHoverStart={e => mouseX.set(e.pageX)}
+          onHoverEnd={() => mouseX.set(Infinity)}
+          style={{display: "flex", justifyContent: "center"}}
+          {...props}
+        >
+          {renderChildren()}
+        </motion.div>
+      </div>
     )
   }
 )
@@ -100,7 +108,7 @@ const DockIcon = ({
   return (
     <motion.div
       ref={ref}
-      style={{ width }}
+      style={{ display: "flex", width }}
       {...props}
     >
       {children}
