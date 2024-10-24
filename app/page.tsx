@@ -10,7 +10,7 @@ type Props = {
   searchParams: SearchParamsType<{ sort_by: string; page: string }>
 }
 
-export const runtime = 'edge';
+export const runtime = "edge";
 
 const Home = async () => {
   return (
@@ -21,7 +21,7 @@ const Home = async () => {
           <p>
             As a Frontend Engineer, I have successfully taken multiple projects
             from scratch to production. Currently, I work mostly with
-            Typescript, React, Vuejs, and GraphQL. I have over {totalOfExper()}+
+            Typescript, React, Vuejs. I have over {totalOfExper()}+
             years of experience in web development.
           </p>
         </Section>
