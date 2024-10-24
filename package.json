@@ -15,11 +15,13 @@
   "dependencies": {
     "@conform-to/react": "^1.2.2",
     "@conform-to/zod": "^1.2.2",
+    "@heroicons/react": "^2.1.5",
     "@hookform/resolvers": "^3.9.0",
     "@libsql/client": "^0.14.0",
     "@tanstack/react-query": "^5.59.15",
     "autoprefixer": "^10.4.20",
     "axios": "^1.7.7",
+    "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
     "drizzle-kit": "^0.26.2",
@@ -38,9 +40,9 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@cloudflare/next-on-pages": "^1.8.6",
     "@next/env": "15.0.1",
     "@types/node": "22.7.8",
-    "@cloudflare/next-on-pages": "^1.8.6",
     "@types/numeral": "^2.0.5",
     "@types/react": "npm:types-react@19.0.0-rc.1",
     "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",

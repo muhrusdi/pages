@@ -1,4 +1,3 @@
-import type { NextPage } from "next"
 import { Header } from "@/components/header"
 import { Section } from "@/components/section"
 import { CompanyItem } from "@/components/company-item"
@@ -11,7 +10,7 @@ type Props = {
   searchParams: SearchParamsType<{ sort_by: string; page: string }>
 }
 
-const Home = async ({ searchParams }: Props) => {
+const Home = async () => {
   return (
     <div>
       <Header />
