@@ -10,6 +10,8 @@ type Props = {
   searchParams: SearchParamsType<{ sort_by: string; page: string }>
 }
 
+export const runtime = 'edge';
+
 const Home = async () => {
   return (
     <div>
