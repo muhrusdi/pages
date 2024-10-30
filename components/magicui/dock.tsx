@@ -48,7 +48,7 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
       <div className={cn(
         dockVariants({ className }),
         className,
-        "backdrop-blur bg-gray-950/40 border-gray-700"
+        "backdrop-blur bg-gray-950/40 border-gray-700 [&>div]:space-x-2"
       )}>
         <motion.div
           ref={ref}
