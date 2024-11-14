@@ -1,4 +1,3 @@
-import { GiftTopIcon } from "@heroicons/react/24/outline"
 import { DockIcon } from "./dock"
 import { GithubIcon, InstagramIcon, LinkedinIcon, XIcon } from "../utils"
 
@@ -10,7 +9,7 @@ const DockIcons = () => {
           href="https://github.com/muhrusdi"
           rel="noopener"
           target="_blank"
-          className="w-full h-full flex justify-center items-center"
+          className="flex h-full w-full items-center justify-center"
           title="Github"
         >
           <GithubIcon />
@@ -21,7 +20,7 @@ const DockIcons = () => {
           href="https://www.instagram.com/muhrusdev"
           rel="noopener"
           target="_blank"
-          className="w-full h-full flex justify-center items-center"
+          className="flex h-full w-full items-center justify-center"
           title="Instagram"
         >
           <InstagramIcon />
@@ -32,7 +31,7 @@ const DockIcons = () => {
           href="https://www.linkedin.com/in/muhrusdi/"
           rel="noopener"
           target="_blank"
-          className="w-full h-full flex justify-center items-center"
+          className="flex h-full w-full items-center justify-center"
           title="Linkedin"
         >
           <LinkedinIcon />
@@ -43,7 +42,7 @@ const DockIcons = () => {
           href="https://x.com/muhrusdev"
           rel="noopener"
           target="_blank"
-          className="w-full h-full flex justify-center items-center"
+          className="flex h-full w-full items-center justify-center"
           title="X"
         >
           <XIcon />

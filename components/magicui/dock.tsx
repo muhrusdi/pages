@@ -2,10 +2,8 @@
 
 import React, { PropsWithChildren, useRef } from "react"
 import { cva, type VariantProps } from "class-variance-authority"
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion"
+import { motion, useMotionValue, useSpring, useTransform } from "motion/react"
 import { cn } from "@/utils"
-import clsx from "clsx"
-
 
 export interface DockProps extends VariantProps<typeof dockVariants> {
   className?: string
@@ -18,7 +16,7 @@ const DEFAULT_MAGNIFICATION = 60
 const DEFAULT_DISTANCE = 140
 
 const dockVariants = cva(
-  "mx-auto w-max mt-8 h-[58px] p-2 flex items-center gap-2 rounded-2xl border"
+  "mx-auto w-max mt-8 h-[58px] p-2 flex items-center gap-2 rounded-2xl border",
 )
 
 const Dock = React.forwardRef<HTMLDivElement, DockProps>(
@@ -30,7 +28,7 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
       distance = DEFAULT_DISTANCE,
       ...props
     },
-    ref
+    ref,
   ) => {
     const mouseX = useMotionValue(Infinity)
 
@@ -45,23 +43,25 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
     }
 
     return (
-      <div className={cn(
-        dockVariants({ className }),
-        className,
-        "backdrop-blur bg-gray-950/40 border-gray-700 [&>div]:space-x-2"
-      )}>
+      <div
+        className={cn(
+          dockVariants({ className }),
+          className,
+          "border-gray-700 bg-gray-950/40 backdrop-blur [&>div]:space-x-2",
+        )}
+      >
         <motion.div
           ref={ref}
           onHoverStart={e => mouseX.set(e.pageX)}
           onHoverEnd={() => mouseX.set(Infinity)}
-          style={{display: "flex", justifyContent: "center"}}
+          style={{ display: "flex", justifyContent: "center" }}
           {...props}
         >
           {renderChildren()}
         </motion.div>
       </div>
     )
-  }
+  },
 )
 
 Dock.displayName = "Dock"
@@ -96,7 +96,7 @@ const DockIcon = ({
   let widthSync = useTransform(
     distanceCalc,
     [-distance, 0, distance],
-    [40, magnification, 40]
+    [40, magnification, 40],
   )
 
   let width = useSpring(widthSync, {
@@ -106,11 +106,7 @@ const DockIcon = ({
   })
 
   return (
-    <motion.div
-      ref={ref}
-      style={{ display: "flex", width }}
-      {...props}
-    >
+    <motion.div ref={ref} style={{ display: "flex", width }} {...props}>
       {children}
     </motion.div>
   )
