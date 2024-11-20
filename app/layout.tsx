@@ -22,11 +22,11 @@ const RootLayout: React.FC<RootLayoutType> = ({ children }) => {
         <Providers>
           <div className="container max-w-2xl">
             {children}
-            <div className="fixed bottom-4 left-1/2 -translate-x-1/2">
+            {/* <div className="fixed bottom-4 left-1/2 -translate-x-1/2">
               <Dock>
                 <DockIcons />
               </Dock>
-            </div>
+            </div> */}
             <Footer />
           </div>
         </Providers>
