@@ -76,35 +76,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@conform-to/dom@npm:1.2.2":
-  version: 1.2.2
-  resolution: "@conform-to/dom@npm:1.2.2"
-  checksum: 10c0/87912486e53c06a27e961353436726fe5ab8246265bc5c4bee8ab4143b2e66244caeb47fe1d1eb4ca6ade8333ddcbd16378d255272f5ea2a464a708d846a4cbf
-  languageName: node
-  linkType: hard
-
-"@conform-to/react@npm:^1.2.2":
-  version: 1.2.2
-  resolution: "@conform-to/react@npm:1.2.2"
-  dependencies:
-    "@conform-to/dom": "npm:1.2.2"
-  peerDependencies:
-    react: ">=18"
-  checksum: 10c0/da277eb4ef888ee44d342e45c4ac5243a77c5427003b35b444b6c0b534b1950749ef1333bbd756349aa3bbf3eea8d19b5596d500b93198b15fc93b1e797ed0c8
-  languageName: node
-  linkType: hard
-
-"@conform-to/zod@npm:^1.2.2":
-  version: 1.2.2
-  resolution: "@conform-to/zod@npm:1.2.2"
-  dependencies:
-    "@conform-to/dom": "npm:1.2.2"
-  peerDependencies:
-    zod: ^3.21.0
-  checksum: 10c0/113594da03271bcf2814183b5fed9e84563cbd2cd64f99b73a4d2156eee8600e47d951809dac7776a0db28fc086f5e923e53d510ea8302952dba1d80c2e9d852
-  languageName: node
-  linkType: hard
-
 "@cspotcode/source-map-support@npm:0.8.1":
   version: 0.8.1
   resolution: "@cspotcode/source-map-support@npm:0.8.1"
@@ -566,15 +537,6 @@ __metadata:
   version: 2.1.1
   resolution: "@fastify/busboy@npm:2.1.1"
   checksum: 10c0/6f8027a8cba7f8f7b736718b013f5a38c0476eea67034c94a0d3c375e2b114366ad4419e6a6fa7ffc2ef9c6d3e0435d76dd584a7a1cbac23962fda7650b579e3
-  languageName: node
-  linkType: hard
-
-"@heroicons/react@npm:^2.1.5":
-  version: 2.1.5
-  resolution: "@heroicons/react@npm:2.1.5"
-  peerDependencies:
-    react: ">= 16"
-  checksum: 10c0/d0ca2d017545da103ed8e90e9e6679d46329c1b09bb4c06ff509b0fe7cfbba7034409ea24b0469fabd2a0a9b144e8e717f58de924615e0b0a1bed7b51fcc5940
   languageName: node
   linkType: hard
 
@@ -4353,6 +4315,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lucide-react@npm:^0.460.0":
+  version: 0.460.0
+  resolution: "lucide-react@npm:0.460.0"
+  peerDependencies:
+    react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0-rc
+  checksum: 10c0/7f54cbc1ab88276f79cfb8c3ac440de9db013d76e386abc68deda4b04ea51e826f1ad5df22983619b970adff7430d892d4e990dbdf6eceb7243eb2e9a2762704
+  languageName: node
+  linkType: hard
+
 "make-fetch-happen@npm:^13.0.0":
   version: 13.0.1
   resolution: "make-fetch-happen@npm:13.0.1"
@@ -5249,15 +5220,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-icons@npm:^5.3.0":
-  version: 5.3.0
-  resolution: "react-icons@npm:5.3.0"
-  peerDependencies:
-    react: "*"
-  checksum: 10c0/a53af0de558f0e2bacfbafc973aa8ca1e6a429006a2f83d70becad5be431726a691e096336c95949bb0d967587b145264c5046d2bc1518969dbae731855d0712
-  languageName: node
-  linkType: hard
-
 "react-is@npm:^16.13.1":
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
@@ -5497,9 +5459,6 @@ __metadata:
   resolution: "sen@workspace:."
   dependencies:
     "@cloudflare/next-on-pages": "npm:^1.13.5"
-    "@conform-to/react": "npm:^1.2.2"
-    "@conform-to/zod": "npm:^1.2.2"
-    "@heroicons/react": "npm:^2.1.5"
     "@hookform/resolvers": "npm:^3.9.1"
     "@libsql/client": "npm:^0.14.0"
     "@next/env": "npm:15.0.3"
@@ -5517,6 +5476,7 @@ __metadata:
     drizzle-orm: "npm:^0.36.1"
     eslint: "npm:9.14.0"
     eslint-config-next: "npm:15.0.3"
+    lucide-react: "npm:^0.460.0"
     motion: "npm:^11.11.14"
     next: "npm:15.0.3"
     numeral: "npm:^2.0.6"
@@ -5526,7 +5486,6 @@ __metadata:
     react: "npm:19.0.0-rc-69d4b800-20241021"
     react-dom: "npm:19.0.0-rc-69d4b800-20241021"
     react-hook-form: "npm:^7.53.2"
-    react-icons: "npm:^5.3.0"
     sass: "npm:^1.80.6"
     tailwind-merge: "npm:^2.5.4"
     tailwindcss: "npm:^3.4.14"

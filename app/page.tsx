@@ -10,7 +10,7 @@ type Props = {
   searchParams: SearchParamsType<{ sort_by: string; page: string }>
 }
 
-export const runtime = "edge";
+export const runtime = "edge"
 
 const Home = async () => {
   return (
@@ -21,12 +21,12 @@ const Home = async () => {
           <p>
             As a Frontend Engineer, I have successfully taken multiple projects
             from scratch to production. Currently, I work mostly with
-            Typescript, React, Vuejs. I have over {totalOfExper()}+
-            years of experience in web development.
+            Typescript, React, Vuejs. I have over {totalOfExper()}+ years of
+            experience in web development.
           </p>
         </Section>
         <Section title="Education">
-          <div className="flex sm:flex-row flex-col-reverse justify-between">
+          <div className="flex flex-col-reverse justify-between sm:flex-row">
             <div>
               <h4>State Polytechnic of Ujung Pandang</h4>
               <p>Computer and Network Engineering</p>
@@ -42,7 +42,7 @@ const Home = async () => {
               <CompanyItem
                 name="PT. Privy Identitas Digital"
                 role="Frontend Engineer"
-                year="Currently"
+                year="2021 - Currently"
               />
             </li>
             <li>
@@ -79,7 +79,7 @@ const Home = async () => {
           </ul>
         </Section>
         <Section title="Work">
-          <ul className="grid sm:grid-cols-2 grid-cols-1 gap-3">
+          <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
             {projects.map((item, i) => (
               <li key={i}>
                 <ProjectItem

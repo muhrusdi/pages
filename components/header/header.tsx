@@ -1,16 +1,15 @@
-import { EnvelopeIcon, GlobeAltIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
-import { WIP } from "../utils"
+import { Globe, Mail } from "lucide-react"
 
 const Header = () => {
   return (
     <header className="py-10">
-      <div className="flex justify-between items-center">
+      <div className="flex items-center justify-between">
         <div className="w-2/3">
           <div>
             <div className="flex items-center space-x-3">
               <div>
-                <h1 className="font-bold text-2xl">Muhammad Rusdi</h1>
+                <h1 className="text-2xl font-bold">Muhammad Rusdi</h1>
               </div>
               {/* <span>
                 <WIP />
@@ -24,7 +23,7 @@ const Header = () => {
               <li>
                 <a className="flex items-center space-x-2" href="#">
                   <div>
-                    <GlobeAltIcon className="w-4" />
+                    <Globe className="w-4" />
                   </div>
                   <div>
                     <p>Yogyakarta, Indonesia</p>
@@ -38,20 +37,20 @@ const Header = () => {
           <Image
             src="https://res.cloudinary.com/muhrusdi/image/upload/v1706784855/muhrusdev.jpg"
             alt=""
-            className="w-28 h-28 rounded-xl"
+            className="h-28 w-28 rounded-xl"
             width={100}
             height={100}
           />
         </div>
       </div>
-      <ul className="mt-3 flex space-x-2 [&>li>a>svg]:w-4 [&>li>a>svg]:h-4">
+      <ul className="mt-3 flex space-x-2 [&>li>a>svg]:h-4 [&>li>a>svg]:w-4">
         <li>
           <a
             href="mailto:murusdev@gmail.com"
             title="Email"
-            className="flex items-center justify-center w-7 h-7 border border-gray-600 rounded-md"
+            className="flex h-7 w-7 items-center justify-center rounded-md border border-gray-600"
           >
-            <EnvelopeIcon />
+            <Mail />
           </a>
         </li>
         <li>
@@ -60,7 +59,7 @@ const Header = () => {
             rel="noopener"
             target="_blank"
             title="X"
-            className="flex [&>svg]:fill-white items-center justify-center w-7 h-7 border border-gray-600 rounded-md"
+            className="flex h-7 w-7 items-center justify-center rounded-md border border-gray-600 [&>svg]:fill-white"
           >
             <svg
               role="img"
@@ -78,7 +77,7 @@ const Header = () => {
             rel="noopener"
             target="_blank"
             title="Github"
-            className="flex [&>svg]:fill-white items-center justify-center w-7 h-7 border border-gray-600 rounded-md"
+            className="flex h-7 w-7 items-center justify-center rounded-md border border-gray-600 [&>svg]:fill-white"
           >
             <svg
               role="img"
@@ -96,7 +95,7 @@ const Header = () => {
             rel="noopener"
             title="Linkedin"
             target="_blank"
-            className="flex [&>svg]:fill-white items-center justify-center w-7 h-7 border border-gray-600 rounded-md"
+            className="flex h-7 w-7 items-center justify-center rounded-md border border-gray-600 [&>svg]:fill-white"
           >
             <svg
               role="img"
@@ -114,7 +113,7 @@ const Header = () => {
             rel="noopener"
             target="_blank"
             title="Instagram"
-            className="flex [&>svg]:fill-white items-center justify-center w-7 h-7 border border-gray-600 rounded-md"
+            className="flex h-7 w-7 items-center justify-center rounded-md border border-gray-600 [&>svg]:fill-white"
           >
             <svg
               role="img"
