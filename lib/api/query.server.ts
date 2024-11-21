@@ -1,79 +1,55 @@
-import {
-  DefaultError,
-  QueryClient,
-  useMutation as mutation,
-  useQuery as query,
-} from "@tanstack/react-query"
-import {
-  KeyofPathsKeyType,
-  MutationParamsType,
-  ParamsType,
-  PathsKeyType,
-} from "@/types/api"
-import { APIs } from "@/utils/endpoints"
 import { generateParams, generateQueries } from "@/utils"
-import { axios, axiosQuery } from "./axios"
+import { APIs } from "@/utils/endpoints"
+import { axios } from "./axios"
+import { cookies } from "next/headers"
+import { AxiosHeaders, AxiosRequestConfig } from "axios"
 
-export const invalidateQueries = (
-  keys: KeyofPathsKeyType[],
-  client: QueryClient,
-) => {
-  return client.invalidateQueries({ queryKey: keys })
+type Options = {
+  params?: Array<string | number>
+  query?: Record<string, any>
+  options?: RequestInit
+} & AxiosRequestConfig<string | FormData>
+
+export type PathsType = typeof APIs
+
+export type PathsKeyType = {
+  [K in keyof PathsType]: string
 }
 
-export const useQuery = <
-  TQueryFnData = unknown,
-  TError = DefaultError,
-  TData = TQueryFnData,
->(
+export const getData = async <TData>(
   path: keyof PathsKeyType,
-  params?: ParamsType<TQueryFnData, TError, TData>,
-  queryClient?: QueryClient,
+  options?: Pick<Options, "options" | "params" | "query">,
 ) => {
-  const paramsString = generateParams(params?.variables?.params)
-  const queriesString = generateQueries(params?.variables?.query)
+  const paramsString = generateParams(options?.params)
+  const queriesString = generateQueries(options?.query)
 
-  return query<TQueryFnData, TError, TData>(
-    {
-      queryKey: [
-        path,
-        { ...params?.variables?.query, ...params?.variables?.params },
-      ],
-      queryFn: async ({ signal }) => {
-        return axiosQuery(APIs[path] + paramsString + queriesString, {
-          signal,
-          headers: params?.headers,
-        })
-      },
-      ...params?.options,
-    },
-    queryClient,
-  )
+  const { get } = await cookies()
+  const accessToken = get("accessToken")?.value
+
+  const headers: AxiosHeaders = new AxiosHeaders()
+
+  if (accessToken) {
+    headers.set("Authorization", `Bearer ${accessToken}`)
+  }
+
+  const res = axios(APIs[path] + paramsString + queriesString, {
+    headers,
+  }).then(d => d.data)
+
+  return res as TData
 }
 
-export const useMutation = <
-  TData = unknown,
-  TError = DefaultError,
-  TVariables = void,
-  TContext = unknown,
->(
+export const postData = async <TData>(
   path: keyof PathsKeyType,
-  params?: MutationParamsType<TData, TError, TVariables, TContext>,
+  options?: Options,
 ) => {
-  const paramsString = generateParams(params?.variables?.params)
-  const queriesString = generateQueries(params?.variables?.query)
+  const paramsString = generateParams(options?.params)
 
-  return mutation<TData, TError, TVariables, TContext>({
-    mutationFn: async formData => {
-      const res = await axios({
-        url: APIs[path] + paramsString + queriesString,
-        data: formData,
-        method: params?.method || "post",
-        headers: params?.headers,
-      }).then(d => d.data)
+  const res = await axios({
+    url: APIs[path] + paramsString,
+    method: "post",
+    ...options,
+  }).then(d => d.data)
 
-      return res
-    },
-    ...params?.options,
-  })
+  return res as TData
 }

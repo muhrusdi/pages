@@ -21,7 +21,7 @@ const nextConfig: NextConfig = {
       fullUrl: true,
     },
   },
-  pageExtensions: ["mdx", "tsx"],
+  pageExtensions: ["mdx", "ts", "tsx"],
   images: {
     remotePatterns: [
       {

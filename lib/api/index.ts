@@ -1,2 +1,2 @@
-export { useQuery, useMutation } from "./query.server"
-export { getData } from "./query.client"
+export { useQuery, useMutation } from "./query.client"
+export { getData } from "./query.server"

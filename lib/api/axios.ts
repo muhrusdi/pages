@@ -4,10 +4,9 @@ axios.defaults.baseURL = process.env.HOST_URL
 
 axios.interceptors.request.use(
   config => {
-    if (config?.headers?.get("x-request-id") === "basic-location") {
-    } else {
-      config.baseURL = "/"
-    }
+    // if (config?.headers?.get("x-request-id") === "basic-location") {
+    // } else {
+    // }
 
     if (config?.headers?.get("x-request-id") === "auth") {
       config.auth = {
