@@ -1,10 +1,15 @@
 import fs from "fs"
 import path from "path"
 import { compileMDX } from "next-mdx-remote/rsc"
+import { SearchParamsType } from "@/lib/definitions"
 
 export const experimental_ppr = true
 
-const DetailBlog = async ({ params }: { params: { slug: string } }) => {
+const DetailBlog = async ({
+  params,
+}: {
+  params: SearchParamsType<{ slug: string }>
+}) => {
   const { slug } = await params
   const blogDirectory = path.join("app/blogs/content")
 
