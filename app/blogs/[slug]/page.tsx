@@ -34,7 +34,7 @@ export const generateStaticParams = async () => {
   const blogDirectory = path.join("app/blogs/content")
   const postFilePaths = fs.readdirSync(blogDirectory)
 
-  return postFilePaths.map(f => ({ slug: f }))
+  return postFilePaths.map(f => ({ slug: f.replace(".mdx", "") }))
 }
 
 export default DetailBlog
