@@ -5,22 +5,17 @@ import { Await } from "@/components/await"
 export const experimental_ppr = true
 
 const Blogs = async () => {
+  const data = await getData<{ blogs: { slug: string; title: string }[] }>(
+    "/contents",
+  )
   return (
     <div>
       <ul>
-        <Await
-          data={getData<{ blogs: { slug: string; title: string }[] }>(
-            "/contents",
-          )}
-        >
-          {({ blogs }) =>
-            blogs?.map(item => (
-              <li key={item.slug}>
-                <Link href={item.slug}>{item.title}</Link>
-              </li>
-            ))
-          }
-        </Await>
+        {data.blogs?.map(item => (
+          <li key={item.slug}>
+            <Link href={item.slug}>{item.title}</Link>
+          </li>
+        ))}
       </ul>
     </div>
   )
