@@ -42,7 +42,7 @@ const Home = async () => {
               <CompanyItem
                 name="PT. Privy Identitas Digital"
                 role="Frontend Engineer"
-                year="2021 - Currently"
+                year="2022 - 2024"
               />
             </li>
             <li>

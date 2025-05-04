@@ -13,9 +13,6 @@ const withMDX = createMDX({
 
 const nextConfig: NextConfig = {
   transpilePackages: ["next-mdx-remote"],
-  experimental: {
-    ppr: "incremental",
-  },
   logging: {
     fetches: {
       fullUrl: true,
