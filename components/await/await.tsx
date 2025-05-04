@@ -19,7 +19,7 @@ export type Props<T> = {
 const Await = <T,>({
   fallback = "Loading...",
   name,
-  errorComponent = ErrorComponent,
+  errorComponent = ErrorComponent as ErrorComponentType,
   ...props
 }: Props<T>) => {
   const ErrorBoundary = errorComponent ? NextErrorBoundary : Fragment
