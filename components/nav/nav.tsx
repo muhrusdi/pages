@@ -47,7 +47,31 @@ const Navigation = () => {
             </Link>
           </li>
           <li>
-            <ul className="relative flex items-center space-x-2">c</ul>
+            <ul className="relative flex items-center space-x-2">
+              <AnimatePresence initial={false} mode="popLayout">
+                {isHovered ? (
+                  <motion.li
+                    key="back"
+                    initial="hidden"
+                    animate="show"
+                    exit="exit"
+                    variants={menuItemAnimate}
+                  >
+                    <span>Back</span>
+                  </motion.li>
+                ) : (
+                  <motion.li
+                    key="work"
+                    initial="hidden"
+                    animate="show"
+                    exit="exit"
+                    variants={menuItemAnimate}
+                  >
+                    <span>Work</span>
+                  </motion.li>
+                )}
+              </AnimatePresence>
+            </ul>
           </li>
         </motion.ul>
       </div>
