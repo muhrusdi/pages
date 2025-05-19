@@ -9,7 +9,7 @@
     "generate": "drizzle-kit generate",
     "migrate": "drizzle-kit migrate",
     "seed": "npx tsx drizzle/seed.ts",
-    "icon:generate": "npx @svgr/cli --out-dir assets/icons --ignore-existing --typescript -- assets/icons/svg --typescript",
+    "icon:generate": "npx @svgr/cli --out-dir assets/icons --ignore-existing --typescript --no-prettier --no-dimensions --filename-case kebab -- assets/icons/svg",
     "lint": "next lint"
   },
   "dependencies": {
