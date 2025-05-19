@@ -1,6 +1,6 @@
 "use client"
 
-import { BackArrow } from "@/assets/icons"
+import { BackArrow, BackArrow2 } from "@/assets/icons"
 import Link from "next/link"
 import { AnimatePresence, motion } from "motion/react"
 import { useState } from "react"
@@ -55,7 +55,7 @@ const Navigation = () => {
                 onMouseEnter={() => handleHover(true)}
                 onMouseLeave={() => handleHover(false)}
               >
-                <BackArrow height={20} className="[&>path]:fill-amber-500" />
+                <BackArrow2 height={20} className="[&>path]:fill-amber-500" />
               </Link>
             </li>
             {isHovered ? (
