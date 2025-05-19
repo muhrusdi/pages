@@ -5,7 +5,7 @@ import matter from "gray-matter"
 export const dynamic = "force-static"
 
 export const GET = async () => {
-  const blogDirectory = path.join("app/blogs/content")
+  const blogDirectory = path.join("app/(landing)/blog/content")
   const postFilePaths = fs.readdirSync(blogDirectory)
 
   const blogs = postFilePaths.map(f => {
