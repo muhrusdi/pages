@@ -61,3 +61,21 @@ export const totalOfExper = () => {
 
   return current - start
 }
+
+export const menuItemAnimate = {
+  hidden: { opacity: 0, y: -10 },
+  show: {
+    opacity: 1,
+    y: 0,
+  },
+  transition: {
+    delay: 0.2,
+    type: "spring",
+    visualDuration: 0.3,
+    bounce: 0.4,
+  },
+  exit: {
+    opacity: 0,
+    y: 10,
+  },
+}

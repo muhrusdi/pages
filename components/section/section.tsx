@@ -1,5 +1,9 @@
+"use client"
 import { ArrowRight } from "@/assets/icons"
 import Link from "next/link"
+import { AnimatePresence, motion } from "motion/react"
+import { useState } from "react"
+import { menuItemAnimate } from "@/utils"
 
 type Props = {
   children: React.ReactNode
@@ -8,16 +12,45 @@ type Props = {
 }
 
 const Section: React.FC<Props> = ({ children, title, actionLink }) => {
+  const [isHovered, setIsHovered] = useState(false)
   return (
     <div className="py-8">
-      <div className="flex items-center justify-between">
+      <div className="flex h-7 items-center justify-between">
         <div>
-          <h2 className="text-xl font-semibold">{title}</h2>
+          <AnimatePresence initial={false} mode="popLayout">
+            {isHovered ? (
+              <motion.h2
+                key="back"
+                initial="hidden"
+                animate="show"
+                exit="exit"
+                variants={menuItemAnimate}
+                className="text-xl font-semibold"
+              >
+                More
+              </motion.h2>
+            ) : (
+              <motion.h2
+                key="work"
+                initial="hidden"
+                animate="show"
+                exit="exit"
+                variants={menuItemAnimate}
+                className="text-xl font-semibold"
+              >
+                {title}
+              </motion.h2>
+            )}
+          </AnimatePresence>
         </div>
         {actionLink ? (
           <div>
             <div>
-              <Link href={actionLink}>
+              <Link
+                href={actionLink}
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+              >
                 <ArrowRight
                   className="[&>path]:fill-amber-500"
                   height={12}
