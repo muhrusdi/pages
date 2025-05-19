@@ -17,7 +17,7 @@ export const GET = async () => {
 
     return {
       title,
-      slug: "/blogs/" + fileName,
+      slug: "/blog/" + fileName,
     }
   })
 
