@@ -1,44 +1,33 @@
 "use client"
 
-import { BackArrow, BackArrow2 } from "@/assets/icons"
+import { BackArrow2 } from "@/assets/icons"
 import Link from "next/link"
 import { AnimatePresence, motion } from "motion/react"
 import { useState } from "react"
+import { usePathname } from "next/navigation"
+import { menuItemAnimate } from "@/utils"
+
+const navData = [
+  {
+    id: 1,
+    title: "Work",
+    link: "/work",
+  },
+  {
+    id: 2,
+    title: "Blog",
+    link: "/blog",
+  },
+  {
+    id: 3,
+    title: "Profile",
+    link: "/profile",
+  },
+]
 
 const Navigation = () => {
   const [isHovered, setIsHovered] = useState(false)
-
-  const backItemAnimate = {
-    hidden: { opacity: 0, y: -10 },
-    show: {
-      opacity: 1,
-      y: 0,
-    },
-    transition: {
-      staggerChildren: 0.07,
-      delayChildren: 0.2,
-    },
-    exit: {
-      opacity: 0,
-      y: -10,
-    },
-  }
-
-  const menuItemAnimate = {
-    hidden: { opacity: 0, y: -10 },
-    show: {
-      opacity: 1,
-      y: 0,
-    },
-    transition: {
-      staggerChildren: 0.07,
-      delayChildren: 0.2,
-    },
-    exit: {
-      opacity: 0,
-      y: -10,
-    },
-  }
+  const pathname = usePathname()
 
   const handleHover = (bool: boolean) => {
     setIsHovered(bool)
@@ -47,52 +36,31 @@ const Navigation = () => {
   return (
     <nav className="flex items-center justify-between py-6 text-sm text-white uppercase">
       <div>
-        <AnimatePresence>
-          <motion.ul className="flex items-center space-x-2">
-            <li>
-              <Link
-                href="/"
-                onMouseEnter={() => handleHover(true)}
-                onMouseLeave={() => handleHover(false)}
-              >
-                <BackArrow2 height={20} className="[&>path]:fill-amber-500" />
-              </Link>
-            </li>
-            {isHovered ? (
-              <motion.li
-                key="back"
-                initial="hidden"
-                animate="show"
-                exit="exit"
-                variants={backItemAnimate}
-              >
-                <span>Back</span>
-              </motion.li>
-            ) : (
-              <motion.li
-                key="work"
-                initial="hidden"
-                animate="show"
-                exit="exit"
-                variants={menuItemAnimate}
-              >
-                <span>Work</span>
-              </motion.li>
-            )}
-          </motion.ul>
-        </AnimatePresence>
+        <motion.ul className="flex items-center space-x-2">
+          <li>
+            <Link
+              href="/"
+              onMouseEnter={() => handleHover(true)}
+              onMouseLeave={() => handleHover(false)}
+            >
+              <BackArrow2 height={20} className="[&>path]:fill-amber-500" />
+            </Link>
+          </li>
+          <li>
+            <ul className="relative flex items-center space-x-2">c</ul>
+          </li>
+        </motion.ul>
       </div>
       <ul className="flex space-x-6 text-gray-400">
-        <li>
-          <a href="/work" className="hover:text-white">
-            Work
-          </a>
-        </li>
-        <li>
-          <a href="/blog" className="hover:text-white">
-            Blog
-          </a>
-        </li>
+        {navData.map(item =>
+          pathname !== item.link ? (
+            <li key={item.id}>
+              <Link href={item.link} key={item.id} className="hover:text-white">
+                {item.title}
+              </Link>
+            </li>
+          ) : null,
+        )}
       </ul>
     </nav>
   )
