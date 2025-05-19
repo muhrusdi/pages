@@ -3,7 +3,7 @@
 // import { compileMDX } from "next-mdx-remote/rsc"
 import { SearchParamsType } from "@/lib/definitions"
 
-// export const runtime = "edge"
+export const runtime = "edge"
 
 const DetailBlog = async ({
   params,
