@@ -1,6 +1,5 @@
 import Link from "next/link"
 import { getData } from "@/lib/api"
-import { Await } from "@/components/await"
 
 export const runtime = "edge"
 
@@ -9,10 +8,12 @@ const Blogs = async () => {
     "/contents",
   )
 
+  console.log("data", data)
+
   return (
     <div>
       <ul>
-        {data.blog?.map(item => (
+        {data?.blog?.map(item => (
           <li key={item.slug}>
             <Link href={item.slug}>{item.title}</Link>
           </li>
