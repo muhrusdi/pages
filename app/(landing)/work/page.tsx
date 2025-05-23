@@ -1,12 +1,9 @@
+import { Header } from "@/components/utils"
+
 const Works = () => {
   return (
     <div>
-      <div className="flex h-[300px] flex-col justify-center">
-        <div>
-          <h1 className="text-4xl font-bold">My Works</h1>
-          <p className="mt-4 text-lg">Here are some of my works.</p>
-        </div>
-      </div>
+      <Header title="My Works" description="Here are some of my blogs." />
       <ul>
         <li>
           <h2 className="text-2xl font-bold">Project 1</h2>

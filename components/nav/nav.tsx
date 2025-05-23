@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from "motion/react"
 import { useState } from "react"
 import { usePathname } from "next/navigation"
 import { menuItemAnimate } from "@/utils"
+import { HouseIcon } from "lucide-react"
 
 const navData = [
   {
@@ -20,14 +21,16 @@ const navData = [
   },
   {
     id: 3,
-    title: "Profile",
-    link: "/profile",
+    title: "About",
+    link: "/me",
   },
 ]
 
 const Navigation = () => {
   const [isHovered, setIsHovered] = useState(false)
   const pathname = usePathname()
+
+  const firstPath = pathname.split("/").filter(Boolean).splice(0, 1)
 
   const handleHover = (bool: boolean) => {
     setIsHovered(bool)
@@ -36,14 +39,23 @@ const Navigation = () => {
   return (
     <nav className="flex items-center justify-between py-6 text-sm text-white uppercase">
       <div>
-        <motion.ul className="flex items-center space-x-2">
-          <li>
+        <motion.ul className="flex items-center gap-3">
+          {/* <li>
             <Link
               href="/"
               onMouseEnter={() => handleHover(true)}
               onMouseLeave={() => handleHover(false)}
             >
               <BackArrow2 height={20} className="[&>path]:fill-amber-500" />
+            </Link>
+          </li> */}
+          <li>
+            <Link
+              href="/"
+              onMouseEnter={() => handleHover(true)}
+              onMouseLeave={() => handleHover(false)}
+            >
+              <HouseIcon size={18} />
             </Link>
           </li>
           <li>
@@ -57,7 +69,7 @@ const Navigation = () => {
                     exit="exit"
                     variants={menuItemAnimate}
                   >
-                    <span>Back</span>
+                    <span>Home</span>
                   </motion.li>
                 ) : (
                   <motion.li
@@ -67,9 +79,12 @@ const Navigation = () => {
                     exit="exit"
                     variants={menuItemAnimate}
                   >
-                    <span>
-                      {pathname.split("/").filter(Boolean).splice(0, 1)}
-                    </span>
+                    <Link
+                      href={"/" + firstPath}
+                      className="flex items-center gap-1"
+                    >
+                      <span>{firstPath}</span>
+                    </Link>
                   </motion.li>
                 )}
               </AnimatePresence>

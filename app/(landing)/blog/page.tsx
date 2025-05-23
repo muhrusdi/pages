@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { getData } from "@/lib/api"
+import { Header } from "@/components/utils"
 
 export const runtime = "edge"
 
@@ -10,6 +11,7 @@ const Blogs = async () => {
 
   return (
     <div>
+      <Header title="My Blogs" description="Here are some of my blogs." />
       <ul>
         {data?.blog?.map(item => (
           <li key={item.slug}>
