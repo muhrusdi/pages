@@ -9,8 +9,6 @@ const Blogs = async () => {
     "/contents",
   )
 
-  console.log(data)
-
   return (
     <div>
       <Header title="My Blogs" description="Here are some of my blogs." />
