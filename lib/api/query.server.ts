@@ -32,6 +32,8 @@ export const getData = async <TData>(
     headers.set("Authorization", `Bearer ${accessToken}`)
   }
 
+  console.log("API", APIs[path] + paramsString + queriesString)
+
   const res = axios(APIs[path] + paramsString + queriesString, {
     headers,
   }).then(d => d.data)

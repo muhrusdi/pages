@@ -67,7 +67,9 @@ const Navigation = () => {
                     exit="exit"
                     variants={menuItemAnimate}
                   >
-                    <span>Work</span>
+                    <span>
+                      {pathname.split("/").filter(Boolean).splice(0, 1)}
+                    </span>
                   </motion.li>
                 )}
               </AnimatePresence>
@@ -77,7 +79,7 @@ const Navigation = () => {
       </div>
       <ul className="flex space-x-6 text-gray-400">
         {navData.map(item =>
-          pathname !== item.link ? (
+          !pathname.startsWith(item.link) ? (
             <li key={item.id}>
               <Link href={item.link} key={item.id} className="hover:text-white">
                 {item.title}

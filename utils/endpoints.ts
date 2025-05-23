@@ -11,5 +11,5 @@ export const APIs = {
   "/review": `${PREFIX}/reviews`,
   "/movie/:id": `${PREFIX}/movie`,
   "/movies": "/api/movie",
-  "/contents": "/api/blogs",
+  "/contents": "/api/blog",
 }
