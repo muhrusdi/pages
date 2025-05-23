@@ -1,3 +1,19 @@
+type Props = {
+  title: string
+  description: string
+}
+
+export const Header = ({ title, description }: Props) => {
+  return (
+    <div className="flex h-[300px] flex-col justify-center">
+      <div>
+        <h1 className="text-4xl font-bold">{title}</h1>
+        <p className="mt-4 text-lg">{description}</p>
+      </div>
+    </div>
+  )
+}
+
 export const WIP = () => {
   return (
     <svg
