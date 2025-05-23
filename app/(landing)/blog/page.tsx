@@ -9,12 +9,14 @@ const Blogs = async () => {
     "/contents",
   )
 
+  console.log(data)
+
   return (
     <div>
       <Header title="My Blogs" description="Here are some of my blogs." />
       <ul>
-        {data?.blog?.map(item => (
-          <li key={item.slug}>
+        {data?.blog?.map((item, i) => (
+          <li key={i}>
             <Link href={item.slug}>{item.title}</Link>
           </li>
         ))}
