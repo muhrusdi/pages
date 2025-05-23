@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { Globe, Mail } from "lucide-react"
+import Link from "next/link"
 
 const Header = () => {
   return (
@@ -43,7 +44,7 @@ const Header = () => {
           />
         </div>
       </div>
-      <ul className="mt-3 flex space-x-2 [&>li>a>svg]:h-4 [&>li>a>svg]:w-4">
+      <ul className="mt-3 flex items-center space-x-2 [&>li>a>svg]:h-4 [&>li>a>svg]:w-4">
         <li>
           <a
             href="mailto:murusdev@gmail.com"
@@ -89,7 +90,7 @@ const Header = () => {
             </svg>
           </a>
         </li>
-        <li>
+        <li className="pr-2">
           <a
             href="https://www.linkedin.com/in/muhrusdi/"
             rel="noopener"
@@ -125,6 +126,19 @@ const Header = () => {
             </svg>
           </a>
         </li> */}
+        <li>
+          <ul className="flex items-center space-x-5 border-l border-gray-800 px-4 font-mono text-gray-400 [&>li>a]:hover:text-yellow-500">
+            <li>
+              <Link href="/work">work</Link>
+            </li>
+            <li>
+              <Link href="/blog">blog</Link>
+            </li>
+            <li>
+              <Link href="/me">me</Link>
+            </li>
+          </ul>
+        </li>
       </ul>
     </header>
   )
