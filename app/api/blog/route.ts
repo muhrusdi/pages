@@ -1,13 +1,8 @@
 import path from "path"
 import fs from "fs"
+import { MetadataType } from "@/types"
 
 export const dynamic = "force-static"
-
-type MetadataType = {
-  title: string
-  description: string
-  date?: string
-}
 
 export const GET = async () => {
   const blogDirectory = path.join("app/(landing)/blog")
@@ -34,9 +29,7 @@ export const GET = async () => {
         })
 
         return {
-          title: metadata.title,
-          description: metadata.description,
-          date: metadata?.date,
+          ...metadata,
           slug: "/blog/" + fileName,
         }
       }

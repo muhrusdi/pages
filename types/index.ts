@@ -31,3 +31,13 @@ export type ProjectItemType = {
   description?: string
   stacks?: string[]
 }
+
+export type MetadataType = {
+  title: string
+  description: string
+  date?: string
+  tags?: string[] | string
+  readingTime?: string
+  author?: string
+  slug: string
+}

@@ -4,8 +4,6 @@ import clsx from "clsx"
 import "./globals.css"
 import { Providers } from "./providers"
 import { Footer } from "@/components/footer"
-import { Dock } from "@/components/magicui/dock"
-import DockIcons from "@/components/magicui/dock-icons"
 
 const inter = Inter({
   subsets: ["latin"],

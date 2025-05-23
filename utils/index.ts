@@ -1,13 +1,13 @@
 import { RecordType } from "@/types"
-import { format } from "date-fns"
+import { format, isValid } from "date-fns"
 import { ReadonlyURLSearchParams } from "next/navigation"
 import numeral from "numeral"
 import { ClassNameValue, twMerge } from "tailwind-merge"
 
 export const isBrowser = typeof window !== "undefined"
 
-export const formatDate = (val: Date | number, str = "dd-MMM-yy") => {
-  return format(val, str)
+export const formatDate = (val: Date | number, str = "dd MMMM yyyy") => {
+  return isValid(val) ? format(val, str) : "-"
 }
 
 export const money = (val: number) => {
