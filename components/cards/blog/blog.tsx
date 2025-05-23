@@ -12,8 +12,8 @@ const BlogItem = ({ item }: { item: MetadataType }) => {
           </span>
         </div>
         <div className="w-2/3">
-          <h2 className="text-2xl font-bold">{item.title}</h2>
-          <p className="mt-2 text-lg">Description of {item.title}.</p>
+          <h2 className="text-xl font-bold">{item.title}</h2>
+          <p className="mt-2">Description of {item.title}.</p>
           <Link className="mt-3 inline-block text-yellow-500" href={item.slug}>
             Read more
           </Link>

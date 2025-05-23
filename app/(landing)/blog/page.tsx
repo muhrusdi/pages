@@ -1,8 +1,6 @@
-import Link from "next/link"
 import { getData } from "@/lib/api"
 import { Header } from "@/components/utils"
 import { MetadataType } from "@/types"
-import { formatDate } from "@/utils"
 import { BlogItem } from "@/components/cards/blog"
 
 export const runtime = "edge"
