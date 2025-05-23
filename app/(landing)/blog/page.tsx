@@ -8,8 +8,6 @@ const Blogs = async () => {
     "/contents",
   )
 
-  console.log("data", data)
-
   return (
     <div>
       <ul>
