@@ -2,16 +2,18 @@ import { NextConfig } from "next"
 import createMDX from "@next/mdx"
 import remarkFrontmatter from "remark-frontmatter"
 import remarkGfm from "remark-gfm"
+import remarkMdx from "remark-mdx"
+import rehypeMdxCodeProps from "rehype-mdx-code-props"
 
 const withMDX = createMDX({
   options: {
-    remarkPlugins: [remarkGfm, remarkFrontmatter],
-    rehypePlugins: [],
+    remarkPlugins: [remarkGfm, remarkFrontmatter, remarkMdx],
+    rehypePlugins: [rehypeMdxCodeProps],
   },
 })
 
 const nextConfig: NextConfig = {
-  transpilePackages: ["next-mdx-remote"],
+  transpilePackages: ["shiki"],
   logging: {
     fetches: {
       fullUrl: true,

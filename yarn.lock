@@ -1432,12 +1432,36 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@shikijs/rehype@npm:^3.4.2":
+  version: 3.4.2
+  resolution: "@shikijs/rehype@npm:3.4.2"
+  dependencies:
+    "@shikijs/types": "npm:3.4.2"
+    "@types/hast": "npm:^3.0.4"
+    hast-util-to-string: "npm:^3.0.1"
+    shiki: "npm:3.4.2"
+    unified: "npm:^11.0.5"
+    unist-util-visit: "npm:^5.0.0"
+  checksum: 10c0/a95f9b7b485fd47eca13dfae2cb17b55e0379db9d8280b3ac83baea51f975eb810eb5b2302b769c60e3c910c3e9b87831716863460413f267229f6b309e8f8da
+  languageName: node
+  linkType: hard
+
 "@shikijs/themes@npm:3.4.2":
   version: 3.4.2
   resolution: "@shikijs/themes@npm:3.4.2"
   dependencies:
     "@shikijs/types": "npm:3.4.2"
   checksum: 10c0/d50bca4384ccf88d68f007869e13bc7a9b55b16c40a3269fe120b2e5a2e882f6206ee0325f619bfa31ff00a0341452840d38f4ca2296dd3ba3e200e53445e22b
+  languageName: node
+  linkType: hard
+
+"@shikijs/transformers@npm:^3.4.2":
+  version: 3.4.2
+  resolution: "@shikijs/transformers@npm:3.4.2"
+  dependencies:
+    "@shikijs/core": "npm:3.4.2"
+    "@shikijs/types": "npm:3.4.2"
+  checksum: 10c0/68fb2a80b171f673a2043d962f87c68bf2e4cc6189a87662f25c9d8c533c1572eb32d15d303e15e48c60c42bfba8f55da1c9881e36dca79f9a8cbed342dd65e4
   languageName: node
   linkType: hard
 
@@ -4121,6 +4145,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"estree-util-value-to-estree@npm:^3.0.0":
+  version: 3.4.0
+  resolution: "estree-util-value-to-estree@npm:3.4.0"
+  dependencies:
+    "@types/estree": "npm:^1.0.0"
+  checksum: 10c0/e90e0c784b29182a3feb471589ab3c031be3ff1ab068b2b473e9ee96467f99442f2c571b2708ee3493906af5bf1a0aa9712d9f90fb113a30d99669100235ba4f
+  languageName: node
+  linkType: hard
+
 "estree-util-visit@npm:^2.0.0":
   version: 2.0.0
   resolution: "estree-util-visit@npm:2.0.0"
@@ -4714,6 +4747,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"hast-util-properties-to-mdx-jsx-attributes@npm:^1.0.0":
+  version: 1.0.1
+  resolution: "hast-util-properties-to-mdx-jsx-attributes@npm:1.0.1"
+  dependencies:
+    "@types/estree": "npm:^1.0.0"
+    "@types/hast": "npm:^3.0.0"
+    comma-separated-tokens: "npm:^2.0.0"
+    estree-util-value-to-estree: "npm:^3.0.0"
+    mdast-util-mdx-jsx: "npm:^3.0.0"
+    property-information: "npm:^7.0.0"
+    space-separated-tokens: "npm:^2.0.0"
+    style-to-js: "npm:^1.0.0"
+  checksum: 10c0/fa6a1b0e8169861bb96b06cb0a40131a7e4e94a43c32b548c0e92f00f0161be4160f6a2f94aa8ef38de5ada3ffd4d8da8d8bbabe713b1127662b3fc558c10505
+  languageName: node
+  linkType: hard
+
 "hast-util-to-estree@npm:^3.0.0":
   version: 3.1.0
   resolution: "hast-util-to-estree@npm:3.1.0"
@@ -4777,6 +4826,15 @@ __metadata:
     unist-util-position: "npm:^5.0.0"
     vfile-message: "npm:^4.0.0"
   checksum: 10c0/97761b2a48b8bc37da3d66cb4872312ae06c6e8f9be59e33b04b21fa5af371a39cb23b3ca165dd8e898ba1caf9b76399da35c957e68bad02a587a3a324216d56
+  languageName: node
+  linkType: hard
+
+"hast-util-to-string@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "hast-util-to-string@npm:3.0.1"
+  dependencies:
+    "@types/hast": "npm:^3.0.0"
+  checksum: 10c0/b5fa1912a6ba6131affae52a0f4394406c4c0d23c2b0307f1d69988f1030c7bb830289303e67c5ad8f674f5f23a454c1dcd492c39e45a22c1f46d3c9bce5bd0c
   languageName: node
   linkType: hard
 
@@ -7534,6 +7592,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"rehype-mdx-code-props@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "rehype-mdx-code-props@npm:3.0.1"
+  dependencies:
+    "@types/hast": "npm:^3.0.0"
+    hast-util-properties-to-mdx-jsx-attributes: "npm:^1.0.0"
+    mdast-util-from-markdown: "npm:^2.0.0"
+    mdast-util-mdx: "npm:^3.0.0"
+    micromark-extension-mdxjs: "npm:^3.0.0"
+    unified: "npm:^11.0.0"
+    unist-util-visit-parents: "npm:^6.0.0"
+  checksum: 10c0/4eda9dfbd8af696399344fd749138f865b517a9a5d33a612060a4d32baf69ea136cbf6272fc1b80472041f0baf3337f6eb25322941d8d1cb0054aff811d6779f
+  languageName: node
+  linkType: hard
+
 "rehype-recma@npm:^1.0.0":
   version: 1.0.0
   resolution: "rehype-recma@npm:1.0.0"
@@ -7571,7 +7644,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"remark-mdx@npm:^3.0.0":
+"remark-mdx@npm:^3.0.0, remark-mdx@npm:^3.1.0":
   version: 3.1.0
   resolution: "remark-mdx@npm:3.1.0"
   dependencies:
@@ -7842,6 +7915,8 @@ __metadata:
     "@mdx-js/react": "npm:^3.1.0"
     "@next/env": "npm:15.3.2"
     "@next/mdx": "npm:^15.3.2"
+    "@shikijs/rehype": "npm:^3.4.2"
+    "@shikijs/transformers": "npm:^3.4.2"
     "@tailwindcss/postcss": "npm:^4.1.7"
     "@tanstack/react-query": "npm:^5.76.2"
     "@types/mdx": "npm:^2.0.13"
@@ -7867,8 +7942,10 @@ __metadata:
     react: "npm:19.1.0"
     react-dom: "npm:19.1.0"
     react-hook-form: "npm:^7.56.4"
+    rehype-mdx-code-props: "npm:^3.0.1"
     remark-frontmatter: "npm:^5.0.0"
     remark-gfm: "npm:^4.0.1"
+    remark-mdx: "npm:^3.1.0"
     sass: "npm:^1.89.0"
     shiki: "npm:^3.4.2"
     tailwind-merge: "npm:^3.3.0"
@@ -8012,7 +8089,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"shiki@npm:^3.4.2":
+"shiki@npm:3.4.2, shiki@npm:^3.4.2":
   version: 3.4.2
   resolution: "shiki@npm:3.4.2"
   dependencies:
@@ -8391,21 +8468,30 @@ __metadata:
   languageName: node
   linkType: hard
 
+"style-to-js@npm:^1.0.0":
+  version: 1.1.16
+  resolution: "style-to-js@npm:1.1.16"
+  dependencies:
+    style-to-object: "npm:1.0.8"
+  checksum: 10c0/578a4dff804539ec7e64d3cc8d327540befb9ad30e3cd0b6b0392f93f793f3a028f90084a9aaff088bffb87818fa2c6c153f0df576f61f9ab0b0938b582bcac7
+  languageName: node
+  linkType: hard
+
+"style-to-object@npm:1.0.8, style-to-object@npm:^1.0.0":
+  version: 1.0.8
+  resolution: "style-to-object@npm:1.0.8"
+  dependencies:
+    inline-style-parser: "npm:0.2.4"
+  checksum: 10c0/daa6646b1ff18258c0ca33ed281fbe73485c8391192db1b56ce89d40c93ea64507a41e8701d0dadfe771bc2f540c46c9b295135f71584c8e5cb23d6a19be9430
+  languageName: node
+  linkType: hard
+
 "style-to-object@npm:^0.4.0":
   version: 0.4.4
   resolution: "style-to-object@npm:0.4.4"
   dependencies:
     inline-style-parser: "npm:0.1.1"
   checksum: 10c0/3a733080da66952881175b17d65f92985cf94c1ca358a92cf21b114b1260d49b94a404ed79476047fb95698d64c7e366ca7443f0225939e2fb34c38bbc9c7639
-  languageName: node
-  linkType: hard
-
-"style-to-object@npm:^1.0.0":
-  version: 1.0.8
-  resolution: "style-to-object@npm:1.0.8"
-  dependencies:
-    inline-style-parser: "npm:0.2.4"
-  checksum: 10c0/daa6646b1ff18258c0ca33ed281fbe73485c8391192db1b56ce89d40c93ea64507a41e8701d0dadfe771bc2f540c46c9b295135f71584c8e5cb23d6a19be9430
   languageName: node
   linkType: hard
 
@@ -8729,7 +8815,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"unified@npm:^11.0.0":
+"unified@npm:^11.0.0, unified@npm:^11.0.5":
   version: 11.0.5
   resolution: "unified@npm:11.0.5"
   dependencies:
