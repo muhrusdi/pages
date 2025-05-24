@@ -37,6 +37,7 @@ export type MetadataType = {
   description: string
   date?: string
   tags?: string[] | string
+  file?: string
   readingTime?: string
   author?: string
   slug: string

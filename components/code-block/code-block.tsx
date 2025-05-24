@@ -6,7 +6,6 @@ import {
   transformerNotationFocus,
   transformerNotationHighlight,
 } from "@shikijs/transformers"
-import "./styles.css"
 
 type Props = {
   children: string

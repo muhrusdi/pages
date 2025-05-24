@@ -1,53 +1,63 @@
-import { getData } from "@/lib/api"
 import { Header } from "@/components/utils"
-import { MetadataType } from "@/types"
 import { BlogItem } from "@/components/cards/blog"
 import path from "path"
 import fs from "fs"
+import { getMdxContent, mapMdxContent } from "@/lib/services"
+import slugify from "@sindresorhus/slugify"
 
 // export const runtime = "edge"
 export const dynamic = "force-static"
 
 const Blogs = async () => {
   // const data = await getData<{ blog: MetadataType[] }>("/contents")
-  const blogDirectory = path.join("app/(landing)/blog/(content)")
+  const blogDirectory = path.join("app/(landing)/blog/contents")
   const postFilePaths = fs.readdirSync(blogDirectory)
-  const metadataRegex = /export\sconst\smetadata\s=\s{\s*([\s\S]*?)\s*}/
+  // const metadataRegex = /export\sconst\smetadata\s=\s{\s*([\s\S]*?)\s*}/
 
-  const blog = postFilePaths
-    .map(f => {
-      const fullPath = path.join(blogDirectory, f)
-      if (!fullPath.endsWith(".tsx")) {
-        const fullMDXPath = fullPath + "/page.mdx"
-        const fileName = f.replace(".mdx", "")
-        const file = fs.readFileSync(fullMDXPath, "utf-8")
-        const match = metadataRegex.exec(file)
-        const frontMatterBlock = match?.[1]
-        const frontmatterLines = frontMatterBlock?.trim().split("\n")
-        const metadata: Partial<MetadataType> = {}
+  // const blog = postFilePaths
+  //   .map(f => {
+  //     const fullPath = path.join(blogDirectory, f)
+  //     if (!fullPath.endsWith(".tsx")) {
+  //       const fullMDXPath = fullPath + "/page.mdx"
+  //       const fileName = f.replace(".mdx", "")
+  //       const file = fs.readFileSync(fullMDXPath, "utf-8")
+  //       const match = metadataRegex.exec(file)
+  //       const frontMatterBlock = match?.[1]
+  //       const frontmatterLines = frontMatterBlock?.trim().split("\n")
+  //       const metadata: Partial<MetadataType> = {}
 
-        frontmatterLines?.forEach(line => {
-          let [key, ...valueArr] = line.split(": ")
-          let value = valueArr.join(": ").trim()
-          value = value.replace(/^['",](.*)(['"],)$/, "$1") // Remove quotes
-          metadata[key.trim() as keyof MetadataType] = value
-        })
+  //       frontmatterLines?.forEach(line => {
+  //         let [key, ...valueArr] = line.split(": ")
+  //         let value = valueArr.join(": ").trim()
+  //         value = value.replace(/^['",](.*)(['"],)$/, "$1") // Remove quotes
+  //         metadata[key.trim() as keyof MetadataType] = value
+  //       })
 
-        return {
-          ...metadata,
-          slug: "/blog/" + fileName,
-        }
-      }
-    })
-    .filter(Boolean) as MetadataType[]
+  //       return {
+  //         ...metadata,
+  //         slug: "/blog/" + fileName,
+  //       }
+  //     }
+  //   })
+  //   .filter(Boolean) as MetadataType[]
+
+  const blog = postFilePaths.map(async f => {
+    const { metadata } = await getMdxContent(f)
+    const slug = slugify(metadata.title)
+
+    return {
+      ...metadata,
+      slug: "/blog/" + slug,
+    }
+  })
 
   return (
     <div>
       <Header title="My Blogs" description="Here are some of my blogs." />
       <ul className="space-y-2">
-        {blog?.map((item, i) => (
+        {blog?.map(async (item, i) => (
           <li key={i}>
-            <BlogItem item={item} />
+            <BlogItem item={await item} />
           </li>
         ))}
       </ul>

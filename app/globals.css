@@ -33,21 +33,3 @@
     @apply font-mono text-gray-400;
   }
 }
-
-@layer components {
-  .blog-layout {
-    h1 {
-      @apply text-4xl font-bold text-center mt-18;
-      & + h5 {
-        @apply text-center text-gray-400 pb-14 mt-4 text-lg font-mono;
-      }
-      & + *:not(h5) {
-        @apply mt-18;
-      }
-    }
-
-    p {
-      @apply mt-8;
-    }
-  }
-}
