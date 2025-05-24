@@ -1,6 +1,6 @@
 import { MetadataType } from "@/types"
 import "./styles.css"
-import { getMdxContent, mapMdxContent } from "@/lib/services"
+import { mapMdxContent } from "@/lib/services"
 
 export const dynamic = "force-static"
 
@@ -31,6 +31,7 @@ const DetailBlog = async ({ params }: { params: Promise<MetadataType> }) => {
   return (
     <div>
       <title>{metadata.title}</title>
+      <meta name="description" content={metadata.description} />
       <div className="mt-10">
         <h1 className="text-center text-4xl font-black">{metadata.title}</h1>
         <p className="mt-4 text-center text-lg">{metadata.description}</p>

@@ -7,7 +7,7 @@ import slugify from "@sindresorhus/slugify"
 
 type MDXFileType = { default?: any; metadata: MetadataType }
 
-export const mapMdxContent = cache(() => {
+export const mapMdxContent = () => {
   const blogDirectory = path.join("app/(landing)/blog/contents")
   const blogPaths = fs.readdirSync(blogDirectory)
 
@@ -18,6 +18,7 @@ export const mapMdxContent = cache(() => {
         const map: Record<string, MDXFileType> = await acc
 
         map[slugify(file.metadata.title)] = file as MDXFileType
+        console.log("---", map)
 
         return map
       } catch (error) {
@@ -26,7 +27,7 @@ export const mapMdxContent = cache(() => {
     },
     {} as Promise<Record<string, MDXFileType>>,
   )
-})
+}
 
 export const getMdxContent = cache(
   async (slug: string): Promise<{ metadata: MetadataType; default?: any }> => {

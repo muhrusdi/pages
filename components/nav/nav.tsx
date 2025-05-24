@@ -37,7 +37,7 @@ const Navigation = () => {
   }
 
   return (
-    <nav className="flex items-center justify-between py-6 text-sm text-white uppercase">
+    <nav className="flex items-center justify-between py-6 text-white uppercase">
       <div>
         <motion.ul className="flex items-center gap-3">
           {/* <li>
