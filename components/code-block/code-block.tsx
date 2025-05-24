@@ -31,7 +31,7 @@ const CodeBlock = async ({ className, ...props }: Props) => {
           this.addClassToHast(
             node,
             `p-4
-            rounded-md
+            sm:rounded-md
             mt-3
             !bg-gray-900
             overflow-x-auto

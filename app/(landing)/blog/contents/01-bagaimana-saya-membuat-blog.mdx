@@ -1,0 +1,219 @@
+import StackList from "../components/stack-list"
+
+export const metadata = {
+  title: "Bagaimana Saya Membangun Blog Pribadi Saya",
+  description: "Langkah-langkah bagaimana saya membangun blog pribadi dengan stack modern seperti React, Next.js, dan MDX.",
+  date: "2025-05-24",
+  tags: ["blog", "tutorial", "react", "nextjs", "mdx"],
+  author: "Muhammad Rusdi"
+}
+
+Membangun blog pribadi merupakan hal yang sangat menarik. Selain dapat menjadi wadah untuk berbagi pengetahuan, blog juga merupakan cara yang bagus untuk belajar dan bereksperimen dengan teknologi baru. Dalam artikel ini, saya akan berbagi pengalaman membangun blog menggunakan stack modern seperti React, Next.js, dan MDX.
+
+## Stack
+
+Pertama kita mulai dari beberapa daftar teknologi yang saya gunakan dalam pembuatan blog ini:
+
+<StackList/>
+
+React.js memberikan fleksibilitas dalam pengembangan web, terutama dalam pembuatan komponen UI yang interaktif. Sementara itu, Next.js adalah starter project yang sangat powerful, dengan fitur-fitur seperti ***file-system based routing*** yang sangat memudahkan dalam pembuatan routing aplikasi. Kemudian berkaitan dengan styling saya menggunakan Tailwindcss, Tailwindcss merupakan ***utility-first css framework*** yang sangat membantu dalam proses styling UI. Dengan pendekatan utility class kita dapat langsung menuliskan style pada atribut className pada element React tanpa harus membuat file css terpisah untuk setiap komponen.
+
+Kemudian bagian terpenting juga dalam pengembangan blog ini adalah pemanfaatan MDX. Dengan MDX, kita dapat menulis konten blog menggunakan sintaks markdown yang sederhana, namun tetap memiliki fleksibilitas untuk menyisipkan komponen React secara langsung di dalam artikel. Hal ini sangat memudahkan untuk menampilkan elemen interaktif seperti tombol, alert, atau bahkan custom code block di tengah-tengah tulisan tanpa harus keluar dari file konten. Integrasi MDX juga membuat proses penulisan menjadi lebih menyenangkan dan efisien, dikarenakan kita memanfaatkan seluruh ekosistem React di dalam setiap artikel. Dengan demikian, blog yang saya bangun tidak hanya sekadar menampilkan teks statis, tetapi juga mampu menghadirkan pengalaman membaca yang lebih dinamis dan interaktif.
+
+Untuk menghadirkan pengalaman pengguna yang lebih interaktif dan modern, saya mengimplementasikan animasi menggunakan motion.dev. Dengan bantuan library ini, penambahan animasi seperti transisi antar komponen, efek saat elemen muncul, maupun interaksi sederhana dapat dilakukan dengan sangat mudah dan efisien.
+
+## Next.js
+
+Struktur direktori didalam folder app:
+
+```tsx
+my-blog
+├── app
+│   ├── blog
+│   │    ├── [slug]
+// [!code highlight:1]
+│   │    │   └── pages.tsx // detail blog 👈
+// [!code highlight:1]
+│   │    ├── contents // direktori file-file mdx untuk content 👈
+│   │    │   ├── first-blog.mdx
+│   │    │   └── second-blog.mdx
+│   │    ├── not-found.tsx
+// [!code highlight:1]
+│   │    └── pages.tsx // list blog 👈
+│   ├── layout.tsx
+│   ├── providers.tsx
+│   ├── page.tsx
+├── components
+│   ├── code-block
+│   │   └── index.ts
+├── lib
+│   ├── api
+│   │   └── index.ts
+├── public
+├── next.config.ts
+├── mdx-components.tsx
+├── tsconfig.json
+└── package.json
+```
+Next.js memanfaatkan konsep ***file-system based routing***, sehingga kita cukup membuat folder dan file di dalam direktori app untuk secara otomatis menghasilkan route yang sesuai. Pada struktur folder blog di atas, setiap bagian memiliki peran yang jelas: file ***page.tsx*** di dalam folder blog berfungsi sebagai halaman utama yang menampilkan daftar seluruh artikel, sedangkan folder ***[slug]/page.tsx*** digunakan untuk menampilkan detail setiap blog berdasarkan slug yang unik.Sementara itu, seluruh konten artikel disimpan terpisah di dalam folder contents dalam format file MDX, sehingga pengelolaan dan penambahan artikel baru menjadi sangat mudah. 
+
+
+## MDX
+
+MDX menjadi solusi yang sangat powerful untuk mengelola konten di Next.js, karena memungkinkan kita menulis artikel dengan sintaks markdown sekaligus menyisipkan komponen React secara langsung di dalamnya. Dengan integrasi MDX pada app router Next.js, setiap file MDX dapat diperlakukan layaknya sebuah halaman atau bagian dari aplikasi, sehingga sangat fleksibel untuk kebutuhan blog, dokumentasi, maupun konten interaktif lainnya.
+
+Selain itu, Next.js menyediakan dukungan penuh untuk custom komponen, layout, dan bahkan penggunaan server components di dalam file MDX, sehingga kita bisa membuatnya benar-benar dinamis dan modern. Proses import dan penggunaan komponen di dalam MDX pun sangat mudah, cukup dengan menuliskan import di bagian atas file MDX, dan dapat langsung digunakan di dalam konten.
+
+Update file ***next.config.ts*** di root direktori project untuk menggunakan MDX:
+
+```tsx
+import createMDX from '@next/mdx'
+ 
+const nextConfig = {
+  // Configure `pageExtensions` to include markdown and MDX files
+  pageExtensions: ['mdx', 'tsx'],
+  // Optionally, add any other Next.js config below
+}
+ 
+const withMDX = createMDX({ // [!code ++]
+  // Add markdown plugins here, as desired
+}) // [!code ++]
+ 
+// Merge MDX config with Next.js config
+export default withMDX(nextConfig) // [!code ++]
+```
+
+Disini saya membuat fungsi untuk membaca seluruh file mdx yang ada didalam folder ***contents***.
+
+```ts
+// @/lib/services/index.ts
+export const mapMdxContent = () => {
+  const blogDirectory = path.join("app/(landing)/blog/contents")
+  const blogPaths = fs.readdirSync(blogDirectory)
+
+  return blogPaths.reduce(
+    async (acc, f) => {
+      try {
+        const file = await import(`@/app/(landing)/blog/contents/${f}`)
+        const map: Record<string, MDXFileType> = await acc
+
+        map[slugify(file.metadata.title)] = file as MDXFileType
+
+        return map
+      } catch (error) {
+        throw notFound()
+      }
+    },
+    {} as Promise<Record<string, MDXFileType>>,
+  )
+}
+```
+
+Lalu kemudian memetakan setiap file mdx kedalam sebuah object dengan key berupa slug (hasil slugify dari title/metadata) dan value berupa isi file beserta metadatanya.
+
+Fungsi ***mapMdxContent*** ini dapat digunakan dihalaman detail blog untuk meload file mdx berdasarkan title yang sudah di slugify.
+
+```tsx
+// @/app/blog/[slug]/page.tsx
+import { mapMdxContent } from "@/lib/services" // [!code ++]
+
+const DetailBlog = async ({ params }: { params: Promise<MetadataType> }) => {
+  const { slug } = await params
+  const map = await mapMdxContent() // {"first-blog.mdx": FileMdx } // [!code ++]
+  const { default: Blog, metadata } = map[slug] // [!code ++]
+
+  return (
+    <div>
+      <div className="mt-16">
+        <h1 className="text-center text-4xl leading-tight font-black">
+          {metadata.title}
+        </h1>
+        <p className="mt-4 text-center text-lg">{metadata.description}</p>
+      </div>
+      <div className="article mt-18">
+        <Blog />
+      </div>
+    </div>
+  )
+}
+
+export default DetailBlog
+
+```
+
+Untuk halaman list blog saya menyediakan fungsi tersendiri untuk meload keseleuruhan file mdx yang ada dalam folder content.
+
+```ts
+// @/lib/service/index.ts
+export const getMdxContent = cache(
+  async (slug: string): Promise<{ metadata: MetadataType; default?: any }> => {
+    try {
+      return await import(`@/app/(landing)/blog/contents/${slug}`)
+    } catch (error) {
+      throw notFound()
+    }
+  },
+)
+```
+
+Blok code diatas adalah fungsi untuk mengambil file mdx berdasarkan slug yang dibungkus dengan fungsi cache dari react untuk membuat lebih efisien dalam pemanggilan file mdx.
+
+Berikut penggunaan fungsi ***getMdxContent*** dihalaman list blog:
+
+```tsx
+// @/app/blog/page.tsx
+import { Header } from "@/components/utils"
+import { BlogItem } from "@/components/cards/blog"
+import path from "path"
+import fs from "fs"
+import { getMdxContent, mapMdxContent } from "@/lib/services"
+import slugify from "@sindresorhus/slugify"
+
+const Blogs = async () => {
+  const blogDirectory = path.join("app/(landing)/blog/contents") // [!code ++]
+  const postFilePaths = fs.readdirSync(blogDirectory) // [!code ++]
+
+  const blog = postFilePaths.map(async f => { // [!code ++]
+    const { metadata } = await getMdxContent(f) // [!code ++]
+    const slug = slugify(metadata.title) // [!code ++]
+
+    return { // [!code ++]
+      ...metadata, // [!code ++]
+      slug: "/blog/" + slug, // [!code ++]
+    } // [!code ++]
+  }) // [!code ++]
+
+  return (
+    <div>
+      <ul className="space-y-2">
+        {blog?.map(async (item, i) => (
+          <li key={i}>
+            <BlogItem item={await item} />
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+export default Blogs
+
+```
+
+Potongan kode berikut adalah komponen list blog, karena setiap list yang dikembalikan ke variable blog adalah data asyncronouse sehingga prose pemanggilannya menggunakan *await* di *callback* mappingnya dan properti *BlogItem*.
+
+```tsx
+// ...
+  <ul className="space-y-2">
+    {blog?.map(async (item, i) => ( // [!code focus]
+      <li key={i}>
+        <BlogItem item={await item} /> // [!code focus]
+      </li>
+    ))}
+  </ul>
+// ...
+```
+
+## Kesimpulan
+
+Membangun blog pribadi dengan stack modern seperti Next.js, MDX, dan Tailwind CSS memberikan banyak kemudahan dan fleksibilitas, baik dari sisi pengembangan maupun pengelolaan konten. Integrasi MDX untuk konten dinamis. blog yang dihasilkan tidak hanya mudah dikembangkan, tetapi juga memberikan pengalaman pengguna yang interaktif dan menyenangkan.
