@@ -13,7 +13,7 @@ const StackItem = ({
     <a
       href={link}
       target="__blank"
-      className="flex flex-col items-center justify-between rounded-md border border-gray-900 p-4 text-center"
+      className="flex h-full flex-col items-center justify-between rounded-md border border-gray-900 p-4 text-center"
     >
       {children}
       <p className="mt-2">{title}</p>
@@ -24,7 +24,7 @@ const StackItem = ({
 const StackList = () => {
   return (
     <div>
-      <ul className="grid grid-cols-5 gap-3 text-white [&_svg]:size-fit [&_svg]:fill-white [&>li]:h-full">
+      <ul className="grid grid-cols-3 gap-3 text-white sm:grid-cols-5 [&_svg]:size-fit [&_svg]:fill-white [&>li]:min-h-full">
         <li>
           <StackItem title="React.js" link="https://nextjs.org/">
             <svg

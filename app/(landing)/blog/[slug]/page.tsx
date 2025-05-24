@@ -33,7 +33,9 @@ const DetailBlog = async ({ params }: { params: Promise<MetadataType> }) => {
       <title>{metadata.title}</title>
       <meta name="description" content={metadata.description} />
       <div className="mt-16">
-        <h1 className="text-center text-4xl font-black">{metadata.title}</h1>
+        <h1 className="text-center text-4xl leading-tight font-black">
+          {metadata.title}
+        </h1>
         <p className="mt-4 text-center text-lg">{metadata.description}</p>
       </div>
       <div className="article mt-18">
