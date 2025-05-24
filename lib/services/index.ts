@@ -18,7 +18,6 @@ export const mapMdxContent = () => {
         const map: Record<string, MDXFileType> = await acc
 
         map[slugify(file.metadata.title)] = file as MDXFileType
-        console.log("---", map)
 
         return map
       } catch (error) {
