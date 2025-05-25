@@ -40,5 +40,6 @@ export type MetadataType = {
   file?: string
   readingTime?: string
   author?: string
-  slug: string
+  slug?: string
+  status: "draft" | "published"
 }

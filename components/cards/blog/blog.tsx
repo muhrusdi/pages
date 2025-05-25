@@ -14,7 +14,10 @@ const BlogItem = ({ item }: { item: MetadataType }) => {
         <div className="w-2/3">
           <h2 className="text-xl font-bold">{item.title}</h2>
           <p className="mt-2 line-clamp-3">{item.description}</p>
-          <Link className="mt-3 inline-block text-yellow-500" href={item.slug}>
+          <Link
+            className="mt-3 inline-block text-yellow-500"
+            href={item?.slug as string}
+          >
             Read more
           </Link>
         </div>

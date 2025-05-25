@@ -43,10 +43,12 @@ export const GET = async () => {
       const { metadata } = await getMdxContent(f)
       const slug = slugify(metadata.title)
 
-      list.push({
-        ...metadata,
-        slug: "/blog/" + slug,
-      })
+      if (metadata.status === "published") {
+        list.push({
+          ...metadata,
+          slug: "/blog/" + slug,
+        })
+      }
 
       res(list)
     })

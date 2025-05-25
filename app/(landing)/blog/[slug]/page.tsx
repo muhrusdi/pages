@@ -19,7 +19,7 @@ const DetailBlog = async ({ params }: { params: Promise<MetadataType> }) => {
 
   const map = await mapMdxContent()
 
-  const fileName = map[slug].fileName
+  const fileName = map[slug!].fileName
 
   // const data = (await getData<{ blog: MetadataType[] }>("/contents", {
   //   params: [slug],
