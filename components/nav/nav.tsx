@@ -1,12 +1,11 @@
 "use client"
 
-import { BackArrow2 } from "@/assets/icons"
 import Link from "next/link"
 import { AnimatePresence, motion } from "motion/react"
 import { useState } from "react"
 import { usePathname } from "next/navigation"
 import { menuItemAnimate } from "@/utils"
-import { HouseIcon } from "lucide-react"
+import clsx from "clsx"
 
 const navData = [
   {
@@ -31,6 +30,7 @@ const Navigation = () => {
   const pathname = usePathname()
 
   const firstPath = pathname.split("/").filter(Boolean).splice(0, 1)
+  const isHome = pathname === "/"
 
   const handleHover = (bool: boolean) => {
     setIsHovered(bool)
@@ -55,10 +55,21 @@ const Navigation = () => {
               onMouseEnter={() => handleHover(true)}
               onMouseLeave={() => handleHover(false)}
             >
-              <HouseIcon size={18} />
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 745 745"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M103 103L255.036 255.036L273.364 273.364L372.5 372.5L471.636 273.364V283.777V471.636L489.964 489.964L642 642V103L489.964 255.036L471.636 273.364L372.5 372.5L430.5 430.5L273.364 300.022V471.636L255.036 489.964L103 642V103Z"
+                  fill="white"
+                />
+              </svg>
             </Link>
           </li>
-          <li>
+          <li className={clsx({ hidden: isHome })}>
             <ul className="relative flex items-center space-x-2">
               <AnimatePresence initial={false} mode="popLayout">
                 {isHovered ? (

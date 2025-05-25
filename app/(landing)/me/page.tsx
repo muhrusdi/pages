@@ -1,9 +1,9 @@
-import { Header } from "@/components/utils"
+import { Header } from "@/components/header"
 
 const About = () => {
   return (
     <div>
-      <Header title="About Me" description="Here are some of my works." />
+      <Header />
     </div>
   )
 }

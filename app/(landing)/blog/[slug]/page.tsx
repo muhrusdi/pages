@@ -63,8 +63,8 @@ const DetailBlog = async ({ params }: { params: Promise<MetadataType> }) => {
           {metadata.tags?.length ? (
             <li>
               <ul className="flex items-center gap-2">
-                {metadata.tags?.map(item => (
-                  <li>
+                {metadata.tags?.map((item, i) => (
+                  <li key={i}>
                     <span className="inline-block rounded-3xl border border-gray-800 bg-gray-900 px-3 py-1 text-[10px] font-medium text-white uppercase">
                       {item}
                     </span>

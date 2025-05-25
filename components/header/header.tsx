@@ -126,19 +126,6 @@ const Header = () => {
             </svg>
           </a>
         </li> */}
-        <li>
-          <ul className="flex items-center space-x-5 px-4 font-mono text-gray-400 [&>li>a]:hover:text-yellow-500">
-            <li>
-              <Link href="/work">work</Link>
-            </li>
-            <li>
-              <Link href="/blog">blog</Link>
-            </li>
-            <li>
-              <Link href="/me">me</Link>
-            </li>
-          </ul>
-        </li>
       </ul>
     </header>
   )
