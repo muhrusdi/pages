@@ -2,6 +2,13 @@ import { ProjectItemType } from "@/types"
 
 export const projects: ProjectItemType[] = [
   {
+    title: "Privy OAuth v2",
+    description:
+      "Contributed to the implementation of the new OAuth UI redesign at Privy.",
+    stacks: ["Typescript", "React", "Gatsbyjs"],
+    link: "https://oauth2.privypass.id/",
+  },
+  {
     title: "Docotel Teknologi Celebes",
     description: "DTC is a software house company in Makassar",
     stacks: ["Typescript", "React", "Gatsbyjs"],
