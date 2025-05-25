@@ -22,17 +22,20 @@ export const projects: ProjectItemType[] = [
     description:
       "Assisting UMKM players in managing finances and building businesses with a digitalization system that makes it easier for MSME players to do business.",
     stacks: ["Typescript", "React", "Nextjs"],
+    link: "https://kas-cerdas.vercel.app/",
   },
   {
     title: "Real Travel Finance",
     description:
       "Real Travel Finance is a platform that provides online Hajj and Umrah registration services, so you can register anytime and anywhere.",
     stacks: ["Typescript", "React", "Nextjs"],
+    link: "https://realtravelfinance.vercel.app/",
   },
   {
     title: "Advice Planning",
     description:
       "Advice Planning is a recommendation regarding the explanation of land use for development or buildings in an area",
     stacks: ["Typescript", "React", "Nextjs"],
+    link: "https://advice-planning-two-gamma.vercel.app/",
   },
 ]

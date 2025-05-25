@@ -85,6 +85,7 @@ const Home = async () => {
                 <ProjectItem
                   id={i}
                   title={item.title}
+                  link={item.link}
                   description={item.description}
                   stacks={item.stacks}
                 />

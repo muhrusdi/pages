@@ -31,6 +31,8 @@ export type ProjectItemType = {
   title: string
   description?: string
   stacks?: string[]
+  link?: string
+  status?: "online" | "offline"
 }
 
 export type MetadataType = {
