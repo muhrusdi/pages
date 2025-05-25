@@ -9,6 +9,12 @@ export const projects: ProjectItemType[] = [
     link: "https://oauth2.privypass.id/",
   },
   {
+    title: "MalessUI",
+    description: "My UI library landing page.",
+    stacks: ["Typescript", "React", "Nextjs"],
+    link: "https://malessui-site-rdyh7be6z-muhrusdi.vercel.app/",
+  },
+  {
     title: "Docotel Teknologi Celebes",
     description: "DTC is a software house company in Makassar",
     stacks: ["Typescript", "React", "Gatsbyjs"],

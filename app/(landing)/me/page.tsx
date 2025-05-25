@@ -6,7 +6,11 @@ const About = () => {
     <div>
       <Header />
       <div className="mt-11">
-        <h2 className="text-2xl font-bold">Stack</h2>
+        <div className="flex">
+          <div>
+            <h2 className="text-2xl font-bold">Stack</h2>
+          </div>
+        </div>
         <div className="mt-3">
           <div>
             <ul className="grid grid-cols-4 gap-4 [&_svg]:h-[60px] [&_svg]:fill-white">
@@ -139,7 +143,7 @@ const About = () => {
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                   >
-                    <g clip-path="url(#clip0_2788_52-004514)">
+                    <g clipPath="url(#clip0_2788_52-004514)">
                       <path
                         d="M31.0739 26L15.86 55.9733H2L13.8805 32.57C15.722 28.94 20.3164 26 24.1439 26H31.0739ZM65.063 33.4933C65.063 29.3533 68.1655 26 71.993 26C75.8205 26 78.923 29.3533 78.923 33.4933C78.923 37.6333 75.8205 40.9867 71.993 40.9867C68.1655 40.9867 65.063 37.6333 65.063 33.4933ZM33.6727 26H47.5327L32.3188 55.9733H18.4588L33.6727 26ZM50.0416 26H63.9016L52.0243 49.4033C50.1828 53.0333 45.5852 55.9733 41.7577 55.9733H34.8277L50.0416 26Z"
                         fill="white"
