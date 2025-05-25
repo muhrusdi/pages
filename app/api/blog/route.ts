@@ -1,11 +1,10 @@
 import path from "path"
 import fs from "fs"
-import { MetadataType } from "@/types"
 import { getMdxContent } from "@/lib/services"
 import slugify from "@sindresorhus/slugify"
-import { after } from "next/server"
 
 export const dynamic = "force-static"
+export const runtime = "edge"
 
 export const GET = async () => {
   const blogDirectory = path.join("app/(landing)/blog/contents")
