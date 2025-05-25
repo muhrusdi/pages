@@ -27,6 +27,7 @@ export const loginSchema = z.object({
   remember: z.boolean().optional(),
 })
 export type ProjectItemType = {
+  id?: string | number
   title: string
   description?: string
   stacks?: string[]

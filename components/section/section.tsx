@@ -15,7 +15,7 @@ type Props = {
 const Section: React.FC<Props> = ({ children, title, actionLink }) => {
   const [isHovered, setIsHovered] = useState(false)
   return (
-    <div className="group/item py-8">
+    <div className="group/header py-8">
       <div className="flex h-7 items-center justify-between">
         <div>
           <AnimatePresence initial={false} mode="popLayout">
@@ -45,7 +45,7 @@ const Section: React.FC<Props> = ({ children, title, actionLink }) => {
           </AnimatePresence>
         </div>
         {actionLink ? (
-          <div className="invisible group-hover/item:visible">
+          <div className="invisible group-hover/header:visible">
             <div>
               <Link
                 href={actionLink}

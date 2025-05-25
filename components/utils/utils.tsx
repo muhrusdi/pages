@@ -1,6 +1,29 @@
+import { cn } from "@/utils"
+import React from "react"
+
 type Props = {
   title: string
   description: string
+}
+
+type TagType = {
+  className?: string
+}
+
+export const Tag = ({
+  children,
+  className,
+}: React.PropsWithChildren<TagType>) => {
+  return (
+    <span
+      className={cn(
+        "inline-block rounded-3xl border border-gray-800 bg-gray-900 px-3 py-1 text-[10px] font-medium text-white uppercase",
+        className,
+      )}
+    >
+      {children}
+    </span>
+  )
 }
 
 export const Header = ({ title, description }: Props) => {

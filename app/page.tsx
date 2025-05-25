@@ -83,6 +83,7 @@ const Home = async () => {
             {projects.map((item, i) => (
               <li key={i}>
                 <ProjectItem
+                  id={i}
                   title={item.title}
                   description={item.description}
                   stacks={item.stacks}
