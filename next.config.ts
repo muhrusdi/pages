@@ -11,7 +11,6 @@ const withMDX = createMDX({
 })
 
 const nextConfig: NextConfig = {
-  transpilePackages: ["shiki"],
   logging: {
     fetches: {
       fullUrl: true,
