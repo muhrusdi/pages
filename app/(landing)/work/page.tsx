@@ -11,6 +11,7 @@ const Works = () => {
           <li key={i}>
             <ProjectItem
               title={item.title}
+              link={item.link}
               description={item.description}
               stacks={item.stacks}
             />
