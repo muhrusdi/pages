@@ -80,7 +80,7 @@ const Home = async () => {
         </Section>
         <Section title="Work" actionLink="/work">
           <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-            {projects.map((item, i) => (
+            {projects.slice(0, 6).map((item, i) => (
               <li key={i}>
                 <ProjectItem
                   id={i}

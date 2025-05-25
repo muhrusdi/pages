@@ -38,4 +38,30 @@ export const projects: ProjectItemType[] = [
     stacks: ["Typescript", "React", "Nextjs"],
     link: "https://advice-planning-two-gamma.vercel.app/",
   },
+  {
+    title: "STAR Design System",
+    description:
+      "Star Design System provides plenty of UI components to enrich your web applications, and we will improve components experience consistent",
+    stacks: ["Typescript", "React", "Nextjs"],
+    link: "https://stardesignsystem.vercel.app/?path=/story/guides-introduction--page",
+  },
+  {
+    title: "Assipauang",
+    description: "Aplikasi survey kepuasan dan pengaduan pelanggan",
+    stacks: ["Typescript", "React", "Nextjs"],
+    link: "https://e-survey-one-eta.vercel.app/",
+  },
+  {
+    title: "DTC Acadmy",
+    description: "DTC Academy is a Technology and Design Academy",
+    stacks: ["Typescript", "React", "Nextjs"],
+    link: "https://dtc-academy.netlify.app/",
+  },
+  {
+    title: "EnjoyPortal",
+    description:
+      "One stop solutions to Buy/Sell Crypto Tokens with fiat money and digital payment, easier than ordering food online.",
+    stacks: ["Typescript", "React", "Nextjs"],
+    link: "https://inquisitive-gelato-720c1d.netlify.app/",
+  },
 ]
