@@ -4,6 +4,7 @@ import Link from "next/link"
 import { AnimatePresence, motion } from "motion/react"
 import { useState } from "react"
 import { menuItemAnimate } from "@/utils"
+import { ArrowRightIcon } from "lucide-react"
 
 type Props = {
   children: React.ReactNode
@@ -14,7 +15,7 @@ type Props = {
 const Section: React.FC<Props> = ({ children, title, actionLink }) => {
   const [isHovered, setIsHovered] = useState(false)
   return (
-    <div className="py-8">
+    <div className="group/item py-8">
       <div className="flex h-7 items-center justify-between">
         <div>
           <AnimatePresence initial={false} mode="popLayout">
@@ -44,18 +45,14 @@ const Section: React.FC<Props> = ({ children, title, actionLink }) => {
           </AnimatePresence>
         </div>
         {actionLink ? (
-          <div>
+          <div className="invisible group-hover/item:visible">
             <div>
               <Link
                 href={actionLink}
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
               >
-                <ArrowRight
-                  className="[&>path]:fill-amber-500"
-                  height={12}
-                  fontSize={13}
-                />
+                <ArrowRightIcon size={18} />
               </Link>
             </div>
           </div>

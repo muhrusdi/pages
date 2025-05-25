@@ -1,14 +1,21 @@
+import { ProjectItem } from "@/components/project-item"
 import { Header } from "@/components/utils"
+import { projects } from "@/utils/mock"
 
 const Works = () => {
   return (
     <div>
       <Header title="My Works" description="Here are some of my blogs." />
-      <ul>
-        <li>
-          <h2 className="text-2xl font-bold">Project 1</h2>
-          <p className="mt-2 text-lg">Description of project 1.</p>
-        </li>
+      <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+        {projects.map((item, i) => (
+          <li key={i}>
+            <ProjectItem
+              title={item.title}
+              description={item.description}
+              stacks={item.stacks}
+            />
+          </li>
+        ))}
       </ul>
     </div>
   )
