@@ -3,6 +3,7 @@ import "./styles.css"
 import { mapMdxContent } from "@/lib/services"
 
 export const dynamic = "force-static"
+export const runtime = "edge"
 
 const DetailBlog = async ({ params }: { params: Promise<MetadataType> }) => {
   const { slug } = await params
