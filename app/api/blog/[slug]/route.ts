@@ -1,4 +1,4 @@
-import { mapMdxContent } from "@/lib/services"
+// import { mapMdxContent } from "@/lib/services"
 
 export const dynamic = "force-static"
 
@@ -11,10 +11,10 @@ export const GET = async (
     params: Promise<{ slug: string }>
   },
 ) => {
-  const { slug } = await params
-  const map = await mapMdxContent()
+  // const { slug } = await params
+  // const map = await mapMdxContent()
 
-  const { fileName } = map[slug]
+  // const { fileName } = map[slug]
 
-  return Response.json({ fileName })
+  return Response.json({ fileName: "" })
 }
