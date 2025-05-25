@@ -6,6 +6,7 @@ import fs from "fs"
 import slugify from "@sindresorhus/slugify"
 
 type MDXFileType = { default?: any; metadata: MetadataType }
+type ValueType = { file: MDXFileType; fileName?: string }
 
 export const mapMdxContent = () => {
   const blogDirectory = path.join("app/(landing)/blog/contents")
@@ -15,16 +16,19 @@ export const mapMdxContent = () => {
     async (acc, f) => {
       try {
         const file = await import(`@/app/(landing)/blog/contents/${f}`)
-        const map: Record<string, MDXFileType> = await acc
+        const map: Record<string, ValueType> = await acc
 
-        map[slugify(file.metadata.title)] = file as MDXFileType
+        map[slugify(file.metadata.title)] = {
+          file: file as MDXFileType,
+          fileName: f,
+        }
 
         return map
       } catch (error) {
         throw notFound()
       }
     },
-    {} as Promise<Record<string, MDXFileType>>,
+    {} as Promise<Record<string, ValueType>>,
   )
 }
 

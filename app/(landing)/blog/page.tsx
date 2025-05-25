@@ -1,17 +1,15 @@
 import { Header } from "@/components/utils"
 import { BlogItem } from "@/components/cards/blog"
-import path from "path"
-import fs from "fs"
-import { getMdxContent, mapMdxContent } from "@/lib/services"
-import slugify from "@sindresorhus/slugify"
+import { MetadataType } from "@/types"
+import { getData } from "@/lib/api"
 
 // export const runtime = "edge"
 export const dynamic = "force-static"
 
 const Blogs = async () => {
-  // const data = await getData<{ blog: MetadataType[] }>("/contents")
-  const blogDirectory = path.join("app/(landing)/blog/contents")
-  const postFilePaths = fs.readdirSync(blogDirectory)
+  const data = await getData<{ blog: MetadataType[] }>("/contents")
+  // const blogDirectory = path.join("app/(landing)/blog/contents")
+  // const postFilePaths = fs.readdirSync(blogDirectory)
   // const metadataRegex = /export\sconst\smetadata\s=\s{\s*([\s\S]*?)\s*}/
 
   // const blog = postFilePaths
@@ -41,23 +39,23 @@ const Blogs = async () => {
   //   })
   //   .filter(Boolean) as MetadataType[]
 
-  const blog = postFilePaths.map(async f => {
-    const { metadata } = await getMdxContent(f)
-    const slug = slugify(metadata.title)
+  // const blog = postFilePaths.map(async f => {
+  //   const { metadata } = await getMdxContent(f)
+  //   const slug = slugify(metadata.title)
 
-    return {
-      ...metadata,
-      slug: "/blog/" + slug,
-    }
-  })
+  //   return {
+  //     ...metadata,
+  //     slug: "/blog/" + slug,
+  //   }
+  // })
 
   return (
     <div>
       <Header title="My Blogs" description="Here are some of my blogs." />
       <ul className="space-y-2">
-        {blog?.map(async (item, i) => (
+        {data.blog?.map((item, i) => (
           <li key={i}>
-            <BlogItem item={await item} />
+            <BlogItem item={item} />
           </li>
         ))}
       </ul>

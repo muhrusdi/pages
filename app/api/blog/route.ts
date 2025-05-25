@@ -1,19 +1,22 @@
 import path from "path"
 import fs from "fs"
 import { MetadataType } from "@/types"
+import { getMdxContent } from "@/lib/services"
+import slugify from "@sindresorhus/slugify"
+import { after } from "next/server"
 
 export const dynamic = "force-static"
 
 export const GET = async () => {
-  // const blogDirectory = path.join("app/(landing)/blog/contents")
-  // const postFilePaths = fs.readdirSync(blogDirectory)
+  const blogDirectory = path.join("app/(landing)/blog/contents")
+  const postFilePaths = fs.readdirSync(blogDirectory)
   // const metadataRegex = /export\sconst\smetadata\s=\s{\s*([\s\S]*?)\s*}/
 
   // const blog = postFilePaths
   //   .map(f => {
   //     const fullPath = path.join(blogDirectory, f)
   //     if (!fullPath.endsWith(".tsx")) {
-  //       const fullMDXPath = fullPath
+  //       const fullMDXPath = fullPath + "/page.mdx"
   //       const fileName = f.replace(".mdx", "")
   //       const file = fs.readFileSync(fullMDXPath, "utf-8")
   //       const match = metadataRegex.exec(file)
@@ -36,5 +39,22 @@ export const GET = async () => {
   //   })
   //   .filter(Boolean)
 
-  return Response.json({})
+  const blog = await new Promise(res => {
+    let list = []
+    postFilePaths.map(async f => {
+      const { metadata } = await getMdxContent(f)
+      const slug = slugify(metadata.title)
+
+      list.push({
+        ...metadata,
+        slug: "/blog/" + slug,
+      })
+
+      res(list)
+    })
+  })
+
+  return Response.json({
+    blog,
+  })
 }
