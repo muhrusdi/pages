@@ -1,6 +1,7 @@
 import { MetadataType } from "@/types"
 import "./styles.css"
 import { mapMdxContent } from "@/lib/services"
+import { formatDate } from "@/utils"
 
 export const dynamic = "force-static"
 
@@ -25,9 +26,9 @@ const DetailBlog = async ({ params }: { params: Promise<MetadataType> }) => {
   //   params: [slug],
   // })) as Record<string, any>
 
-  const { default: Blog, metadata } = await import(
+  const { default: Blog, metadata } = (await import(
     `@/app/(landing)/blog/contents/${fileName}`
-  )
+  )) as { metadata: MetadataType; default: any }
 
   // const blogDirectory = path.join("app/(landing)/blog/(content)/contents")
   // const metadataRegex = /export\sconst\smetadata\s=\s{\s*([\s\S]*?)\s*}/
@@ -55,6 +56,24 @@ const DetailBlog = async ({ params }: { params: Promise<MetadataType> }) => {
           {metadata.title}
         </h1>
         <p className="mt-4 text-center text-lg">{metadata.description}</p>
+        <ul className="mt-8 flex items-center justify-center gap-3 border-t border-b border-gray-900 py-2">
+          <li>
+            <p>{formatDate(new Date(metadata.date as string))}</p>
+          </li>
+          {metadata.tags?.length ? (
+            <li>
+              <ul className="flex items-center gap-2">
+                {metadata.tags?.map(item => (
+                  <li>
+                    <span className="inline-block rounded-3xl border border-gray-800 bg-gray-900 px-3 py-1 text-[10px] font-medium text-white uppercase">
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ) : null}
+        </ul>
       </div>
       <div className="article mt-18">
         <Blog />
