@@ -4,6 +4,7 @@ import { mapMdxContent } from "@/lib/services"
 import { getData } from "@/lib/api"
 
 export const dynamic = "force-static"
+export const runtime = "edge"
 
 const DetailBlog = async ({ params }: { params: Promise<MetadataType> }) => {
   const { slug } = await params
