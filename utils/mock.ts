@@ -5,13 +5,19 @@ export const projects: ProjectItemType[] = [
     title: "Privy OAuth v2",
     description:
       "Contributed to the implementation of the new OAuth UI redesign at Privy.",
-    stacks: ["Typescript", "React", "Gatsbyjs"],
+    stacks: ["Typescript", "Vue", "Nuxtjs"],
     link: "https://oauth2.privypass.id/",
   },
   {
     title: "Docotel Teknologi Celebes",
     description: "DTC is a software house company in Makassar",
     stacks: ["Typescript", "React", "Gatsbyjs"],
+  },
+  {
+    title: "My Old Web Profile",
+    description: "Landing page of my old web profile",
+    stacks: ["Typescript", "React", "Gatsbyjs"],
+    link: "https://2022-rus.pages.dev/",
   },
   {
     title: "Mahapatih",
@@ -49,7 +55,7 @@ export const projects: ProjectItemType[] = [
     title: "STAR Design System",
     description:
       "Star Design System provides plenty of UI components to enrich your web applications, and we will improve components experience consistent",
-    stacks: ["Typescript", "React", "Nextjs"],
+    stacks: ["Typescript", "React"],
     link: "https://stardesignsystem.vercel.app/?path=/story/guides-introduction--page",
   },
   {
