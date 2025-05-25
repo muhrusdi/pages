@@ -1,20 +1,32 @@
 import { MetadataType } from "@/types"
 import "./styles.css"
 import { mapMdxContent } from "@/lib/services"
-import { getData } from "@/lib/api"
 
 export const dynamic = "force-static"
-export const runtime = "edge"
+
+export const generateStaticParams = async () => {
+  const map = await mapMdxContent()
+
+  return Object.keys(map).map(key => {
+    return {
+      slug: key,
+    }
+  })
+}
 
 const DetailBlog = async ({ params }: { params: Promise<MetadataType> }) => {
   const { slug } = await params
 
-  const data = (await getData<{ blog: MetadataType[] }>("/contents", {
-    params: [slug],
-  })) as Record<string, any>
+  const map = await mapMdxContent()
+
+  const fileName = map[slug].fileName
+
+  // const data = (await getData<{ blog: MetadataType[] }>("/contents", {
+  //   params: [slug],
+  // })) as Record<string, any>
 
   const { default: Blog, metadata } = await import(
-    `@/app/(landing)/blog/contents/${data.fileName}`
+    `@/app/(landing)/blog/contents/${fileName}`
   )
 
   // const blogDirectory = path.join("app/(landing)/blog/(content)/contents")
