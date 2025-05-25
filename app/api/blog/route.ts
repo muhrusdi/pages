@@ -5,7 +5,7 @@ import { MetadataType } from "@/types"
 export const dynamic = "force-static"
 
 export const GET = async () => {
-  const blogDirectory = path.join("app/(landing)/blog/(content)")
+  const blogDirectory = path.join("app/(landing)/blog/contents")
   const postFilePaths = fs.readdirSync(blogDirectory)
   const metadataRegex = /export\sconst\smetadata\s=\s{\s*([\s\S]*?)\s*}/
 
