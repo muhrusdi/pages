@@ -1,12 +1,19 @@
-import { StackItem } from "@/components/cards/stack-item"
 import { Header } from "@/components/header"
 import Content from "./content"
+import { CodeBlock } from "@/components/code-block"
+import { blockCode } from "./data"
 
 const About = () => {
   return (
     <div>
       <Header />
-      <Content />
+      <Content
+        renderServer={
+          <CodeBlock innerClassName="h-[400px]" lang="tsx">
+            {blockCode}
+          </CodeBlock>
+        }
+      />
     </div>
   )
 }
