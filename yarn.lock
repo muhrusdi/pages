@@ -7382,6 +7382,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-compare-slider@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "react-compare-slider@npm:3.1.0"
+  peerDependencies:
+    react: ">=16.8"
+    react-dom: ">=16.8"
+  checksum: 10c0/c111a5440647f3db137678cc19871e17dfff0a0e8d8c40bbbc9b02a1dd58a2a41c9bc94b360aebf388fe34ac922f29d162bf4770aeee6db5c31b9195a9f745c6
+  languageName: node
+  linkType: hard
+
 "react-dom@npm:19.1.0":
   version: 19.1.0
   resolution: "react-dom@npm:19.1.0"
@@ -7906,6 +7916,7 @@ __metadata:
     prettier: "npm:^3.5.3"
     prettier-plugin-tailwindcss: "npm:^0.6.11"
     react: "npm:19.1.0"
+    react-compare-slider: "npm:^3.1.0"
     react-dom: "npm:19.1.0"
     react-hook-form: "npm:^7.56.4"
     rehype-mdx-code-props: "npm:^3.0.1"
