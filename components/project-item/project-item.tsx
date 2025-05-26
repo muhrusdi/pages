@@ -1,6 +1,8 @@
+"use client"
 import { ProjectItemType } from "@/types"
 import { Tag } from "../utils"
 import { cn } from "@/utils"
+import { useState } from "react"
 
 const ProjectItem: React.FC<ProjectItemType> = ({
   title,
@@ -8,8 +10,13 @@ const ProjectItem: React.FC<ProjectItemType> = ({
   link,
   stacks,
 }) => {
+  const [isHovered, setIsHovered] = useState(false)
   return (
-    <div className="group/item group/visit relative flex min-h-full flex-col justify-between overflow-hidden rounded-lg border border-gray-800 p-3">
+    <div
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className="group/visit relative flex min-h-full flex-col justify-between overflow-hidden rounded-lg border border-gray-800 p-3"
+    >
       <div>
         <span
           className={cn(
@@ -21,14 +28,19 @@ const ProjectItem: React.FC<ProjectItemType> = ({
         <p className="mt-2 line-clamp-3 text-sm">{description}</p>
       </div>
       <div className="relative mt-2">
-        <ul className="flex transform space-x-2 transition-all group-hover/item:-translate-x-10">
+        <ul
+          className={cn(
+            "flex transform space-x-2 transition-all",
+            isHovered ? "-translate-x-10" : null,
+          )}
+        >
           {stacks?.map((item, i) => (
             <li key={i}>
               <Tag>{item}</Tag>
             </li>
           ))}
         </ul>
-        <div className="hidden transition-all group-hover/visit:block">
+        <div className={cn("transition-all", isHovered ? "block" : "hidden")}>
           <a
             href={link}
             aria-disabled={!link}
