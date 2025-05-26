@@ -11,9 +11,14 @@ type Props = {
   children: string
   lang: BundledLanguage
   className?: string
+  innerClassName?: string
 }
 
-const CodeBlock = async ({ className, ...props }: Props) => {
+const CodeBlock = async ({
+  className,
+  innerClassName = "",
+  ...props
+}: Props) => {
   const lang = className?.replace(/language-/, "") || props.lang
   const out = await codeToHtml(props.children, {
     lang: lang,
@@ -32,17 +37,17 @@ const CodeBlock = async ({ className, ...props }: Props) => {
             node,
             `p-4
             sm:rounded-md
-            mt-3
             !bg-gray-900
-            overflow-x-auto
+            overflow-auto
             [&::-webkit-scrollbar]:h-2
+            [&::-webkit-scrollbar]:w-2
             [&::-webkit-scrollbar-track]:rounded-full
             [&::-webkit-scrollbar-track]:bg-gray-100
             [&::-webkit-scrollbar-thumb]:rounded-full
             [&::-webkit-scrollbar-thumb]:bg-gray-300
             dark:[&::-webkit-scrollbar-track]:bg-transparent
             dark:[&::-webkit-scrollbar-thumb]:bg-gray-800
-            `,
+            ` + innerClassName,
           )
         },
       },
@@ -51,7 +56,7 @@ const CodeBlock = async ({ className, ...props }: Props) => {
 
   return (
     <div className="vp-doc relative pb-3">
-      <div dangerouslySetInnerHTML={{ __html: out }} className={className} />
+      <div dangerouslySetInnerHTML={{ __html: out }} />
       <CopyToClipboard code={props.children} />
     </div>
   )
