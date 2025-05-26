@@ -1,3 +1,16 @@
+import { FlipHorizontal } from "lucide-react"
+
+export const CustomHandle = () => {
+  return (
+    <div className="relative flex h-full items-center justify-center">
+      <div>
+        <FlipHorizontal size={20} className="translate-x-[0.5px] transform" />
+      </div>
+      <div className="absolute top-0 bottom-0 w-[1px] bg-gray-800"></div>
+    </div>
+  )
+}
+
 export const dataStack = {
   library: [
     {
@@ -177,3 +190,230 @@ export const dataStack = {
     },
   ],
 }
+
+export const blockCode = `
+import clsx from "clsx"
+import styles from "./banner.module.scss"
+import Image from "next/image"
+
+export const HeroBanner = () => (
+  <div
+    className={clsx(
+      styles.banner,
+      "grid place-items-center relative overflow-hidden"
+    )}
+  >
+    <div className="container">
+      <div className="text-center relative z-20 pt-20 sm:pt-28">
+        <div className="text-center">
+          <span className="text-gray-400 uppercase text-xs border border-purple-900 py-1 px-4 rounded-full">
+            Built with{" "}
+            <a
+              href="https://malesscss.com"
+              target="_blank"
+              className="font-medium text-white pl-1 lowercase text-base"
+            >
+              malesscss
+            </a>
+          </span>
+        </div>
+        <h1 className="text-5xl sm:text-6xl font-black mt-6">
+          Build your next idea even <span className="h1-gradient">faster.</span>
+        </h1>
+        <p className="text-lg sm:text-2xl mt-10 leading-relaxed">
+          Choose from over 100+ beautifully designed templates. <br />
+          The perfect starting line for your next project.
+        </p>
+        <div className="flex space-x-4 justify-center mt-10 sm:mt-14">
+          <div>
+            <button className="py-3 px-6 rounded-lg font-bold button-gradient">
+              Buy Now
+            </button>
+          </div>
+          <div>
+            <button className="py-3 px-6 rounded-lg bg-gray-900 border border-gray-800">
+              View Templates
+            </button>
+          </div>
+        </div>
+        <div className="flex justify-center mt-8 sm:mt-16">
+          <div className="flex items-center space-x-3 text-gray-400">
+            <div className="flex items-center space-x-2">
+              <div className="flex-none">
+                <Image
+                  className="h-8 w-8 rounded-full border-2 border-gray-600 overflow-hidden"
+                  src="https://res.cloudinary.com/muhrusdi/image/upload/v1616335341/thumb-612467.png"
+                  width={500}
+                  height={500}
+                  alt=""
+                />
+              </div>
+              <span>
+                Created by{" "}
+                <a
+                  target="_blank"
+                  className="text-gray-300"
+                  href="https://twitter.com/mhmrus"
+                >
+                  muhrusdi
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <svg
+      width="900"
+      height="570"
+      viewBox="0 0 1301 827"
+      className="absolute left-0 top-0"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g clip-path="url(#clip0_247_3-498859)">
+        <path
+          d="M-1 -3H790C790 -3 674.5 277 457.5 478C240.5 679 -1 788 -1 788V-3Z"
+          fill="url(#paint0_linear_247_3-810266)"
+        />
+        <ellipse
+          cx="-1.00006"
+          cy="317.544"
+          rx="329.474"
+          ry="407.197"
+          transform="rotate(25.581 -1.00006 317.544)"
+          fill="url(#paint1_radial_247_3-957987)"
+        />
+        <ellipse
+          cx="743.015"
+          cy="19.3831"
+          rx="335.5"
+          ry="591.5"
+          transform="rotate(25.581 743.015 19.3831)"
+          fill="url(#paint2_radial_247_3-518305)"
+        />
+      </g>
+      <defs>
+        <linearGradient
+          id="paint0_linear_247_3-810266"
+          x1="299"
+          y1="-89"
+          x2="489"
+          y2="602"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#1E0833" stop-opacity="0.02" />
+          <stop offset="1" />
+        </linearGradient>
+        <radialGradient
+          id="paint1_radial_247_3-957987"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="translate(-1.00006 317.544) rotate(90) scale(407.196 329.474)"
+        >
+          <stop stop-color="#250808" />
+          <stop offset="1" stop-color="#0E0912" stop-opacity="0" />
+        </radialGradient>
+        <radialGradient
+          id="paint2_radial_247_3-518305"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="translate(743.015 19.3831) rotate(90) scale(591.5 335.5)"
+        >
+          <stop stop-color="#0F0E49" />
+          <stop offset="1" stop-color="#0E0912" stop-opacity="0" />
+        </radialGradient>
+        <clipPath id="clip0_247_3-498859">
+          <rect width="1301" height="827" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+    <svg
+      width="1301"
+      height="351"
+      viewBox="0 0 1301 351"
+      className="absolute bottom-0 left-1/2 transform -translate-x-1/2 z-[2]"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g clip-path="url(#clip0_249_7-218698)">
+        <ellipse
+          cx="650.194"
+          cy="462.512"
+          rx="448.194"
+          ry="354.512"
+          fill="url(#paint0_radial_249_7-706057)"
+        />
+        <path d="M241 350H1059" stroke="url(#paint1_linear_249_7-771288)" />
+      </g>
+      <defs>
+        <radialGradient
+          id="paint0_radial_249_7-706057"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="translate(650.194 462.512) rotate(90) scale(354.512 448.194)"
+        >
+          <stop stop-color="#260B3C" />
+          <stop offset="1" stop-color="#0E0912" stop-opacity="0" />
+        </radialGradient>
+        <linearGradient
+          id="paint1_linear_249_7-771288"
+          x1="241"
+          y1="350"
+          x2="1059.5"
+          y2="350"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop />
+          <stop offset="0.25" stop-color="#1F3172" />
+          <stop offset="0.5" stop-color="#701A48" />
+          <stop offset="0.75" stop-color="#250707" />
+          <stop offset="1" />
+        </linearGradient>
+        <clipPath id="clip0_249_7-218698">
+          <rect width="1301" height="351" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+    <svg
+      width="736"
+      height="351"
+      viewBox="0 0 736 351"
+      className="bottom-0 right-0 absolute z-[1]"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g clip-path="url(#clip0_250_15-626768)">
+        <circle
+          cx="605.5"
+          cy="615.5"
+          r="581.5"
+          fill="url(#paint0_linear_250_15-997876)"
+        />
+      </g>
+      <defs>
+        <linearGradient
+          id="paint0_linear_250_15-997876"
+          x1="775.5"
+          y1="11"
+          x2="335.5"
+          y2="750"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#020002" stop-opacity="0" />
+          <stop offset="1" stop-color="#04031C" />
+        </linearGradient>
+        <clipPath id="clip0_250_15-626768">
+          <rect width="736" height="351" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+  </div>
+)
+`
