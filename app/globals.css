@@ -58,8 +58,11 @@
       & > em > strong {
         @apply bg-gradient-to-r from-pink-500 to-violet-500 bg-clip-text text-transparent;
       }
+      & + pre {
+        @apply mt-4;
+      }
     }
-    div {
+    div, pre {
       & + p {
         @apply mt-6;
       }
