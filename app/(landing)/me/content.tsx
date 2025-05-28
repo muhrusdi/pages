@@ -108,7 +108,7 @@ const Content = ({ renderServer }: Props) => {
             <ul className="grid grid-cols-2 gap-4 sm:grid-cols-4 [&_svg]:h-[60px] [&_svg]:fill-white">
               {filtered.map((item, i) => (
                 <motion.li
-                  key={filter + i}
+                  key={filter === "" || filter === "all" ? i : filter + i}
                   variants={itemAnimate}
                   initial="initial"
                   animate="animate"
