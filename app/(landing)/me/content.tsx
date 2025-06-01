@@ -1,7 +1,7 @@
 "use client"
 
 import { cn } from "@/utils"
-import { useState } from "react"
+import React, { useState } from "react"
 import { CustomHandle, dataStack } from "./data"
 import { StackItem } from "@/components/cards/stack-item"
 import { motion } from "motion/react"
@@ -105,7 +105,10 @@ const Content = ({ renderServer }: Props) => {
         </div>
         <div className="mt-3">
           <div className="relative">
-            <ul className="grid grid-cols-2 gap-4 sm:grid-cols-4 [&_svg]:h-[60px] [&_svg]:fill-white">
+            <ul
+              className="grid grid-cols-2 gap-4 sm:grid-cols-4 [&_svg]:h-[60px] [&_svg]:fill-white"
+              style={{ "--border": "#1e2939" } as React.CSSProperties}
+            >
               {filtered.map((item, i) => (
                 <motion.li
                   key={filter === "" || filter === "all" ? i : filter + i}
