@@ -33,6 +33,10 @@ const nextConfig: NextConfig = {
         source: "/api/v1/:path*",
         destination: "https://api.themoviedb.org/3/:path*",
       },
+      {
+        source: "/cv-2025",
+        destination: "/cv-2025.pdf",
+      },
     ]
   },
 }
