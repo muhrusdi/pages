@@ -17,7 +17,7 @@ const filterList = [
   { id: "ui", title: "UI" },
 ]
 
-const desainList = [
+const designList = [
   { id: "image", title: "Image", icon: <ImageIcon size={14} /> },
   { id: "design", title: "Design", icon: <FrameIcon size={14} /> },
   { id: "code", title: "Code", icon: <CodeIcon size={14} /> },
@@ -146,7 +146,7 @@ const Content = ({ renderServer }: Props) => {
           </div>
           <div>
             <ul className="flex h-[28px] items-center overflow-hidden rounded-md border border-gray-800 bg-gray-950 text-sm [&>li>button]:px-3 [&>li>button]:py-1 [&>li>button]:hover:bg-gray-900">
-              {desainList.map(item => (
+              {designList.map(item => (
                 <li key={item.id}>
                   <button
                     onClick={() => handleDesignChange(item)}
