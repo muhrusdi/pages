@@ -16,6 +16,9 @@ const nextConfig: NextConfig = {
       fullUrl: true,
     },
   },
+  experimental: {
+    mdxRs: true,
+  },
   pageExtensions: ["mdx", "ts", "tsx"],
   images: {
     remotePatterns: [
