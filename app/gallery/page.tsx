@@ -7,6 +7,7 @@
 // )
 
 // const scopes = ["https://www.googleapis.com/auth/photoslibrary.readonly"]
+export const runtime = "edge"
 
 const Gallery = () => {
   // const authUrl = oauthClient.generateAuthUrl({
