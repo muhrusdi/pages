@@ -3,7 +3,6 @@ import fs from "fs"
 import { getMdxContent } from "@/lib/services"
 import slugify from "@sindresorhus/slugify"
 
-export const dynamic = "force-static"
 export const runtime = "edge"
 
 export const GET = async () => {
