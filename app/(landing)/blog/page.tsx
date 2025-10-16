@@ -3,7 +3,6 @@ import { BlogItem } from "@/components/cards/blog"
 import { MetadataType } from "@/types"
 import { getData } from "@/lib/api"
 
-export const runtime = "edge"
 export const dynamic = "force-static"
 
 const Blogs = async () => {
