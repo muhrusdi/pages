@@ -5,7 +5,7 @@ import { projects } from "@/utils/mock"
 const Works = () => {
   return (
     <div>
-      <Header title="My Works" description="Here are some of my blogs." />
+      <Header title="My Works" description="Here are some of my works." />
       <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
         {projects.map((item, i) => (
           <li key={i}>

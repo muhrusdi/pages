@@ -5,8 +5,8 @@ import rehypeMdxCodeProps from "rehype-mdx-code-props"
 
 const withMDX = createMDX({
   options: {
-    remarkPlugins: [remarkGfm],
-    rehypePlugins: [rehypeMdxCodeProps],
+    // remarkPlugins: [remarkGfm],
+    // rehypePlugins: [rehypeMdxCodeProps],
   },
 })
 
