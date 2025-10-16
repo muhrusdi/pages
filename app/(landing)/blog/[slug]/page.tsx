@@ -3,7 +3,6 @@ import "./styles.css"
 import { mapMdxContent } from "@/lib/services"
 import { formatDate } from "@/utils"
 
-export const runtime = "edge"
 export const dynamic = "force-static"
 
 export const generateStaticParams = async () => {
