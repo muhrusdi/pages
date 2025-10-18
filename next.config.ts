@@ -11,7 +11,6 @@ const withMDX = createMDX({
 })
 
 const nextConfig: NextConfig = {
-  output: "export",
   logging: {
     fetches: {
       fullUrl: true,
