@@ -5,8 +5,15 @@ import { getData } from "@/lib/api"
 
 export const dynamic = "force-static"
 
-const Blogs = async () => {
+export async function getStaticProps() {
   const data = await getData<{ blog: MetadataType[] }>("/contents")
+
+  return {
+    props: { data },
+  }
+}
+
+const Blogs = async ({ data }: { data: { blog: MetadataType[] } }) => {
   // const blogDirectory = path.join("app/(landing)/blog/contents")
   // const postFilePaths = fs.readdirSync(blogDirectory)
   // const metadataRegex = /export\sconst\smetadata\s=\s{\s*([\s\S]*?)\s*}/
