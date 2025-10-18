@@ -20,6 +20,7 @@ const RootLayout: React.FC<RootLayoutType> = ({ children }) => {
       <body className="bg-white dark:bg-black dark:text-white">
         <Providers>
           <div className="container max-w-2xl">
+            <Nav />
             {children}
             {/* <div className="fixed bottom-4 left-1/2 -translate-x-1/2">
               <Dock>

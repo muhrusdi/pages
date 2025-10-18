@@ -7,6 +7,7 @@ export const dynamic = "force-static"
 
 const Blogs = async () => {
   const data = await getData<{ blog: MetadataType[] }>("/contents")
+
   // const blogDirectory = path.join("app/(landing)/blog/contents")
   // const postFilePaths = fs.readdirSync(blogDirectory)
   // const metadataRegex = /export\sconst\smetadata\s=\s{\s*([\s\S]*?)\s*}/
@@ -52,7 +53,7 @@ const Blogs = async () => {
     <div>
       <Header title="My Blogs" description="Here are some of my blogs." />
       <ul className="space-y-2">
-        {data.blog?.map((item, i) => (
+        {data?.blog?.map((item, i) => (
           <li key={i}>
             <BlogItem item={item} />
           </li>

@@ -1,6 +1,7 @@
+import "@/env.config"
 import axios, { AxiosHeaders, AxiosRequestHeaders } from "axios"
 
-axios.defaults.baseURL = process.env.HOST_URL
+axios.defaults.baseURL = process.env.HOST_URL || "https://rus.pages.dev"
 
 axios.interceptors.request.use(
   config => {
