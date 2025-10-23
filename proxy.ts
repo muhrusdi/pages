@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server"
 import type { NextRequest } from "next/server"
 
+export const runtime = "edge"
+
 export function proxy(request: NextRequest) {
   const requestHeaders = new Headers(request.headers)
 
