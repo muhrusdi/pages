@@ -10,7 +10,7 @@ type Props = {
   searchParams: SearchParamsType<{ sort_by: string; page: string }>
 }
 
-export const runtime = "edge"
+export const dynamic = "force-static"
 
 const Home = async () => {
   return (

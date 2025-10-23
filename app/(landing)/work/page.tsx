@@ -2,6 +2,8 @@ import { ProjectItem } from "@/components/project-item"
 import { Header } from "@/components/utils"
 import { projects } from "@/utils/mock"
 
+export const dynamic = "force-static"
+
 const Works = () => {
   return (
     <div>

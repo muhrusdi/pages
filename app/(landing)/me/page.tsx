@@ -3,6 +3,8 @@ import Content from "./content"
 import { CodeBlock } from "@/components/code-block"
 import { blockCode } from "./data"
 
+export const dynamic = "force-static"
+
 const About = () => {
   return (
     <div>
