@@ -1,7 +1,7 @@
 import { NextConfig } from "next"
 import createMDX from "@next/mdx"
-import remarkGfm from "remark-gfm"
-import rehypeMdxCodeProps from "rehype-mdx-code-props"
+// import remarkGfm from "remark-gfm"
+// import rehypeMdxCodeProps from "rehype-mdx-code-props"
 
 const withMDX = createMDX({
   options: {
