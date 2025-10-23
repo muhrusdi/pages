@@ -63,7 +63,7 @@ const Blogs = async () => {
       <ul className="space-y-2">
         {blogs?.map((item, i) => (
           <li key={i}>
-            <BlogItem item={item as any} />
+            <BlogItem item={item} />
           </li>
         ))}
       </ul>
