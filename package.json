@@ -44,7 +44,7 @@
     "zod": "^3.25.23"
   },
   "devDependencies": {
-    "@cloudflare/next-on-pages": "^1.13.12",
+    "@cloudflare/next-on-pages": "^1.13.16",
     "@shikijs/rehype": "^3.4.2",
     "@shikijs/transformers": "^3.4.2",
     "@types/mdx": "^2.0.13",
