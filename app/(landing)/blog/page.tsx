@@ -2,14 +2,18 @@ import { Header } from "@/components/utils"
 import { BlogItem } from "@/components/cards/blog"
 import { MetadataType } from "@/types"
 import { getData } from "@/lib/api"
+import path from "path"
+import fs from "fs"
+import { getMdxContent } from "@/lib/services"
+import slugify from "@sindresorhus/slugify"
 
 export const dynamic = "force-static"
 
 const Blogs = async () => {
-  const data = await getData<{ blog: MetadataType[] }>("/contents")
+  // const data = await getData<{ blog: MetadataType[] }>("/contents")
 
-  // const blogDirectory = path.join("app/(landing)/blog/contents")
-  // const postFilePaths = fs.readdirSync(blogDirectory)
+  const blogDirectory = path.join("app/(landing)/blog/contents")
+  const postFilePaths = fs.readdirSync(blogDirectory)
   // const metadataRegex = /export\sconst\smetadata\s=\s{\s*([\s\S]*?)\s*}/
 
   // const blog = postFilePaths
@@ -39,23 +43,27 @@ const Blogs = async () => {
   //   })
   //   .filter(Boolean) as MetadataType[]
 
-  // const blog = postFilePaths.map(async f => {
-  //   const { metadata } = await getMdxContent(f)
-  //   const slug = slugify(metadata.title)
-
-  //   return {
-  //     ...metadata,
-  //     slug: "/blog/" + slug,
-  //   }
-  // })
+  const blogs = await Promise.all(
+    postFilePaths.map(async f => {
+      const { metadata } = await getMdxContent(f)
+      const slug = slugify(metadata.title)
+      if (metadata.status === "published") {
+        return {
+          ...metadata,
+          slug: "/blog/" + slug,
+        }
+      }
+      return null
+    }),
+  ).then(results => results.filter(Boolean))
 
   return (
     <div>
       <Header title="My Blogs" description="Here are some of my blogs." />
       <ul className="space-y-2">
-        {data?.blog?.map((item, i) => (
+        {blogs?.map((item, i) => (
           <li key={i}>
-            <BlogItem item={item} />
+            <BlogItem item={item as any} />
           </li>
         ))}
       </ul>

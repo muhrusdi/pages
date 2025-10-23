@@ -70,7 +70,7 @@ const Navigation = () => {
             </Link>
           </li>
           <li className={clsx({ hidden: isHome })}>
-            <ul className="relative flex items-center space-x-2">
+            <ul className="relative flex items-center space-x-2 text-sm">
               <AnimatePresence initial={false} mode="popLayout">
                 {isHovered ? (
                   <motion.li
@@ -103,7 +103,7 @@ const Navigation = () => {
           </li>
         </motion.ul>
       </div>
-      <ul className="flex space-x-6 text-gray-400">
+      <ul className="flex space-x-6 text-sm text-gray-400">
         {navData.map(item =>
           !pathname.startsWith(item.link) ? (
             <li key={item.id}>
