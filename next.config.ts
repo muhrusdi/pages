@@ -17,6 +17,7 @@ const nextConfig: NextConfig = {
     },
   },
   experimental: {
+    viewTransition: true,
     mdxRs: true,
   },
   pageExtensions: ["mdx", "ts", "tsx"],

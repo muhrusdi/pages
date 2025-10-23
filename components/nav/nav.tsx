@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { AnimatePresence, motion } from "motion/react"
-import { useState } from "react"
+import { useId, useState } from "react"
 import { usePathname } from "next/navigation"
 import { menuItemAnimate } from "@/utils"
 import clsx from "clsx"
@@ -18,6 +18,11 @@ const navData = [
     title: "Blog",
     link: "/blog",
   },
+  // {
+  //   id: 2,
+  //   title: "Photos",
+  //   link: "/photos",
+  // },
   {
     id: 3,
     title: "About",
@@ -28,6 +33,7 @@ const navData = [
 const Navigation = () => {
   const [isHovered, setIsHovered] = useState(false)
   const pathname = usePathname()
+  const id = useId()
 
   const firstPath = pathname.split("/").filter(Boolean).splice(0, 1)
   const isHome = pathname === "/"
@@ -56,8 +62,8 @@ const Navigation = () => {
               onMouseLeave={() => handleHover(false)}
             >
               <svg
-                width="28"
-                height="28"
+                width="24"
+                height="24"
                 viewBox="0 0 745 745"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -104,9 +110,9 @@ const Navigation = () => {
         </motion.ul>
       </div>
       <ul className="flex space-x-6 text-sm text-gray-400">
-        {navData.map(item =>
+        {navData.map((item, i) =>
           !pathname.startsWith(item.link) ? (
-            <li key={item.id}>
+            <li key={i}>
               <Link href={item.link} key={item.id} className="hover:text-white">
                 {item.title}
               </Link>
