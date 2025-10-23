@@ -145,7 +145,7 @@ const Content = ({ renderServer }: Props) => {
       <div className="mt-20">
         <div className="flex items-center justify-between">
           <div>
-            <h2 className="text-2xl font-bold">Ability</h2>
+            <h2 className="text-2xl font-bold">Skill</h2>
           </div>
           <div>
             <ul className="flex h-[28px] items-center overflow-hidden rounded-md border border-gray-800 bg-gray-950 text-sm [&>li>button]:px-3 [&>li>button]:py-1 [&>li>button]:hover:bg-gray-900">
