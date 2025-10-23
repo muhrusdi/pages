@@ -1,6 +1,7 @@
 import path from "path"
 import fs from "fs"
 import { ViewTransition } from "react"
+import Link from "next/link"
 
 export const dynamic = "force-static"
 
@@ -19,11 +20,13 @@ const Photos = async ({ params }: { params: Promise<{ id: string }> }) => {
         <ul className="mt-3 grid grid-cols-3 gap-2">
           {photoPath?.map(key => (
             <li key={key}>
-              <img
-                src={`/albums/${id}/${key}`}
-                alt={key}
-                className="h-40 w-full rounded-md object-cover"
-              />
+              <Link href={`/photos/${id}/${key}`}>
+                <img
+                  src={`/albums/${id}/${key}`}
+                  alt={key}
+                  className="h-40 w-full rounded-md object-cover"
+                />
+              </Link>
             </li>
           ))}
         </ul>
