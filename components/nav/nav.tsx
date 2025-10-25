@@ -18,11 +18,11 @@ const navData = [
     title: "Blog",
     link: "/blog",
   },
-  // {
-  //   id: 2,
-  //   title: "Photos",
-  //   link: "/photos",
-  // },
+  {
+    id: 2,
+    title: "Photos",
+    link: "/photos",
+  },
   {
     id: 3,
     title: "About",
