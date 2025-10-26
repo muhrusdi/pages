@@ -16,7 +16,9 @@ const nextConfig: NextConfig = {
       fullUrl: true,
     },
   },
+  reactCompiler: true,
   experimental: {
+    turbopackFileSystemCacheForDev: true,
     mdxRs: true,
   },
   pageExtensions: ["mdx", "ts", "tsx"],
