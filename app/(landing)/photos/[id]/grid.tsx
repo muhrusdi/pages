@@ -9,6 +9,8 @@ import {
 } from "@/components/ui/dialog"
 import { useDeferredValue, useState, ViewTransition } from "react"
 import * as DialogPrimitive from "@radix-ui/react-dialog"
+import { ArrowLeft } from "lucide-react"
+import Link from "next/link"
 
 const Grid = ({ photos, id }: { photos: string[]; id: string }) => {
   const [urlImage, setUrlImage] = useState("")
@@ -29,9 +31,20 @@ const Grid = ({ photos, id }: { photos: string[]; id: string }) => {
       <ViewTransition name={`photo-album-${id}`}>
         <div className="mt-4">
           <div>
-            <h1 className="text-2xl capitalize">{id}</h1>
+            <div className="flex items-center gap-2">
+              <div>
+                <Link href="/photos" className="block">
+                  <ArrowLeft size={20} />
+                </Link>
+              </div>
+              <div>
+                <ViewTransition name={`photo-album-title-${id}`}>
+                  <h1 className="text-2xl capitalize">{id}</h1>
+                </ViewTransition>
+              </div>
+            </div>
           </div>
-          <ul className="mt-3 grid grid-cols-3 gap-2">
+          <ul className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3">
             {photos?.map(key => (
               <li key={key}>
                 {!urlImage ? (
@@ -67,7 +80,7 @@ const Grid = ({ photos, id }: { photos: string[]; id: string }) => {
             // style={{
             //   backgroundImage: `url(${urlDeferred})`,
             // }}
-            <ViewTransition name={urlImage}>
+            <ViewTransition>
               <img
                 src={`/albums/${id}/${urlImage}`}
                 alt=""

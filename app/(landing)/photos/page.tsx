@@ -30,7 +30,7 @@ const Photos = async () => {
 
   return (
     <ViewTransition>
-      <ul className="mt-4 grid grid-cols-3 gap-2">
+      <ul className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3">
         {Object.keys(albums)?.map(key => (
           <ViewTransition name={`photo-album-${albums[key].folder}`} key={key}>
             <Link
@@ -41,7 +41,11 @@ const Photos = async () => {
               className="after:content-[' '] relative flex h-40 w-full items-end rounded-md bg-cover bg-center p-4 text-white backdrop-blur-sm transition after:absolute after:inset-0 after:-z-1 after:bg-black/40 after:transition hover:bg-size-[106%]"
             >
               <div className="relative">
-                <h2 className="capitalize">{albums[key].folder}</h2>
+                <ViewTransition
+                  name={`photo-album-title-${albums[key].folder}`}
+                >
+                  <h2 className="capitalize">{albums[key].folder}</h2>
+                </ViewTransition>
                 <p className="text-sm text-white">Oct 2025</p>
               </div>
             </Link>
