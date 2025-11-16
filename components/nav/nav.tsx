@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { AnimatePresence, motion } from "motion/react"
-import { useId, useState } from "react"
+import { useId, useState, ViewTransition } from "react"
 import { usePathname } from "next/navigation"
 import { menuItemAnimate } from "@/utils"
 import clsx from "clsx"
@@ -98,12 +98,14 @@ const Navigation = () => {
                         exit="exit"
                         variants={menuItemAnimate}
                       >
-                        <Link
-                          href={"/" + firstPath}
-                          className="flex items-center gap-1"
-                        >
-                          <span>{firstPath}</span>
-                        </Link>
+                        <ViewTransition name={"/" + firstPath.toString()}>
+                          <Link
+                            href={"/" + firstPath}
+                            className="flex items-center gap-1"
+                          >
+                            <span>{firstPath}</span>
+                          </Link>
+                        </ViewTransition>
                       </motion.li>
                     )}
                   </AnimatePresence>
@@ -115,13 +117,15 @@ const Navigation = () => {
             {navData.map((item, i) =>
               !pathname.startsWith(item.link) ? (
                 <li key={i}>
-                  <Link
-                    href={item.link}
-                    key={item.id}
-                    className="hover:text-white"
-                  >
-                    {item.title}
-                  </Link>
+                  <ViewTransition key={i} name={item.link}>
+                    <Link
+                      href={item.link}
+                      key={item.id}
+                      className="hover:text-white"
+                    >
+                      {item.title}
+                    </Link>
+                  </ViewTransition>
                 </li>
               ) : null,
             )}
