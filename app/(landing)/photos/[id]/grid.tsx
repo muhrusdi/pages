@@ -1,20 +1,11 @@
 "use client"
-import {
-  Dialog,
-  DialogClose,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog"
-import { useDeferredValue, useState, ViewTransition } from "react"
-import * as DialogPrimitive from "@radix-ui/react-dialog"
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
+import { useState, ViewTransition } from "react"
 import { ArrowLeft } from "lucide-react"
 import Link from "next/link"
 
 const Grid = ({ photos, id }: { photos: string[]; id: string }) => {
   const [urlImage, setUrlImage] = useState("")
-  const urlDeferred = useDeferredValue(urlImage)
 
   const handleSetUrlImage = (url: string, val?: boolean) => {
     setUrlImage(url)
