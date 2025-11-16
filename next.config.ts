@@ -16,11 +16,9 @@ const nextConfig: NextConfig = {
       fullUrl: true,
     },
   },
-  // cacheComponents: true,
-  // reactCompiler: true,
+  reactCompiler: true,
   experimental: {
     turbopackFileSystemCacheForDev: true,
-    viewTransition: true,
     mdxRs: true,
   },
   pageExtensions: ["mdx", "ts", "tsx"],
