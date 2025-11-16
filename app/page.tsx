@@ -15,7 +15,7 @@ export const dynamic = "force-static"
 const Home = async () => {
   return (
     <div>
-      <Header />
+      <Header type="home" />
       <div>
         <Section title="About">
           <p>

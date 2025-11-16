@@ -1,13 +1,13 @@
 import Image from "next/image"
 import { Globe, Mail } from "lucide-react"
-import Link from "next/link"
 import { ShineBorder } from "../magicui/shine-border"
+import clsx from "clsx"
 
-const Header = () => {
+const Header = ({ type }: { type: "home" | "me" }) => {
   return (
     <header className="py-10">
-      <div className="flex items-center justify-between">
-        <div className="w-2/3">
+      <div className="flex flex-col-reverse items-start justify-between sm:flex-row">
+        <div className="mt-6 sm:mt-0 sm:w-2/3">
           <div>
             <div className="flex items-center space-x-3">
               <div>
@@ -35,7 +35,7 @@ const Header = () => {
             </ul>
           </div>
         </div>
-        <div>
+        <div className={clsx(type === "me" ? "block" : "hidden sm:block")}>
           <Image
             src="https://res.cloudinary.com/muhrusdi/image/upload/v1706784855/muhrusdev.jpg"
             alt=""

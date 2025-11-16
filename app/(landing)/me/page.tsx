@@ -8,7 +8,7 @@ export const dynamic = "force-static"
 const About = () => {
   return (
     <div>
-      <Header />
+      <Header type="me" />
       <Content
         renderServer={
           <CodeBlock innerClassName="h-[400px]" lang="tsx">

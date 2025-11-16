@@ -3,6 +3,7 @@ import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
 import { useState, ViewTransition } from "react"
 import { ArrowLeft } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 const Grid = ({ photos, id }: { photos: string[]; id: string }) => {
   const [urlImage, setUrlImage] = useState("")
@@ -41,20 +42,24 @@ const Grid = ({ photos, id }: { photos: string[]; id: string }) => {
                 {!urlImage ? (
                   <ViewTransition name={key}>
                     <div onClick={() => handleSetUrlImage(key)}>
-                      <img
+                      <Image
                         src={`/albums/${id}/${key}`}
                         alt={key}
                         className="h-40 w-full rounded-md object-cover"
+                        width={400}
+                        height={400}
                       />
                     </div>
                   </ViewTransition>
                 ) : (
                   <ViewTransition>
                     <div onClick={() => handleSetUrlImage(key)}>
-                      <img
+                      <Image
                         src={`/albums/${id}/${key}`}
                         alt={key}
                         className="h-40 w-full rounded-md object-cover"
+                        width={800}
+                        height={800}
                       />
                     </div>
                   </ViewTransition>
