@@ -2,31 +2,15 @@ import { ViewTransition } from "react"
 import path from "path"
 import fs from "fs"
 import Link from "next/link"
+import { getAlbums } from "./utils"
 
 export const dynamic = "force-static"
-
-type Album = {
-  folder: string
-  photos: string[]
-}
 
 const Photos = async () => {
   const albumsSrc = path.join("public/albums")
   const albumsPath = fs.readdirSync(albumsSrc)
 
-  const albums = albumsPath.reduce(
-    (acc: Album[], folder) => {
-      const folderPath = path.join(albumsSrc, folder)
-      const stats = fs.statSync(folderPath)
-      if (stats.isDirectory()) {
-        const photosSrc = path.join("public/albums", folder)
-        const photoPath = fs.readdirSync(photosSrc)
-        acc.push({ folder, photos: photoPath } as Album)
-      }
-      return acc
-    },
-    [] as unknown as Album[],
-  ) as unknown as Record<string, Album>
+  const albums = getAlbums({ albumsPath, albumsSrc })
 
   return (
     <ViewTransition>
