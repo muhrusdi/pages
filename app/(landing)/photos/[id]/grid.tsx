@@ -4,6 +4,7 @@ import { useState, ViewTransition } from "react"
 import { ArrowLeft } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import Portal from "./portal"
 
 const Grid = ({ photos, id }: { photos: string[]; id: string }) => {
   const [urlImage, setUrlImage] = useState("")
@@ -39,31 +40,15 @@ const Grid = ({ photos, id }: { photos: string[]; id: string }) => {
           <ul className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3">
             {photos?.map(key => (
               <li key={key}>
-                {!urlImage ? (
-                  <ViewTransition name={key}>
-                    <div onClick={() => handleSetUrlImage(key)}>
-                      <Image
-                        src={`/albums/${id}/${key}`}
-                        alt={key}
-                        className="h-40 w-full rounded-md object-cover"
-                        width={400}
-                        height={400}
-                      />
-                    </div>
-                  </ViewTransition>
-                ) : (
-                  <ViewTransition>
-                    <div onClick={() => handleSetUrlImage(key)}>
-                      <Image
-                        src={`/albums/${id}/${key}`}
-                        alt={key}
-                        className="h-40 w-full rounded-md object-cover"
-                        width={800}
-                        height={800}
-                      />
-                    </div>
-                  </ViewTransition>
-                )}
+                <div onClick={() => handleSetUrlImage(key)}>
+                  <Image
+                    src={`/albums/${id}/${key}`}
+                    alt={key}
+                    className="h-40 w-full rounded-md object-cover"
+                    width={400}
+                    height={400}
+                  />
+                </div>
               </li>
             ))}
           </ul>
@@ -76,13 +61,13 @@ const Grid = ({ photos, id }: { photos: string[]; id: string }) => {
             // style={{
             //   backgroundImage: `url(${urlDeferred})`,
             // }}
-            <ViewTransition>
-              <img
-                src={`/albums/${id}/${urlImage}`}
-                alt=""
-                className="absolute top-1/2 left-1/2 max-h-screen w-auto max-w-full -translate-x-1/2 -translate-y-1/2"
-              />
-            </ViewTransition>
+            <Image
+              src={`/albums/${id}/${urlImage}`}
+              alt={urlImage}
+              width={800}
+              height={800}
+              className="absolute top-1/2 left-1/2 max-h-screen w-auto max-w-full -translate-x-1/2 -translate-y-1/2"
+            />
           ) : null}
         </DialogContent>
       </Dialog>
