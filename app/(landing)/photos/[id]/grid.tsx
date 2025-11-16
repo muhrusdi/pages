@@ -1,10 +1,9 @@
 "use client"
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
-import { useState, ViewTransition } from "react"
+import { Suspense, useState, ViewTransition } from "react"
 import { ArrowLeft } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
-import Portal from "./portal"
 
 const Grid = ({ photos, id }: { photos: string[]; id: string }) => {
   const [urlImage, setUrlImage] = useState("")
@@ -66,6 +65,7 @@ const Grid = ({ photos, id }: { photos: string[]; id: string }) => {
               alt={urlImage}
               width={800}
               height={800}
+              sizes="100vw"
               className="absolute top-1/2 left-1/2 max-h-screen w-auto max-w-full -translate-x-1/2 -translate-y-1/2"
             />
           ) : null}

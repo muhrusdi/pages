@@ -25,9 +25,8 @@ const Photos = async () => {
               <Image
                 src={`/albums/${albums[key].folder}/${albums[key].photos[1]}`}
                 alt={albums[key].folder + key}
-                width={400}
-                height={400}
-                className="absolute inset-0 -z-1 h-full w-full rounded-md object-cover transition"
+                fill
+                className="relative -z-1 rounded-md object-cover transition"
               />
               <div className="relative">
                 <ViewTransition
