@@ -31,6 +31,12 @@ const nextConfig: NextConfig = {
         pathname: "/muhrusdi/**",
       },
     ],
+    localPatterns: [
+      {
+        pathname: "/albums/**",
+        search: "",
+      },
+    ],
   },
   async rewrites() {
     return [
